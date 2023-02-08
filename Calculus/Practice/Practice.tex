@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[1]{\dfrac{d}{d#1}}
+\newcommand{\pderv}[1]{\dfrac{\partial}{\partial#1}}
+\newcommand{\p}{\partial}
+\newcommand{\lint}{\displaystyle\int}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 2393 Practice}
+
+\normalsize
+\section*{Derivatives}
+\begin{itemize}
+    \item [1.)] $\dfrac{d}{dx}\bracks{4x^5-5\sqrt{x}+\cos^4x}=20x^4+\frac{5}{2\sqrt{x}}-4\cos^3x\sin x$
+
+    \item [2.)] $\dfrac{d}{dx}\bracks{e^x\sin(6x)}=e^x\sin(6x)+6e^x\cos(6x)$
+
+    \item [3.)] $\dfrac{d}{dx}\bracks{\dfrac{1}{x^4+3x}}=\dfrac{0(x^4+3x)-1(4x^3+3)}{(x^4+3x)^2}=-\dfrac{4x^3+3}{(x^4+3x)^2}$
+
+    \item [4.)] $\dfrac{d}{dx}\bracks{\dfrac{x}{1+x^2}}=\dfrac{1(1+x^2)-x(2x)}{(1+x^2)^2}=\dfrac{1+x^2-2x^2}{(1+x^2)^2}=\dfrac{1-x^2}{(1+x^2)^2}$
+
+    \item [5.)] $\dfrac{d}{dx}\bracks{\ln(xe^{7x})+\dfrac{1}{x^3}}=\dfrac{d}{dx}\bracks{\ln x+7x}-\dfrac{3}{x^4}=\dfrac{1}{x}+7-\dfrac{3}{x^4}=\dfrac{7x^4+x^3-3}{x^4}$
+
+    \item [6.)] $\dfrac{d}{dx}\bracks{\sqrt{e^{2x}+e}-\dfrac{4}{\sqrt{x}}}=\dfrac{2e^{2x}}{2\sqrt{e^{2x}+e}}+\dfrac{2}{\sqrt{x^3}}$
+
+    \item [7.)] $\derv{x}\bracks{\dfrac{5x^2-7x}{x^2+2}}=\dfrac{(x^2+2)(10x-7)-(5x^2-7x)(2x)}{(x^2+2)^2}$
+
+    \item [8.)] $\dfrac{d}{dx}\bracks{\sec^2 x\tan x}=2\sec^2 x\tan^2 x+\sec^4 x$
+
+    \item [9.)] $\derv{x}\bracks{(\tan^{-1}x)^{10}}=\dfrac{10(\tan^{-1}x)^9}{x^2+1}$
+
+    \item [10.)] $\derv{x}\bracks{\sqrt[3]{x^2}-\dfrac{1}{\sqrt{x^3}}}=\dfrac{2}{3\sqrt[3]{x}}+\dfrac{3}{2\sqrt{x^5}}$
+\end{itemize}
+
+\section*{First Order Partial Derivatives}
+\begin{itemize}
+    \item [11.)] $f_x=\pderv{x}\bracks{x\sin(xy)}=\sin(xy)+xy\cos(xy)$\newline
+    $f_y=\pderv{y}\bracks{x\sin(xy)}=x^2\cos(xy)$
+
+    \item [12.)] $f_x=\pderv{x}\bracks{xy^2e^{-xz}}=y^2e^{-xz}-xy^2ze^{-xz}$\newline
+    $f_y=\pderv{y}\bracks{xy^2e^{-xz}}=2xye^{-xz}$\newline
+    $f_z=\pderv{z}\bracks{xy^2e^{-xz}}=-x^2y^2e^{-xz}$
+
+    \item [13.)] $f_x=\pderv{x}\bracks{(x^2-y^2+5)^3}=2x[3(x^2-y^2+5)^2]=6x(x^2-y^2+5)^3$\newline
+    $f_y=\pderv{y}\bracks{(x^2-y^2+5)^3}=-2y[3(x^2-y^2+5)^2]=-6y(x^2-y^2+5)^2$
+\end{itemize}
+
+\section*{Second Order Partial Derivatives}
+\begin{itemize}
+    \item [14.)] $f_{xx}=\dfrac{\p^2}{\p x^2}\bracks{x^4y-2x^3y^2}=\pderv{x}\bracks{4x^3y-6x^2y^2}=9x^2y-12xy^2$\newline
+    $f_{xy}=f_{yx}=\dfrac{\p^2}{\p x\p y}\bracks{x^4y-2x^3y^2}=\pderv{y}\bracks{4x^3y-6x^2y^2}=4x^3-12x^2y$\newline
+    $f_{yy}=\dfrac{\p^2}{\p y^2}\bracks{x^4y-2x^3y^2}=\pderv{y}\bracks{x^4-4x^3y}=-4x^3$
+
+    \item [14.)] $f_{xx}=\dfrac{\p^2}{\p x^2}\bracks{\ln(3x+2y)}=\pderv{x}\bracks{\dfrac{3}{3x+2y}}=-\dfrac{9}{(3x+2y)^2}$\newline
+    $f_{xy}=f_{yx}=\dfrac{\p^2}{\p x\p y}\bracks{\ln(3x+2y)}=\pderv{y}\bracks{\dfrac{3}{3x+2y}}=-\dfrac{6}{(3x+2y)^2}$\newline
+    $f_{yy}=\dfrac{\p^2}{\p y^2}\bracks{\ln(3x+2y)}=\pderv{y}\bracks{\dfrac{2}{3x+2y}}=-\dfrac{4}{(3x+2y)^2}$
+
+    \item [14.)] $f_{xx}=\dfrac{\p^2}{\p x^2}\bracks{x^3\sqrt{y}+\sin(y^2)+x\cos y}=\pderv{x}\bracks{3x^2\sqrt{y}+\cos{y}}=6x\sqrt{y}$\newline
+    $f_{xy}=f_{yx}=\dfrac{\p^2}{\p x\p y}\bracks{x^3\sqrt{y}+\sin(y^2)+x\cos y}=\pderv{y}\bracks{3x^2\sqrt{y}+\cos y}=-\dfrac{3x^2}{\sqrt{y}}-\sin y$\newline
+    $f_{yy}=\dfrac{\p^2}{\p y^2}\bracks{x^3\sqrt{y}+\sin(y^2)+x\cos y}=\pderv{y}\bracks{\dfrac{x^3}{2\sqrt{y}}+2y\cos(y^2)-x\sin y}\newline=-\dfrac{x^3}{4\sqrt{y^3}}-4y^2\sin(y^2)+2\cos(y^2)-x\cos y$
+\end{itemize}
+
+\section*{Integrals}
+\begin{itemize}
+    \item [17.)] $\lint x^2+2x-4+\dfrac{1}{x^2}+\sin x\ dx=\dfrac{x^3}{3}+x^2-4x-\dfrac{1}{x}-\cos x+C$
+
+    \item [18.)] $\lint_0^4(4-t)\sqrt{t}\ dt=\lint_0^44\sqrt{t}-t\sqrt{t}\ dt=\bracks{\dfrac{8\sqrt{t^3}}{3}-\dfrac{2\sqrt{t^5}}{5}}_0^4=\dfrac{8\sqrt{4^3}}{3}-\dfrac{2\sqrt{4^5}}{5}=\dfrac{8(2^3)}{3}-\dfrac{2(2^5)}{5}=\dfrac{64}{3}-\dfrac{64}{5}=\dfrac{128}{15}$
+
+    \item [19.)] $\lint_0^1\cos(\pi t/2)\ dt=\bracks{\dfrac{2\sin(\pi t/2)}{\pi}}_0^1=\dfrac{2(1)}{\pi}-\dfrac{2(0)}{\pi}=\dfrac{2}{\pi}$
+
+    \item [20.)] $\lint(1-2x)^9\ dx=-\dfrac{1}{2}\lint u^9\ du=-\dfrac{u^{10}}{20}+C=-\dfrac{(1-2x)^{10}}{20}+C$
+
+    \item [21.)] $\lint x\sqrt{1-x^2}\ dx=-\dfrac{1}{2}\lint\sqrt{u}\ du=-\dfrac{\sqrt{u^3}}{3}+C=-\dfrac{\sqrt{(1-x^2)^3}}{3}+C$
+
+    \item [22.)] $\lint\sin x\cos^2x\ dx=-\lint u^2\ du=-\dfrac{u^3}{3}+C=-\dfrac{cos^3x}{3}+C$
+
+    \item [23.)] $\lint e^{2x}x\ dx=\dfrac{xe^{2x}}{2}-\dfrac{e^{2x}}{4}+C$
+
+    \item [24.)] $\lint e^{2x}x^2\ dx=\dfrac{x^2e^{2x}}{2}-\dfrac{xe^{2x}}{2}+\dfrac{e^{2x}}{4}+C$
+
+    \item [25.)] $\lint\dfrac{1}{4x+3}\ dx=\dfrac{1}{4}\lint\dfrac{1}{u}\ du=\dfrac{\ln\vert u\vert}{4}+C=\dfrac{\ln\vert4x+3\vert}{4}+C$
+
+    \item [26.)] $\lint\dfrac{1}{(2x+5)^3}\ dx=\dfrac{1}{2}\lint\dfrac{1}{u^3}\ du=-\dfrac{1}{4u^2}+C=-\dfrac{1}{4(2x+5)^2}+C$
+\end{itemize}
+
+\end{document}

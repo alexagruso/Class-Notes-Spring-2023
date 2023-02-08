@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 3}
+
+\normalsize
+\begin{itemize}
+    \item [1.)] Manipulate to standard form:
+    \begin{equation*}
+        x^2\derv{y}{x}+x(x+2)y=x^2\derv{y}{x}+x^2y+2xy\implies \derv{y}{x}+y\left(1+\dfrac{2}{x}\right)=\dfrac{e^x}{x^2}
+    \end{equation*}
+    Find $\mu(x)$ then $y$:
+    \begin{equation*}
+        \mu(x)=e^{\int p(x)dx}=e^{\int1+\frac{2}{x}dx}=e^{x+2\ln\vert x\vert}=e^xe^{2\ln\vert x\vert}=e^xx^2
+    \end{equation*}
+    \begin{equation*}
+        y=\dfrac{1}{\mu(x)}\int\mu(x)g(x)\ dx=\dfrac{1}{e^xx^2}\bracks{\int e^{2x}\ dx}=\dfrac{e^x}{2x^2}+\dfrac{C}{e^xx^2}
+    \end{equation*}
+
+    Which is the explicit solution.
+
+    \item [2.)] Manipulate to standard form:
+    \begin{equation*}
+        \cos xdy+y\sin xdx-dx=0\implies \cos x\derv{y}{x}+y\sin x-1=0
+    \end{equation*}
+    \begin{equation*}
+        \implies\derv{y}{x}+y\tan x=\sec x
+    \end{equation*}
+    Find $\mu(x)$ then $y$:
+    \begin{equation*}
+        \mu(x)=e^{\int\tan xdx}=e^{-\ln\vert\cos x\vert}=\sec x
+    \end{equation*}
+    \begin{equation*}
+        y=\dfrac{1}{\sec x}\bracks{\int\sec^2x\ dx}=\dfrac{\tan x}{\sec x}+\dfrac{C}{\sec x}
+    \end{equation*}
+    Which is the explicit solution.
+
+    \item [3.)] $y=\dfrac{\tan x}{\sec x}+\dfrac{C}{\sec x}$ as per problem 2.
+
+    \item [4.)] Find $\mu(x)$ then $y$:
+    \begin{equation*}
+        \mu(x)=e^{\int \sin xdx}=e^{-\cos x}=\dfrac{1}{e^{\cos x}}
+    \end{equation*}
+    \begin{equation*}
+        y=e^{\cos x}\bracks{\int\dfrac{e^{\cos x}}{e^{\cos x}}\ dx}=e^{\cos x}(x+C)
+    \end{equation*}
+    Solving given the initial values:
+    \begin{equation*}
+        -2.5=e^{\cos(0)}(0+C)=Ce^1\implies C=\dfrac{-2.5}{e}
+    \end{equation*}
+    \begin{equation*}
+        \therefore y=e^{\cos x}\left(x+\dfrac{-2.5}{e}\right)
+    \end{equation*}
+    Which is the particular solution.
+
+    \pagebreak
+    \item [5.)] Manipulate to standard form:
+    \begin{equation*}
+        \derv{y}{x}=x-4xy\implies\derv{y}{x}+4xy=x
+    \end{equation*}
+    Find $\mu(x)$ then $y$:
+    \begin{equation*}
+        \mu(x)=e^{\int4xdx}=e^{2x^2}
+    \end{equation*}
+    \begin{equation*}
+        y=\dfrac{1}{e^{2x^2}}\bracks{\int xe^{2x^2}\ dx}=\dfrac{1}{e^{2x^2}}\left(\dfrac{e^{2x^2}}{4}+C\right)=\dfrac{1}{4}+\dfrac{C}{e^{2x^2}}
+    \end{equation*}
+    Which is the explicit solution.
+
+    \item [6.)] awd
+
+\end{itemize}
+
+\end{document}

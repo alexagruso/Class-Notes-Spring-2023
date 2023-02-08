@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 2}
+
+\normalsize
+\begin{itemize}
+    \item [11.)] Quantifiers are important because they allow us to make more rigorous mathematical statements. For example, we could state that $x<y$, but without context, the exact meaning of this statement is ambiguous. However, using quantifiers, we can provide context. For example, $\forall x\in\mathbb{R},\exists y\in\mathbb{R}:x<y$. This gives context to the original statement and allows us to fully understand it.
+
+    \item [12.)] *
+
+    \item [13.)] Assume $x,y\in\mathbb{R}$, $x,y>0$, and $n\in\mathbb{N}$. Because it is a biconditional statement, we must prove it both ways:
+    \begin{itemize}
+        \item [a.)] Assume $x<y$. We can manipulate the inequality as follows:
+        \begin{align*}
+            x&<y\\
+            nx&<ny\\
+            \ln(x^n)&<\ln(y^n)\\
+            e^{\ln(x^n)}&<e^{\ln(y^n)}\\
+            x^n&<y^n
+        \end{align*}
+        Thus $x<y\implies x^n<y^n$.
+
+        \item [b.)] Assume $x^n<y^n$ and manipulate as follows:
+        \begin{align*}
+            x^n&<y^n\\
+            \ln(x^n)&<\ln(y^n)\\
+            nx&<ny\\
+            x&<y
+        \end{align*}
+        Thus $x^n<y^n\implies x<y$.
+    \end{itemize}
+    Thus $x<y\iff x^n<y^n$. Q.E.D.
+
+    \item [14.)] \begin{itemize}
+        \item [a.)] Assume $x\in\mathbb{R}$ and $0<x<1$. Multiplying each term by $x^n$ gives us $0(x^n)<x(x^n)<1(x^n)\implies0<x^{n+1}<x^n$, thus $x^{n+1}<x^n$. Q.E.D.
+
+        \item [b.)] Assume $x\in\mathbb{R}$ and $x>1$. Multiplying both terms by $x^n$ gives us $x(x^n)>1(x^n)\implies x^{n+1}>x^n$. Q.E.D.
+    \end{itemize}
+
+    \item [15.)] Consider the base case where $n=1$, $2^n=2^1=2\geq1$, thus the base case holds. Next, suppose the inequality holds for $n$, and consider $n+1$. $n+1\leq n+n\leq2^n+2^n=2(2^n)=2^{n+1}$, thus $n+1\leq2^{n+1}$, thus the induction step holds. Q.E.D.
+
+    \pagebreak
+    \item [16.)] \begin{itemize}
+        \item [a.)] $s\in\mathbb{R}$ is an upper bound of $G$ if for all $x\in G$, $s\geq x$.
+
+        \item [b.)] $G$ is bounded if there exist $u,v\in\mathbb{R}$ such that $u$ is an upper bound of $G$ and $v$ is a lower bound of $G$.
+
+        \item [c.)] $n\in\mathbb{R}$ is the infimum of $G$ if $n$ is a lower bound of $G$ and for all $v\in\mathbb{R}$ such that $v$ is a lower bound of $G$, $n\geq v$.
+    \end{itemize}
+
+    \item [17.)] Three upper bounds for $S$ are $11$, $12$, and $13$. Three lower bounds for $S$ are $1$, $0$, and $-1$. $\sup(S)=11$, as $11$ is an upper bound of $S$ and $11<u$ for all upper bounds $u$ of $S$. Finally, $\inf(S)=1$, as $1$ is a lower bound of $S$ and $1>v$ for all lower bounds $v$ of $S$.
+
+    \item [18.)] Let $v\in\mathbb{R}$ be a lower bound of $B$, thus $v\leq x$ for all $x\in B$. Since $A\subseteq B$, we know that for all $a\in A$, $a\in B$, thus for all $a\in A$, $v\leq a$, thus $v$ is a lower bound of $A$. Q.E.D.
+
+    \item [19.)] Let $s\in\mathbb{R}$ such that $s=\sup(A)$. Since $s=\sup(A)$, $s\leq u$ for all upper bounds $u$ of $A$. Consequently, for $u\in\mathbb{R}$ to be an upper bound of $A$, $u\geq s$, thus the set of all upper bounds of $A$ is $\{u\in\mathbb{R}:u\geq s\}=[\sup(A),\infty)$. Q.E.D.
+
+    \item [20.)] $S=[-2,5]=\{x\in\mathbb{R}:-2\leq x\leq5\}$. Consider $-2$: $-2$ is by definition a lower bound of $S$ as $-2\leq x$ for all $x\in S$. Next, for establishing a contradiction, suppose $v$ is a lower bound of $S$ and $v>-2$, but since $-2\in S$, $v\not\leq x$ for all $x\in S$, thus $v>-2$ cannot be a lower bound of $S$\contradiction, thus $\inf(S)=-2$. Q.E.D.
+\end{itemize}
+
+\end{document}
