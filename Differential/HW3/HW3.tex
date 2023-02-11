@@ -90,7 +90,32 @@
     \end{equation*}
     Which is the explicit solution.
 
-    \item [6.)] awd
+    \item [6.)] Find $\mu(t)$ then $y$:
+    \[\mu(t)=e^{\int-dt}=e^{-t}\]
+    \[y=e^t\bracks{\int2te^t\ dt}=e^t(2te^t-2e^t+C)=2te^{2t}-2e^{2t}+e^tC\]
+    Solving given the initial values:
+    \[1=2(0)e^{2(0)}-2e^{2(0)}+e^0C=C-2\implies C=3\]
+    \[\therefore y=2te^{2t}-2e^{2t}+3e^t\]
+    Which is the particular solution.
+
+    \item [7.)] Manipulate to standard form:
+    \[t\dfrac{dy}{dx}+(t+1)y=t\implies\dfrac{dy}{dx}+\left(\dfrac{t+1}{t}\right)y=1\]
+    Find $\mu(t)$ then $y$:
+    \[e^{\int\left(\frac{t+1}{t}\right)dt}=e^{t+\ln\vert t\vert}=te^t\]
+    \[y=\dfrac{1}{te^t}\bracks{\int te^t\ dt}=\dfrac{1}{te^t}\left(te^t-e^t+C\right)=1-\dfrac{1}{t}+\dfrac{C}{te^t}\]
+    Solving given the initial values:
+    \[1=1-\dfrac{1}{\ln 2}+\dfrac{C}{\ln 2e^{\ln 2}}\implies\dfrac{1}{\ln 2}=\dfrac{C}{2\ln 2}\implies C=2\]
+    \[\therefore y=1-\dfrac{1}{t}+\dfrac{1}{\ln 2}\]
+    Which is the particular solution.
+
+    \pagebreak
+    \item [8.)] Find $\mu(x)$ then $y$:
+    \[\mu(x)=e^{\int2dt}=e^{2t}\]
+    \[y=\dfrac{1}{e^{2t}}\bracks{\int t\ dt}=\dfrac{1}{e^{2t}}\left(\dfrac{t^2}{2}+C\right)=\dfrac{t^2}{2e^{2t}}+\dfrac{C}{e^{2t}}\]
+    Solving given the initial values:
+    \[0=\dfrac{(1)^2}{2e^{2(1)}}+\dfrac{C}{e^{2(1)}}=\dfrac{1}{2e^2}+\dfrac{C}{e^2}\implies C=-\dfrac{1}{2}\]
+    \[\therefore y=\dfrac{t^2}{2e^{2t}}-\dfrac{1}{2e^{2t}}=\dfrac{t^2-1}{2e^{2t}}\]
+    Which is the particular solution.
 
 \end{itemize}
 
