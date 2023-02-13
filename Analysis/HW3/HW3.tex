@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 3}
+
+\normalsize
+\begin{itemize}
+    % \item [12.)] ***
+
+    \item [13.)] Let $x,y\in\mathbb{R}$ such that $x,y>0$ and $n\in\mathbb{N}$. To show that $x<y\iff x^n<y^n$, we must prove it both ways.
+
+    Suppose $x<y$:
+    \begin{align*}
+        x<y&\implies x-y<0\\
+        &\implies (x-y)\sum_{k=0}^{n-1}x^ky^{n-k-1}<0\\
+        &\implies x^n-y^n<0\\
+        &\implies x^n<y^n
+    \end{align*}
+    Now suppose $x^n<y^n$:
+    \begin{align*}
+        x^n<y^n&\implies x^n-y^n<0\\
+        &\implies(x-y)\sum_{k=0}^{n-1}x^ky^{n-k-1}<0\\
+        &\implies x-y<0\\
+        &\implies x<y
+    \end{align*}
+    Thus $x<y\iff x^n<y^n$. Q.E.D.
+
+    % \item [21.)] awd
+
+    \item [22.)] \begin{itemize}
+        \item [a.)] False, as $\sup((0,1))=1\notin(0,1)$
+
+        \item [b.)] False, as $\sup([0,1])=1\in[0,1]$
+
+        \item [c.)] True, as $\sup([0,1])=1\in[0,1]$
+
+        \item [d.)] True, as $\sup((0,1))=1\notin(0,1)$
+    \end{itemize}
+
+    \item [23.)] Let $u,v\in\mathbb{R}$ such that $u=\sup(S)$ and $v=\inf(S)$. For the sake of establishing a contradiction, suppose $v>u$. Since $v>u$, $v>x$ for all $x\in S$, but for $v=\inf(S)$, $v\leq x$ for all $x\in S$, thus $v>u\implies v\neq\inf(S)$\contradiction, thus $v\leq u$. Q.E.D.
+
+    \item [24.)] \begin{itemize}
+        \item [a.)] $S=\mathbb{R}$; $\mathbb{R}=(-\infty,\infty)$ and thus has no upper bound nor lower bound.
+
+        \item [b.)] DNE; for $S\subseteq\mathbb{R}$ to be bounded, there must exist $u\in\mathbb{R}$ such that $u=\sup(S)$.
+
+        \item [c.)] $S=[0,1)$; $\inf(S)=0\in S$ and $\sup(S)=1\notin S$.
+
+        \item [d.)] $S=(-\infty,1]$; $\sup(S)$ exists but $\inf(S)$ does not.
+
+        \item [e.)] $S=(0,1)$; $\sup(S)$ exists but $\sup(S)\notin S$.
+    \end{itemize}
+
+    % \item [25.)] Let $A\subseteq B\subseteq\mathbb{R}$ and $b\in\mathbb{R}$ such that $b=\inf(B)$.
+
+    \pagebreak
+    \item [26.)] My first exposure to functions was in the context of programming rather than math, specifically in procedural programming languages like C. In this context, functions are often used for their side-effects, rather than being purely functional. When I took discrete math, I was introduced to the mathematical notion of a function, i.e. a mapping between two sets. To me, the distinction between these two types of functions has always been clear as their use cases are quite different.
+
+    \item [27.)] \begin{itemize}
+        \item [a.)] $S=(0,1)$; $\sup(S)=1\notin S$.
+
+        \item [b.)] $S=(0,1)$; $\inf(S)=0\notin S$.
+
+        \item [c.)] DNE; for $u=\sup(S)$, $u\geq x$ for all $x\in S$, but $u<t$ and $t\in S$, thus $u\neq\sup(S)$.
+    \end{itemize}
+
+    % \item [28.)] ***
+
+    % \item [29.)] \begin{itemize}
+    %     \item [a.)] $\mathscr{L}$
+    % \end{itemize}
+
+    % \item [30.)] ***
+
+    % \item [31.)] ***
+
+    \item [32.)] For all $x\in\mathbb{R}$, $\vert x\vert$ is defined as follows:
+    \[\vert x\vert=
+        \begin{cases}
+            x&x\geq0\\
+            -x&x<0
+        \end{cases}
+    \]
+
+    % \item [33.)] ***
+
+    % \item [34.)] \begin{itemize}
+    %     \item [a.)] False; let $S=(-\infty,0]$, thus $\{\vert x\vert:x\in S\}=[0,\infty)$, which has no upper bound.
+
+    %     \item [b.)] True; let $u=\sup(\{\vert x\vert:x\in S\})$ ***
+    % \end{itemize}
+
+    % \item [35.)] ***
+
+\end{itemize}
+
+\end{document}

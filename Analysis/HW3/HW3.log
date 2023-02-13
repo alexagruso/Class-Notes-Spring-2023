@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.1.24)  25 JAN 2023 22:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.1.24)  11 FEB 2023 05:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alexander/Storage/School/Templates/HW1.tex
-(/home/alexander/Storage/School/Templates/HW1.tex
+**/home/alexander/Storage/School/ClassSpring2023/Analysis/HW3/HW3.tex
+(/home/alexander/Storage/School/ClassSpring2023/Analysis/HW3/HW3.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -106,6 +106,9 @@ Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footer
 \f@nch@O@erf=\skip60
 \f@nch@O@olf=\skip61
 \f@nch@O@orf=\skip62
+) (/usr/share/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
 ) (/usr/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
@@ -134,23 +137,23 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count268
 \l__pdf_internal_box=\box51
-) (/home/alexander/Storage/School/Templates/HW1.aux)
-\openout1 = `HW1.aux'.
+) (/home/alexander/Storage/School/ClassSpring2023/Analysis/HW3/HW3.aux)
+\openout1 = `HW3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -186,22 +189,33 @@ LaTeX Font Info:    ... okay on input line 20.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Font Info:    Trying to load font information for U+msa on input line 34.
+(/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 34.
+ (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 34.
+ (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] (/home/alexander/Storage/School/Templates/HW1.aux) ) 
+] [2] (/home/alexander/Storage/School/ClassSpring2023/Analysis/HW3/HW3.aux) ) 
 Here is how much of TeX's memory you used:
- 2287 strings out of 480954
- 30116 string characters out of 5908242
- 316965 words of memory out of 5000000
- 19551 multiletter control sequences out of 15000+600000
- 403728 words of font info for 28 fonts, out of 8000000 for 9000
+ 2360 strings out of 480954
+ 31443 string characters out of 5908242
+ 330065 words of memory out of 5000000
+ 19596 multiletter control sequences out of 15000+600000
+ 408569 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,10n,74p,260b,212s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on /home/alexander/Storage/School/Templates/HW1.pdf (1 page, 12424 bytes).
+ 68i,10n,74p,607b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on /home/alexander/Storage/School/ClassSpring2023/Analysis/HW3/HW3.pdf (2 pages, 73821 bytes).
 PDF statistics:
- 12 PDF objects out of 1000 (max. 8388607)
- 7 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

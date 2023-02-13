@@ -24,17 +24,48 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[L]{Alexander Agruso}
-\fancyhead[R]{MATH 3323 Homework 3}
+\fancyhead[R]{MATH 3323 Homework 4}
 
 \begin{itemize}
-    \item [1.)] \begin{itemize}
-        \item [a.)] Establish initial variables:
-        \[V_0=100,Q_0=0,f_{in}=f_{out}=2,c_{in}=0.5\]
-        Setup equation for salt concentration:
-        \[\dfrac{dQ}{dt}=f_{in}c_{in}-f_{out}c_{out}=1-\dfrac{Q}{100}\implies\dfrac{dQ}{dt}+\dfrac{Q}{100}=1\]
-        Solving for $Q$:
-        \[Q=\]
-    \end{itemize}
+    \item [1.)] Establish initial variables:
+    \[V_0=200,Q_0=1,f_{in}=f_{out}=2,c_{in}=0,c_{out}=\frac{Q(t)}{V(t)},V(t)=V_0=200\]
+    Setup differential equation for salt concentration:
+    \[\frac{dQ}{dt}=f_{in}c_{in}-f_{out}c_{out}=0-\frac{2Q}{200}\implies\frac{dQ}{dt}+\frac{Q}{100}=0\]
+    Solve for $Q$:
+    \[\mu(x)=e^{\int\frac{1}{100}dt}=e^{\frac{t}{100}}\]
+    \[Q=\frac{1}{e^{\frac{t}{100}}}\bracks{\int(0)e^{\frac{t}{100}}\ dt}=\frac{C}{e^{\frac{t}{100}}}\]
+    Solve for $C$ given $Q(0)=Q_0$:
+    \[1=\frac{C}{e^{\frac{0}{100}}}=C\]
+    Solve for $t$ given $Q(t)=\dfrac{Q_0}{100}=\dfrac{1}{100}$
+    \[\frac{1}{100}=\frac{1}{e^\frac{t}{100}}\implies100=e^\frac{t}{100}\implies t=100\ln(100)\approx460.52\]
+    Which is the time (in minutes) before the concentration is $1\%$ of the initial value.
+
+    \item [2.)] Establish initial variables:
+    \[V_0=120,Q_0=0,f_{in}=f_{out}=2,c_{in}=\gamma,c_{out}=\frac{Q(t)}{V(t)},V(t)=V_0=120\]
+    Setup differential equation for salt concentration:
+    \[\frac{dQ}{dt}=2\gamma-\frac{Q}{60}\implies\frac{dQ}{dt}+\frac{Q}{60}=2\gamma\]
+    Solve for $Q$:
+    \[\mu(x)=e^{\int\frac{1}{60}dt}=e^\frac{t}{60}\]
+    \[Q=\frac{1}{e^\frac{t}{60}}\bracks{\int2\gamma e^\frac{t}{60}\ dt}=\frac{1}{e^\frac{t}{60}}\left(120\gamma e^\frac{t}{60}+C\right)=120\gamma+\frac{C}{e^\frac{t}{60}}\]
+    Solve for $C$ given $Q(0)=Q_0=0$:
+    \[0=120\gamma+\frac{C}{e^\frac{0}{60}}\implies C=-120\gamma\]
+    \[\therefore\ Q=120\gamma-\frac{120\gamma}{e^\frac{t}{60}}=120\gamma\left(1-\frac{1}{e^\frac{t}{60}}\right)\]
+    Which is the explicit solution. To find the limiting amount of salt, take the limit as $t\rightarrow\infty$:
+    \[\lim_{t\rightarrow\infty}\bracks{120\gamma-\frac{120\gamma}{e^\frac{t}{60}}}=120\gamma-0=120\gamma\]
+    Which is the limiting amount.
+
+    \pagebreak
+    \item [3.)] Establish initial variables:
+    \[V_0=100,Q_0=0,f_{in}=f_{out}=2,c_{in}=\frac{1}{2},c_{out}=\frac{Q(t)}{V(t)},V(t)=V_0=100\]
+    Setup differential equation:
+    \[\frac{dQ}{dt}=1-\frac{Q}{50}\implies\frac{dQ}{dt}+\frac{Q}{50}=1\]
+    Solve for $Q$:
+    \[\mu(x)=e^{\int\frac{1}{50}dt}=e^\frac{t}{50}\]
+    \[Q=\frac{1}{e^\frac{t}{50}}\bracks{\int e^\frac{t}{50}\ dt}=\frac{1}{e^\frac{t}{50}}\left(50e^\frac{t}{50}+C\right)=50+\frac{C}{e^\frac{t}{50}}\]
+    Solve for $C$ given $Q(0)=Q_0=0$:
+    \[0=50+\frac{C}{e^\frac{0}{50}}\implies C=-50\]
+    \[\therefore\ Q=50\left(1-\frac{1}{e^\frac{t}{50}}\right)\]
+    $Q(10)\approx9.06$, and $c_{in}=0$.
 \end{itemize}
 
 \end{document}
