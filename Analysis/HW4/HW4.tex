@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 4}
+
+\normalsize
+\begin{itemize}
+    \item [12.)] ***
+
+    \item [21.)] awd
+
+    \item [25.)] Let $A\subseteq B\subseteq\mathbb{R}$ and $b\in\mathbb{R}$ such that $b=\inf(B)$.
+
+    \item [28.)] \begin{itemize}
+        \item [a.)] Let $u\in\mathbb{R}$ be an upper bound of $S$, thus $u\geq x$ for all $x\in S$, thus $-u\leq-x$ for all $x\in S$, thus $-u\leq y$ for all $y\in-S$, thus $-u$ is a lower bound of $-S$, thus $-S$ is bounded below. Q.E.D.
+
+        \item [b.)] Let $u=\sup(S)$. Since $u$ is an upper bound of $S$, $-u$ is a lower bound of $-S$. For the sake of establishing a contradiction, suppose there exists $v\in\mathbb{R}$ such that $-u<v$ and $v$ is a lower bound of $-S$, thus $u>-v$. Since $v$ is a lower bound of $-S$, $v\leq y$ for all $y\in-S$, thus $-v\geq-y$ for all $y\in-S$, thus $-v\geq x$ for all $x\in S$, thus $-v$ is an upper bound of $S$, but since $u>-v$, $u\neq\sup(S)$\contradiction, thus $-\sup(S)=-u=\inf(-S)$. Q.E.D.
+    \end{itemize}
+
+    \item [29.)] \begin{itemize}
+        \item [a.)] Since $S\neq\varnothing$ and is bounded below, $\mathscr{L}\neq\varnothing$. In addition, since $S$ is bounded below, there exists $v\in\mathbb{R}$ such that $v=\inf(S)$, thus $v\geq x$ for all $x\in\mathscr{L}$, thus $v$ is an upper bound of $\mathscr{L}$, thus $\mathscr{L}$ is bounded above. Q.E.D.
+
+        \item [b.)] Let $w=\sup(\mathscr{L})$, thus $w\geq x$ for all $x\in\mathscr{L}$.
+
+        \item [c.)] ***
+    \end{itemize}
+
+    \item [30.)] \begin{itemize}
+        \item [a.)] For unbounded sets, infinite suprema and infima make sense, as for all $x\in\mathbb{R}$, $-\infty<x<\infty$. In addition, there exists no $y\in\mathbb{R}$ such that $y<-\infty$ or $y>\infty$, thus $\sup(S)=\infty$ and $\inf(S)=-\infty$.
+
+        \item [b.)] ***
+    \end{itemize}
+
+    \item [31.)] \begin{itemize}
+        \item [a.)] False; let $S=\{x\in\mathbb{Q}:0\leq x<\pi\}$. By definition, all $x\in S$ are rational, but $\sup(S)=\pi$ is irrational.
+
+        \item [b.)] False; let $S=\{x\in\mathbb{R}\backslash\mathbb{Q}:0<x<3\}$. By definition, all $x\in S$ are irrational, but $\sup(S)=3$ is rational.
+    \end{itemize}
+
+    \item [33.)] Let $x,y\in\mathbb{R}$. From the triangle inequality, we know that
+    \[\vert x+y\vert\leq\vert x\vert+\vert y\vert\]
+
+    \item [34.)] \begin{itemize}
+        \item [a.)] False; let $S=(-\infty,0]$, thus $\{\vert x\vert:x\in S\}=[0,\infty)$, which has no upper bound.
+
+        \item [b.)] True; let $u=\sup(\{\vert x\vert:x\in S\})$ ***
+    \end{itemize}
+
+    \item [35.)] \begin{itemize}
+        \item [a.)] Suppose $S$ is bounded, thus there exist $u,v$ such that $u$ is an upper bound of $S$ and $v$ is a lower bound of $S$, thus $v\leq x\leq u$ for all $x\in S$. Let $w=\max(u,v)$, thus $-w\leq x\leq w$, thus $\vert x\vert\leq w$ for all $x\in S$, thus there exists $M\geq0$ such that $\vert x\vert\leq M$ for all $x\in S$. Now, suppose there exists such $M$, thus $\vert sxs$
+
+        \item [b.)] Suppose $S$ is bounded, and let $x\in S$. Let $u,v\in\mathbb{R}$ such that $u$ is an upper bound of $S$ and $v$ is a lower bound of $S$, thus $v\leq x\leq u$.
+    \end{itemize}
+
+    \item [36.)] When learning the various integration techniques taught in calculus 2, I noticed that some of them involved manipulating the $dx$ term. I initially found this confusing, as I though that $\dfrac{d}{dx}$ was a single operator that could not be seperated. I later found out that this was not the case, and that it can often be treated just like a fraction. What helped me to realize this was when I watched a video series that explained calculus in a more intuitive, less purely algebraic way. In this context, $dx$ being a seperate variable simply made sense.
+
+    \item [37.)] awed
+
+    \item [38.)] Let $u=\sup(S)$, thus $u\geq x$ for all $x\in S$. For the sake of establishing a contradiction, suppose $u\notin S$, then for some $\epsilon>0$, $u=x+\epsilon$ for some $x\in S$. Consider $x+\frac{\epsilon}{2}$. Since $\epsilon>0$, $\frac{\epsilon}{2}>0$,
+
+    \item [39.)] \begin{itemize}
+        \item [a.)] A sequence is defined as a function $x(n)$ such that $x:\mathbb{N}\rightarrow\mathbb{R}$.
+
+        \item [b.)] The sequence $\{x_n\}^\infty_{n=1}$ converges to $L\in\mathbb{R}$ if and only if
+        \[\forall\epsilon>0:\exists k\in\mathbb{N}:n\geq k\implies\vert x_n-L\vert<\epsilon\]
+    \end{itemize}
+
+    \item [43.)] \begin{itemize}
+        \item [a.)] $\displaystyle\lim_{n\to\infty}\frac{1}{10n}=10$
+
+        \item [b.)] $\displaystyle\lim_{n_\to\infty}\sin n$ diverges
+
+        \item [c.)] awd
+    \end{itemize}
+
+    \item [44.)] ***
+
+\end{itemize}
+
+\end{document}

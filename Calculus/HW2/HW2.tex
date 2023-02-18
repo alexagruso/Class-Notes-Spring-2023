@@ -1,0 +1,62 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage{pgfplots}
+\usepackage[margin=1in,headheight=10mm]{geometry}
+
+\usetikzlibrary{fillbetween}
+
+\pgfplotsset{compat=1.17}
+
+\newcommand{\contradiction}{%
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}%
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{Homework 1}
+
+\normalsize
+\section*{Exercises 12.4}
+\begin{itemize}
+    \item [5.)] $\angleb{\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4}}\times\angleb{1,2,-3}=\left(-1-\dfrac{1}{2}\right)i-\left(-\dfrac{3}{2}-\dfrac{1}{4}\right)j+\left(1-\dfrac{1}{3}\right)k=\angleb{-\dfrac{3}{2},\dfrac{7}{4},\dfrac{2}{3}}$\newline
+    $\angleb{\dfrac{1}{2},\dfrac{1}{3},\dfrac{1}{4}}\cdot\angleb{-\dfrac{3}{2},\dfrac{7}{4},\dfrac{2}{3}}=-\dfrac{3}{4}+\dfrac{7}{12}+\dfrac{2}{12}=0$\newline
+    $\angleb{1,2,-3}\cdot\angleb{-\dfrac{3}{2},\dfrac{7}{4},\dfrac{2}{3}}=-\dfrac{3}{2}+\dfrac{14}{4}-\dfrac{6}{3}=0$
+
+    \item [7.)] $\angleb{t,1,\dfrac{1}{t}}\times\angleb{t^2,t^2,1}=\left(1-t\right)i-(t-t)j+(t^3-t^2)k=\angleb{1-t,0,t^3-t^2}$\newline
+    $\angleb{t,1,\dfrac{1}{t}}\cdot\angleb{1-t,0,t^3-t^2}=(t-t^2)+(t^2-t)=0$\newline
+    $\angleb{t^2,t^2,1}\cdot\angleb{1-t,0,t^3-t^2}=(t^2-t^3)+(t^3-t^2)=0$
+
+    \item [17.)] $\angleb{2,-1,3}\times\angleb{4,2,1}=(-1-6)i-(2-12)j+(4+4)k=\angleb{-7,10,8}$\newline
+    $\angleb{4,2,1}\times\angleb{2,-1,3}=-\angleb{2,-1,3}\times\angleb{4,2,1}=\angleb{7,-10,-8}$.
+
+    \item [19.)] $\angleb{3,2,1}\times\angleb{-1,1,0}=\angleb{-1,-1,5};\dfrac{\angleb{-1,-1,5}}{\Vert\angleb{-1,-1,5}\Vert}=\dfrac{1}{3\sqrt{3}}\angleb{-1,-1,5}$\newline
+    Thus $\pm\dfrac{1}{3\sqrt{3}}\angleb{-1,-1,5}$ are orthogonal unit vectors.
+
+    \item [27.)] $\Vec{AB}=\angleb{-1+3,3-0}=\angleb{2,3}$; $\vec{BC}=\angleb{5+1,2-3}=\angleb{6,-1}$.\newline
+    $\begin{vmatrix}
+        2&3\\6&-1
+    \end{vmatrix}=-2-18=-20,\vert-20\vert=20$
+
+    \item [29.)] \begin{itemize}
+        \item [a.)] awd
+    \end{itemize}
+\end{itemize}
+\section*{Exercises 12.5}
+\begin{itemize}
+    \item [3.)] awd
+\end{itemize}
+
+\end{document}
