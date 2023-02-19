@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1676690058 "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.tex" "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.pdf" "HW4" 1676690185
-  "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.aux" 1676690058 32 044b7f8fc9779af7531264e0c5c84b6d ""
-  "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.tex" 1676690185 5298 6c0bd0541212dd811805b615687ed33b ""
+["pdflatex"] 1676761004 "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.tex" "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.pdf" "HW4" 1676761039
+  "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.aux" 1676761004 32 3985256e7290058c681f74d7a3565a19 ""
+  "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.tex" 1676761039 5355 7fce3e6c67aa3724389ca41613850ea4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -26,10 +26,8 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
-  "/usr/share/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb" 1229303445 16077 4737ac34f0fb5608550f3780a0202c22 ""
   "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1583617216 6501 4011d89d9621e0b0901138815ba5ff29 ""
   "/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
@@ -54,11 +52,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1674625271 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1674625283 327343 41a22076d79f3b37803909eea542967d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1674625280 1329901 c88d70d6449690fcea91df1055e2bc36 ""
-  "HW4.aux" 1676690058 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "HW4.tex" 1676690185 5298 6c0bd0541212dd811805b615687ed33b ""
+  "HW4.aux" 1676761004 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "HW4.tex" 1676761039 5355 7fce3e6c67aa3724389ca41613850ea4 ""
   (generated)
-  "HW4.log"
-  "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.log"
   "HW4.pdf"
+  "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.log"
+  "HW4.log"
   "HW4.aux"
   "/home/alexander/Storage/School/ClassSpring2023/Analysis/HW4/HW4.pdf"
