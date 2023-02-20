@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 6}
+
+\normalsize
+\begin{itemize}
+    \item [2.)] Find the critical points of $y'$:
+    \[y'=y(y-1)(y-2)\implies y=0,1,2\text{ are critical points}\]
+    Fill in the sign chart to determine solution stability:
+    \begin{center}
+        \begin{tabular}{c|c|c|c|c}
+            & $y$ & $(y-1)$ & $(y-2)$ & result\\
+            \hline
+            $y=-\frac{1}{2}$ & $-$ & $-$ & $-$ & $-$\\
+            $y=\frac{1}{2}$ & $+$ & $-$ & $-$ & $+$\\
+            $y=\frac{3}{2}$ & $+$ & $+$ & $-$ & $-$\\
+            $y=\frac{5}{2}$ & $+$ & $+$ & $+$ & $+$\\
+        \end{tabular}
+    \end{center}
+    Thus $y=0,2$ are unstable solutions and $y=1$ is a stable solution.
+
+    \item [5.)] \begin{itemize}
+        \item [a.)] For the sake of establishing a contradiction, suppose $y\neq1$ is a critical point of $y'$, thus $k(1-y)^2=0$. We can manipulate the equation as follows:
+        \begin{align*}
+            k(1-y)^2=0&\implies(1-y)^2=0\\
+            &\implies(1-y)=\pm0=0\\
+            &\implies1=y
+        \end{align*}
+        But $y\neq1$\contradiction, thus for $y$ to be a critical point of $y'$, $y=1$. Q.E.D.
+
+        \item [b.)] Fill in the sign chart to determine solution stability:
+        \begin{center}
+            \begin{tabular}{c|c|c}
+                & $k(1-y)^2$ & result\\
+                \hline
+                $y=\frac{1}{2}$ & $+$ & $+$\\
+                $y=\frac{3}{2}$ & $+$ & $+$\\
+            \end{tabular}
+        \end{center}
+        Thus $y=1$ is a semistable solution.
+
+        \item [c.)] Solve for $y$:
+        \[\frac{dy}{dt}=k(1-y)^2\implies dy=k(1-y)^2dt\]
+        \[\implies\int dy=\int k(1-y)^2\ dt\implies y=k\bracks{\int1-2y+y^2\ dt}\]
+        \[\implies y=k\bracks{t-2yt+y^2t}\]
+        Substituting $y(0)=y_0$:
+    \end{itemize}
+
+    \pagebreak
+    \item [6.)] Find the critical points of $y'$:
+    \[y'=y^2(y^2-1)\implies y=-1,0,1\text{ are critical points}\]
+    Fill in the sign chart to determine solution stability:
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+            & $y^2$ & $(y^2-1)$ & result\\
+            \hline
+            $y=-\frac{3}{2}$ & $+$ & $+$ & $+$\\
+            $y=-\frac{1}{2}$ & $+$ & $-$ & $-$\\
+            $y=\frac{1}{2}$ & $+$ & $-$ & $-$\\
+            $y=\frac{3}{2}$ & $+$ & $+$ & $+$\\
+        \end{tabular}
+    \end{center}
+    Thus $y=-1$ is a stable solution, $y=0$ is a semistable solution, and $y=1$ is an unstable solution.
+
+    \item [7.)] Find the critical points of $y'$:
+    \[y'=y(1-y^2)\implies y=-1,0,1\text{ are critical points}\]
+    Fill in the sign chart to determine solution stability:
+    \begin{center}
+        \begin{tabular}{c|c|c|c}
+            & $y$ & $(1-y^2)$ & result\\
+            \hline
+            $y=-\frac{3}{2}$ & $-$ & $-$ & $+$\\
+            $y=-\frac{1}{2}$ & $-$ & $+$ & $-$\\
+            $y=\frac{1}{2}$ & $+$ & $+$ & $+$\\
+            $y=\frac{3}{2}$ & $+$ & $-$ & $-$\\
+        \end{tabular}
+    \end{center}
+    Thus $y=-1,1$ are stable solutions, and $y=0$ is an unstable solution.
+
+    \item [14.)] Since $f(y)=\dfrac{dy}{dt}$, $f'(y)=\dfrac{d^2y}{dt^2}$, thus $f'(y)$ can be used to determine the "acceleration" of the slope. If $f'(y)$ is
+
+\end{itemize}
+
+\end{document}
