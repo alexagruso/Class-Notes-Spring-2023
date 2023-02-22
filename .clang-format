@@ -1,0 +1,6 @@
+Language: Cpp
+IndentWidth: 4
+DerivePointerAlignment: false
+PointerAlignment: Left
+ColumnLimit: 80
+BreakBeforeBraces: Allman

@@ -64,10 +64,14 @@
         Thus $y=1$ is a semistable solution.
 
         \item [c.)] Solve for $y$:
-        \[\frac{dy}{dt}=k(1-y)^2\implies dy=k(1-y)^2dt\]
-        \[\implies\int dy=\int k(1-y)^2\ dt\implies y=k\bracks{\int1-2y+y^2\ dt}\]
-        \[\implies y=k\bracks{t-2yt+y^2t}\]
-        Substituting $y(0)=y_0$:
+        \[\frac{dy}{dt}=k(1-y)^2\implies\frac{dy}{k(1-y)^2}=dt\]
+        \[\implies\int\frac{dy}{k(1-y)^2}=\int dt\implies\frac{1}{k(1-y)}=t+C\]
+        \[\implies1-y=\frac{1}{k(t+C)}\implies y=1-\frac{1}{k(t+C)}=\frac{k(t+C)-1}{k(t+C)}\]
+        Substitute $y(0)=y_0$:
+        \[y_0=\frac{k(0+C)-1}{k(0+C)}=\frac{kC-1}{kC}=1-\frac{1}{kC}\implies 1-y_0=\frac{1}{kC}\]
+        \[\implies k(1-y_0)=\frac{1}{C}\implies C=\frac{1}{k(1-y_0)}\]
+        \[\therefore\ y=1-\frac{1}{k\left(t+\frac{1}{k(1-y_0)}\right)}=1-\frac{1-y_0}{kt(1-y_0)+1}=\frac{kt(1-y_0)+y_0}{kt(1-y_0)+1}\]
+        Which is the particular solution.
     \end{itemize}
 
     \pagebreak
@@ -101,7 +105,7 @@
     \end{center}
     Thus $y=-1,1$ are stable solutions, and $y=0$ is an unstable solution.
 
-    \item [14.)] Since $f(y)=\dfrac{dy}{dt}$, $f'(y)=\dfrac{d^2y}{dt^2}$, thus $f'(y)$ can be used to determine the "acceleration" of the slope. If $f'(y)$ is
+    \item [14.)] $f'(y)$=$\dfrac{d^2y}{dy^2}$, thus $f'(y)$ can be used to determine the concavity of a given solution $\phi(t)$. Suppose $y_1$ is a critical point; when $f'(y_1)<0$, then $\phi(t)=y_1$ is concave with respect to the $y$-axis, thus the solution converges to $y_1$, making it stable. When $f'(y_1)>0$, the solution is convex, thus the solution does not converge to $y_1$, making it unstable.
 
 \end{itemize}
 

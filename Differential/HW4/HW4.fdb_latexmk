@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1676174511 "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.tex" "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.pdf" "HW4" 1676186369
-  "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.aux" 1676174511 32 044b7f8fc9779af7531264e0c5c84b6d ""
-  "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.tex" 1676186368 3170 c17babc77e4c594d8c7947b9520069f6 ""
+["pdflatex"] 1676966254 "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.tex" "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.pdf" "HW4" 1676966322
+  "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.aux" 1676966255 32 ab05033ccbb38b00a31b200ccedf8001 ""
+  "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.tex" 1676966322 4962 b9e6a713a1043b6cc4abbc1c4363dccd ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -52,11 +52,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1674625271 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1674625283 327343 41a22076d79f3b37803909eea542967d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1674625280 1329901 c88d70d6449690fcea91df1055e2bc36 ""
-  "HW4.aux" 1676174511 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "HW4.tex" 1676186368 3170 c17babc77e4c594d8c7947b9520069f6 ""
+  "HW4.aux" 1676966255 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
+  "HW4.tex" 1676966322 4962 b9e6a713a1043b6cc4abbc1c4363dccd ""
   (generated)
   "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.log"
-  "HW4.aux"
-  "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.pdf"
   "HW4.log"
+  "HW4.aux"
   "HW4.pdf"
+  "/home/alexander/Storage/School/ClassSpring2023/Differential/HW4/HW4.pdf"
