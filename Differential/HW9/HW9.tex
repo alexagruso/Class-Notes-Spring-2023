@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 9}
+
+\normalsize
+\section*{Section 3.1}
+\begin{itemize}
+    \item [1.)] Setup and solve the characteristic equation:
+    \[y''+2y'-3y=0\to r^2+2r-3=(r-1)(r+3)=0\implies r=1,-3\]
+    Since $r_1\neq r_2$, the general solution of the equation is given as
+    \[y(t)=c_1e^t+c_2e^{-3t}\]
+
+    \item [2.)] Setup and solve the characteristic equation:
+    \[y''+3y'+2y\to r^2+3r+2=(r+1)(r+2)=0\implies r=-1,-2\]
+    Since $r_1\neq r_2$, the general solution of the equation is given as
+    \[y(t)=c_1e^{-t}+c_2e^{-2t}\]
+
+    \item [9.)] Setup and solve the characteristic equation:
+    \[y''+3y'=0\to r^2+3y=r(r+3)\implies r=0,-3\]
+    Since $r_1\neq r_2$, the general solution of the equation is given as
+    \[y(t)=c_1e^0+c_2e^{-3t}=c_1+c_2e^{-3t}\]
+    Solving for $c_1$ and $c_2$ given $y(0)=-2$, $y'(0)=3$ we find the particular solution:
+    \[-2=c_1+c_2e^0=c_1+c_2\]
+    \[3=-3c_2e^0=-3c_2\]
+    \[\implies\bracks{\begin{array}{rr|r}
+        1 & 1 & -2\\
+        0 & -3 & 3
+    \end{array}}\implies\bracks{\begin{array}{rr|r}
+        1 & 1 & -2\\
+        0 & -1 & 1
+    \end{array}}\implies\bracks{\begin{array}{rr|r}
+        1 & 0 & -1\\
+        0 & -1 & 1
+    \end{array}}\]
+    \[\implies\bracks{\begin{array}{rr|r}
+        1 & 0 & -1\\
+        0 & 1 & -1
+    \end{array}}\implies c_1=c_2=-1\]
+    \[\therefore\ y(t)=-1-e^{-3t}\]
+    As $t\to\infty$, $y\to-1$.
+
+    \item [13.)] Determine $r_1$ and $r_2$:
+    \[y=c_1e^{2t}+c_2e^{-3t}\implies r_1=2,r_2=-3\]
+    \[\therefore\ (r-2)(r+3)=r^2+t-6=0\]
+    And derive the equation from its characteristic equation:
+    \[y''+y'-6y=0\]
+
+\end{itemize}
+\section*{Section 3.3}
+\begin{itemize}
+    \item [5.)] Setup and solve the characteristic equation:
+    \[y''-2y'+2y\to r^2-2r+2=0\]
+    \[\frac{2\pm\sqrt{4-4(2)}}{2}=\frac{2\pm\sqrt{-4}}{2}=1\pm i\]
+    \[\therefore\ r_1=1+i,r_2=1-i\]
+    And find the general solution to the equation:
+    \[y(t)=c_1e^{t}\cos t+c_2e^{t}\sin t\]
+    \item [12.)] Setup and solve the characteristic equation:
+    \[y''+4y=0\to r^2+4=0\]
+    \[\frac{\pm\sqrt{-4(4)}}{2}=\frac{\pm{\sqrt{-16}}}{2}=\pm2i\]
+    \[\therefore\ r_1=2i,r_2=-2i\]
+    And find the general solution to the equation:
+    \[y(t)=c_1e^0\cos(2t)+c_2e^0\sin(2t)=c_1\cos(2t)+c_2\sin(2t)\]
+    Solving for $c_1$ and $c_2$ given $y(0)=0,y'(0)=1$, we find the particular solution:
+    \[0=c_1\cos(2(0))+c_2\sin(2(0))=c_1\]
+    \[1=-2c_1\sin(2(0))+2c_2\cos(2(0))=2c_2\implies c_2=\frac{1}{2}\]
+    \[\therefore\ y(t)=\frac{1}{2}\sin(2t)\]
+    As $t\to\infty$, $y(t)$ will oscillate.
+\end{itemize}
+\section*{Section 3.4}
+\begin{itemize}
+    \item [1.)] Setup and solve the characteristic equation:
+    \[y''-2y'+y=0\to r^2-2r+1=(r-1)^2=0\]
+    \[\therefore\ r_1=r_2=1\]
+    Since $r_1=r_2$, the general solution to the equation is given as
+    \[y(t)=c_1e^t+c_2te^t\]
+
+    \item [2.)] Setup and solve the characteristic equation:
+    \[9y''+6y'+y=0\to 9r^2+6r+1=(3r+1)^2=0\]
+    \[\therefore\ r_1=r_2=-\frac{1}{3}\]
+    Since $r_1=r_2$, the general solution to the equation is given as
+    \[y(t)=c_1e^{-\frac{1}{3}t}+c_2te^{-\frac{1}{3}t}\]
+
+    \item [10.)] Setup and solve the characteristic equation:
+    \[y''-6y'+9y=0\to r^2-6r+9=(r-3)^2=0\]
+    \[\therefore\ r_1=r_2=3\]
+    Since $r_1=r_2$, the general solution to the equation is given as
+    \[y(t)=c_1e^{3t}+c_2te^{3t}\]
+    Solving for $c_1$ and $c_2$ given $y(0)=0,y'(0)=2$, we find the particular solution:
+    \[0=c_1e^0+c_2(0)e^0=c_1\]
+    \[2=3c_1e^{0}+c_2(0+e^{0})\implies c_2=2\]
+    \[\therefore\ y(t)=(0)e^{3t}+2te^{3t}=2te^{3t}\]
+    As $t\to\infty$, $y\to\infty$.
+\end{itemize}
+\end{document}

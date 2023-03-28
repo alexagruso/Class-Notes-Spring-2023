@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 10}
+
+\normalsize
+\begin{itemize}
+    \item[1.)] \[W\bracks{e^{2t},e^{-3t/2}}=\begin{vmatrix}
+        e^{2t} & e^{-3t/2} \\
+        2e^{2t} & -\frac{3}{2}e^{-3t/2}
+    \end{vmatrix}=-\frac{3}{2}e^{t/2}-2e^{t/2}=-\frac{7}{2}e^{t/2}\]
+
+    \item[2.)] \[W\bracks{\cos t,\sin t}=\begin{vmatrix}
+        \cos t & \sin t \\
+        -\sin t & \cos t
+    \end{vmatrix}=\cos^2t+\sin^2t=1\]
+
+    \item[3.)] \[W\bracks{e^{-2t},te^{-2t}}=\begin{vmatrix}
+        e^{-2t} & te^{-2t} \\
+        -2e^{-2t} & e^{-2t}-2te^{-2t}
+    \end{vmatrix}=e^{-4t}-2te^{-4t}+2te^{-4t}=e^{-4t}\]
+
+    \item[6.)] Determine $p(t)$, $q(t)$, and $g(t)$:
+    \[ty''+3y=t\implies y''+\frac{3}{t}y=1\]
+    \[\therefore\ p(t)=0,\ q(t)=\frac{3}{t},\ g(t)=1\]
+    Since the only discontinuity point is $t=0$, and since $t_0=1$, the largest interval is $(0,\infty)$.
+
+    \item[7.)] Determine $p(t)$, $q(t)$, and $g(t)$:
+    \[t(t-4)y''+3ty'+4y=2\implies y''+\frac{3}{t-4}y'+\frac{4}{t(t-4)}y=\frac{2}{t(t-4)}\]
+    \[\therefore\ p(t)=\frac{3}{t-4},\ q(t)=\frac{4}{t(t-4)},\ g(t)=\frac{2}{t(t-4)}\]
+    Since $t_0=3$, and there is discontinuity when $t=0$ and $t=4$, the largest interval is $(0,4)$.
+
+    \item[8.)] Determine $p(t)$, $q(t)$, and $g(t)$:
+    \[y''+(\cos t)y'+3(\ln\vert t\vert)y=0\]
+    \[\therefore\ p(t)=\cos t,\ q(t)=3\ln\vert t\vert,\ g(t)=0\]
+    Since $t_0=2$, and since $q(t)$ is only continuous when $t>0$, the largest interval is $(0,\infty)$.
+
+    \item[9.)] Determine $p(x)$, $q(x)$, and $g(x)$:
+    \[(x-2)y''+y'+(x-2)(\tan x)y=0\implies y''+\frac{1}{x-2}y'+(\tan x)y=0\]
+    \[\therefore\ p(x)=\frac{1}{x-2}\ q(x)=\tan x,\ g(x)=0\]
+    Since $q(x)$ is continuous when $\frac{\pi}{2}<x<\frac{3\pi}{2}$, and since $p(x)$ is discontinuous at $x=2$, the largest interval is $\parns{2,\frac{3\pi}{2}}$.
+\end{itemize}
+\end{document}

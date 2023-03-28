@@ -1,0 +1,148 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 14}
+
+\normalsize
+\section*{Section 3.6}
+\begin{itemize}
+    \item [4.)] First find the homogeneous solution:
+    \[y''+y=0\implies r=\pm\,i\]
+    \[\implies y_h=c_1\sin t+c_2\cos t\]
+    Let $u_1$ and $u_2$ be functions of $t$, then the particular solution takes the form
+    \[Y=u_1y_1+u_2y_2\]
+    Where $y_1=\sin t$ and $y_2=\cos t$. Finding the derivatives of $Y$:
+    \[Y'=u_1'y_1+u_1y_1'+u_2'y_2+u_2y_2',\ \text{ assume }u'_1y_1+u'_2y_2=0\]
+    \[\implies Y''=u_1'y_1'+u_1y_1''+u_2'y_2'+u_2y_2''\]
+    Thus
+    \[Y''+Y=u'_1y'_1+u_1y''_1+u'_2y_2'+u_2y''_2+u_1y_1+u_2y_2=\tan t\]
+    \[\implies u'_1y'_1+u_2'y_2'+u_1(y''_1+y_1)+u_2(y''_2+y_2)=u'_1y'_1+u'_2y'_2+0+0=\tan t\]
+    Solving for $u'_1$ and $u'_2$:
+    \[u'_1y_1+u'_2y_2=0\]
+    \[u'_1y'_1+u'_2y'_2=\tan t\]
+    \[\implies u'_1=-\frac{u'_2y_2}{y_1}\]
+    \[\implies u'_1y'_1+u'_2y'_2=u'_2\parns{y'_2-\frac{y_2y'_1}{y_1}}=u'_2\parns{\frac{y_1y'_2-y_2y'_1}{y_1}}=\tan t\]
+    \[\implies u'_2=\frac{y_1\tan t}{y_1y'_2-y_2y'_1}\]
+    \[\implies u'_1=-\frac{y_1y_2\tan t}{y_1(y_1y'_2-y_2y'_1)}=-\frac{y_2\tan t}{y_1y'_2-y_2y'_1}\]
+    Integrating $u_1'$ and $u_2'$:
+    \[u_1=-\int\frac{y_2\tan t}{y_1y'_2-y_2y'_1}\,dt=-\int\frac{\cos t\tan t}{W[\sin t,\cos t]}\,dt=\int\cos t\frac{\sin t}{\cos t}\,dt=-\cos t\]
+    \[u_2=\int\frac{\sin t\tan t}{W[\sin t,\cos t]}\,dt=-\int\frac{\sin^2t}{\cos t}\,dt=-\int\frac{1-\cos^2t}{\cos t}\,dt=-\int\frac{1}{\cos t}-\cos t\,dt\]
+    \[=\sin t-\ln\vertb{\tan t+\sec t}\]
+    \[\therefore\ Y=-\sin t\cos t+\sin t\cos t-\cos t\ln\vertb{\tan t+\sec t}\]
+    \[\therefore\ y_h+Y=c_1\sin t+c_2\cos t-\cos t\ln\vertb{\tan t+\sec t}\]
+    Which is the general solution.
+
+    \item [5.)] Find the homogeneous solution:
+    \[y''+9y=0\implies r=\pm\,3i\]
+    \[\implies y_h=c_1\sin(3t)+c_2\cos(3t)\]
+    Now find $Y$:
+    \[Y=u_1y_1+u_2y_2,\,Y'=u_1'y_1+u_1y'_1+u_2'y_2+u_2y'_2=u_1y'_1+u_2y'_2\]
+    \[Y''=u'_1y'_1+u_1y''_1+u_2'y'_2+u_2y''_2\]
+    \[\therefore\ Y''+9Y=u'_1y'_1+u_1y''_1+u_2'y'_2+u_2y''_2+9(u_1y_1+u_2y_2)\]
+    \[=u'_1y'_1+u'_2y'_2+u_1(y''_1+9y_1)+u_2(y''_2+9y_2)=u'_1y'_1+u'_2y'_2+0+0=9\sec^2(3t)\]
+    Solving for $u'_1$ and $u'_2$:
+    \[u'_1y_1+u'_2y_2=0\]
+    \[u'_1y'_1+u'_2y'_2=9\sec^2(3t)\]
+    \[\implies u'_1=-\frac{9y_2\sec^2(3t)}{y_1y'_2-y_2y'_1}=9\cos(3t)\sec^2(3t)\]
+    \[\implies u'_2=\frac{9y_1\sec^2(3t)}{y_1y'_2-y_2y'_1}=-9\sin(3t)\sec^2(3t)\]
+    Integrating:
+    \[u_1=\int9\cos(3t)\sec^2(3t)\,dt=9\int\sec(3t)\,dt=3\ln\vertb{\tan(3t)+\sec(3t)}\]
+    \[u_2=-9\int\sin(3t)\sec^2(3t)\,dt=-9\int\tan(3t)\sec(3t)\,dt=-3\sec(3t)\]
+    \[\therefore\ Y=3\bracks{\sin(3t)\ln\vertb{\tan(3t)+\sec(3t)}-\cos(3t)\sec(3t)}\]
+    \[\therefore\ y_h+Y=c_1\sin(3t)+c_2\cos(3t)+3\bracks{\sin(3t)\ln\vertb{\tan(3t)+\sec(3t)}-1}\]
+    Which is the general solution.
+
+    \item [6.)] Find $y_h$:
+    \[y''+4y'+4y=0\implies r_1=r_2=-2\]
+    \[\implies y_h=c_1e^{-2t}+c_2te^{-2t}\]
+    Find $Y$:
+    \[Y=u_1y_1+u_2y_2,\,Y'=u_1y'_1+u_2y'_2,\,Y''=u'_1y'_1+u_1y''_1+u_2'y'_2+u_2y''_2\]
+    \[\therefore\ Y''+4Y'+4Y=u'_1y'_1+u_1y''_1+u_2'y'_2+u_2y''_2+4(u_1y'_1+u_2y'_2)+4(u_1y_1+u_2y_2)\]
+    \[=u'_1y'_1+u'_2y'_2=t^{-2}e^{-2t}\]
+    Solving for $u'_1$ and $u'_2$:
+    \[u'_1=-\frac{y_2t^{-2}e^{-2t}}{y_1y'_2-y_2y'_1}=-\frac{t^{-1}e^{-4t}}{e^{-4t}}=-t^{-1}\]
+    \[u'_2=\frac{y_1t^{-2}e^{-2t}}{y_1y'_2-y_2y'_1}=\frac{t^{-2}e^{-4t}}{e^{-4t}}=t^{-2}\]
+    \[u_1=-\int-t^{-1}\,dt=\ln\vert t\vert\]
+    \[u_2=\int t^{-2}\,dt=-t^{-1}\]
+    \[\therefore\ Y=-e^{-2t}\ln\vert t\vert-e^{-2t}\]
+    \[\therefore\ y_h+Y=(c_1-1)e^{-2t}+c_2te^{-2t}-e^{-2t}\ln\vert t\vert\]
+    Which is the general solution.***
+
+    \item [7.)] Find $y_h$:
+    \[4y''+y=0\implies y''+\frac{1}{4}y=0\implies r=\pm\,\frac{1}{2}i\]
+    \[\implies y_h=c_1\sin(t/2)+c_2\cos(t/2)\]
+    Find $Y$:
+    \[u'_1y'_1+u'_2y'_2=2\sec(t/2)\]
+    \[u'_1=-\frac{2y_2\sec(t/2)}{-1}=2\cos(t/2)\sec(t/2)=2\]
+    \[u'_2=\frac{2y_1\sec(t/2)}{-1}=-2\sin(t/2)\sec(t/2)=-2\tan(t/2)\]
+    \[u_1=\int2\,dt=2t\]
+    \[u_2=-2\int\tan(t/2)\,dt=4\ln\vert\cos(t/2)\vert\]
+    \[\therefore\ Y=2t\sin(t/2)+4\cos(t/2)\ln\vert\cos(t/2)\vert\]
+    \[\therefore\ y_h+Y=c_1\sin(t/2)+c_2\sin(t/2)+2\bracks{t\sin(t/2)+2\cos(t/2)\ln\vertb{\cos(t/2)}\,}\]
+    Which is the general solution.
+
+    \item [8.)] Find $y_h$:
+    \[y''-2y'+y=0\implies r_1=r_2=1\]
+    \[\implies y_h=c_1e^{t}+c_2te^{t}\]
+
+    \pagebreak
+    Find $Y$:
+    \[W[e^t,te^t]=e^{2t}\]
+    \[u_1=-\int\frac{te^{2t}}{e^{2t}(1+t^2)}\,dt=-\int\frac{t}{1+t^2}\,dt=-\frac{1}{2}\int\frac{1}{u}\,du=-\frac{1}{2}\ln\vertb{1+x^2}\]
+    \[u_2=\int\frac{e^{2t}}{e^{2t}(1+x^2)}\,dt=\int\frac{1}{1+x^2}\,dt=\tan^{-1}t\]
+    \[\therefore\ Y=-\frac{1}{2}e^t\ln\vertb{1+x^2}+te^t\tan^{-1}t\]
+    \[\therefore\ y_h+Y=c_1e^t+c_2te^t-\frac{1}{2}e^t\ln\vertb{1+x^2}+te^t\tan^{-1}t\]
+    Which is the general solution.
+
+    \item [9.)] Find $y_h$:
+    \[y''-5y'+6y=0\implies r=2,3\]
+    \[\implies y_h=c_1e^{2t}+c_2e^{3t}\]
+    Find $Y$:
+    \[W[e^{2t},e^{3t}]=e^{5t}\]
+    \[u_1=-\int\frac{e^{3t}g(t)}{e^{5t}}\,dt=-\int e^{-2t}g(t)\,dt\]
+    \[u_2=\int\frac{e^{2t}g(t)}{e^{5t}}\,dt=\int e^{-3t}g(t)\,dt\]
+    \[\therefore\ Y=e^{3t}\int e^{-3t}g(t)\,dt-e^{2t}\int e^{-2t}g(t)\,dt\]
+    \[\therefore\ y_h+Y=c_1e^{2t}+c_2e^{3t}+e^{3t}\int e^{-3t}g(t)\,dt-e^{2t}\int e^{-2t}g(t)\,dt\]
+    Which is the general solution.
+    
+    \item [10.)] Check $y_1$ and $y_2$:
+    \[y_1=t^2,\,y_1'=2t,\,y_1''=2\]
+    \[t^2y''-2y=2t^2-2t^2=0\]
+    \[y_2=t^{-1},\,y_2'=-t^{-2},\,y_2''=2t^{-3}\]
+    \[2t^2t^{-3}-2t^{-1}=2t^{-1}-2t^{-1}=0\]
+
+    \pagebreak
+    Thus $y_1$ and $y_2$ are solutions to the homogeneous equation. Find $Y$:
+    \[g=\frac{3t^2-1}{t^2}=3-t^{-2}\]
+    \[W[t^2,t^{-1}]=-3\]
+    \[u_1=-\int\frac{t^{-1}(3-t^{-2})}{-3}\,dt=\frac{1}{3}\int3t^{-1}-t^{-3}\,dt=\ln\vertb{t}+\frac{1}{6}t^{-2}\]
+    \[u_2=\int\frac{t^2(3-t^{-2})}{-3}\,dt=-\frac{1}{3}\int3t^2-1\,dt=-\frac{1}{3}t^3+\frac{1}{3}t\]
+    \[\therefore\ Y=t^2\ln\vertb{t}+\frac{1}{6}-\frac{1}{3}t^2+\frac{1}{3}=\frac{1}{2}+t^2\parns{\ln\vertb{t}-\frac{1}{3}}\]
+    Which is the particular solution.
+\end{itemize}
+\end{document}

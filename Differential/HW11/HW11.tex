@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 11}
+
+\normalsize
+\begin{itemize}
+    \item[10.)] We can substitute $y_1$ and $y_2$ to validate them:
+    \[y_1=t^2,\ y'_1=2t,\ y''_1=2 \]
+    \[\implies t^2y''-2y=2t^2-2t^2=0\]
+    \[y_2=\frac{1}{t},\ y'_2=-\frac{1}{t^2},\ y''_2=\frac{2}{t^3}\]
+    \[\implies t^2y''-2y=\frac{2t^2}{t^3}y''-\frac{2}{t}=\frac{2}{t}-\frac{2}{t}=0\]
+    Thus $y_1$ and $y_2$ are solutions. We can now show that $\phi(t)=c_1y_1+c_2y_2$ is a solution for all $c_1,c_2\in\mathbb{R}$.
+    \[\phi(t)=c_1t^2+\frac{c_2}{t},\ \phi'(t)=2c_1t-\frac{c_2}{t^2},\ \phi''(t)=2c_1+\frac{2c_2}{t^3}\]
+    \[\implies t^2y''-2y=t^2\parns{2c_1+\frac{2c_2}{t^3}}-2c_1t^2-\frac{2c_2}{t}=2c_1t^2-2c_1t^2+\frac{2c_2}{t}-\frac{2c_2}{t}=0\]
+    Thus $c_1y_1+c_2y_2$ is a solution.
+
+    \item[11.)] Substitute $y_1$ and $y_2$:
+    \[y_1=1,\ y'_1=y''_1=0\]
+    \[\implies yy''+(y')^2=0+0^2=0\]
+    \[y_2=\sqrt{t},\ y'_2=\frac{1}{2\sqrt{t}},\ y''_2=-\frac{1}{4\sqrt{t^3}}\]
+    \[\implies yy''+(y')^2=-\frac{\sqrt{t}}{4\sqrt{t^3}}+\frac{1}{4t}=\frac{1}{4t}-\frac{1}{4t}=0\]
+    Thus $y_1$ and $y_2$ are solutions. We can show that $\phi(t)=c_1+c_2y_2$ is not a general solution.
+    \[\phi(t)=c_1+c_2\sqrt{t},\ \phi'(t)=\frac{c_2}{2\sqrt{t}},\ \phi''(t)=-\frac{c_2}{4\sqrt{t^3}}\]
+    \[yy''+(y')^2=-\frac{c_1c_2}{4\sqrt{t^3}}-\frac{c_2^2\sqrt{t}}{4\sqrt{t^3}}+\frac{c^2_2}{4t}=\frac{c_2^2}{4t}-\frac{c_2^2}{4t}-\frac{c_1c_2}{4\sqrt{t^3}}=\frac{c_1c_2}{4\sqrt{t^3}}\neq0\]
+    Thus $c_1+c_2y_2$ is not a solution when $t>0$. This does not contradict theorem 3.2.2 because $c\neq0$ is not a solution to the equation, thus $c_1\neq cy$ for some solution $y$.
+
+    \item[14.)] \[W\bracks{3e^{4t},g(t)}=\begin{vmatrix}
+        3e^{4t} & g(t) \\
+        12e^{4t} & g'(t) \\
+    \end{vmatrix}=3e^{4t}g(t)-12e^{4t}g'(t)=3e^{4t}\]
+    \[\implies g(t)=1\]
+    \[\text{to verify:}\]
+    \[g(t)=1,\ g'(t)=0,\ \therefore\ 3e^{4t}g(t)-12e^{4t}g'(t)=3e^{4t}(1)-12e^{4t}(0)=3e^{4t}\]
+
+    \item[19.)] Substitute $y_1$ and $y_2$:
+    \[y_1=\cos(2t),\ y'_1=-2\sin(2t),\ y''_1=-4\cos(2t)\]
+    \[\implies y''+4y=-4\cos(2t)+4\cos(2t)=0\]
+    \[y_2=\sin(2t),\ y'_2=2\cos(2t),\ y''_1=-4\sin(2t)\]
+    \[\implies y''+4y=-4\sin(2t)+4\sin(2t)=0\]
+    Thus $y_1$ and $y_2$ are solutions. Now find $W\bracks{y_1,y_2}$:
+    \[W\bracks{\cos(2t),\sin(2t)}=\begin{vmatrix}
+        \cos(2t) & \sin(2t) \\
+        -2\sin(2t) & 2\cos(2t)
+    \end{vmatrix}=2\cos^2(2t)+2\sin^2(2t)=1\]
+    Since $W\bracks{y_1,y_2}\neq0$, $y_1$ and $y_2$ comprise a fundamental solution set.
+
+    \item[21.)] Substitute $y_1$ and $y_2$:
+    \[y_1=x,\ y'_1=1,\ y''_1=0\]
+    \[\implies x^2y''-x(x+2)y'+(x+2)y=0-x^2-2x+x^2+2x=0\]
+    \[y_2=xe^x,\ y'_2=e^x+xe^x,\ y''_2=2e^x+xe^x\]
+    \[\implies x^2y''-x(x+2)y'+(x+2)y=x^2(2e^x+xe^x)-x(x+2)(e^x+xe^x)+(x+2)xe^x\]
+    \[=2x^2e^x+x^3e^x-x^2e^x-2xe^x-x^3e^x-2x^2e^x+x^2e^x+2xe^x=0\]
+    Thus $y_1$ and $y_2$ are solutions. Now find $W\bracks{y_1,y_2}$:
+    \[W\bracks{x,xe^x}=\begin{vmatrix}
+        x & xe^x \\
+        1 & e^x+xe^x
+    \end{vmatrix}=xe^x+x^2e^x-xe^x=x^2e^x\]
+    Since $W\bracks{y_1,y_2}\neq0$ for all $t>0$, $y_1$ and $y_2$ comprise a fundamental solution set.
+\end{itemize}
+\end{document}

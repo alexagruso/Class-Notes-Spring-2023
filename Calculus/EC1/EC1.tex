@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=10mm]{geometry}
+
+\newcommand{\contradiction}{%
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}%
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+\newcommand{\dvert}[1]{\left\Vert#1\right\Vert}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{Extra Credit 1}
+
+\normalsize
+\noindent
+Let $f(x,y,z)=5xy+2xz+2yz$ represent the cost of the materials and $g(x,y,z)=xyz=540$ be the volume of the container. We can solve for $x$ and $y$ given the following equation:
+\[\nabla f=\lambda\nabla g\implies\angleb{5y+2z,5x+2z,2x+2y}=\lambda\angleb{yz,xz,xy}\]
+Find the critical points:
+\[5y+2z=\lambda yz,\ 5x+2z=\lambda xz,\ 2x+2y=\lambda xy,\ xyz=540\]
+\[\lambda xyz=x(5y+2z)=y(5x+2z)=z(2x+2y)\]
+\[x(5y+2z)=y(5x+2z)\implies5xy+2xz=5xy+2yz\implies x=y\]
+\[y(5x+2z)=z(2x+2y)\implies5xy+2yz=2xz+2yz\implies z=\frac{5}{2}y=\frac{5}{2}x\]
+\[\implies xyz=\frac{5x^3}{2}=540\implies x^3=216\implies x=6\]
+\[\implies 6yz=6y\cdot\frac{5}{2}y=\frac{30y^2}{2}=15y^2=540\implies y^2=36\implies y=6\]
+\[\implies 36z=540\implies z=15\]
+Thus the dimensions of the tank that minimize cost of materials are $6\times6\times15$.
+
+\end{document}

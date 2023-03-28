@@ -1,0 +1,187 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=10mm]{geometry}
+
+\newcommand{\contradiction}{%
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}%
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+\newcommand{\dvert}[1]{\left\Vert#1\right\Vert}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 2393 Homework 5}
+
+\normalsize
+\section*{Exercises 14.7}
+\begin{itemize}
+    \item[1.)] \begin{itemize}
+        \item [a.)] Find $D$:
+        \[D=f_{xx}f_{yy}-[f_{xy}]^2=4(2)-1^2=7\]
+        Since $D>0$ and $f_{xx}=4>0$, $(1,1)$ is a local minimum of $f$.
+
+        \item [b.)] Find $D$:
+        \[D=4(2)-3^2=8-9=-1\]
+        Since $D<0$ and $f_{xx}=4>0$, $(1,1)$ is a saddle point of $f$.
+    \end{itemize}
+
+    \item[5.)] Find the critical points of $f$:
+    \[f_x=2x+y=0,\ f_y=x+2y+1=0\implies x+2y=-1\]
+    \[\implies 2(-1-2y)+y=-2-4y+y=-2-3y=0\implies y=-\frac{2}{3}\]
+    \[\implies x=\frac{1}{3}\]
+    Thus there is one critical point at $\left(\dfrac{1}{3},-\dfrac{2}{3}\right)$. Find $D$ at this point:
+    \[f_{xx}=2,\ f_{yy}=2,\ f_{xy}=1\]
+    \[\implies D=(2)(2)-1^2=4-1=3\]
+    Since $D>0$ and $f_{xx}>0$, $\parns{\dfrac{1}{3},-\dfrac{2}{3}}$ is a local minimum of $f$.
+
+    \item[12.)] Find the critical points of $f$:
+    \[f_x=3x^2-6x-9=0,\ f_y=3y^2-6y=0\]
+    \[x=(3x+3)(x-3)\implies x=-1,3\]
+    \[y=\frac{6\pm\sqrt{36+0}}{6}=\frac{6\pm6}{6}\implies y=0,2\]
+    Thus there are four critical points at $(-1,0),(-1,2),(3,0)$, and $(3,2)$. Find $D$ at these points:
+    \[f_{xx}=6x-6,\ f_{yy}=6y-6,\ f_{xy}=0\]
+    \[D(-1,0)=-12(-6)-0^2=72\]
+    \[D(-1,2)=-12(6)-0^2=-72\]
+    \[D(3,0)=12(-6)-0^2=-72\]
+    \[D(3,2)=12(6)=72\]
+    The properties of each critical point are described in the following table.
+    \[
+        \begin{tabular}{c|c|c}
+            \text{critical point} & $D$ and $f_{xx}$ & property\\
+            \hline
+            (-1,0) & $D>0,f_{xx}<0$ & local maximum \\
+            (-1,2) & $D<0,f_{xx}<0$ & saddle point \\
+            (3,0) & $D<0,f_{xx}>0$ & saddle point \\
+            (3,2) & $D>0,f_{xx}>0$ & local minimum \\
+        \end{tabular}
+    \]
+
+    \item[41.)] The distance $d$ from $P_0$ to a point on the plane:
+    \[x+y+z=1\implies z=1-x-y\]
+    \[\implies d=\sqrt{(x-2)^2+y^2+(z+3)^2}=\sqrt{(x-2)^2+y^2+(4-x-y)^2}\]
+    \[\implies d^2=(x-2)^2+y^2+(4-x-y)^2\]
+    Now find the critical points:
+    \[f_x=2x-4-8+2x+2y=4x+2y-12=0\implies 4x+2y=12\]
+    \[f_y=2y-8+2x+2y=2x+4y-8\implies 2x+4y=8\]
+    \[\implies 2x+4y=8\implies x=4-2y\]
+    \[\implies 4(4-2y)+2y=16-8y+2y=16-6y=12\implies y=\frac{2}{3}\]
+    \[\implies 4x+\frac{4}{3}=12\implies4x=\frac{32}{3}\implies x=\frac{8}{3}\]
+    Thus there is one critical point at $\parns{\dfrac{8}{3},\dfrac{2}{3}}$. Find $D$ at this point:
+    \[f_{xx}=4,\ f_{yy}=4,\ f_{xy}=2\]
+    \[D=(4)(4)-2^2=16-4=12\]
+    Since $D>0$ and $f_{xx}>0$, we know there is a local minimum at $\parns{\dfrac{8}{3},\dfrac{2}{3}}$. Finally, evaluate $d$ at this point to find the minimum distance to the plane:
+    \[d\parns{\frac{8}{3},\frac{2}{3}}=\sqrt{\parns{\frac{8}{3}-2}^2+\parns{\frac{2}{3}}^2+\parns{4-\frac{8}{3}-\frac{2}{3}}^2}=\sqrt{\frac{4}{9}+\frac{4}{9}+\frac{4}{9}}=\sqrt{\frac{12}{9}}=\frac{\sqrt{12}}{3}\]
+
+    \item[45.)] Setup the equations:
+    \[x+y+z=100,\ xyz,\ x,y,z\neq0\]
+    Find $f_x$ and $f_y$:
+    \[x+y+z=100\implies z=100-x-y\]
+    \[xyz=xy(100-x-y)=100xy-x^2y-xy^2\]
+    \[f_x=100y-2xy-y^2=y(100-2x-y)=0\]
+    \[f_y=100x-x^2-2xy=x(100-2y-x)=0\]
+
+    \pagebreak
+    Find the critical points:
+    \[y(100-2x-y)=0\implies100-2x-y=0\implies y=100-2x\]
+    \[\implies x(100-2y-x)=x(100-200+4x-x)=x(-100+3x)\]
+    \[\implies x=0,\frac{100}{3}\]
+    \[\implies y=100-\frac{200}{3}=\frac{100}{3}\]
+    Now find $D\parns{\dfrac{100}{3},\dfrac{100}{3}}$:
+    \[f_{xx}=-2y=-\frac{200}{3},\ f_{yy}=-\frac{200}{3},\ f_{xy}=100-2x-y-y=100-100-\frac{100}{3}=-\frac{100}{3}\]
+    \[D=\frac{40000}{9}-\frac{10000}{9}=\frac{30000}{9}=\frac{10000}{3}\]
+    Since $D>0$ and $f_{xx}<0$, $\parns{\dfrac{100}{3},\dfrac{100}{3}}$ is a local minimum. Finally, find $z$:
+    \[z=100-\frac{100}{3}-\frac{100}{3}=\frac{100}{3}\]
+    Thus $(x,y,z)=\left(\dfrac{100}{3},\dfrac{100}{3},\dfrac{100}{3}\right)$
+
+    \item[47.)] Setup the equations:
+    \[x^2+y^2+z^2=r^2,\ (2x)(2y)(2z)=8xyz,\ x,y,z>0\]
+    Find the critical points:
+    \[x^2+y^2+z^2=r^2\implies z=\sqrt{r^2-x^2-y^2}\]
+    \[\implies8xyz=8xy\sqrt{r^2-x^2-y^2}\]
+    \[f_x=8y\sqrt{r^2-x^2-y^2}-\frac{8x^2y}{\sqrt{r^2-x^2-y^2}}=\frac{8y(r^2-x^2-y^2)-8x^2y}{\sqrt{r^2-x^2-y^2}}\]
+    \[=\frac{8y(r^2-2x^2-y^2)}{\sqrt{r^2-x^2-y^2}}=0\]
+    \[f_y=8x\sqrt{r^2-x^2-y^2}-\frac{8xy^2}{\sqrt{r^2-x^2-y^2}}=\frac{8x(r^2-x^2-y^2)-8xy^2}{\sqrt{r^2-x^2-y^2}}\]
+    \[=\frac{8x(r^2-x^2-2y^2)}{\sqrt{r^2-x^2-y^2}}=0\]
+
+    \pagebreak
+    \[\implies r^2-x^2-2y^2=r^2-2x^2-y^2=0\implies r^2=x^2+2y^2=2x^2+y^2\]
+    \[\implies 2x^2+4y^2=2r^2\implies 3y^2=r^2\implies y=\frac{r}{\sqrt{3}} \]
+    \[\implies 2x^2+y^2=2x^2+\frac{r^2}{3}=r^2\implies2x^2=\frac{2r^2}{3}\implies x=\frac{r}{\sqrt3}\]
+    Thus there is one critical point at $\parns{\dfrac{r}{\sqrt3},\dfrac{r}{\sqrt3}}$. Evaluating $f$ at this point gives us the maximum volume:
+    \[8\parns{\frac{r}{\sqrt3}}\parns{\frac{r}{\sqrt3}}\sqrt{r^2-\parns{\frac{r}{\sqrt3}}^2-\parns{\frac{r}{\sqrt3}}^2}=\frac{8r^2}{3}\sqrt{\frac{3r^2-r^2-r^2}{3}}=\frac{8r^2}{3}\sqrt{\frac{r^2}{3}}=\frac{8r^3}{3\sqrt3}\]
+
+
+\end{itemize}
+\section*{Exercises 14.8}
+\begin{itemize}
+    \item[3.)] Expand the equation:
+    \[\nabla f=\lambda\nabla\implies \angleb{2x,-2y}=\lambda\angleb{2x,2y}\]
+    Find the critical points:
+    \[2x=2\lambda x,\ -2y=2\lambda y,\ x^2+y^2=1\]
+    \[2x=2\lambda x\implies\lambda=1\lor x=0\]
+    Case: $\lambda=1$:
+    \[-2y=2y\implies -y=y\implies y=0\]
+    \[\implies x^2+y^2=x^2=1\implies x=\pm1\]
+    Case: $x=0$:
+    \[x^2+y^2=y^2=1\implies y=\pm1\]
+    Thus there are four critical points at $(0,-1),(0,1),(-1,0)$, and $(1,0)$. Evaluating $f$ at these points:
+    \begin{align*}
+        f(0,-1)&=0-1=-1\\
+        f(0,1)&=0-1=-1\\
+        f(-1,0)&=1+0=1\\
+        f(1,0)&=1+0=1
+    \end{align*}
+    Thus there are two minima at $(0,-1)$ and $(0,1)$, and two maxima at $(-1,0)$ and $(1,0)$.
+
+    \item[7.)] Expand the equation:
+    \[\nabla f=\lambda\nabla g\implies\angleb{2,2,1}=\lambda\angleb{2x,2y,2z}\]
+    Find the critical points:
+    \[\implies 2=2\lambda x,\ \implies 2=2\lambda y,\ \implies 1=2\lambda z,\ x^2+y^2+z^2=9\]
+    \[\implies 2\lambda x=2\lambda y\implies x=y\implies z=\frac{x}{2}=\frac{y}{2}\]
+    \[\implies x^2+y^2+z^2=x^2+x^2+\parns{\frac{x}{2}}^2=\frac{9x^2}{4}=9\implies 9x^2=36\implies x=\pm2\]
+    \[\implies x^2+y^2+z^2=4+y^2+\parns{\frac{y}{2}}^2=9\implies\frac{5y^2}{4}=5\implies 5y^2=20\implies y=\pm2\]
+    \[\implies x^2+y^2+z^2=4+4+z^2=9\implies z^2=1\implies z=\pm1\]
+
+    Thus there are two critical points at $(2,2,1)$ and $(-2,-2,-1)$. Evaluating $f$ at these points:
+    \begin{align*}
+        f(2,2,1)&=4+4+1=9\\
+        f(-2,-2,-1)&=-4-4-1=-9
+    \end{align*}
+    Thus there is one minimum at $(-2,-2,-1)$, and one maximum at $(2,2,1)$.
+
+    \item[9.)] Expand the equation:
+    \[\nabla f=\lambda\nabla g\implies\angleb{y^2z,2xyz,xy^2}=\lambda\angleb{2x,2y,2z}\]
+    Find the critical points:
+    \[\implies y^2z=2\lambda x,\ 2xyz=2\lambda y,\ xy^2=2\lambda z,\ x^2+y^2+z^2=4\]
+    \[2xyz=2\lambda y\implies\lambda=xz\]
+    \[2\lambda x=2x^2z=y^2z\implies y^2=2x^2\]
+    \[2\lambda z=2xz^2=xy^2\implies 2z^2=2x^2\implies z^2=x^2\]
+    \[\implies x^2+y^2+z^2=x^2+2x^2+x^2=4x^2=4\implies x=\pm1\]
+    \[\implies x^2+y^2+z^2=1+2z^2+z^2=4\implies 3z^2=3\implies z=\pm1\]
+    \[\implies x^2+y^2+z^2=1+y^2+1=4\implies y^2=2\implies y=\pm\sqrt{2}\]
+    We can check $(1,\pm\sqrt2,1),(-1,\pm\sqrt2,1),(1,\pm\sqrt2,-1)$, and $(-1,\pm\sqrt2,-1)$ for maxima and minima:
+    \begin{align*}
+        f(1,\pm\sqrt2,1)&=2\\
+        f(-1,\pm\sqrt2,1)&=-2\\
+        f(1,\pm\sqrt2,-1)&=-2\\
+        f(-1,\pm\sqrt2,-1)&=2
+    \end{align*}
+    Thus there are two minima at $(-1,\pm\sqrt2,1)$ and $(1,\pm\sqrt2,-1)$ and two maxima at $(\pm1,\pm\sqrt2,\pm1)$.
+
+\end{itemize}
+
+\end{document}

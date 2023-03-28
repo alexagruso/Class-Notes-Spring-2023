@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 15}
+
+\normalsize
+\section*{Section 3.7}
+\begin{itemize}
+    \item [1.)] Since $c_1=3$ and $c_2=4$, we can find $\delta$ and $R$:
+    \[\delta=\tan^{-1}\parns{\frac{c_2}{c_1}}=\tan^{-1}\parns{\frac{4}{3}}\]
+    \[R=\sqrt{c_1^2+c_2^2}=\sqrt{3^2+4^2}=5\]
+    By the original equation, $\omega_0=2$, thus the solution can be written as
+    \[5\cos[2t-\tan^{-1}\parns{4/3}]\]
+
+    \item [2.)] Since $c_1=-2$ and $c_2=-3$, we can find $\delta$ and $R$:
+    \[\delta=\tan^{-1}\parns{\frac{3}{2}}\]
+    \[R=\sqrt{(-2)^2+(-3)^2}=\sqrt{4+9}=\sqrt{13}\]
+    By the original equation, $\omega_0=\pi$, thus the solution can be written as
+    \[\sqrt{13}\cos[\pi t-\tan^{-1}\parns{3/2}]\]
+
+    \item [3.)] Since $L=0.05$ and $m=0.1$, $k=\dfrac{mg}{L}=\dfrac{0.98}{0.05}=19.6$. We can solve the resulting initial value problem:
+    \[0.1y''+19.6y=0;\,y(0)=0,\,y'(0)=0.1\]
+    \[\implies y''+196y=0\implies r=\pm\,14i\]
+    \[\therefore\ y=c_1\sin(14t)+c_2\cos(14t)\]
+    Solving for $c_1$ and $c_2$:
+    \[0=c_1\sin(0)+c_2\cos(0)=c_2\]
+    \[0.1=14c_1\cos(0)+14c_2\sin(0)=14c_1\implies c_1=\frac{0.1}{14}=\frac{1}{140}\]
+    \[\therefore\ y=\frac{1}{140}\sin(14t)\]
+    Since $\sin(\pi)=0$, we know that when $t=\dfrac{\pi}{14}$, $y(t)=0$, thus the spring returns to equilibrium after $\dfrac{\pi}{14}$ seconds.
+
+    \pagebreak
+    \item [4.)] Since $L=0.25$ and $m=3$, $k=\dfrac{96}{0.25}=384$. We can solve the resulting initial value problem:
+    \[3y''+384y=0\implies y''+128y=0;\,y(0)=-\frac{1}{12},\,y'(0)=2\]
+    \[\implies r=\pm\,8\sqrt{2}i\]
+    \[\therefore\ y=c_1\sin\parns{8\sqrt2t}+c_2\cos\parns{8\sqrt2t}\]
+    Solving for $c_1$ and $c_2$:
+    \[-\frac{1}{12}=c_1\sin(0)+c_2\cos(0)=c_2\]
+    \[2=8\sqrt2c_1\cos(0)+8\sqrt2c_2\sin(0)=8\sqrt2c_1\implies c_1=\frac{1}{4\sqrt2}\]
+    \[\therefore\ y=\frac{1}{4\sqrt2}\sin\parns{8\sqrt2t}-\frac{1}{12}\cos\parns{8\sqrt2t}\]
+    With $c_1$ and $c_2$, we can find $R$ and $\delta$:
+    \[R=\sqrt{\parns{-\frac{1}{12}}^2+\parns{\frac{1}{4\sqrt2}}^2}=\sqrt{\frac{1}{144}+\frac{1}{32}}=\sqrt{\frac{11}{288}}\]
+    \[\delta=\tan^{-1}\parns{\frac{c_2}{c_1}}\approx-25.24\]
+    And since $\omega=8\sqrt2$, the period $T$ is $\dfrac{1}{8\sqrt2}$.
+\end{itemize}
+\section*{Section 3.8}
+\begin{itemize}
+    \item [4.)] Since $L=0.1$ and $m=5$, $k=\dfrac{49}{0.1}=490$. In addition, $\gamma=\dfrac{2}{0.04}=50$. This can be modeled with the following initial value problem:
+    \[5y''+50y'+490y=10\sin(t/2)\implies y''+10y'+98y''=2\sin(t/2)\]
+    \[\text{where }y(0)=0,\,y'(0)=0.03\]
+
+    \item [7a.)] Since $L=0.5$ and $m=8$, $k=\dfrac{256}{0.5}=512$. In addition, $\gamma=\dfrac{1}{4}$. We can solve the resulting initial value problem:
+    \[8y''+\frac{1}{4}y'+512y=4\cos(2t)\implies y''+\frac{1}{32}y'+64y=\frac{1}{2}\cos(2t)\]
+    Which gives us some $y_h+Y$, where $Y$ is the particular (steady state) solution.
+
+\end{itemize}
+\end{document}

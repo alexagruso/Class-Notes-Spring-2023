@@ -1,0 +1,192 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 8}
+
+\normalsize
+\begin{itemize}
+    % \item [12.)] \begin{itemize}
+    %     \item [a.)] Since $0<\lambda<1$, $0<(1-\lambda)<1$ and $(1-\lambda)y < y$.
+    % \end{itemize}
+
+    % \item [29.)] \begin{itemize}
+    %     \item [a.)] Since $S\neq\varnothing$, $\mathscr{L}\neq\varnothing$. In addition, since $S$ is bounded below, there exists $v\in\mathbb{R}$ such that $v=\inf(S)$, thus $v\geq x$ for all $x\in\mathscr{L}$, thus $v$ is an upper bound of $\mathscr{L}$, thus $\mathscr{L}$ is bounded above. Q.E.D.
+
+    %     \item [b.)] Let $w=\sup(\mathscr{L})$. For the sake of establishing a contradiction, suppose there exists $x\in S$ such that $x<w$, thus $x$ is not an upper bound of $\mathscr{L}$, thus there exists $l\in\mathscr{L}$ such that $l>x$, thus $l$ is not a lower bound of $S$, thus $l\notin\mathscr{L}$\contradiction, thus $x\in S\implies x\geq w$, thus $w$ is a lower bound of $S$. Q.E.D.
+
+    %     \item [c.)] Since $w=\sup(\mathscr{L})$, $w\geq l$ for all $l\in\mathscr{L}$, thus $w\geq l$ for all lower bounds $l$ of $S$, thus $w=\inf(S)$. Q.E.D.
+    % \end{itemize}
+
+    \item [33.)] Let $x,y\in\mathbb{R}$, and consider $x$:
+        \[x=x+0=x-y+y\]
+        And thus by the triangle inequality:
+        \[\vertb{x-y+y}\leq\vertb{x-y}+\vertb{y}\]
+        Manipulating:
+        \[\vert
+        x-y+y\vert\leq\vertb{x-y}+\vertb{y}\implies\vertb{x}-\vertb{y}\leq\vertb{x-y}\]
+        \[\implies\vert x\vert-\vert x\vert-\vert y\vert=-\vert y\vert\leq\vert x\vert-\vert y\vert\leq\vert x-y\vert\]
+        Thus the inequality holds. Q.E.D.***
+
+    % \item [37.)] awd
+
+    % \item [38.)] Let $S$ be a uniformly discrete set,
+
+    \item [40.)] Let $\varepsilon>0$, and $n\geq k$ for some $k\in\mathbb{N}$, thus:
+    \[\vertb{\frac{2n-1}{n}-2}<\varepsilon\]
+
+    \item [41.)] Let $\e>0$ be given, then we know that
+    \[\vertb{\frac{(-1)^n}{n}-0}<\e\]
+    given $n\geq k$ for some $k\in\mathbb{N}$. Manipulating the inequality, we find that
+    \[\vertb{\frac{(-1)^n}{n}-0}=\vertb{\frac{(-1)^n}{n}}=\frac{\vertb{(-1)^n}}{\vertb{n}}=\frac{1}{n}<\e\]
+    \[\implies n>\frac{1}{\e}.\]
+    Let $k>\frac{1}{\e}$:
+    \[\frac{1}{n}<\frac{1}{k}=\frac{1}{\frac{1}{\e}}=\e\]
+    \[\therefore\ \vertb{\frac{(-1)^n}{n}-0}<\e\]
+    thus $x_n\to0$. Q.E.D.
+
+    \pagebreak
+    \item [42.)] Let $\e>0$ be given, then we know that
+    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}<\e\]
+    given $n\geq k$ for some $k\in\mathbb{N}$. Manipulating the inequality, we find that
+    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}=\vertb{\frac{15n+5-15n+6}{25n-10}}=\vertb{\frac{11}{25n-10}}=\frac{\vertb{11}}{\vertb{25n-10}}=\frac{11}{25n-10}<\e\]
+    \[\implies 25n-10>\frac{11}{\e}\implies n=\frac{11}{25\e}+\frac{2}{5}.\]
+    Let $k>\dfrac{11}{25\e}+\dfrac{2}{5}$:
+    \[\frac{11}{25n-10}<\frac{11}{25k-10}=\frac{11}{25\parns{\frac{11}{25\e}+\frac{2}{5}}-10}=\frac{11}{\frac{11}{\e}+10-10}=\frac{11}{\frac{11}{\e}}=\e\]
+    \[\therefore\ \vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}<\e\]
+    thus $x_n\to\dfrac{3}{5}$. Q.E.D.
+
+    % \item [45.)] ***
+
+    % \item [46.)] ***
+
+    % \item [47.)] ***
+
+    % \item [48.)] ***
+
+    % \item [49.)] ***
+
+    % \item [50.)] Let $x_n\to A$ and $\varepsilon>0$ be given, then $\vert x_n-A\vert<\varepsilon$ for $n\geq k$ given $k\in\mathbb{N}$. We can manipulate the inequality as follows:
+    % \[\vert x_n-A\vert<\varepsilon\implies \vert c\vert\cdot\vert x_n-A\vert=\vert cx_n-cA\vert<\vert c\vert\varepsilon\]
+
+    % \item [51.)] ***
+
+    % \item [52.)] ***
+
+    % \item [53.)] ***
+
+    % \item [54.)] ***
+
+    % \item [55.)] ***
+
+    % \item [56.)] ***
+
+    % \item [57.)] ***
+
+    % \item [58.)] ***
+
+    % \item [59.)] ***
+
+    % \item [60.)] ***
+
+    % \item [61.)] ***
+
+    % \item [62.)] ***
+
+    % \item [63.)] ***
+
+    % \item [64.)] ***
+
+    % \item [65.)] ***
+
+    % \item [66.)] ***
+
+    % \item [67.)] ***
+
+    % \item [68.)] ***
+
+    % \item [69.)] ***
+
+    % \item [70.)] ***
+
+    % \item [71.)] ***
+
+    % \item [72.)] ***
+
+    % \item [73.)] ***
+
+    % \item [74.)] ***
+
+    % \item [75.)] ***
+
+    % \item [76.)] ***
+
+    % \item [77.)] ***
+
+    % \item [78.)] ***
+
+    % \item [79.)] ***
+
+    % \item [80.)] ***
+
+    % \item [81.)] ***
+
+    % \item [82.)] ***
+
+    % \item [83.)] ***
+
+    % \item [84.)] ***
+
+    % \item [85.)] ***
+
+    % \item [86.)] ***
+
+    % \item [87.)] ***
+
+    % \item [88.)] ***
+
+    % \item [89.)] ***
+
+    % \item [90.)] ***
+
+    % \item [91.)] ***
+
+    % \item [92.)] ***
+
+    % \item [93.)] ***
+
+    % \item [94.)] ***
+
+    % \item [95.)] ***
+
+    % \item [96.)] ***
+
+    % \item [97.)] ***
+
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,126 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=10mm]{geometry}
+
+\newcommand{\contradiction}{%
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}%
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+\newcommand{\dvert}[1]{\left\Vert#1\right\Vert}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 2393 Homework 4}
+
+\normalsize
+\section*{Exercises 14.4}
+\begin{itemize}
+    \item [1.)] Find $f_x$ and $f_y$:
+    \[f_x=4x,\ f_y=2y-5\]
+    Now find $f_x$ and $f_y$ at $(1,2)$:
+    \[f_x(1,2)=4(1)=4,\ f_y(1,2)=2(2)-5=4-5=-1\]
+    Now find the equation of the plane:
+    \[z+4=4(x-1)-1(y-2)\implies z=4x-4-y+2-4\]
+    \[\implies z=4x-y-6\]
+
+    \item [11.)] Find $f_x$ and $f_y$:
+    \[f_x=\ln(xy-5)+\frac{xy}{xy-5},\ f_y=\frac{x^2}{xy-5}\]
+    Now find $f$, $f_x$, and $f_y$ at $(2,3)$:
+    \[f(2,3)=1+2\ln[(2)(3)-5]=1+2\ln(1)=1\]
+    \[f_x(2,3)=\ln(6-5)+\frac{(2)(3)}{(2)(3)-5}=0+\frac{6}{6-5}=6\]
+    \[f_y(2,3)=\frac{(2)^2}{(2)(3)-5}=\frac{4}{6-5}=4\]
+    Now find the linearization of $f$:
+    \[L(x,y)=f(2,3)+f_x(2,3)(x-2)+f_y(2,3)(y-3)=1+6(x-2)+4(y-3)\]
+    \[\implies L(x,y)=6x+4y-23\]
+
+    \item [15.)] Find $f_x$ and $f_y$:
+    \[f_x=\frac{4y}{1+(xy)^2},\ f_y=\frac{4x}{1+(xy)^2}\]
+    Now find $f$, $f_x$, and $f_y$ at $(1,1)$:
+    \[f(1,1)=4\arctan(1)=\frac{4\pi}{4}=\pi\]
+    \[f_x(1,1)=\frac{4(1)}{1+1}=2,\ f_y(1,1)=\frac{4(1)}{1+1}=2\]
+    Now find the linearization of $f$:
+    \[L(x,y)=f(1,1)+f_x(1,1)(x-1)+f_y(1,1)(y-1)=\pi+2(x-1)+2(y-1)\]
+    \[\implies L(x,y)=2x+2y+\pi-4\]
+
+    \item [31.)] Find $dz$:
+    \[dz=f_x\,dx+f_y\,dy=10x\,dx+2y\,dy\]
+    Now find $dx$ and $dy$:
+    \[dx=1.05-1=0.05,\ dy=2.1-2=0.1\]
+    Thus
+    \[dz=10(1)(0.05)+2(2)(0.1)=0.5+0.4=0.9\]
+    And
+    \[\Delta z=f(1.05,2.1)-f(1,2)=5(1.05)^2+(2.1)^2-5(1)^2-(2)^2=0.9225\]
+\end{itemize}
+\section*{Exercises 14.6}
+\begin{itemize}
+    \item [7.)] \begin{itemize}
+        \item [a.)] \[\nabla f=\angleb{f_x,f_y}=\angleb{\frac{1}{y},-\frac{x}{y^2}}\]
+
+        \item [b.)] \[\nabla f(2,1)=\angleb{\frac{1}{1},-\frac{2}{1^2}}=\angleb{1,-2}\]
+
+        \item [c.)] \[D_uf(2,1)=f_x(2,1)\,\frac{3}{5}+f_y(2,1)\,\frac{4}{5}=\frac{3}{5(1)}-\frac{4(2)}{5(1)^2}=-\frac{5}{5}=-1\]
+    \end{itemize}
+
+    \item [13.)] Find $f_s$ and $f_t$:
+    \[f_s=\sqrt{t},\ f_t=\frac{s}{2\sqrt{t}}\]
+    Now find the unit vector in the direction of $\overline{v}$:
+    \[\Vert\overline{v}\Vert=5\implies\hat{v}=\angleb{\frac{2}{\sqrt{5}},-\frac{1}{\sqrt{5}}}\]
+    Thus
+    \[D_vf(2,4)=\frac{2\sqrt{4}}{\sqrt{5}}-\frac{2}{2\sqrt{5(4)}}=\frac{16-2}{4\sqrt{5}}=\frac{14}{4\sqrt{5}}=\frac{7}{2\sqrt{5}}\]
+
+    \pagebreak
+    \item [19.)] Find $f_x$ and $f_y$:
+    \[f_x=\frac{y}{2\sqrt{xy}},\ f_y=\frac{x}{2\sqrt{xy}}\]
+    Now find $\overline{v}$:
+    \[\overline{v}=\angleb{5-2,4-8}=\angleb{3,-4}\]
+    Now find the unit vector in the direction of $\overline{v}$:
+    \[\Vert\overline{v}\Vert=5\implies\hat{v}=\angleb{\frac{3}{5},-\frac{4}{5}}\]
+    Thus
+    \[D_vf(2,8)=\frac{3(8)}{5(2)\sqrt{(2)(8)}}-\frac{4(2)}{5(2)\sqrt{(2)(8)}}=\frac{24-8}{10(4)}=\frac{16}{40}=\frac{2}{5}\]
+
+    \item [21.)] Find $\nabla f$ then $\nabla f(4,1)$:
+    \[\nabla f=\angleb{\frac{4y}{2\sqrt{x}},4\sqrt{x}},\ \overline{v}=\nabla f(4,1)=\angleb{\frac{4(1)}{2\sqrt{4}},4\sqrt{4}}=\angleb{1,8}\]
+    Now find $\Vert\overline{v}\Vert$:
+    \[\Vert\overline{v}\Vert=\sqrt{1^2+8^2}=\sqrt{65}\]
+    Thus the maximum rate of change of $f$ at $(4,1)$ is $\sqrt{65}$ in the direction of $\angleb{1,8}$.
+
+    \item [43.)] Find $\nabla f$:
+    \[f_x=y^2z^3,\ f_y=2xyz^3,\ f_z=3xy^2z^2\]
+    \[\implies\nabla f=\angleb{y^2z^3,2xyz^3,3xy^2z^2}\]
+    Now find $\nabla f(2,2,1)$:
+    \[\nabla f(2,2,1)=\angleb{4,8,24}\]
+    Now find the equation of the tangent plane:
+    \[4(x-2)+8(y-2)+24(z-1)=4x+8y+24z=48\]
+    \[\implies x+2y+6z=12\]
+    Finally, parametrize $P_0$ and $\nabla f(2,2,1)$ to find the equation of the normal line:
+    \[P_0+t\nabla f(2,2,1)=\angleb{2,2,1}+t\angleb{4,8,24}=\angleb{2+4t,2+8t,1+24t}\]
+    \[\implies \frac{x-2}{4}=\frac{y-2}{8}=\frac{z-1}{24}\]
+
+    \pagebreak
+    \item [45.)] Find $\nabla f$:
+    \[f_x=1+yze^{xyz},\ f_y=1+xze^{xyz},\ f_z=1+xye^{xyz}\]
+    \[\implies\nabla f=\angleb{1+yze^{xyz},1+xze^{xyz},1+xze^{xyz}}\]
+    Now find $\nabla f(0,0,1)$:
+    \[\nabla f(0,0,1)=\angleb{1,1,1}\]
+    Now find the equation of the plane:
+    \[x+y+(z-1)\implies x+y+z=1\]
+    Finally, parametrize $P_0$ and $\nabla f(0,0,1)$ to find the equation of the normal line:
+    \[P_0+t\nabla f(0,0,1)=\angleb{0,0,1}+t\angleb{1,1,1}=\angleb{t,t,1+t}\]
+    \[\implies x=y=z-1\]
+\end{itemize}
+
+\end{document}

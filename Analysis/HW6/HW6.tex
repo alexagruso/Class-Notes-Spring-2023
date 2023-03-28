@@ -1,0 +1,89 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 6}
+
+\normalsize
+\begin{itemize}
+    % \item [12.)] \begin{itemize}
+    %     \item [a.)] Since $0<\lambda<1$, $0<(1-\lambda)<1$ and $(1-\lambda)y < y$.
+    % \end{itemize}
+
+    % \item [29.)] \begin{itemize}
+    %     \item [a.)] Since $S\neq\varnothing$, $\mathscr{L}\neq\varnothing$. In addition, since $S$ is bounded below, there exists $v\in\mathbb{R}$ such that $v=\inf(S)$, thus $v\geq x$ for all $x\in\mathscr{L}$, thus $v$ is an upper bound of $\mathscr{L}$, thus $\mathscr{L}$ is bounded above. Q.E.D.
+
+    %     \item [b.)] Let $w=\sup(\mathscr{L})$. For the sake of establishing a contradiction, suppose there exists $x\in S$ such that $x<w$, thus $x$ is not an upper bound of $\mathscr{L}$, thus there exists $l\in\mathscr{L}$ such that $l>x$, thus $l$ is not a lower bound of $S$, thus $l\notin\mathscr{L}$\contradiction, thus $x\in S\implies x\geq w$, thus $w$ is a lower bound of $S$. Q.E.D.
+
+    %     \item [c.)] Since $w=\sup(\mathscr{L})$, $w\geq l$ for all $l\in\mathscr{L}$, thus $w\geq l$ for all lower bounds $l$ of $S$, thus $w=\inf(S)$. Q.E.D.
+    % \end{itemize}
+
+    % \item [33.)] Let $x,y\in\mathbb{R}$, and consider $x$:
+    %     \[x=x+0=x-y+y\]
+    %     And thus by the triangle inequality:
+    %     \[\vertb{x-y+y}\leq\vertb{x-y}+\vertb{y}\]
+    %     Manipulating:
+    %     \[\vert
+    %     x-y+y\vert\leq\vertb{x-y}+\vertb{y}\implies\vertb{x}-\vertb{y}\leq\vertb{x-y}\]
+    %     \[\implies\]
+    %     Thus the inequality holds. Q.E.D.
+
+    \item [34.)] \begin{itemize}
+        \item [a.)] False; let $S=(-\infty,0]$, thus $\{\vert x\vert:x\in S\}=[0,\infty)$, which has no upper bound.
+
+        \item [b.)] True; let $\vert S\vert=\{\vert x\vert:x\in S\}$ and let $M\in\mathbb{R}$ be an upper bound of $\vert S\vert$, thus $\vert x\vert\leq M$ for all $x\in S$, thus $-M\leq x\leq M$ for all $x\in S$, thus $M\geq x$ for all $x\in S$, thus $S$ is bounded above. Q.E.D.
+    \end{itemize}
+
+    % \item [37.)] Consider $a\in A$. Since by definition $a\leq b$ for all $b\in r$, $a$ is a lower bound of $B$ for all $a\in A$, thus $A$ is a subset of the set of all lower bounds of $B$. Let $\mathscr{L}$ be this set, thus $A\subseteq\mathscr{L}$.
+
+    % \item [38.)] Let $u=\sup(S)$, thus $u\geq x$ for all $x\in S$. For the sake of establishing a contradiction, suppose $u\notin S$, then for some $\epsilon>0$, $u=x+\epsilon$ for some $x\in S$. Consider $x+\frac{\epsilon}{2}$. Since $\epsilon>0$, $\frac{\epsilon}{2}>0$,
+
+    % \item [40.)] ***
+
+    % \item [41.)] ***
+
+    % \item [42.)] To verify that $x_n\to\dfrac{3}{5}$, we can simplify the fraction to $\dfrac{7}{25n-10}$. Let $\epsilon>0$, then
+    % \[\left\vert\frac{7}{25n-10}-\frac{3}{5}\right\vert<\epsilon\]
+    % Manipulating:
+    % \[\vertb{\frac{7}{25n-10}-\frac{1}{25}}=\vertb{\frac{}{}}\]
+
+    \item [43.)] \begin{itemize}
+        \item [a.)] $\displaystyle\lim_{n\to\infty}\frac{10n}{n}=10$
+
+        \item [b.)] $\displaystyle\lim_{n_\to\infty}\sin n$ diverges
+
+        \item [c.)] Suppose $x_n\to15$ and $x_n\to-77$. Since $x_n\to15$, $x_n$ gets arbitrarily close to $15$. Also, since $x_n\to-77$, $x_n$ gets arbitrarily close to $-77$. However, as $x_n$ gets closer to $15$, $x_n$ moves farther from $-77$, and vice versa, thus $x_n$ cannot get arbitrarily close to both, thus $x_n$ cannot converge to both.
+    \end{itemize}
+
+    \item [44.)] \begin{itemize}
+        \item [a.)] Let $\{x_n\}^\infty_{n=1}$ be a sequence such that $x_n\to L$, then by definition for all $n>k$ for some $k\in\mathbb{N}$, $\vert x_n-L\vert<\epsilon$ for some $\epsilon>0$. By the reverse triangle inequality, we know that $\Big\vert\vert x_n\vert-\vert L\vert\Big\vert<\vert x_n-L\vert<\epsilon$, thus $\Big\vert\vert x_n\vert-\vert L\vert\Big\vert<\epsilon$, thus $\vert x_n\vert\to\vert L\vert$. Q.E.D.
+
+        \item [b.)] Consider the sequences $x_n=(-1)^n$ and $\vert x_n\vert$. Since $\vert(-1)^n\vert=1$ for all $n\in\mathbb{N}$, $\vert x_n\vert\to1$, but $x_n$ does not converge, thus $\vert x_n\vert\to\vert L\vert$ does not imply that $x_n\to L$. Q.E.D.
+    \end{itemize}
+
+\end{itemize}
+
+\end{document}
