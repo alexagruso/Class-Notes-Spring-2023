@@ -15,6 +15,8 @@
     \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}%
 }
 
+\newcommand{\pderv}[2]{{\partial#1}/{\partial#2}}
+
 \newcommand{\angleb}[1]{\left\langle#1\right\rangle}
 \newcommand{\vertb}[1]{\left\vert#1\right\vert}
 \newcommand{\bracks}[1]{\left[#1\right]}
@@ -97,7 +99,6 @@
     \item [29.)]
 
 \end{itemize}
-
 \section*{Exercises 15.4}
 \begin{itemize}
     \item [17.)] \[I_x=\int^3_1\int^4_1y^4k\,dy\,dx=\int^3_1\bracks{\frac{1}{5}y^5k}^4_1\,dx=\int^3_1\parns{\frac{1023}{5}k}\,dx\]
@@ -107,9 +108,9 @@
     \[I_0=\int^3_1\int^4_1(x^2+y^2)ky^2\,dy\,dx=I_x+I_y=591.2k\]
 
 \end{itemize}
-
 \section*{Exercises 15.9}
 \begin{itemize}
+<<<<<<< HEAD
     \item [1.)] \[J=\begin{vmatrix*}[r]
         2 & 4 \\
         1 & -1
@@ -137,5 +138,34 @@
     \item [17.)] awd
 
 \end{itemize}
+=======
+    \item [1.)] \[J=\begin{vmatrix}
+        \pderv{x}{u} & \pderv{x}{v} \\
+        \pderv{y}{u} & \pderv{y}{v}
+    \end{vmatrix}=\begin{vmatrix*}[r]
+        2 & 1 \\
+        4 & -1
+    \end{vmatrix*}=-2-4=-6\]
+>>>>>>> 916cf7101b4d89289f9e3418f9c8698d5d37d8f0
 
+    \item [3.)] \[J=\begin{vmatrix}
+        \cos t & -s\sin t \\
+        \sin t & s\cos t
+    \end{vmatrix}=s\cos^2t+s\sin^2t=s\]
+
+    \item [15.)] First find the area of integration:
+    \[\text{triangle }(0,0),\,(2,1),\,(1,2)\]
+    \[\implies I=\iint\limits_R(x-3y)\,dA=\int^1_0\int^{2x}_{x/2}(x-3y)\,dy\,dx+\int^2_0\int^{3-x}_{x/2}(x-3y)\,dy\,dx\]
+    Next, find the jacobian of $x$ and $y$:
+    \[J=\begin{vmatrix}
+        2 & 1 \\
+        1 & 2 \\
+    \end{vmatrix}=4-1=3\]
+    Finally, evalutate the integral:
+    \[x-3y=2u+v-3u-6v=-u-5v\]
+    \[\implies I=3\int^1_0\int^{4u+2v}_{u+v/2}-u-5v\,du\,dv+3\int^1_2\int^{3-2u+v}_{u+v/2}-u-5v\,du\,dv\]
+
+    \item [17.)]
+
+\end{itemize}
 \end{document}
