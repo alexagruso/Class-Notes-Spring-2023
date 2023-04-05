@@ -37,17 +37,11 @@
     %     \item [a.)] Since $0<\lambda<1$, $0<(1-\lambda)<1$ and $(1-\lambda)y < y$.
     % \end{itemize}
 
-    % \item [29.)] \begin{itemize}
-    %     \item [a.)] Since $S\neq\varnothing$, $\mathscr{L}\neq\varnothing$. In addition, since $S$ is bounded below, there exists $v\in\mathbb{R}$ such that $v=\inf(S)$, thus $v\geq x$ for all $x\in\mathscr{L}$, thus $v$ is an upper bound of $\mathscr{L}$, thus $\mathscr{L}$ is bounded above. Q.E.D.
+    \item [29.)] \begin{itemize}
+        \item [a.)] Since $S$ is bounded below, $x\in S\implies x\geq M$ for some $M\in\mathbb{R}$. Let $l<M$, thus $l<M\leq x$, thus $l<x$ for all $x\in S$, thus $l$ is a lower bound of $S$, thus $\mathscr{L}\ne\varnothing$. Next, let $x\in S$, thus $x\geq l$ for all lower bounds $l$ of $S$, thus $x$ is an upper bound of $\mathscr{L}$, thus $\mathscr{L}$ is bounded above. Q.E.D.
 
-    %     \item [b.)] Let $w=\sup(\mathscr{L})$. For the sake of establishing a contradiction, suppose there exists $x\in S$ such that $x<w$, thus $x$ is not an upper bound of $\mathscr{L}$, thus there exists $l\in\mathscr{L}$ such that $l>x$, thus $l$ is not a lower bound of $S$, thus $l\notin\mathscr{L}$\contradiction, thus $x\in S\implies x\geq w$, thus $w$ is a lower bound of $S$. Q.E.D.
-
-    %     \item [c.)] Since $w=\sup(\mathscr{L})$, $w\geq l$ for all $l\in\mathscr{L}$, thus $w\geq l$ for all lower bounds $l$ of $S$, thus $w=\inf(S)$. Q.E.D.
-    % \end{itemize}
-
-    % \item [29.)] \begin{itemize}
-    %     \item [a.)] Since $S$ is nonempty and bounded below, there exists some lower bound $l$ of $S$, thus $\mathscr{L}\neq\varnothing$.
-    % \end{itemize}
+        \item [b.)] Let $w=\sup(\mathscr{L})$, thus $w\geq l$ for all $l\in\mathscr{L}$.
+    \end{itemize}
 
     % \item [33.)] Let $x,y\in\mathbb{R}$, and consider $x$:
     %     \[x=x+0=x-y+y\]
@@ -59,27 +53,58 @@
     %     \[\implies\vert x\vert-\vert x\vert-\vert y\vert=-\vert y\vert\leq\vert x\vert-\vert y\vert\leq\vert x-y\vert\]
     %     Thus the inequality holds. Q.E.D.***
 
-    % \item [37.)] awd
+    % \item [37.)] ***
 
     % \item [38.)] Let $S$ be a uniformly discrete set,
 
     % \item [45.)] ***
 
-    % \item [46.)] ***
+    \item [46.)] Suppose $2^{-n}\to0$, then for all $\e>0$, there exists $k\in\mathbb{N}$ where
+    \[\vertb{2^{-n}-0}<\e\]
+    Manipulating the inequality:
+    \[\vertb{2^{-n}-0}=\vertb{2^{-n}}=2^{-n}<\e\implies\frac{1}{\e}<2^n\]
+    Thus
+    \[\vertb{2^{-n}-0}=\vertb{\frac{1}{2^n}}<\vertb{\frac{1}{\frac{1}{\e}}}=\vertb{\e}=\e\]
+    Thus $n\geq k\implies\vertb{2^{-n}-0}<\e$, thus $2^{-n}\to0$. Q.E.D.
 
-    % \item [47.)] Let $x_n$ be a bounded sequence, and $y_n\to0$.
+    \item [47.)] Let $y_n\to0$, thus for all $\e_1>0$, there exists $k\in\mathbb{N}$ where
+    \[n\geq k\implies\vertb{y_n-0}<\e_1\]
+    Now suppose $x_n$ is a bounded sequence, and $x_ny_n\to0$, then for all $\e>0$,
+    \[n\geq k\implies\vertb{x_ny_n-0}<\e\]
+    Manipulating the inequality:
+    \[\vertb{x_ny_n-0}=\vertb{x_ny_n}=\vertb{x_n}\vertb{y_n-0}<\e\implies\vertb{y_n-0}<\frac{\e}{\vertb{x_n}}\]
+    Let $\e_1=\dfrac{\e}{\vertb{x_n}}$, then
+    \[\vertb{y_n-0}<\frac{\e}{\vertb{x_n}}\implies\vertb{x_n}\vertb{y_n-0}<\e\implies\vertb{x_ny_n-0}<\e\]
+    Thus $n\geq k\implies\vertb{x_ny_n-0}<\e$, thus $x_ny_n\to0$. Q.E.D.
 
     % \item [48.)] ***
 
     % \item [49.)] ***
 
-    % \item [50.)] Let $x_n\to A$ and $c\in\mathbb{R}$. Since $x_n\to A$, then for all $\varepsilon>0$, there exists $k$ such that $n\geq k\implies\vertb{x_n-A}<\varepsilon$. Consider the following equation:
+    \item [50.)] Since $x_n\to A$, then for all $\e_1>0$, there exists $k\in\mathbb{N}$ where
+    \[n\geq k\implies\vertb{x_n-A}<\e_1\]
+    Now suppose $cx_n\to cA$, then for all $\e>0$,
+    \[n\geq k\implies\vertb{cx_n-cA}<\e\]
+    Manipulating the inequality:
+    \[\vertb{cx_n-cA}<\vertb{c(x_n-A)}=\vertb{c}\vertb{x_n-A}<\e\]
+    \[\implies\vertb{x_n-A}<\frac{\e}{\vertb c}\]
+    Let $\e_1=\dfrac{\e}{\vertb c}$, then
+    \[\vertb{x_n-A}<\frac{\e}{\vertb c}\implies\vertb{c}\vertb{x_n-A}<\e\implies\vertb{cx_n-cA}<\e\]
+    Thus $n\geq k\implies\vertb{cx_n-cA}<\e$, thus $cx_n\to cA$. Q.E.D.
 
-    % \item [52.)] ***
+    \item [52.)] Let $M,N\in\mathbb{R}$ where $M\geq x_n$ and $N\geq y_n$ for all $n\in\mathbb{N}$. Consider $z_n=x_n+y_n$. $x_n+y_n\leq M+N$, thus $z_n\leq M+N$ for all $n\in\mathbb{N}$, thus $z_n$ is bounded. Q.E.D.
 
-    % \item [53.)] ***
+    \item [53.)] \begin{itemize}
+        \item [a.)] False; many sequences diverge.
 
-    % \item [54.)] ***
+        \item [b.)] True; Since $x_n$ diverges, then we know that $x^2_n=x_nx_n$ diverges too.
+    \end{itemize}
+
+    \item [54.)] \begin{itemize}
+        \item [a.)] $(-1)^n$
+
+        \item [b.)] DNE; A sequence cannot converge to a value while having terms that are arbitrarily far from that value.
+    \end{itemize}
 
     % \item [57.)] ***
 
