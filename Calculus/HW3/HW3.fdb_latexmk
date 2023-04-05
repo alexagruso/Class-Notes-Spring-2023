@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1679118500 "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.tex" "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.pdf" "HW3" 1679118500
-  "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.aux" 1679118500 32 2d1df76398b3c48c6419a45a7331db2d ""
-  "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.tex" 1679118500 8755 295b2de37c962f542fb7a68c3f92958b ""
+["pdflatex"] 1680470307 "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.tex" "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.pdf" "HW3" 1680470386
+  "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.aux" 1680470308 32 2d1df76398b3c48c6419a45a7331db2d ""
+  "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.tex" 1680470385 9091 f5448f87ec932f77a498b0672f0ecaff ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -96,7 +96,7 @@
   "/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty" 1496704190 4904 ee78b44e85d6fccf08cd99370557481e ""
   "/usr/share/texmf-dist/tex/latex/tools/array.sty" 1601675358 12675 9a7bbb9e485cd81cdcc1d56212b088ff ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1463002160 55589 34128738f682d033422ca125f82e5d62 ""
-  "/usr/share/texmf-dist/web2c/texmf.cnf" 1677215923 39447 2134d78a2da0cee52270db0ec417a200 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1680387097 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/usr/share/texmf-site/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1677215765 992 fb3cda354707a54fda62787a411c7c22 ""
   "/usr/share/texmf-site/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1677215765 43820 bc6cf5aa959817914ace33f5c6232161 ""
   "/usr/share/texmf-site/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex" 1677215765 19324 c9a64402f22bd8d81821141a357af653 ""
@@ -173,12 +173,12 @@
   "/usr/share/texmf-site/tex/latex/pgf/utilities/pgfkeys.sty" 1677215765 274 4cad6e665cc93ac2ac979039a94fa1e1 ""
   "/usr/share/texmf-site/tex/latex/pgf/utilities/pgfrcs.sty" 1677215765 325 2bcd023400636339210573e2b3ee298b ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1677215934 327343 41a22076d79f3b37803909eea542967d ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1677215926 1329897 0e89215d78960e72cc79e9cc7d752272 ""
-  "HW3.aux" 1679118500 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
-  "HW3.tex" 1679118500 8755 295b2de37c962f542fb7a68c3f92958b ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1680387110 1329900 874896efe3efd94b1e3c58e82feaf3c0 ""
+  "HW3.aux" 1680470308 32 2d1df76398b3c48c6419a45a7331db2d "pdflatex"
+  "HW3.tex" 1680470385 9091 f5448f87ec932f77a498b0672f0ecaff ""
   (generated)
-  "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.pdf"
   "HW3.log"
-  "HW3.aux"
   "HW3.pdf"
+  "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.pdf"
   "/home/alexander/Documents/School/ClassSpring2023/Calculus/HW3/HW3.log"
+  "HW3.aux"

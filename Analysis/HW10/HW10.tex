@@ -1,0 +1,275 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 10}
+
+\normalsize
+\begin{itemize}
+    % \item [12.)] \begin{itemize}
+    %     \item [a.)] Since $0<\lambda<1$, $0<(1-\lambda)<1$ and $(1-\lambda)y < y$.
+    % \end{itemize}
+
+    % \item [29.)] \begin{itemize}
+    %     \item [a.)] Since $S\neq\varnothing$, $\mathscr{L}\neq\varnothing$. In addition, since $S$ is bounded below, there exists $v\in\mathbb{R}$ such that $v=\inf(S)$, thus $v\geq x$ for all $x\in\mathscr{L}$, thus $v$ is an upper bound of $\mathscr{L}$, thus $\mathscr{L}$ is bounded above. Q.E.D.
+
+    %     \item [b.)] Let $w=\sup(\mathscr{L})$. For the sake of establishing a contradiction, suppose there exists $x\in S$ such that $x<w$, thus $x$ is not an upper bound of $\mathscr{L}$, thus there exists $l\in\mathscr{L}$ such that $l>x$, thus $l$ is not a lower bound of $S$, thus $l\notin\mathscr{L}$\contradiction, thus $x\in S\implies x\geq w$, thus $w$ is a lower bound of $S$. Q.E.D.
+
+    %     \item [c.)] Since $w=\sup(\mathscr{L})$, $w\geq l$ for all $l\in\mathscr{L}$, thus $w\geq l$ for all lower bounds $l$ of $S$, thus $w=\inf(S)$. Q.E.D.
+    % \end{itemize}
+
+    % \item [29.)] \begin{itemize}
+    %     \item [a.)] Since $S$ is nonempty and bounded below, there exists some lower bound $l$ of $S$, thus $\mathscr{L}\neq\varnothing$.
+    % \end{itemize}
+
+    % \item [33.)] Let $x,y\in\mathbb{R}$, and consider $x$:
+    %     \[x=x+0=x-y+y\]
+    %     And thus by the triangle inequality:
+    %     \[\vertb{x-y+y}\leq\vertb{x-y}+\vertb{y}\]
+    %     Manipulating:
+    %     \[\vert
+    %     x-y+y\vert\leq\vertb{x-y}+\vertb{y}\implies\vertb{x}-\vertb{y}\leq\vertb{x-y}\]
+    %     \[\implies\vert x\vert-\vert x\vert-\vert y\vert=-\vert y\vert\leq\vert x\vert-\vert y\vert\leq\vert x-y\vert\]
+    %     Thus the inequality holds. Q.E.D.***
+
+    % \item [37.)] awd
+
+    % \item [38.)] Let $S$ be a uniformly discrete set,
+
+    % \item [45.)] ***
+
+    % \item [46.)] ***
+
+    % \item [47.)] Let $x_n$ be a bounded sequence, and $y_n\to0$.
+
+    % \item [48.)] ***
+
+    % \item [49.)] ***
+
+    % \item [50.)] Let $x_n\to A$ and $c\in\mathbb{R}$. Since $x_n\to A$, then for all $\varepsilon>0$, there exists $k$ such that $n\geq k\implies\vertb{x_n-A}<\varepsilon$. Consider the following equation:
+
+    % \item [52.)] ***
+
+    % \item [53.)] ***
+
+    % \item [54.)] ***
+
+    % \item [57.)] ***
+
+    % \item [58.)] ***
+
+    % \item [59.)] ***
+
+    % \item [60.)] ***
+
+    \item [62.)] Assume $x_n\to A$, thus for all $\varepsilon>0$, there exists $k$ such that
+    \[n\geq k\implies\vertb{x_n-A}<\varepsilon\]
+    Since $x_n<M$, we know that
+    \[\vertb{x_n-A}<\vertb{M-A}\]
+    ***
+
+    \item [63.)] Since $S$ is nonempty and bounded below, there exists some $v\in\mathbb{R}$ where $v=\inf(S)$. Let $\{x_n\}^\infty_{n=1}$ be a sequence where $x_n=v$, thus $x_n\to\inf(S)$, thus there exists a sequence $x_n$ where $x_n\to\inf(S)$. Q.E.D.
+
+    % \item [64.)] ***
+
+    \item [65.)] So far, the topic I have had the most trouble grasping is $\varepsilon$-$k$ convergence proofs. I understand the process of constructing the proof, but am still working on understanding the logic.
+
+    % \item [66.)] ***
+
+    % \item [67.)] ***
+
+    % \item [68.)] ***
+
+    % \item [69.)] ***
+
+    % \item [70.)] ***
+
+    % \item [71.)] ***
+
+    % \item [74.)] ***
+
+    % \item [75.)] ***
+
+    % \item [76.)] ***
+
+    \item [77.)] Let $x_n$ and $y_n$ be sequences where $x_n=y_n=n$. Since $n$ is stricly increasing, so are $x_n$ and $y_n$. However $x_n-y_n=n-n=0$, and $0$ is not strictly increasing, thus $x_n-y_n$ is not strictly increasing.
+
+    \item [79.)] A subsequence of $x_n$ is a sequence $y_k$ such that $y_k=x_{n_k}$ for all $k\in\mathbb{N}$, where $n_k$ is a strictly increasing sequence of natural numbers.
+
+    \item [80.)] You can view subsequences as a more abstract form of function composition. You have $x_n$, which is a function $f:\mathbb{N}\to\mathbb{R}$, and you have $n_k$, which is a function $g:\mathbb{N}\to\mathbb{N}$. When you let $y_k=x_{n_k}$, this is equivalent to $y_k=f(g(k))$. Since the codomain of $g$ and domain of $f$ are the same, namely $\mathbb{N}$, we know this function composition is valid.
+
+    \item [81.)] Let $y_k=x_{2k}$, thus $y_k=(-1)^{2k}=1$ for all $k\in\mathbb{N}$, thus $y_k\to1$, thus $y_k$ is convergent.
+
+    \item [82.)] \begin{itemize}
+        \item [a.)] DNE, if $y_k\preceq x_n$ and $x_n\to L$, then $y_k\to L$ as per theorem 19.
+
+        \item [b.)] $n-(-1)^nn$, $x_n$ diverges, but $y_k=x_{2k}=2k-(-1)^{2k}2k=2k-2k=0,\,\therefore y_n\to0$.
+
+    \end{itemize}
+
+    \item [83.)] Setting $x_n=y_k$ and solving for $n$, we can find a suitable $n_k$:
+    \[2n-1=8k+1\implies2n=8k+2\implies n=4k+1\]
+    Thus when $n_k=4k+1$, $x_{n_k}=2(4k+1)-1=8k+2-1=8k+1=y_k$, thus $y_k\preceq x_n$. Q.E.D.
+
+    \item [84.)] Setting $x_n=y_k$ and solving for $n$, we can find a suitable $n_k$:
+    \[2n-1=8k^2+24k+17\implies2n=8k^2+24k+18\implies n=4k^2+12k+9\]
+    Thus when $n_k=4k^2+12k+9$, $x_{n_k}=2(4k^2+12k+9)-1=8k^2+24k+17=y_k$, thus $y_k\preceq x_n$. Q.E.D.
+
+    \item [85.)] \begin{itemize}
+        \item [a.)] ***
+
+        \item [b.)] ***
+    \end{itemize}
+
+    \item [86.)] \begin{itemize}
+        \item [a.)] True; Let $n_k=k$, thus $x_k=x_{n_k}$, thus $x\preceq x$.
+
+        \item [b.)] False; Let $x_n=(-1)^n$ and $y_n=(-1)^{n+1}$. 
+
+        \item [c.)] True; Let ***
+    \end{itemize}
+
+    % \item [87.)] ***
+
+    % \item [88.)] ***
+
+    % \item [89.)] ***
+
+    \item [90.)] Since $x_n$ is bounded, $x_n\leq M$ for some $M\in\mathbb{R}$. In addition, since $y\preceq x$, for all $k\in\mathbb{N}$, there exists $n\in\mathbb{N}$ such that $y_k=x_n$, thus $y_k=x_n\leq M$, thus $y_k\leq M$ for all $k$, thus $y_k$ is bounded. Q.E.D.
+
+    \item [91.)] \begin{itemize}
+        \item [a.)] $S=\left\{\dfrac{1}{n}:n\in\mathbb{N}\right\}$ are the friends of $x_n$.
+
+        \item [b.)] $S=\{1\}$ is the friend of $y_n$.
+    \end{itemize}
+
+    \item [92.)] $S=\{n\in\mathbb{N}:21\leq n\leq56\}$ are the friends of $z_n$.
+
+    \item [93.)] Since $x_n$ is bounded, $x_n\leq M$ for some $M\in\mathbb{R}$. Consider $\overline{x}_n$: ***
+
+    % \item [94.)] ***
+
+    % \item [95.)] ***
+
+    % \item [96.)] ***
+
+    % \item [97.)] ***
+
+    % \item [99.)] ***
+
+    % \item [100.)] ***
+
+    % \item [101.)] ***
+
+    % \item [102.)] ***
+
+    % \item [103.)] ***
+
+    % \item [104.)] ***
+
+    % \item [105.)] ***
+
+    % \item [106.)] ***
+
+    % \item [107.)] ***
+
+    % \item [108.)] ***
+
+    % \item [109.)] ***
+
+    % \item [110.)] ***
+
+    % \item [111.)] ***
+
+    % \item [112.)] ***
+
+    \item [113.)] $z\in\mathbb{R}$ is a cluster point of $S$ if for all $\varepsilon>0$ there exists $x\in S$ such that $0<\vertb{x-z}<\varepsilon$.
+
+    \item [114.)] Let $S=\{y\in\mathbb{R}:\vertb{x-y}<r\}$,
+    \[\vertb{x-y}<r\implies-r<x-y<r\implies -r-x<-y<r-x\]
+    \[\implies x-r<y<x+r\implies S=(x-r,x+r)\]
+    Thus $\{y\in\mathbb{R}:\vertb{x-y}<r\}=(x-r,x+r)$ Q.E.D.
+    
+    \item [115.)] $\mathbb{Z}$ has no cluster points.
+    
+    \item [116.)] 1 is a cluster point of $[0,1)$.
+
+    \item [117.)] For $0$ to be a cluster point of $[1,2]$, then for all $\varepsilon>0$ there exists $a\in[1,2]$ where $\vertb{a-0}<\varepsilon$. Let $\varepsilon=\dfrac{1}{2}$, then
+    \[\vertb{a-0}=\vertb{a}<\frac{1}{2}\implies -\frac{1}{2}<a<\frac{1}{2}\]
+    But since $-\dfrac{1}{2}<a<\dfrac{1}{2}$, $a\notin[1,2]$, thus $a\in[1,2]$ does not exist for 0, thus $0$ is not a cluster point of $[1,2]$. Q.E.D.
+
+    % \item [118.)] ***
+
+    % \item [119.)] ***
+
+    % \item [120.)] ***
+
+    % \item [121.)] ***
+
+    % \item [122.)] ***
+
+    % \item [123.)] ***
+
+    \item [124.)] Let $f:E\to\mathbb{R}$, $c\in E'$, and $L\in\mathbb{R}$, then $f(x)\to L$ as $x\to c$, or $\displaystyle\lim_{x\to c}f(x)=L$ if for all $\varepsilon>0$, there exists $\delta>0$ such that $\vertb{x-c}<\delta\implies\vertb{f(x)-L}<\varepsilon$.
+
+    \item [125.)] Suppose $\displaystyle\lim_{x\to c}f(x)=a$, then for all $\varepsilon>0$, there exists $\delta>0$ where
+    \[\vertb{x-c}<\delta\implies\vertb{a-a}<\varepsilon\]
+    Since $\vertb{a-a}=\vertb{0}=0<\varepsilon$, $\vertb{a-a}<\varepsilon$, thus $\displaystyle\lim_{x\to c}f(x)=a$. Q.E.D.
+
+    \item [126.)] Suppose $\lm{x\to2}3x+1=7$, then for all $\varepsilon>0$, there exists $\delta>0$ where
+    \[\vertb{x-2}<\delta\implies\vertb{3x+1-7}<\e\]
+    We can manipulate the inequality to find a sufficient value for $\delta$:
+    \[\vertb{3x+1-7}=\vertb{3x-6}=\vertb{3(x-2)}=3\vertb{x-2}<\e\]
+    \[\implies\vertb{x-2}<\frac{\e}{3}\]
+    Let $\delta=\dfrac{\e}{3}$, then we know that $\vertb{x-2}<\delta$. Manipulating the inequality:
+    \[\vertb{x-2}<\dfrac{\e}{3}\implies3\vertb{x-2}=\vertb{3(x-2)}=\vertb{3x-6}=\vertb{3x+1-7}<\e\]
+    Thus $\vertb{x-2}<\delta\implies\vertb{3x+1-7}<\e$, thus $\lm{x\to2}3x+1=7$. Q.E.D.
+
+    \item [127.)] Suppose $\lm{x\to5}x^2=25$, then for all $\e>0$, there exists $\delta>0$ where
+    \[\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e\]
+    We can manipulate the inequality to find a sufficient value for $\delta$:
+    \[\vertb{x^2-25}=\vertb{(x-5)(x+5)}=\vertb{x-5}\vertb{x+5}<\e\]
+    \[\implies\vertb{x-5}<\frac{\e}{\vertb{x+5}}\]
+    Let $\delta=\dfrac{\e}{\vertb{x+5}}$, then we know that $\vertb{x-5}<\delta$. Manipulating the inequality:
+    \[\vertb{x-5}<\frac{\varepsilon}{\vertb{x+5}}\implies\vertb{x-5}\vertb{x+5}=\vertb{(x-5)(x+5)}=\vertb{x^2-25}<\e\]
+    Thus $\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e$, thus $\lm{x\to5}x^2=25$. Q.E.D.
+
+    \item [128.)] Suppose $\lm{x\to\frac{1}{2}}\dfrac{1}{x}=2$, then for all $\e>0$ there exists $\delta>0$ where
+    \[\vertb{x-\frac{1}{2}}<\delta\implies\vertb{\frac{1}{x}-2}<\e\]
+    We can manipulate the inequality to find a sufficient value for $\delta$:
+    \[\vertb{\frac{1}{x}-2}=***\]
+
+    % \item [129.)] ***
+
+    % \item [130.)] ***
+
+\end{itemize}
+
+\end{document}

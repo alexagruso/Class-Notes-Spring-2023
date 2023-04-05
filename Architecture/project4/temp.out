@@ -1,0 +1,21 @@
+CS 3339 MIPS Simulator
+Running: sssp.mips
+
+ 7 1
+
+Program finished at pc = 0x400440 (449513 instructions executed)
+
+Cycles: 1046867
+CPI: 2.33
+
+Bubbles: 545359
+Flushes: 51988
+
+RAW Hazards: 349295
+Instructions:Hazards: 1.29
+Stage 2: 0	0.0%
+Stage 3: 225878	64.7%
+Stage 4: 79203	22.7%
+Stage 5: 37697	10.8%
+Stage 6: 6517	1.9%
+Stage 7: 0	0.0%

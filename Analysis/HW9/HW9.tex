@@ -1,5 +1,6 @@
 \documentclass[12pt]{article}
 \pagenumbering{gobble}
+\linespread{1.25}
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -42,6 +43,10 @@
     %     \item [c.)] Since $w=\sup(\mathscr{L})$, $w\geq l$ for all $l\in\mathscr{L}$, thus $w\geq l$ for all lower bounds $l$ of $S$, thus $w=\inf(S)$. Q.E.D.
     % \end{itemize}
 
+    % \item [29.)] \begin{itemize}
+    %     \item [a.)] Since $S$ is nonempty and bounded below, there exists some lower bound $l$ of $S$, thus $\mathscr{L}\neq\varnothing$.
+    % \end{itemize}
+
     % \item [33.)] Let $x,y\in\mathbb{R}$, and consider $x$:
     %     \[x=x+0=x-y+y\]
     %     And thus by the triangle inequality:
@@ -61,7 +66,7 @@
     Solving for $n$, we can find a sufficiently large value for $k$:
     \[\vertb{\frac{2n-1}{n}-2}=\vertb{\frac{2n-1-2n}{n}}=\vertb{\frac{-1}{n}}=\frac{1}{n}<\varepsilon\]
     \[\implies n>\frac{1}{\varepsilon}\]
-    Now, let $k>\frac{1}{\varepsilon}$, then
+    Now, let $k>\dfrac{1}{\varepsilon}$, then
     \[\vertb{\frac{2n-1}{n}-2}=\frac{1}{n}\leq\frac{1}{k}<\frac{1}{1/\varepsilon}=\varepsilon\]
     \[\therefore\ \vertb{\frac{2n-1}{n}-2}<\varepsilon\]
     Thus $x_n\to2$. Q.E.D.
@@ -71,35 +76,36 @@
     Solving for $n$, we can find a sufficiently large value for $k$:
     \[\vertb{\frac{(-1)^n}{n}-0}=\vertb{\frac{(-1)^n}{n}}=\frac{\vertb{(-1)^n}}{\vertb{n}}=\frac{1}{n}<\varepsilon\]
     \[\implies n>\frac{1}{\varepsilon}\]
-    Now, let $k>\frac{1}{\varepsilon}$, then
+    Now, let $k>\dfrac{1}{\varepsilon}$, then
     \[\vertb{\frac{(-1)^n}{n}-0}=\frac{1}{n}\leq\frac{1}{k}<\frac{1}{1/\varepsilon}=\varepsilon\]
     \[\therefore\ \vertb{\frac{(-1)^n}{n}-0}<\varepsilon\]
     Thus $x_n\to0$. Q.E.D.
 
-    \item [42.)] Let $\e>0$ be given, then we know that
-    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}<\e\]
-    given $n\geq k$ for some $k\in\mathbb{N}$. Manipulating the inequality, we find that
-    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}=\vertb{\frac{15n+5-15n+6}{25n-10}}=\vertb{\frac{11}{25n-10}}=\frac{\vertb{11}}{\vertb{25n-10}}=\frac{11}{25n-10}<\e\]
-    \[\implies 25n-10>\frac{11}{\e}\implies n=\frac{11}{25\e}+\frac{2}{5}.\]
-    Let $k>\dfrac{11}{25\e}+\dfrac{2}{5}$:
-    \[\frac{11}{25n-10}<\frac{11}{25k-10}=\frac{11}{25\parns{\frac{11}{25\e}+\frac{2}{5}}-10}=\frac{11}{\frac{11}{\e}+10-10}=\frac{11}{\frac{11}{\e}}=\e\]
-    \[\therefore\ \vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}<\e\]
-    thus $x_n\to\dfrac{3}{5}$. Q.E.D.
+    \pagebreak
+    \item [42.)] Let $\varepsilon>0$, and $n\geq k$ for some $k\in\mathbb{N}$, then
+    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}<\varepsilon\]
+    Solving for $n$, we can find a sifficiently large value for $k$:
+    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}=\vertb{\frac{15n+5-15n+6}{25n-10}}=\vertb{\frac{11}{25n-10}}=\frac{\vertb{11}}{\vertb{25n-10}}=\frac{11}{25n-10}<\varepsilon\]
+    \[\implies\frac{11}{\varepsilon}<25n-10\implies\frac{11}{25\varepsilon}+\frac{2}{5}<n\]
+    Now, let $k>\dfrac{11}{25\varepsilon}+\dfrac{2}{5}$, then
+    \[\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}=\frac{11}{25n-10}\leq\frac{11}{25k-10}<\frac{11}{25\parns{\frac{11}{25\varepsilon}+\frac{2}{5}}-10}=\frac{11}{\frac{11}{\varepsilon}+10-10}=\frac{11}{\frac{11}{\varepsilon}}=\varepsilon\]
+    \[\therefore\vertb{\frac{3n+1}{5n-2}-\frac{3}{5}}<\varepsilon\]
+    Thus $x_n\to\dfrac{3}{5}$. Q.E.D.
 
     % \item [45.)] ***
 
     % \item [46.)] ***
 
-    % \item [47.)] ***
+    % \item [47.)] Let $x_n$ be a bounded sequence, and $y_n\to0$.
 
     % \item [48.)] ***
 
     % \item [49.)] ***
 
-    % \item [50.)] Let $x_n\to A$ and $\varepsilon>0$ be given, then $\vert x_n-A\vert<\varepsilon$ for $n\geq k$ given $k\in\mathbb{N}$. We can manipulate the inequality as follows:
-    % \[\vert x_n-A\vert<\varepsilon\implies \vert c\vert\cdot\vert x_n-A\vert=\vert cx_n-cA\vert<\vert c\vert\varepsilon\]
+    % \item [50.)] Let $x_n\to A$ and $c\in\mathbb{R}$. Since $x_n\to A$, then for all $\varepsilon>0$, there exists $k$ such that $n\geq k\implies\vertb{x_n-A}<\varepsilon$. Consider the following equation:
 
-    % \item [51.)] ***
+
+    \item [51.)] For $x_n$ to be bounded, we must find $M\in\mathbb{R}$ such that $M\geq x_n$ for all $n\in\mathbb{N}$. Consider $x_n$. When $n$ is odd, $2(-1)^n+5=2(-1)+5=5-2=3$. When $n$ is even, $2(-1)^n+5=2(1)+5=2+7$, thus $x_n=3$ or $x_n=7$ for all $n\in\mathbb{N}$. Let $M=7$, thus $M\geq x_n$ for all $n\in\mathbb{N}$, thus $x_n$ is bounded. Q.E.D.
 
     % \item [52.)] ***
 
@@ -107,9 +113,23 @@
 
     % \item [54.)] ***
 
-    % \item [55.)] ***
+    \item [55.)] \begin{itemize}
+        \item [1.)] $(-\infty,0]$
 
-    % \item [56.)] ***
+        \item [2.)] DNE
+
+        \item [3.)] DNE
+    \end{itemize}
+
+    \item [56.)] \begin{itemize}
+        \item [4.)] $(0,1)$
+
+        \item [5.)] $x_n=\dfrac{n}{2n}$
+
+        \item [6.)] $x_n=n$
+
+        \item [7.)] $(0,1)$
+    \end{itemize}
 
     % \item [57.)] ***
 
@@ -119,7 +139,15 @@
 
     % \item [60.)] ***
 
-    % \item [61.)] ***
+    \item [61.)] Let $\varepsilon>0$, and $n\geq k$ for some $k\in\mathbb{N}$, then
+    \[\vertb{\frac{6n+1}{2n-1}-3}<\varepsilon\]
+    Solving for $n$, we can find a sufficiently large value for $k$:
+    \[\vertb{\frac{6n+1}{2n-1}-3}=\vertb{\frac{6n+1-6n+3}{2n-1}}=\vertb{\frac{4}{2n-1}}=\frac{\vertb{4}}{\vertb{2n-1}}=\frac{4}{2n-1}<\epsilon\]
+    \[\implies \frac{4}{\varepsilon}<2n-1\implies\frac{4}{2\varepsilon}+\frac{1}{2}<n\]
+    Now, let $k>\dfrac{4}{2\varepsilon}+\dfrac{1}{2}$, then
+    \[\vertb{\frac{6n+1}{2n-1}-3}=\frac{4}{2n-1}\leq\frac{4}{2k-1}<\frac{4}{2\parns{\frac{4}{2\varepsilon}+\frac{1}{2}}-1}=\frac{4}{\parns{\frac{4}{\varepsilon}}+1-1}=\frac{4}{\frac{4}{\varepsilon}}=\varepsilon\]
+    \[\therefore\ \vertb{\frac{6n+1}{2n-1}-3}<\varepsilon\]
+    Thus $x_n\to3$. Q.E.D.
 
     % \item [62.)] ***
 
@@ -127,7 +155,7 @@
 
     % \item [64.)] ***
 
-    % \item [65.)] ***
+    \item [65.)] So far, the topic I have had the most trouble grasping is $\varepsilon$-$k$ convergence proofs. I understand the process of constructing the proof, but am still working on understanding the logic.
 
     % \item [66.)] ***
 
@@ -141,9 +169,25 @@
 
     % \item [71.)] ***
 
-    % \item [72.)] ***
+    \item [72.)] We can show that $x_n=\dfrac{(-1)^n}{n}$ is not monotonic by showing that it is neither nonincreasing nor nondecreasing. First, consider $x_1$ and $x_2$:
+    \[x_1=\frac{(-1)^1}{1}=-\frac{1}{1}=-1\]
+    \[x_2=\frac{(-1)^2}{1}=\frac{1}{1}=1\]
+    Thus $x_1<x_2$, thus $x_n$ is not nonincreasing. Next, consider $x_2$ and $x_3$:
+    \[x_2=1\]
+    \[x_3=\frac{(-1)^3}{1}=-\frac{1}{1}=-1\]
+    Thus $x_2>x_3$, thus $x_n$ is not nondecreasing, thus $x_n$ is not monotonic. Q.E.D.
 
-    % \item [73.)] ***
+    \item [73.)] \begin{itemize}
+        \item [a.)] First, assume that $x_n$ is a nondecreasing sequence. From this, we know that $x_n\leq x_{n+1}$ for all $n\in\mathbb{N}$. We can manipulate this inequality as follows:
+        \[x_n\leq x_{n+1}\implies 0\leq x_{n+1}-x_n=(\partial x)_n\]
+        Thus $(\partial x)_n\geq0$ for all $n\in\mathbb{N}$, thus $\partial x$ is a nonnegative sequence.
+        
+        Next, assume that $\partial x$ is a nonnegative sequence. From this, we know that $(\partial x)_n=x_{n+1}-x_n\geq0$ for all $n\in\mathbb{N}$. We can manipulate this inequality as follows:
+        \[x_{n+1}-x_n\geq0\implies x_{n+1}\geq x_n\]
+        Thus $x_{n+1}\geq x_n$ for all $n\in\mathbb{N}$, thus $x_n$ is nondecreasing, thus $x_n$ is nondecreasing if and only if $\partial x$ is nonnegative. Q.E.D.
+
+        \item [b.)] This reminds me about a video I watched a while back that was about discrete calculus, and the ``discrete derivative" resembles the $\partial x$ sequence.
+    \end{itemize}
 
     % \item [74.)] ***
 
@@ -153,7 +197,11 @@
 
     % \item [77.)] ***
 
-    % \item [78.)] ***
+    \item [78.)] \begin{itemize}
+        \item [a.)] $x_n=n$.
+
+        \item [b.)] $x_n=-\dfrac{1}{n}$.
+    \end{itemize}
 
     % \item [79.)] ***
 
@@ -192,6 +240,53 @@
     % \item [96.)] ***
 
     % \item [97.)] ***
+
+    \item [98.)] $x_n$ is a cauchy sequence if for all $\varepsilon>0$, there exists $k\in\mathbb{N}$ such that
+    \[n,m\geq k\implies\vertb{x_n-x_m}<\varepsilon\].
+
+    % \item [99.)] ***
+
+    % \item [100.)] ***
+
+    % \item [101.)] ***
+
+    % \item [102.)] ***
+
+    % \item [103.)] ***
+
+    % \item [104.)] ***
+
+    % \item [105.)] ***
+
+    % \item [106.)] ***
+
+    % \item [107.)] ***
+
+    % \item [108.)] ***
+
+    % \item [109.)] ***
+
+    % \item [110.)] ***
+
+    % \item [111.)] ***
+
+    % \item [112.)] ***
+
+    % \item [113.)] ***
+
+    % \item [114.)] ***
+    
+    % \item [115.)] ***
+    
+    % \item [116.)] ***
+
+    % \item [117.)] ***
+
+    % \item [118.)] ***
+
+    % \item [119.)] ***
+
+    % \item [120.)] ***
 
 \end{itemize}
 

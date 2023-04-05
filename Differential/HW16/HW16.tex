@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\newcommand{\lgr}{\mathcal{L}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 16}
+
+\normalsize
+\begin{itemize}
+    \item [1.)] \[\lgr\bracks{e^{at}}=\int_0^\infty e^{at}e^{-st}\,dt=\int_0^\infty e^{-(s-a)t}\,dt=\bracks{-\frac{e^{-(s-a)t}}{(s-a)}}^\infty_0\]
+    \[=-\lim_{t\to\infty}\frac{e^{-(s-a)t}}{(s-a)}+\frac{e^{-(s-a)(0)}}{(s-a)}=-\frac{0}{(s-a)}+\frac{1}{(s-a)}=\frac{1}{s-a}\]
+
+    \item [2.)] \[\lgr\bracks{t^2}=\int_0^\infty t^2e^{-st}\,dt=\bracks{-\frac{t^2e^{-st}}{s}-\frac{2te^{-st}}{s^2}-\frac{2e^{-st}}{s^3}}^\infty_0\]
+    \[=-\frac{0}{s}-\frac{0}{s^2}-\frac{0}{s^3}+\frac{(0)^2e^{-s(0)}}{s}+\frac{2(0)e^{-s(0)}}{s^2}+\frac{2e^{-s(0)}}{s^3}=0+\frac{2}{s^3}=\frac{2}{s^3}\]
+
+    \item [3.)] \[\lgr\bracks{k}=\int^\infty_0ke^{-st}\,dt=\bracks{-\frac{ke^{-st}}{s}}^\infty_0=-\lim_{t\to\infty}\frac{ke^{-st}}{s}+\frac{ke^{-s(0)}}{s}=-\frac{0}{s}+\frac{k}{s}=\frac{k}{s}\]
+
+    \item [4.)] \[\lgr\bracks{\sinh(t)}=\int^\infty_0\sinh(t)e^{-st}\,dt=\int^\infty_0\frac{1}{2}\parns{e^t-e^{-t}}e^{-st}\,dt\]
+    \[=\frac{1}{2}\int^\infty_0e^{(1-s)t}-e^{(-1-s)t}\,dt=\frac{1}{2}\bracks{\frac{e^{(1-s)t}}{(1-s)}}^\infty_0-\frac{1}{2}\bracks{\frac{e^{(-1-s)t}}{(-1-s)}}^\infty_0\]
+    \[=\frac{1}{2}\parns{\lim_{t\to\infty}\frac{e^{(1-s)t}}{(1-s)}-\frac{e^{(1-s)(0)}}{(1-s)}}-\frac{1}{2}\parns{\lim_{t\to\infty}\frac{e^{(-1-s)t}}{(-1-s)}-\frac{e^{(-1-s)(0)}}{(-1-s)}}\]
+    \[=\frac{1}{2}\parns{\frac{0}{1-s}-\frac{1}{1-s}}-\frac{1}{2}\parns{\frac{0}{(-1-s)}-\frac{1}{(-1-s)}}=-\frac{1}{2(1-s)}+\frac{1}{2(-1-s)}\]
+    \[=\frac{(1-s)-(-1-s)}{2(s^2-1)}=\frac{2}{2(s^2-1)}=\frac{1}{s^2-1}\]
+
+    \item [5.)] \[\lgr\bracks{5+3e^{3t}-5t^3+4\sin\parns{\sqrt3t}-6\cosh(5t)}=\frac{5}{s}+\frac{3}{s-3}-\frac{30}{s^4}+\frac{4\sqrt3}{s^2+3}-\frac{6s}{s^2-25}\]
+
+    \item [6.)] \[\lgr\bracks{\sinh(2t)+5\cos(3t)}=\frac{2}{s^2-4}+\frac{5s}{s^2+9}\]
+
+    \item [7.)] \[\lgr\bracks{(2e^{4t}-5)^2}=\lgr\bracks{4e^{8t}-20e^{4t}+25}=\frac{4}{s-8}-\frac{20}{s-4}+\frac{25}{s}\]
+
+    \item [8.)] \[\lgr\bracks{(\sin(2t)-\cos(2t))^2}\lgr\bracks{\sin^2(2t)-2\sin(2t)\cos(2t)+\cos^2(2t)}\]
+    \[=-\lgr\bracks{2\sin(2t)\cos(2t)}=-\lgr\bracks{\sin(4t)}=-\frac{4}{s^2+16}\]
+
+    \item [9.)] \[\lgr\bracks{e^{4t}\cos(3t)}=F(s-4)=\frac{s-4}{(s-4)^2+9}\]
+
+    \item [10.)] \[\lgr\bracks{e^{-2t}\sin(7t)}=F(s+2)=\frac{7}{(s+2)^2+49}\]
+
+    \item [11.)] \[\lgr\bracks{2\sinh(t)\sin(2t)}=\lgr\bracks{\parns{e^t-e^{-t}}\sin(2t)}=\lgr\bracks{e^t\sin(2t)-e^{-t}\sin(2t)}\]
+    \[=F(s-1)-F(s+1)=\frac{2}{(s-1)^2+4}-\frac{2}{(s+1)^2+4}\]
+
+    \item [12.)] \[\lgr\bracks{e^{-2t}(3\cos(4t)-6\sin(5t))}=\lgr\bracks{3e^{-2t}\cos(4t)-6e^{-2t}\sin(5t)}\]
+    \[=\frac{3(s+2)}{(s+2)^2+16}-\frac{30}{(s+2)^2+25}\]
+\end{itemize}
+\end{document}

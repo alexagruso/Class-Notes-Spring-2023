@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1679964168 "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.tex" "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.pdf" "HW9" 1679964168
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.aux" 1679964168 32 044b7f8fc9779af7531264e0c5c84b6d ""
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.tex" 1679964168 5839 82836a3ebe57b8a0aafe311d0f8a9281 ""
+["pdflatex"] 1680323901 "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.tex" "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.pdf" "HW9" 1680371858
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.aux" 1680323901 32 c81c40425fbb5e93b90fba65da0b5e61 ""
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.tex" 1680371857 10004 125dc81c205962a346890fd40c3d3bd9 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -53,11 +53,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1677215923 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1677215934 327343 41a22076d79f3b37803909eea542967d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1677215926 1329897 0e89215d78960e72cc79e9cc7d752272 ""
-  "HW9.aux" 1679964168 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "HW9.tex" 1679964168 5839 82836a3ebe57b8a0aafe311d0f8a9281 ""
+  "HW9.aux" 1680323901 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "HW9.tex" 1680371857 10004 125dc81c205962a346890fd40c3d3bd9 ""
   (generated)
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.pdf"
-  "HW9.log"
-  "HW9.pdf"
   "HW9.aux"
+  "HW9.pdf"
   "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.log"
+  "HW9.log"
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW9/HW9.pdf"
