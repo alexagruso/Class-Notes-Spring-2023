@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.2.14)  3 APR 2023 11:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.4.1)  5 APR 2023 21:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alexander/Documents/ClassSpring2023/Differential/HW17/HW17.tex
-(/home/alexander/Documents/ClassSpring2023/Differential/HW17/HW17.tex
+**/home/alexander/Documents/School/ClassSpring2023/Differential/HW17/HW17.tex
+(/home/alexander/Documents/School/ClassSpring2023/Differential/HW17/HW17.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -166,7 +166,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count272
 \l__pdf_internal_box=\box52
-) (/home/alexander/Documents/ClassSpring2023/Differential/HW17/HW17.aux)
+) (/home/alexander/Documents/School/ClassSpring2023/Differential/HW17/HW17.aux)
 \openout1 = `HW17.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -260,20 +260,20 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] (/home/alexander/Documents/ClassSpring2023/Differential/HW17/HW17.aux) ) 
+] [2] (/home/alexander/Documents/School/ClassSpring2023/Differential/HW17/HW17.aux) ) 
 Here is how much of TeX's memory you used:
  3649 strings out of 480954
- 50972 string characters out of 5908242
- 349403 words of memory out of 5000000
+ 51035 string characters out of 5908243
+ 360403 words of memory out of 5000000
  20855 multiletter control sequences out of 15000+600000
  408075 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 70i,10n,77p,281b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/alexander/Documents/ClassSpring2023/Differential/HW17/HW17.pdf (1 page, 54928 bytes).
+ 70i,11n,77p,288b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on /home/alexander/Documents/School/ClassSpring2023/Differential/HW17/HW17.pdf (2 pages, 67166 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 39 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
