@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.4.1)  7 APR 2023 20:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.4.1)  8 APR 2023 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.tex
-(/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.tex
+**/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.tex
+(/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -137,8 +137,8 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count268
 \l__pdf_internal_box=\box51
-) (/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.aux)
-\openout1 = `HW10.aux'.
+) (/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.aux)
+\openout1 = `HW11.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
@@ -202,20 +202,20 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 62.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] [3] (/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.aux) ) 
+] [2] (/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.aux) ) 
 Here is how much of TeX's memory you used:
  2362 strings out of 480954
  31487 string characters out of 5908243
- 330087 words of memory out of 5000000
+ 326087 words of memory out of 5000000
  19598 multiletter control sequences out of 15000+600000
  408569 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  68i,10n,74p,514b,272s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.pdf (3 pages, 97029 bytes).
+Output written on /home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.pdf (2 pages, 90919 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 38 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

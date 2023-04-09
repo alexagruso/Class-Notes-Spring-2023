@@ -90,18 +90,6 @@
 
     % \item [52.)] Let $M,N\in\mathbb{R}$ where $M\geq x_n$ and $N\geq y_n$ for all $n\in\mathbb{N}$. Consider $z_n=x_n+y_n$. $x_n+y_n\leq M+N$, thus $z_n\leq M+N$ for all $n\in\mathbb{N}$, thus $z_n$ is bounded. Q.E.D.
 
-    \item [53.)] \begin{itemize}
-        \item [a.)] False; many sequences diverge.
-
-        \item [b.)] False; $(-1)^n$ diverges, but $\bracks{(-1)^n}^2=(-1)^{2n}=1\to1$.
-    \end{itemize}
-
-    \item [54.)] \begin{itemize}
-        \item [a.)] $(-1)^n$
-
-        \item [b.)] DNE; A sequence cannot converge to a value while having terms that are arbitrarily far from that value.
-    \end{itemize}
-
     % \item [57.)] ***
 
     % \item [58.)] ***
@@ -140,10 +128,6 @@
 
     % \item [76.)] ***
 
-    \item [77.)] Let $x_n$ and $y_n$ be sequences where $x_n=y_n=n$. Since $n$ is stricly increasing, so are $x_n$ and $y_n$. However $x_n-y_n=n-n=0$, and $0$ is not strictly increasing, thus $x_n-y_n$ is not strictly increasing.
-
-    \item [79.)] A subsequence of $x_n$ is a sequence $y_k$ such that $y_k=x_{n_k}$ for all $k\in\mathbb{N}$, and where $n_k$ is a strictly increasing sequence of natural numbers.
-
     \item [80.)] You can view subsequences as a more abstract form of function composition. You have $x_n$, which is a function $f:\mathbb{N}\to\mathbb{R}$, and you have $n_k$, which is a function $g:\mathbb{N}\to\mathbb{N}$. When you let $y_k=x_{n_k}$, this is equivalent to $y_k=(f\circ g)(k)=f(g(k))$. Since the codomain of $g$ and domain of $f$ are the same, namely $\mathbb{N}$, we know this function composition is well defined.
 
     \item [81.)] Let $y_k=x_{2k}$, thus $y_k=(-1)^{2k}=1$ for all $k\in\mathbb{N}$, thus $y_k\to1$, thus $y_k$ is convergent.
@@ -154,14 +138,6 @@
         \item [b.)] $x_n=n-(-1)^nn$; $x_n$ diverges, but $y_k=x_{2k}=2k-(-1)^{2k}2k=2k-2k=0,\,\therefore y_n\to0$.
 
     \end{itemize}
-
-    \item [83.)] Setting $x_n=y_k$ and solving for $n$, we can find a suitable $n_k$:
-    \[2n-1=8k+1\implies2n=8k+2\implies n=4k+1\]
-    Thus when $n_k=4k+1$, $x_{n_k}=2(4k+1)-1=8k+2-1=8k+1=y_k$, thus $y_k\preceq x_n$. Q.E.D.
-
-    \item [84.)] Setting $x_n=y_k$ and solving for $n$, we can find a suitable $n_k$:
-    \[2n-1=8k^2+24k+17\implies2n=8k^2+24k+18\implies n=4k^2+12k+9\]
-    Thus when $n_k=4k^2+12k+9$, $x_{n_k}=2(4k^2+12k+9)-1=8k^2+24k+17=y_k$, thus $y_k\preceq x_n$. Q.E.D.
 
     % \item [85.)] \begin{itemize}
     %     \item [a.)] True; If we visualize 
@@ -183,12 +159,10 @@
 
     % \item [89.)] ***
 
-    \item [90.)] Since $x_n$ is bounded, there exists $M\in\mathbb{R}$ where $x_n\leq M$ for all $n\in\mathbb{N}$. Since $y_k\preceq x_n$, $y_k=x_{n_k}\leq M$ for all $k\in\mathbb{N}$, thus $y_k$ is bounded. Q.E.D.
-
     \item [91.)] \begin{itemize}
-        \item [a.)] $S=\left\{\dfrac{1}{n}:n\in\mathbb{N}\right\}$ are the friends of $x_n$.
+        \item [a.)] $S=\mathbb{N}$ are the friends of $x_n$.
 
-        \item [b.)] $S=\{1\}$ is the friend of $y_n$.
+    \item [b.)] $S=\{2n\}$ are the friends of $y_n$.
     \end{itemize}
 
     \item [92.)] $S=\{n\in\mathbb{N}:21\leq n\leq56\}$ are the friends of $z_n$.
@@ -231,20 +205,10 @@
 
     % \item [112.)] ***
 
-    \item [113.)] $z\in\mathbb{R}$ is a cluster point of $S$ if for all $\varepsilon>0$ there exists $x\in S$ such that $0<\vertb{x-z}<\varepsilon$.
-
     \item [114.)] Let $S=\{y\in\mathbb{R}:\vertb{x-y}<r\}$,
     \[\vertb{x-y}<r\implies-r<x-y<r\implies -r-x<-y<r-x\]
     \[\implies x-r<y<x+r\implies S=(x-r,x+r)\]
     Thus $\{y\in\mathbb{R}:\vertb{x-y}<r\}=(x-r,x+r)$ Q.E.D.
-    
-    \item [115.)] $\mathbb{Z}$ has no cluster points.
-    
-    \item [116.)] $[0,1]$ are the cluster points of $[0,1)$.
-
-    \item [117.)] For $0$ to be a cluster point of $[1,2]$, then for all $\varepsilon>0$ there exists $a\in[1,2]$ where $\vertb{a-0}<\varepsilon$. Let $\varepsilon=\dfrac{1}{2}$, then
-    \[\vertb{a-0}=\vertb{a}<\frac{1}{2}\implies -\frac{1}{2}<a<\frac{1}{2}\]
-    But since $-\dfrac{1}{2}<a<\dfrac{1}{2}$, $a\notin[1,2]$, there exists $\e$ where no $a\in[1,2]$ satisfies the definition, thus $0$ is not a cluster point of $[1,2]$. Q.E.D.
 
     % \item [118.)] ***
 
@@ -257,12 +221,6 @@
     % \item [122.)] ***
 
     % \item [123.)] ***
-
-    \item [124.)] Let $f:E\to\mathbb{R}$, $c\in E'$, and $L\in\mathbb{R}$, then $f(x)\to L$ as $x\to c$, or $\displaystyle\lim_{x\to c}f(x)=L$, if for all $\varepsilon>0$, there exists $\delta>0$ such that $\vertb{x-c}<\delta\implies\vertb{f(x)-L}<\varepsilon$.
-
-    \item [125.)] Suppose $\displaystyle\lim_{x\to c}f(x)=a$, then for all $\varepsilon>0$, there exists $\delta>0$ where
-    \[\vertb{x-c}<\delta\implies\vertb{f(x)-a}<\varepsilon\]
-    Since $\vertb{f(x)-a}=\vertb{a-a}=\vertb{0}=0<\varepsilon$, $\vertb{a-a}<\varepsilon$, thus $\displaystyle\lim_{x\to c}f(x)=a$. Q.E.D.
 
     \pagebreak
     \item [126.)] Suppose $\lm{x\to2}3x+1=7$, then for all $\varepsilon>0$, there exists $\delta>0$ where
@@ -291,6 +249,22 @@
     % \item [129.)] ***
 
     % \item [130.)] ***
+
+    % \item [131.)] ***
+
+    % \item [132.)] ***
+
+    % \item [133.)] ***
+
+    % \item [134.)] ***
+
+    % \item [135.)] ***
+
+    % \item [136.)] ***
+
+    % \item [137.)] ***
+
+    % \item [138.)] ***
 
 \end{itemize}
 

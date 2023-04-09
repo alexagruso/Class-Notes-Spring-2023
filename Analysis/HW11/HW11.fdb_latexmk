@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1680918343 "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.tex" "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.pdf" "HW10" 1680978268
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.aux" 1680918343 32 ab05033ccbb38b00a31b200ccedf8001 ""
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.tex" 1680978268 11742 22cd4536f046a802979092f21fefddf5 ""
+["pdflatex"] 1681010824 "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.tex" "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.pdf" "HW11" 1681012396
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.aux" 1681010824 32 044b7f8fc9779af7531264e0c5c84b6d ""
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.tex" 1681012396 9095 c1e40e4a8d2fd5c9fa9ca86223044e97 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -55,11 +55,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1680741051 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1677215934 327343 41a22076d79f3b37803909eea542967d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1680387110 1329900 874896efe3efd94b1e3c58e82feaf3c0 ""
-  "HW10.aux" 1680918343 32 ab05033ccbb38b00a31b200ccedf8001 "pdflatex"
-  "HW10.tex" 1680978268 11742 22cd4536f046a802979092f21fefddf5 ""
+  "HW11.aux" 1681010824 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "HW11.tex" 1681012396 9095 c1e40e4a8d2fd5c9fa9ca86223044e97 ""
   (generated)
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.log"
-  "HW10.pdf"
-  "HW10.log"
-  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW10/HW10.pdf"
-  "HW10.aux"
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.pdf"
+  "HW11.log"
+  "/home/alexander/Documents/School/ClassSpring2023/Analysis/HW11/HW11.log"
+  "HW11.pdf"
+  "HW11.aux"
