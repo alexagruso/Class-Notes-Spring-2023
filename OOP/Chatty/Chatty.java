@@ -1,38 +1,35 @@
-import java.util.ArrayList;
+import java.awt.GridLayout;
 
 import javax.swing.*;
 
+class Message {
+
+}
+
 class Client {
-    private String username;
+    private String user;
+
     private JFrame window;
+    // private JLabel 
 
-    public Client(String username) {
-        this.username = username;
+    public Client(String user) {
+        this.user = user;
 
-        window = new JFrame("User: " + username);
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        window.setSize(1000, 1000);
+        window = new JFrame(user);
+        window.setSize(250, 500);
+        window.setLayout(new GridLayout(2, 1));
+
         window.setVisible(true);
-    }
-
-    public void Update(ArrayList<JLabel> chatlog) {
-        window.removeAll();
-
-        for (JLabel message : chatlog) {
-            window.add(message);
-        }
     }
 }
 
 public class Chatty {
     public static void main(String[] args) {
-        ArrayList<JLabel> chatLog;
-
         Client[] clients = {
-                new Client("User 1"),
-                new Client("User 2"),
-                new Client("User 3"),
-                new Client("User 4"),
+            new Client("User 1"),
+            new Client("User 2"),
+            new Client("User 3"),
+            new Client("User 4"),
         };
     }
 }
