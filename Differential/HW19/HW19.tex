@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\lp}{\mathcal{L}}
+\newcommand{\lpi}{\mathcal{L}^{-1}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\pderv}[2]{\dfrac{\partial#1}{\partial#2}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3323 Homework 19}
+
+\normalsize
+\begin{itemize}
+    \item [a.)] \[\lpi\bracks{\frac{s}{(s+3)(s-2)}}=\frac{1}{5}\lpi\bracks{\frac{3}{s+3}+\frac{2}{s-2}}=\frac{3}{5}e^{-3t}+\frac{2}{5}e^{2t}\]
+
+    \item [b.)] \[\lpi\bracks{\frac{1}{s(s+2)}}=\frac{1}{2}\lpi\bracks{\frac{1}{s}-\frac{1}{s+2}}=\frac{1}{2}-\frac{1}{2}e^{-2t}\]
+
+    \item [c.)] \[\lpi\bracks{\frac{s^2}{(s^2-1)(s^2+4)}}=\frac{1}{5}\lpi\bracks{\frac{4}{s^2+4}+\frac{1}{s^2-1}}\]
+\end{itemize}
+\end{document}

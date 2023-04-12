@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1681320212 "/home/alexander/Documents/ClassSpring2023/Differential/HW18/HW18.tex" "/home/alexander/Documents/ClassSpring2023/Differential/HW18/HW18.pdf" "HW18" 1681320512
-  "/home/alexander/Documents/ClassSpring2023/Differential/HW18/HW18.aux" 1681320212 32 044b7f8fc9779af7531264e0c5c84b6d ""
-  "/home/alexander/Documents/ClassSpring2023/Differential/HW18/HW18.tex" 1681320512 3432 1a5432fcd55ab28ca3f227eb64c23823 ""
+["pdflatex"] 1681321276 "/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.tex" "/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.pdf" "HW19" 1681321276
+  "/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.aux" 1681321276 32 3985256e7290058c681f74d7a3565a19 ""
+  "/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.tex" 1681321275 1253 bd57c3e53192809a64180a97cf9a718a ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -59,11 +59,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1676413314 39447 2134d78a2da0cee52270db0ec417a200 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1676413328 327343 41a22076d79f3b37803909eea542967d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1676413319 1329898 9052f1448a59edd75d4416110dac0713 ""
-  "HW18.aux" 1681320212 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "HW18.tex" 1681320512 3432 1a5432fcd55ab28ca3f227eb64c23823 ""
+  "HW19.aux" 1681321276 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "HW19.tex" 1681321275 1253 bd57c3e53192809a64180a97cf9a718a ""
   (generated)
-  "HW18.aux"
-  "HW18.pdf"
-  "HW18.log"
-  "/home/alexander/Documents/ClassSpring2023/Differential/HW18/HW18.log"
-  "/home/alexander/Documents/ClassSpring2023/Differential/HW18/HW18.pdf"
+  "HW19.pdf"
+  "HW19.log"
+  "HW19.aux"
+  "/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.log"
+  "/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.pdf"
