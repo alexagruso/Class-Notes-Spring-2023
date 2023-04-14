@@ -59,10 +59,6 @@
 
     % \item [45.)] ***
 
-    \item [46.)] Consider the sequences $x_n=\dfrac{1}{n}$ and $y_n=0$. For all $n\in\mathbb{N}$, the following is true:
-    \[0<\frac{1}{2^n}\leq\frac{1}{n}\]
-    Since we know that $\dfrac{1}{n}\to0$ and $0\to0$, then by the squeeze theorem we can conclude that $2^{-n}\to0$. Q.E.D.
-
     % \item [47.)] Let $y_n\to0$, thus for all $\e_1>0$, there exists $k\in\mathbb{N}$ where
     % \[n\geq k\implies\vertb{y_n-0}<\e_1\]
     % Now suppose $x_n$ is a bounded sequence, and $x_ny_n\to0$, then for all $\e>0$,
@@ -108,42 +104,83 @@
 
     % \item [64.)] ***
 
-    % \item [65.)] So far, the topic I have had the most trouble grasping is $\varepsilon$-$k$ convergence proofs. I understand the process of constructing the proof, but am still working on understanding the logic.
+    \item [65.)] So far, the topic I have had the most trouble understanding is $\e-\delta$ limit proofs.
 
-    % \item [66.)] ***
+    \item [66.)] \begin{itemize}
+        \item [a.)] $x_n=n$
 
-    % \item [67.)] ***
-
-    % \item [68.)] ***
-
-    % \item [69.)] ***
-
-    % \item [70.)] ***
-
-    % \item [71.)] ***
-
-    % \item [74.)] ***
-
-    % \item [75.)] ***
-
-    % \item [76.)] ***
-
-    \item [80.)] You can view subsequences as a more abstract form of function composition. You have $x_n$, which is a function $f:\mathbb{N}\to\mathbb{R}$, and you have $n_k$, which is a function $g:\mathbb{N}\to\mathbb{N}$. When you let $y_k=x_{n_k}$, this is equivalent to $y_k=(f\circ g)(k)=f(g(k))$. Since the codomain of $g$ and domain of $f$ are the same, namely $\mathbb{N}$, we know this function composition is well defined.
-
-    \item [81.)] Let $y_k=x_{2k}$, thus $y_k=(-1)^{2k}=1$ for all $k\in\mathbb{N}$, thus $y_k\to1$, thus $y_k$ is convergent.
-
-    \item [82.)] \begin{itemize}
-        \item [a.)] DNE; if $y_k\preceq x_n$ and $x_n\to L$, then $y_k\to L$ as per theorem 19.
-
-        \item [b.)] $x_n=n-(-1)^nn$; $x_n$ diverges, but $y_k=x_{2k}=2k-(-1)^{2k}2k=2k-2k=0,\,\therefore y_n\to0$.
-
+        \item [b.)] DNE; a sequence cannot converge to a value while also having terms arbitrarily far from that value.
     \end{itemize}
 
-    % \item [85.)] \begin{itemize}
-    %     \item [a.)] True; If we visualize 
+    \item [68.)] Let $P(n)$ propose that $1-y_1-y_2-\cdots-y_n=(1-x_1)(1-x_2)\cdots(1-x_n)$. For the base case, consider $P(1)$:
+    \[y_1=x_1\implies1-y_1=1-x_1\]
+    Thus $P(1)$ holds. For the induction step, assume $P(n)$ and consider $P(n+1)$:
+    \[1-y_1-y_2-\cdots-y_n=(1-x_1)(1-x_2)\cdots(1-x_n)\]
+    \[\implies1-y_1-y_2-\cdots-y_n-y_{n+1}=(1-x_1)(1-x_2)\cdots(1-x_n)-y_{n+1}\]
+    \[=(1-x_1)(1-x_2)\cdots(1-x_n)-x_{n+1}(1-x_1)(1-x_2)\cdots(1-x_n)\]
+    \[=(1-x_1)(1-x_2)\cdots(1-x_n)(1-x_{n+1})\]
+    Thus $P(n)$ holds for all $n\in\mathbb{N}$. Q.E.D.
 
-    %     \item [b.)] True;
-    % \end{itemize}
+    \item [69.)] \begin{itemize}
+        \item [a.)] $\{x_n\}_{n\in\mathbb{N}}$ is nondecreasing if $x_n\leq x_{n+1}$ for all $n\in\mathbb{N}$.
+
+        \item [b.)] $\{x_n\}_{n\in\mathbb{N}}$ is strictly decreasing if $x_n>x_{n+1}$ for all $n\in\mathbb{N}$.
+    \end{itemize}
+
+    \item [70.)] Consider $x_n$ and $x_{n+1}$:
+    \[x_{n+1}-x_n=2(n+1)+6-(2n+6)=2n+2+6-2n-6=2\]
+    \[\implies x_{n+1}-x_n=2>0\implies x_{n+1}>x_n\]
+    Thus $x_{n+1}>x_n$ for all $n\in\mathbb{N}$, thus $x_n$ is strictly increasing. Q.E.D.
+
+    \item [71.)] Consider $x_n$ and $x_{n+1}$:
+    \[x_{n+1}-x_n=5^{-(n+1)}-5^{-n}=\frac{1}{5^{n+1}}-\frac{1}{5^n}=\frac{1}{5^{n+1}}-\frac{5}{5^{n+1}}=-\frac{4}{5^{n+1}}<0\]
+    \[\implies x_{n+1}-x_n=-\frac{4}{5^{n+1}}<0\implies x_{n+1}<x_n\]
+    Thus $x_{n+1}<x_n$ for all $n\in\mathbb{N}$, thus $x_n$ is strictly decreasing. Q.E.D.
+
+    \item [74.)] 
+    \[
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        $a_n$ & X & X & X & X & & & X \\
+        \hline
+        $b_n$ & X & X & & X & & X & X \\
+        \hline
+        $c_n$ & X & & & & & & \\
+        \hline
+        $d_n$ & X & X & & & & & \\
+    \end{tabular}
+    \]
+
+    \item [75.)] 
+    \[
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        $e_n$ & X & X & X & & X & & X \\
+        \hline
+        $f_n$ & & & X & & X & & X \\
+        \hline
+        $g_n$ & & & & & & & \\
+        \hline
+        $h_n$ & & & X & & & & X\\
+    \end{tabular}
+    \]
+
+    \item [76.)]
+    \[
+    \begin{tabular}{c|c|c|c|c|c|c|c}
+        $i_n$ & & & & & & & \\
+        \hline
+        $j_n$ & & & X & & X & X \\
+        \hline
+        $k_n$ & & & & & & & \\
+        \hline
+        $l_n$ & & & X & & & & X \\
+    \end{tabular}
+    \]
+
+    \item [85.)] \begin{itemize}
+        \item [a.)] True; Let $x_n$ be a bounded sequence, thus $x_n\leq M$ for some $M\in\mathbb{R}$. Let $y_k\preceq x_n$, thus for all $k\in\mathbb{N}$, there exists $n\in\mathbb{N}$ where $y_k=x_n$, thus $y_k\leq M$ for all $k\in\mathbb{N}$, thus $y_k$ is bounded.
+
+        \item [b.)] True; Since $x_n$ is monotonic, all terms $x_n$ maintain monotonicity with all $x_m$ where $m>n$, thus if $y_k\preceq x_n$, then $y_k$ is monotonic.
+    \end{itemize}
 
     % \item [86.)] \begin{itemize}
     %     \item [a.)] True; Let $n_k=k$, thus $x_k=x_{n_k}$, thus $x\preceq x$.
@@ -165,7 +202,7 @@
     \item [b.)] $S=\{2n\}$ are the friends of $y_n$.
     \end{itemize}
 
-    \item [92.)] $S=\{n\in\mathbb{N}:21\leq n\leq56\}$ are the friends of $z_n$.
+    \item [92.)] $S=\{n\in\mathbb{N}:1\leq n\leq36\}$ are the friends of $z_n$.
 
     % \item [93.)] Since $x_n$ is bounded, $x_n\leq M$ for some $M\in\mathbb{R}$. Consider $\overline{x}_n$: ***
 
@@ -177,19 +214,19 @@
 
     % \item [97.)] ***
 
-    % \item [99.)] ***
+    \item [99.)] Let $x_n=n-(-1)^nn$. $x_n$ is unbounded, but $y_k=x_{2k}=2k-(-1)^{2k}2k=2k-2k=0$, thus $y_k\preceq x_n$ and $y_k\to0$.
 
-    % \item [100.)] ***
+    \item [100.)] Every cauchy sequence is convergent according to theorem 23, and no convergent sequence can be unbounded.
 
-    % \item [101.)] ***
+    \item [101.)] Every cauchy sequence is convergent according to theorem 23.
 
-    % \item [102.)] ***
+    \item [102.)] $x_n=\dfrac{\sin x}{x}$ is not monotonic, but $x_n\to0$, thus $x_n$ is convergent and thus cauchy.
 
-    % \item [103.)] ***
+    \item [103.)] Let $x_n=\dfrac{1}{n^2}$. Since $x_n\to\dfrac{\pi^2}{6}$, $x_n$ is convergent and thus cauchy. Q.E.D.
 
-    % \item [104.)] ***
+    \item [104.)] Let $x_n$ and $y_n$ be cauchy sequences, thus $x_n\to A$ and $y_n\to B$ for some $A,B\in\mathbb{R}$. Let $z_n=x_ny_n$, thus $z_n\to AB$, thus $z_n$ is convergent and thus cauchy. Q.E.D.
 
-    % \item [105.)] ***
+    \item [105.)] Similarly, let $z_n=\dfrac{x_n}{y_n}$ where $y_n\neq0$, thus $z_n\to\dfrac{A}{B}$, thus $z_n$ is convergent and thus cauchy. Q.E.D.
 
     % \item [106.)] ***
 
@@ -206,9 +243,12 @@
     % \item [112.)] ***
 
     \item [114.)] Let $S=\{y\in\mathbb{R}:\vertb{x-y}<r\}$,
-    \[\vertb{x-y}<r\implies-r<x-y<r\implies -r-x<-y<r-x\]
-    \[\implies x-r<y<x+r\implies S=(x-r,x+r)\]
-    Thus $\{y\in\mathbb{R}:\vertb{x-y}<r\}=(x-r,x+r)$ Q.E.D.
+    \[y\in S\implies\vertb{x-y}<r\implies-r<x-y<r\implies -r-x<-y<r-x\]
+    \[\implies x-r<y<x+r\implies y\in(x-r,x+r)\]
+    Thus $S\subseteq(x-r,x+r)$. Next, consider $(x-r,x+r)$:
+    \[y\in(x-r,x+r)\implies x-r<y<x+r\implies r-x>-y>-r-x\]
+    \[\implies -r<x-y<r\implies\vertb{x-y}<r\implies y\in S\]
+    Thus $(x-r,x+r)\subseteq S$, thus $S=(x-r,x+r)$. Q.E.D.
 
     % \item [118.)] ***
 
@@ -223,14 +263,7 @@
     % \item [123.)] ***
 
     \pagebreak
-    \item [126.)] Suppose $\lm{x\to2}3x+1=7$, then for all $\varepsilon>0$, there exists $\delta>0$ where
-    \[\vertb{x-2}<\delta\implies\vertb{3x+1-7}<\e\]
-    We can manipulate the inequality to find a sufficient value for $\delta$:
-    \[\vertb{3x+1-7}=\vertb{3x-6}=\vertb{3(x-2)}=3\vertb{x-2}<\e\]
-    \[\implies\vertb{x-2}<\frac{\e}{3}\]
-    Let $\delta=\dfrac{\e}{3}$. Manipulating the inequality:
-    \[\vertb{x-2}<\dfrac{\e}{3}\implies3\vertb{x-2}=\vertb{3(x-2)}=\vertb{3x-6}=\vertb{3x+1-7}<\e\]
-    Thus $\vertb{x-2}<\delta\implies\vertb{3x+1-7}<\e$, thus $\lm{x\to2}3x+1=7$. Q.E.D.
+    \item [126.)] awd
 
     \item [127.)] Suppose $\lm{x\to5}x^2=25$, then for all $\e>0$, there exists $\delta>0$ where
     \[\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e\]
