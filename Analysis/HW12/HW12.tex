@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \pagenumbering{gobble}
-\linespread{1.1}
+\linespread{1.5}
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -22,6 +22,7 @@
 
 \newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
 \newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
 
 \newcommand{\lm}[1]{\displaystyle\lim_{#1}}
 
@@ -29,7 +30,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[L]{Alexander Agruso}
-\fancyhead[R]{MATH 3380 Homework 10}
+\fancyhead[R]{MATH 3380 Homework 12}
 
 \normalsize
 \begin{itemize}
@@ -104,65 +105,6 @@
 
     % \item [64.)] ***
 
-    \item [65.)] So far, the topics I have had the most trouble understanding are limits and continuity. I know the definitions, and can write proofs, but I lack an intuitive understanding of what the definitions are saying. I plan on supplementing with online resources in order to build a better understanding.
-
-    \item [66.)] \begin{itemize}
-        \item [a.)] $x_n=n$
-
-        \item [b.)] DNE; a sequence cannot converge to a value while also having terms arbitrarily far from that value.
-    \end{itemize}
-
-    \item [68.)] Let $P(n)$ propose that $1-y_1-y_2-\cdots-y_n=(1-x_1)(1-x_2)\cdots(1-x_n)$. For the base case, consider $P(1)$:
-    \[y_1=x_1\implies1-y_1=1-x_1\]
-    Thus $P(1)$ holds. For the induction step, assume $P(n)$ and consider $P(n+1)$:
-    \[1-y_1-y_2-\cdots-y_n=(1-x_1)(1-x_2)\cdots(1-x_n)\]
-    \[\implies1-y_1-y_2-\cdots-y_n-y_{n+1}=(1-x_1)(1-x_2)\cdots(1-x_n)-y_{n+1}\]
-    \[=(1-x_1)(1-x_2)\cdots(1-x_n)-x_{n+1}(1-x_1)(1-x_2)\cdots(1-x_n)\]
-    \[=(1-x_1)(1-x_2)\cdots(1-x_n)(1-x_{n+1})\]
-    Thus $P(n)$ holds for all $n\in\mathbb{N}$. Q.E.D.
-
-    \item [69.)] \begin{itemize}
-        \item [a.)] $\{x_n\}_{n\in\mathbb{N}}$ is nondecreasing if $x_n\leq x_{n+1}$ for all $n\in\mathbb{N}$.
-
-        \item [b.)] $\{x_n\}_{n\in\mathbb{N}}$ is strictly decreasing if $x_n>x_{n+1}$ for all $n\in\mathbb{N}$.
-    \end{itemize}
-
-    \item [70.)] Consider $x_n$ and $x_{n+1}$:
-    \[x_{n+1}-x_n=2(n+1)+6-(2n+6)=2n+2+6-2n-6=2\]
-    \[\implies x_{n+1}-x_n=2>0\implies x_{n+1}>x_n\]
-    Thus $x_{n+1}>x_n$ for all $n\in\mathbb{N}$, thus $x_n$ is strictly increasing. Q.E.D.
-
-    \item [71.)] Consider $x_n$ and $x_{n+1}$:
-    \[x_{n+1}-x_n=5^{-(n+1)}-5^{-n}=\frac{1}{5^{n+1}}-\frac{1}{5^n}=\frac{1}{5^{n+1}}-\frac{5}{5^{n+1}}=-\frac{4}{5^{n+1}}<0\]
-    \[\implies x_{n+1}-x_n=-\frac{4}{5^{n+1}}<0\implies x_{n+1}<x_n\]
-    Thus $x_{n+1}<x_n$ for all $n\in\mathbb{N}$, thus $x_n$ is strictly decreasing. Q.E.D.
-
-    \item [74.)] 
-    \[
-    \begin{tabular}{c|c|c|c|c|c|c|c}
-        $a_n$ & X & X & X & X & & & X \\
-        \hline
-        $b_n$ & X & X & & X & & X & X \\
-        \hline
-        $c_n$ & X & & & & & & \\
-        \hline
-        $d_n$ & X & X & & & & & \\
-    \end{tabular}
-    \]
-
-    \item [75.)] 
-    \[
-    \begin{tabular}{c|c|c|c|c|c|c|c}
-        $e_n$ & X & X & X & & X & & X \\
-        \hline
-        $f_n$ & & & X & & X & & X \\
-        \hline
-        $g_n$ & & & & & & & \\
-        \hline
-        $h_n$ & & & X & & & & X\\
-    \end{tabular}
-    \]
-
     \item [76.)]
     \[
     \begin{tabular}{c|c|c|c|c|c|c|c}
@@ -170,17 +112,11 @@
         \hline
         $j_n$ & & & X & & X & X \\
         \hline
-        $k_n$ & & & & & & & \\
+        $k_n$ & X & & & & & & \\
         \hline
         $l_n$ & & & X & & & & X \\
     \end{tabular}
     \]
-
-    \item [85.)] \begin{itemize}
-        \item [a.)] True; Let $x_n$ be a bounded sequence, thus $x_n\leq M$ for some $M\in\mathbb{R}$. Let $y_k\preceq x_n$, thus for all $k\in\mathbb{N}$, there exists $n\in\mathbb{N}$ where $y_k=x_n$, thus $y_k\leq M$ for all $k\in\mathbb{N}$, thus $y_k$ is bounded.
-
-        \item [b.)] True; Since $x_n$ is monotonic, all terms $x_n$ maintain monotonicity with all $x_m$ where $m>n$, thus if $y_k\preceq x_n$, then $y_k$ is monotonic.
-    \end{itemize}
 
     % \item [86.)] \begin{itemize}
     %     \item [a.)] True; Let $n_k=k$, thus $x_k=x_{n_k}$, thus $x\preceq x$.
@@ -196,37 +132,34 @@
 
     % \item [89.)] ***
 
-    \item [91.)] \begin{itemize}
-        \item [a.)] $S=\mathbb{N}$ are the friends of $x_n$.
-
-    \item [b.)] $S=\{2n\}$ are the friends of $y_n$.
-    \end{itemize}
-
-    \item [92.)] $S=\{n\in\mathbb{N}:1\leq n\leq36\}$ are the friends of $z_n$.
-
     % \item [93.)] Since $x_n$ is bounded, $x_n\leq M$ for some $M\in\mathbb{R}$. Consider $\overline{x}_n$: ***
 
     % \item [94.)] ***
 
     % \item [95.)] ***
 
-    % \item [96.)] ***
+    \item [96.)] Let $S\subseteq\mathbb{N}$, and consider the cases of $S$:
 
-    % \item [97.)] ***
+    Case $S=\mathbb N$: Let $x_n=1$. Since $1\geq 1$, the friends of $x_n$ are $\mathbb{N}$, and thus $S$.
+
+    Case $S\subset\mathbb{N}$: Let the sequence $x_n$ be defined as follows:
+    \[x_n=\begin{cases}
+        1 & n\in S \\
+        -\frac{1}{n} & n\notin S \\
+    \end{cases}\]
+    Since $1>-\dfrac{1}{n}$ for all $n\in\mathbb{N}$, all $n$ for which $x_n=1$ are friends of $x_n$. In addition, for all $m,n\in\mathbb{N}$:
+    \[m\geq n\implies\dfrac{1}{n}\geq\dfrac{1}{m}\implies-\dfrac{1}{n}\leq-\frac{1}{m}\]
+    Thus all $n$ for which $x_n=-\dfrac{1}{n}$ cannot be friends of $x_n$, thus $x_n=1$ for all friends $n$ of $x_n$, thusly all $n\in S$. Finally, we know that $S$ is the set of all friends of $x_n$, thus for all $S\subseteq\mathbb{N}$, there exists a sequence such that $S$ is the set of friends of that sequence. Q.E.D.
+
+    \item [97.)] Let $x_n\to L$, then by theorem 19, $y_k\to L$ for all subsequences $y_k$ of $x_n$. Similarly, since
 
     \item [99.)] Let $x_n=n-(-1)^nn$. $x_n$ is unbounded, but $y_k=x_{2k}=2k-(-1)^{2k}2k=2k-2k=0$, thus $y_k\preceq x_n$ and $y_k\to0$.
 
     \item [100.)] Every cauchy sequence is convergent according to theorem 23, and no convergent sequence can be unbounded.
 
-    \item [101.)] Every cauchy sequence is convergent according to theorem 23.
+    \item [103.)] Let $x_n=\dfrac{1}{n^2}$. Since $x_n\to0$, $x_n$ is convergent and thus cauchy. Q.E.D.
 
-    \item [102.)] $x_n=\dfrac{(-1)^n}{n}$ is not monotonic, but $x_n\to0$, thus $x_n$ is convergent and thus cauchy.
-
-    \item [103.)] Let $x_n=\dfrac{1}{n^2}$. Since $x_n\to\dfrac{\pi^2}{6}$, $x_n$ is convergent and thus cauchy. Q.E.D.
-
-    \item [104.)] Let $x_n$ and $y_n$ be cauchy sequences, thus $x_n\to A$ and $y_n\to B$ for some $A,B\in\mathbb{R}$. Let $z_n=x_ny_n$, thus $z_n\to AB$, thus $z_n$ is convergent and thus cauchy. Q.E.D.
-
-    \item [105.)] Similarly, let $z_n=\dfrac{x_n}{y_n}$ where $y_n\neq0$, thus $z_n\to\dfrac{A}{B}$, thus $z_n$ is convergent and thus cauchy. Q.E.D.
+    \item [105.)] Since $x_n$ and $y_n$ are cauchy, there exist $A,B\in\mathbb{R}$ where $x_n\to A$ and $y_n\to B$. Since $y_n\ne0$ for all $n\in\mathbb{N}$, $B\ne0$. Let $z_n=x_n\di y_n$. According to theorem 14,\break $z_n=x_n\di y_n\implies z_n\to A\di B$, thus $z_n$ is convergent and thus cauchy. Q.E.D.
 
     % \item [106.)] ***
 
@@ -242,14 +175,6 @@
 
     % \item [112.)] ***
 
-    \item [114.)] Let $S=\{y\in\mathbb{R}:\vertb{x-y}<r\}$,
-    \[y\in S\implies\vertb{x-y}<r\implies-r<x-y<r\implies -r-x<-y<r-x\]
-    \[\implies x-r<y<x+r\implies y\in(x-r,x+r)\]
-    Thus $S\subseteq(x-r,x+r)$. Next, consider $(x-r,x+r)$:
-    \[y\in(x-r,x+r)\implies x-r<y<x+r\implies r-x>-y>-r-x\]
-    \[\implies -r<x-y<r\implies\vertb{x-y}<r\implies y\in S\]
-    Thus $(x-r,x+r)\subseteq S$, thus $S=(x-r,x+r)$. Q.E.D.
-
     % \item [118.)] ***
 
     % \item [119.)] ***
@@ -261,12 +186,6 @@
     % \item [122.)] ***
 
     % \item [123.)] ***
-
-    \item [126.)] Let $\e>0$ be given, then there exists $\delta>0$ where
-    \[\vertb{x-2}<\delta\implies\vertb{3x+1-7}<\e\]
-    Let $\delta=\dfrac{\e}{3}$.
-    \[\vertb{x-2}<\frac{\e}{3}\implies\vertb{3}\vertb{x-2}<\e\implies\vertb{3x-6}<\e\implies\vertb{3x+1-7}<\e\]
-    Thus $\vertb{x-2}<\delta\implies\vertb{3x+1-7}<\e$, thus $\displaystyle\lim_{x\to2}3x+1=7$. Q.E.D.
 
     % \item [127.)] Suppose $\lm{x\to5}x^2=25$, then for all $\e>0$, there exists $\delta>0$ where
     % \[\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e\]
@@ -286,9 +205,6 @@
     % \[\vertb{x-0}<\delta\implies\vertb{f(x)-f(0)}<\e\]
 
     % \item [130.)] Since $\lm{x\to c}f(x)=\lm{x\to c}h(x)=L$, there exist 
-
-    \item [131.)] Let $f:D\subseteq\mathbb R\to\mathbb R$ and $c\in D$. $f$ is continuous at $c$ if for all $\e>0$, there exists $\delta>0$ where
-    \[x\in D\,\land \vertb{x-c}<\delta\implies\vertb{f(x)-f(c)}<\e\]
 
     % \item [132.)] When a function $f$ is continuous at $c$, you can visualize that 
 

@@ -37,6 +37,18 @@
 
     \item [b.)] \[\lpi\bracks{\frac{1}{s(s+2)}}=\frac{1}{2}\lpi\bracks{\frac{1}{s}-\frac{1}{s+2}}=\frac{1}{2}-\frac{1}{2}e^{-2t}\]
 
-    \item [c.)] \[\lpi\bracks{\frac{s^2}{(s^2-1)(s^2+4)}}=\frac{1}{5}\lpi\bracks{\frac{4}{s^2+4}+\frac{1}{s^2-1}}\]
+    \item [c.)] \[\lpi\bracks{\frac{s^2}{(s^2-1)(s^2+4)}}=\frac{1}{5}\lpi\bracks{\frac{4}{s^2+4}+\frac{1}{s^2-1}}=\frac{1}{5}\bracks{\frac{4}{s^2+4}+\frac{1}{(s-1)(s+1)}}\]
+    \[=\frac{1}{5}\bracks{\frac{4}{s^2+4}+\frac{1}{2}\bracks{\frac{1}{s-1}-\frac{1}{s+1}}}=\frac{1}{5}\cdot\frac{4}{s^2+4}+\frac{1}{10}\cdot\frac{1}{s-1}-\frac{1}{10}\cdot\frac{1}{s+1}\]
+    \[=\frac{2}{5}\sin(2t)+\frac{1}{10}e^t-\frac{1}{10}e^{-t}\]
+
+    \item [d.)] \[\lpi\bracks{\frac{1}{s(s^2+4)}}=\int^t_0\lpi\bracks{\frac{1}{s^2+4}}\,dt=\frac{1}{2}\int^t_0\sin(2t)\,dt=-\frac{1}{4}\cos(2t)-\frac{1}{4}\]
+
+    \item [e.)] \[\lpi\bracks{\frac{s}{(s^2+4)(s^2+9)}}=\frac{1}{5}\lpi\bracks{\frac{s}{s^2+4}-\frac{s}{s^2+9}}=\frac{1}{5}\cos(2t)-\frac{1}{5}\cos(3t)\]
+
+    \item [f.)] \[\lpi\bracks{\frac{1}{s^4-16}}=\lpi\bracks{\frac{1}{(s^2-4)(s^2+4)}}=\frac{1}{8}\lpi\bracks{\frac{1}{s^2-4}-\frac{1}{s^2+4}}\]
+    \[=\frac{1}{8}\lpi\bracks{\frac{1}{(s-2)(s+2)}-\frac{1}{s^2+4}}=\frac{1}{8}\lpi\bracks{\frac{1}{4}\bracks{\frac{1}{s-2}-\frac{1}{s+2}}-\frac{1}{s^2+4}}\]
+    \[=\frac{1}{32}e^{2t}-\frac{1}{32}e^{-2t}-\frac{1}{16}\sin(2t)\]
+
+    \item [g.)] \[\lpi\bracks{\frac{42}{(s-2)(s+4)(s+5)}}=\lpi\bracks{\frac{1}{s-2}-\frac{7}{s+4}+\frac{6}{s+5}}=e^{2t}-7e^{-4t}+6e^{-5t}\]
 \end{itemize}
 \end{document}

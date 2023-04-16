@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.2.14)  12 APR 2023 12:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.4.12)  12 APR 2023 20:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.tex
-(/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.tex
+**/home/alexander/Documents/School/Differential/HW19/HW19.tex
+(/home/alexander/Documents/School/Differential/HW19/HW19.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -166,7 +166,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count272
 \l__pdf_internal_box=\box52
-) (/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.aux)
+) (/home/alexander/Documents/School/Differential/HW19/HW19.aux)
 \openout1 = `HW19.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -260,17 +260,17 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] (/home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.aux) ) 
+] (/home/alexander/Documents/School/Differential/HW19/HW19.aux) ) 
 Here is how much of TeX's memory you used:
  3650 strings out of 480954
- 50975 string characters out of 5908242
- 346414 words of memory out of 5000000
+ 50894 string characters out of 5908242
+ 359414 words of memory out of 5000000
  20856 multiletter control sequences out of 15000+600000
  408075 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  70i,10n,77p,284b,214s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on /home/alexander/Documents/ClassSpring2023/Differential/HW19/HW19.pdf (1 page, 59691 bytes).
+Output written on /home/alexander/Documents/School/Differential/HW19/HW19.pdf (1 page, 63934 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
