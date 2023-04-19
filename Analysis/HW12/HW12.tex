@@ -148,8 +148,8 @@
         -\frac{1}{n} & n\notin S \\
     \end{cases}\]
     Since $1>-\dfrac{1}{n}$ for all $n\in\mathbb{N}$, all $n$ for which $x_n=1$ are friends of $x_n$. In addition, for all $m,n\in\mathbb{N}$:
-    \[m\geq n\implies\dfrac{1}{n}\geq\dfrac{1}{m}\implies-\dfrac{1}{n}\leq-\frac{1}{m}\]
-    Thus all $n$ for which $x_n=-\dfrac{1}{n}$ cannot be friends of $x_n$, thus $x_n=1$ for all friends $n$ of $x_n$, thusly all $n\in S$. Finally, we know that $S$ is the set of all friends of $x_n$, thus for all $S\subseteq\mathbb{N}$, there exists a sequence such that $S$ is the set of friends of that sequence. Q.E.D.
+    \[m>n\implies\dfrac{1}{n}>\dfrac{1}{m}\implies-\dfrac{1}{n}<-\frac{1}{m}\]
+    Thus all $n$ for which $x_n=-\dfrac{1}{n}$ cannot be friends of $x_n$, thus $x_n=1$ for all friends $n$ of $x_n$, thusly all $n\in S$ are friends, thus $S$ is the set of all friends of $x_n$, thus for all $S\subseteq\mathbb{N}$, there exists a sequence such that $S$ is the set of friends of that sequence. Q.E.D.
 
     \item [97.)] Let $x_n\to L$, then by theorem 19, $y_k\to L$ for all subsequences $y_k$ of $x_n$. Similarly, since
 
@@ -187,19 +187,25 @@
 
     % \item [123.)] ***
 
-    % \item [127.)] Suppose $\lm{x\to5}x^2=25$, then for all $\e>0$, there exists $\delta>0$ where
-    % \[\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e\]
-    % We can manipulate the inequality to find a sufficient value for $\delta$:
-    % \[\vertb{x^2-25}=\vertb{(x-5)(x+5)}=\vertb{x-5}\vertb{x+5}<\e\]
-    % \[\implies\vertb{x-5}<\frac{\e}{\vertb{x+5}}\]
-    % Let $\delta=\dfrac{\e}{\vertb{x+5}}$. Manipulating the inequality:
-    % \[\vertb{x-5}<\frac{\varepsilon}{\vertb{x+5}}\implies\vertb{x-5}\vertb{x+5}=\vertb{(x-5)(x+5)}=\vertb{x^2-25}<\e\]
-    % Thus $\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e$, thus $\lm{x\to5}x^2=25$. Q.E.D.
+    \item [127.)] For $\lm{x\to5}x^2=25$, then given $\e>0$, there must exist $\delta>0$ where
+    \[\vertb{x-5}<\delta\implies\vertb{x^2-25}<\e\]
+    Suppose $\vertb{x-5}<1$, then $\vertb{x+5}<11$, thus 
+    \[\vertb{x^2-25}=\vertb{x-5}\vertb{x+5}<11\vertb{x-5}<11\delta\]
+    \[11\delta=\e\implies\delta=\frac{\e}{11}\]
+    Let $\delta<\min\parns{1,\dfrac{\e}{11}}$:
+    \[\vertb{x-5}<\delta\implies\vertb{x-5}<\dfrac{\e}{11}\implies11\vertb{x-5}<\e\implies\vertb{x-5}\vertb{x+5}<11\vertb{x-5}<\e\]
+    \[\implies\vertb{x-5}\vertb{x+5}=\vertb{x^2-25}<\e\]
+    Thus $\lm{x\to5}x^2=25$. Q.E.D.
 
-    % \item [128.)] Suppose $\lm{x\to\frac{1}{2}}\dfrac{1}{x}=2$, then for all $\e>0$ there exists $\delta>0$ where
-    % \[\vertb{x-\frac{1}{2}}<\delta\implies\vertb{\frac{1}{x}-2}<\e\]
-    % We can manipulate the inequality to find a sufficient value for $\delta$:
-    % \[\vertb{\frac{1}{x}-2}=***\]
+    \item [128.)] For $\lm{x\to\frac{1}{2}}\dfrac{1}{x}=2$, then given $\e>0$, there must exist $\delta>0$ where
+    \[\vertb{x-\frac{1}{2}}<\delta\implies\vertb{\frac{1}{x}-2}<\e\]
+    Suppose $\vertb{x-\dfrac{1}{2}}<\dfrac{1}{4}$:
+    \[\vertb{x-\frac{1}{2}}<\frac{1}{4}\implies-\frac{1}{4}<x-\frac{1}{2}<\frac{1}{4}\implies\frac{1}{4}<x<\frac{3}{4}\implies\frac{4}{3}<\frac{1}{\vertb{x}}<4\]
+    \[\implies\frac{\vertb{x-\frac{1}{2}}}{\vertb{x}}<4\vertb{x-\frac{1}{2}}<4\delta\]
+    \[4\delta=\e\implies\delta=\frac{\e}{4}\]
+    Let $\delta<\min\parns{\dfrac{1}{4},\dfrac{\e}{4}}$:
+    \[\vertb{x-\frac{1}{2}}<\delta\implies\vertb{x-\frac{1}{2}}<\frac{\e}{4}\implies4\vertb{x-\frac{1}{2}}<\e\implies\frac{\vertb{x-\frac{1}{2}}}{\vertb{x}}<4\vertb{x-\frac{1}{2}}<\e\]
+    \[\frac{\vertb{x-\frac{1}{2}}}{\vertb{x}}=\vertb{\frac{x-\frac{1}{2}}{x}}=1-\]
 
     % \item [129.)] For $\displaystyle\lim_{x\to0}f(x)$ to exist, then for all $\e>0$, there must exist $\delta>0$ where
     % \[\vertb{x-0}<\delta\implies\vertb{f(x)-f(0)}<\e\]
