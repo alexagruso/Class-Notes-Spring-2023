@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.4.12)  14 APR 2023 22:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.2.14)  19 APR 2023 16:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/alexander/Documents/School/Analysis/HW11/HW11.tex
-(/home/alexander/Documents/School/Analysis/HW11/HW11.tex
+**/home/alexander/Documents/ClassSpring2023/Analysis/HW11/HW11.tex
+(/home/alexander/Documents/ClassSpring2023/Analysis/HW11/HW11.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18> (/usr/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
@@ -137,7 +137,7 @@ Package: iftex 2020/03/06 v1.0d TeX engine tests
 File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count268
 \l__pdf_internal_box=\box51
-) (/home/alexander/Documents/School/Analysis/HW11/HW11.aux)
+) (/home/alexander/Documents/ClassSpring2023/Analysis/HW11/HW11.aux)
 \openout1 = `HW11.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -202,17 +202,17 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 110
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] [3] (/home/alexander/Documents/School/Analysis/HW11/HW11.aux) ) 
+] [2] [3] (/home/alexander/Documents/ClassSpring2023/Analysis/HW11/HW11.aux) ) 
 Here is how much of TeX's memory you used:
  2362 strings out of 480954
- 31343 string characters out of 5908242
+ 31424 string characters out of 5908242
  336087 words of memory out of 5000000
  19598 multiletter control sequences out of 15000+600000
  408569 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 68i,11n,74p,442b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,11n,74p,451b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on /home/alexander/Documents/School/Analysis/HW11/HW11.pdf (3 pages, 76383 bytes).
+Output written on /home/alexander/Documents/ClassSpring2023/Analysis/HW11/HW11.pdf (3 pages, 76383 bytes).
 PDF statistics:
  42 PDF objects out of 1000 (max. 8388607)
  29 compressed objects within 1 object stream
