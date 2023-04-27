@@ -85,15 +85,15 @@
     % \[\vertb{x_n-A}<\frac{\e}{\vertb c}\implies\vertb{c}\vertb{x_n-A}<\e\implies\vertb{cx_n-cA}<\e\]
     % Thus $n\geq k\implies\vertb{cx_n-cA}<\e$, thus $cx_n\to cA$. Q.E.D.
 
-    \item [52.)] Let $M,N\in\mathbb{R}$ where $M\geq x_n$ and $N\geq y_n$ for all $n\in\mathbb{N}$. Consider $z_n=x_n+y_n$. $x_n+y_n\leq M+N$, thus $z_n\leq M+N$ for all $n\in\mathbb{N}$, thus $z_n$ is bounded. Q.E.D. ***
+    \item [52.)] Let $M,N\in\mathbb{R}$ where $M\geq x_n$ and $N\geq y_n$ for all $n\in\mathbb{N}$. Consider $z_n=x_n+y_n$. $x_n+y_n\leq M+N$, thus $z_n\leq M+N$ for all $n\in\mathbb{N}$, thus $z_n$ is bounded. Q.E.D.
 
-    \item [57.)] We can show this by induction. For the base case, consider $a_1$ and $a_2$:
-    \[a_1=1,\ a_2=\frac{4+2}{3}=2\]
-    Thus $a_1<a_2<4$, thus the base case holds. Now, suppose $a_{n-1}<a_n<4$, and consider $a_{n+1}$:
-    \[a_{n}=\frac{4-2a_{n-1}}{3},\ a_{n+1}=\frac{4-2a_{n}}{3}\]
-    \[a_{n+1}-a_n=\frac{4-2a_n}{3}-\frac{4-2a_{n-1}}{3}=-\frac{2}{3}(a_n+a_{n-1})***\]
+    % \item [57.)] We can show this by induction. For the base case, consider $a_1$ and $a_2$:
+    % \[a_1=1,\ a_2=\frac{4+2}{3}=2\]
+    % Thus $a_1<a_2<4$, thus the base case holds. Now, suppose $a_{n-1}<a_n<4$, and consider $a_{n+1}$:
+    % \[a_{n}=\frac{4-2a_{n-1}}{3},\ a_{n+1}=\frac{4-2a_{n}}{3}\]
+    % \[a_{n+1}-a_n=\frac{4-2a_n}{3}-\frac{4-2a_{n-1}}{3}=-\frac{2}{3}(a_n+a_{n-1})***\]
 
-    \item [58.)] Let $L,U\subseteq\mathbb R$. ***
+    % \item [58.)] Let $L,U\subseteq\mathbb R$. ***
 
     % \item [59.)] ***
 
@@ -107,9 +107,9 @@
 
     % \item [63.)] Suppose $\inf(S)\in S$, then when $x_n=\inf(S)$, $x_n\to\inf(S)$. Now, suppose $\inf(S)\notin S$. ***
 
-    \item [64.)] \begin{itemize}
-        \item [a.)] Let $S=S-S$ and $S\ne\varnothing$.
-    \end{itemize}
+    % \item [64.)] \begin{itemize}
+    %     \item [a.)] Let $S=S-S$ and $S\ne\varnothing$.
+    % \end{itemize}
 
     \item [76.)]
     \[
@@ -151,13 +151,13 @@
     Case $S\subset\mathbb{N}$: Let the sequence $x_n$ be defined as follows:
     \[x_n=\begin{cases}
         1 & n\in S \\
-        -\frac{1}{n} & n\notin S \\
+        -\dfrac{1}{n} & n\notin S \\
     \end{cases}\]
     Since $1>-\dfrac{1}{n}$ for all $n\in\mathbb{N}$, all $n$ for which $x_n=1$ are friends of $x_n$. In addition, for all $m,n\in\mathbb{N}$:
     \[m>n\implies\dfrac{1}{n}>\dfrac{1}{m}\implies-\dfrac{1}{n}<-\frac{1}{m}\]
     Thus all $n$ for which $x_n=-\dfrac{1}{n}$ cannot be friends of $x_n$, thus $x_n=1$ for all friends $n$ of $x_n$, thusly all $n\in S$ are friends, thus $S$ is the set of all friends of $x_n$, thus for all $S\subseteq\mathbb{N}$, there exists a sequence such that $S$ is the set of friends of that sequence. Q.E.D.
 
-    \item [97.)] Let $x_n\to L$, then by theorem 19, $y_k\to L$ for all subsequences $y_k$ of $x_n$. Similarly, since ***
+    % \item [97.)] Let $x_n\to L$, then by theorem 19, $y_k\to L$ for all subsequences $y_k$ of $x_n$. Similarly, since ***
 
     \item [99.)] Let $x_n=n-(-1)^nn$. $x_n$ is unbounded, but $y_k=x_{2k}=2k-(-1)^{2k}2k=2k-2k=0$, thus $y_k\preceq x_n$ and $y_k\to0$.
 
@@ -220,7 +220,7 @@
 
     % \item [130.)] Since $\lm{x\to c}f(x)=\lm{x\to c}h(x)=L$, there exist 
 
-    \item [132.)] When a function $f$ is continuous at $c$, then for all vertical windows around $f(c)$, there exists a horizontal window around $c$ such that if $c$ is in the horizontal window, then $f(c)$ is within the vertical window.
+    % \item [132.)] When a function $f$ is continuous at $c$, then for all vertical windows around $f(c)$, there exists a horizontal window around $c$ such that if $c$ is in the horizontal window, then $f(c)$ is within the vertical window.
 
     \item [133.)] For $x^2$ to be continuous over all $c\in\mathbb{R}$, then for all $\e>0$, there must exist $\delta>0$ where
     \[\vertb{x-c}<\delta\implies\vertb{x^2-c^2}<\e\]
@@ -246,9 +246,9 @@
     \[\implies \vertb{\frac{1}{x}-\frac{1}{4}}<\e\]
     Thus $\dfrac{1}{x}$ is continuous at $x=4$. Q.E.D.
 
-    \item [135.)] For $\vertb{x}$ to be continuous over all $c\in\mathbb{R}$, then for all $\e>0$, there must exist $\delta>0$ where
-    \[\vertb{x-c}<\delta\implies\big\vert{\vertb{x}-c}\big\vert<\e\]
-    \[***\]
+    % \item [135.)] For $\vertb{x}$ to be continuous over all $c\in\mathbb{R}$, then for all $\e>0$, there must exist $\delta>0$ where
+    % \[\vertb{x-c}<\delta\implies\big\vert{\vertb{x}-c}\big\vert<\e\]
+    % \[***\]
 
     % \item [136.)] ***
 
@@ -256,11 +256,11 @@
 
     % \item [138.)] ***
  
-    \item [139.)] Let $f:\mathbb R\to\mathbb R$ be $1/2$-H\"older, then there exists $C>0$ where
-    \[\vertb{f(x)-f(y)}\leq C\vertb{x-y}^{1/2}\]
-    ***
+    % \item [139.)] Let $f:\mathbb R\to\mathbb R$ be $1/2$-H\"older, then there exists $C>0$ where
+    % \[\vertb{f(x)-f(y)}\leq C\vertb{x-y}^{1/2}\]
+    % ***
 
-    \item [140.)] Let $f(x)=***$
+    % \item [140.)] Let $f(x)=***$
 
     % \item [141.)] ***
 
@@ -273,14 +273,14 @@
     \[f(b)<b\implies b-f(b)>0\implies g(b)>0\]
     Since $x$ and $f(x)$ are continuous, $x-f(x)$ is continuous, thus $g(x)$ is continuous. Since $g(a)<0$, $g(b)>0$, and $a<b$, then from the intermediate value theorem, there exists $x\in[a,b]$ where $g(x)=0$, thus $g(x)=x-f(x)=0\implies f(x)=x$, thus $f$ has a fixed point. Q.E.D.
 
-    \item [145.)] Let $f:(a,b)\to(a,b)$ where $f(x)=$.
+    % \item [145.)] Let $f:(a,b)\to(a,b)$ where $f(x)=$ ***
 
     \item [146.)] Since $f(x)=x^3+x-10$ is a polynomial, it is continuous. Consider $f(-1)$ and $f(3)$:
     \[f(-1)=(-1)^3+(-1)-10=-12\]
     \[f(3)=3^3+3-10=20\]
     Thus there exist $a,b$ where $f(a)<0<f(b)$, thus from the intermediate value theorem, there exists $x$ where $f(x)=0$, thus $f(x)=0$ has at least one real solution. Q.E.D.
 
-    \item [147.)] awd
+    % \item [147.)] awd
 
     % \item [147.)] ***
 
@@ -289,11 +289,11 @@
     \item [149.)] $f:D\to\mathbb R$ is uniformly continuous if for all $\e>0$, there exists $\delta>0$ where
     \[x,y\in D\land\vertb{x-y}<\delta\implies\vertb{f(x)-f(y)}<\e\]
 
-    \item [150.)] \begin{itemize}
-        \item [a.)] Consider $f:(3,5)\to\mathbb R$, then ***
-
-        \item [b.)] Consider $f:(0,2)\to\mathbb R$, then ***
-    \end{itemize}
+    % \item [150.)] \begin{itemize}
+    %     \item [a.)] Consider $f:(3,5)\to\mathbb R$, then ***
+    
+    %     \item [b.)] Consider $f:(0,2)\to\mathbb R$, then ***
+    % \end{itemize}
 
     % \item [151.)] ***
 

@@ -1,0 +1,228 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.5}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 13}
+
+\normalsize
+\begin{itemize}
+    \item [29.)] \begin{itemize}
+        \item [a.)] Since $S\ne\varnothing$ and is bounded below, there exists $l\in\mathbb{R}$ where $l\leq x$ for all $x\in S$, thus $l\in\mathscr{L}$, thus $\mathscr{L}\ne\varnothing$. Q.E.D.
+
+        \item [b.)] Let $w=\sup(\mathscr{L})$, thus $w\geq l$ for all $l\in\mathscr{L}$. For the sake of establishing a contradiction, suppose $w>x$ for some $x\in S$. Let $m=\text{mid}(w,x)$, thus $w>m>x$. Since $m>x$ for some $x\in S$, $m$ cannot be a lower bound of $S$, thus $w$ cannot be a lower bound of $S$, thus $w\ne\sup(\mathscr{L})$\contradiction, thus $w\leq x$ for all $x\in S$, thus $w=\sup(\mathscr{L})$ is a lower bound of $S$, thus $w\in\mathscr{L}$. Q.E.D.
+
+        \item [c.)] Since $w=\sup(\mathscr{L})$, $w\geq l$ for all $l\in\mathscr{L}$ and thus all lower bounds $l$ of $S$, thus $w=\inf(S)$. Q.E.D.
+    \end{itemize}
+
+    \item [33.)] Consider $\vertb{x}$:
+    \[\vertb{x}=\vertb{x-y+y}\leq\vertb{x-y}+\vertb{y}\implies\vertb{x}-\vertb{y}\leq\vertb{x-y}\]
+    Now consider $\vertb{y}$:
+    \[\vertb{y}=\vertb{y-x+x}\leq\vertb{y-x}+\vertb{x}\implies\vertb{y}-\vertb{x}\leq\vertb{y-x}=\vertb{x-y}\]
+    \[\implies\vertb{x}-\vertb{y}\geq-\vertb{x-y}\]
+    Since $-\vertb{x-y}\leq\vertb{x}-\vertb{y}\leq\vertb{x-y}$, $\big\vert\vertb{x}-\vertb{y}\big\vert\leq\vertb{x-y}$, thus the inequality holds. Q.E.D.
+
+    \item [37.)] Since $b\in\mathbb{B}\implies b\geq a$ for all $a\in A$, $b$ is an upper bound of $A$ for all $b\in B$. Since $A\ne\varnothing$ and is bounded above, there exists $u\in\mathbb{R}$ where $u=\sup(A)$. For the sake of establishing a contradiction, suppose $u>b$ for some $b\in B$. Let $m=\text{mid}(u,b)$, thus $u>m>b$. Since $m>b$ for some $b\in B$, $m>a$ for all $a\in A$, thus $m$ is an upper bound of $A$, but since $u>m$, $u\neq\sup(A)$\contradiction, thus $u\leq b$ for all $b\in B$, thus $u$ is a lower bound of $B$, and thus $u=\sup(A)\leq\inf(B)$. Q.E.D.
+
+    \item [45.)] Since $y_n\to B$, then for all $\e_0>0$, there exists $k_0\in\mathbb{N}$ where
+    \[n\geq k_0\implies\vertb{y_n-B}<\e_0\]
+    Let $\lambda=\vertb{B}/2$. Since $B\neq0$, there exists $k_1\in\mathbb{N}$ where
+    \[n\geq k_1\implies\vertb{y_n}>\lambda\]
+    Let $n\geq\max(k_0,k_1)$, then
+    \[\vertb{\frac{1}{y_n}-\frac{1}{B}}=\frac{\vertb{y_n-B}}{\vertb{y_n}\vertb{B}}<\frac{\e_0}{\lambda\vertb{B}}\]
+    \[\frac{\e_0}{\lambda\vertb{B}}=\e\implies\e_0=\e\vertb{B}\lambda\]
+    Let $\e_0=\e\vertb{B}\lambda$ and $n\geq\max(k_0,k_1)$, then
+    \[\vertb{y_n-B}<\e_0\implies\vertb{y_n-B}<\e\vertb{B}\lambda\implies \frac{\vertb{y_n-B}}{\vertb{y_n}\vertb{B}}<\frac{\vertb{y_n-B}}{\lambda\vertb{B}}<\e\]
+    \[\implies\frac{\vertb{y_n-B}}{\vertb{y_n}\vertb{B}}=\vertb{\frac{1}{y_n}-\frac{1}{B}}<\e\]
+    Thus if $y_n\to B$ and $B\neq0$, then $1/y_n\to1/B$. Q.E.D.
+
+    \item [47.)] Since $y_n\to0$, then for all $\e_0>0$, there exists $k\in\mathbb{R}$ where
+    \[n\geq k\implies\vertb{y_n-0}<\e_0\]
+    Since $x_n$ is bounded, there exists $M\in\mathbb{R}$ where $M\geq\vertb{x_n}$ for all $n\in\mathbb{N}$. Let $\e_0=\e/M$ and $n\geq k$:
+    \[\vertb{y_n-0}<\e_0\implies\vertb{y_n-0}<\frac{\e}{M}\leq\frac{\e}{\vertb{x_n}}\implies\vertb{y_n-0}<\frac{\e}{\vertb{x_n}}\]
+    \[\implies\vertb{x_n}\vertb{y_n-0}=\vertb{x_ny_n-0}<\e\]
+    Thus if $x_n$ is bounded and $y_n\to0$, then $x_ny_n\to0$. Q.E.D.
+
+    \item [48.)] ***
+
+    \item [49.)]
+    \[\lm{n\to\infty}\frac{1-5n^2+40x^3+2n^{-2}}{4-12n-2n^3}=\lm{n\to\infty}\frac{n^{-3}}{n^{-3}}\cdot\frac{1-5n^2+40x^3+2n^{-2}}{4-12n-2n^3}\]
+    \[=\lm{n\to\infty}\frac{x^{-3}-5n^{-1}+40+2n^{-5}}{4n^{-3}-12n^{-2}-2}=\frac{\lm{n\to\infty}\frac{1}{n^3}-\frac{5}{n}+40+\frac{2}{n^5}}{\lm{n\to\infty}\frac{4}{n^3}-\frac{12}{n^2}-2}=\frac{0-0+40+0}{0-0-2}\]
+    \[=\frac{40}{-2}=-20\]
+
+    \item [50.)] Since $x_n\to A$, then for all $\e_0>0$, there exists $k\in\mathbb{N}$ where
+    \[n\geq k\implies\vertb{x_n-A}<\e_0\]
+    Let $\e_0=\e/\vertb{c}$, then
+    \[\vertb{x_n-A}<\e_0\implies\vertb{x_n-A}<\frac{\e}{\vertb{c}}\implies\vertb{c}\vertb{x_n-A}=\vertb{cx_n-cA}<\e\]
+    Thus if $x_n\to A$, then $cx_n\to cA$. Q.E.D.
+
+    % \item [57.)] We can show this by induction. For the base case, consider $a_1$ and $a_2$:
+    % \[a_1=1,\ a_2=\frac{4+2}{3}=2\]
+    % Thus $a_1<a_2<4$, thus the base case holds. Now, suppose $a_{n-1}<a_n<4$, and consider $a_{n+1}$:
+    % \[a_{n}=\frac{4-2a_{n-1}}{3},\ a_{n+1}=\frac{4-2a_{n}}{3}\]
+    % \[a_{n+1}-a_n=\frac{4-2a_n}{3}-\frac{4-2a_{n-1}}{3}=-\frac{2}{3}(a_n+a_{n-1})***\]
+
+    % \item [58.)] Let $L,U\subseteq\mathbb R$. ***
+
+    % \item [59.)] ***
+
+    % \item [60.)] ***
+
+    % \item [62.)] Assume $x_n\to A$, thus for all $\varepsilon>0$, there exists $k$ such that
+    % \[n\geq k\implies\vertb{x_n-A}<\varepsilon\]
+    % Since $x_n<M$, we know that
+    % \[\vertb{x_n-A}<\vertb{M-A}\]
+    % ***
+
+    % \item [63.)] Suppose $\inf(S)\in S$, then when $x_n=\inf(S)$, $x_n\to\inf(S)$. Now, suppose $\inf(S)\notin S$. ***
+
+    % \item [64.)] \begin{itemize}
+    %     \item [a.)] Let $S=S-S$ and $S\ne\varnothing$.
+    % \end{itemize}
+
+    % \item [86.)] \begin{itemize}
+    %     \item [a.)] True; Let $n_k=k$, thus $x_k=x_{n_k}$, thus $x\preceq x$.
+
+    %     \item [b.)] False; Let $x_n=(-1)^n$ and $y_n=(-1)^{n+1}$. 
+
+    %     \item [c.)] True; Let ***
+    % \end{itemize}
+
+    % \item [87.)] ***
+
+    % \item [88.)] ***
+
+    % \item [89.)] ***
+
+    % \item [93.)] Since $x_n$ is bounded, $x_n\leq M$ for some $M\in\mathbb{R}$. Consider $\overline{x}_n$: ***
+
+    % \item [94.)] ***
+
+    % \item [95.)] ***
+
+    % \item [97.)] Let $x_n\to L$, then by theorem 19, $y_k\to L$ for all subsequences $y_k$ of $x_n$. Similarly, since ***
+    
+    \item [105.)] Suppose $y_n=1/n$. $y_n\ne0$ for all $n\in\mathbb{N}$, yet $y_n\to0$. Since $y_n$ converges, it is also cauchy. Because $y_n\to0$, $x_n/y_n$ does not converge, thus $z_n=x_n/y_n$ does not converge, thus $z_n$ is not cauchy. Q.E.D.
+
+    % \item [106.)] ***
+
+    % \item [107.)] ***
+
+    % \item [108.)] ***
+
+    \item [109.)] \begin{itemize}
+        \item [a.)] A cauchy sequence is a sequence whose terms, past a certain point, get arbitrarily close to eachother. A type-C sequence is a sequence whose terms, past a certain point, remain constant.
+
+        \item [b.)] Since $n\neq m\implies1/n\ne1/m$, there exists no $N$ such that $n,m\geq N\implies\vertb{x_n-x_m}<\e$ for all $\e>0$, thus $x_n=1/n$ is not type-C.
+
+        \item [c.)] Let $n\in\mathbb{N}$ be fixed, and consider $y_n,y_{n+1}$, and $y_{n+2}$:
+        \[\vertb{y_n-y_{n+1}}=2,\ \vertb{y_n-y_{n+2}}=0\]
+        Since the distance between any two terms of $y_n$ is either $0$ or $2$, it cannot be less than all $\e>0$, thus $y_n$ is not type-C.
+
+        \item [d.)] ***
+
+        \item [e.)] Since any type-C sequence eventually reaches a point where its terms remain constant, we know that every type-C sequence converges to this constant. Since it converges, it is also cauchy.
+
+        \item [f.)] $1/n$ is a cauchy sequence, but not a type-C sequence, thus not every cauchy sequence is type-C.
+    \end{itemize}
+
+    \item [110.)] Let $y_n=2^{-n}$ and $z_n=-2^{-n}$. We know that $\lm{n\to\infty}2^{-n}=0$, thus $\lm{x\to\infty}-2^{-n}=-\lm{x\to\infty}2^{-n}=-0=0$, thus $y_n\to0$ and $z_n\to0$. Now consider $x_n$. For all $n\in\mathbb{N}$, the following is true:
+
+    % \item [111.)] ***
+
+    % \item [112.)] ***
+
+    \item [118.)] ***
+
+    % \item [119.)] ***
+
+    % \item [120.)] ***
+
+    \item [121.)] $E=\{1\}$
+
+    \item [122.)] $E=\{x_n\}\cup\{y_n\}\cup\{z_n\}$ where $x_n=1/n$, $y_n=(n+1)/n$, and $z_n=(2n+1)/n$.
+
+    \item [123.)] $E=\displaystyle\bigcup_{k\in\mathbb{N}}\left\{\frac{n}{kn+1}\right\}_{n\in\mathbb{N}}$ where $\displaystyle\left\{\frac{n}{kn+1}\right\}_{n\in\mathbb{N}}$ is a sequence given some value of $k$.
+
+    % \item [129.)] For $\displaystyle\lim_{x\to0}f(x)$ to exist, then for all $\e>0$, there must exist $\delta>0$ where
+    % \[\vertb{x-0}<\delta\implies\vertb{f(x)-f(0)}<\e\]
+
+    % \item [130.)] Since $\lm{x\to c}f(x)=\lm{x\to c}h(x)=L$, there exist 
+
+    % \item [132.)] When a function $f$ is continuous at $c$, then for all vertical windows around $f(c)$, there exists a horizontal window around $c$ such that if $c$ is in the horizontal window, then $f(c)$ is within the vertical window.
+
+    \item [135.)] For $\vertb{x}$ to be continuous over all $c\in\mathbb{R}$, then for all $\e>0$, there must exist $\delta>0$ where
+    \[\vertb{x-c}<\delta\implies\big\vert{\vertb{x}-\vertb{c}}\big\vert<\e\]
+    By the reverse triangle inequality, we know that $\big\vert{\vertb{x}-\vertb{c}}\big\vert\leq\vertb{x-c}$, thus
+    \[\big\vert{\vertb{x}-\vertb{c}}\big\vert\leq\vertb{x-c}<\delta\]
+    Let $\delta=\e$, then
+    \[\big\vert{\vertb{x}-\vertb{c}}\big\vert<\e\]
+    Thus $\vertb{x}$ is continuous for all $c\in\mathbb{R}$. Q.E.D.
+
+    % \item [136.)] ***
+
+    \item [137.)] $g(x)=\lfloor x\rfloor$ is continuous over all $x\in\mathbb{R}-\mathbb{Z}$.
+
+    % \item [138.)] ***
+ 
+    % \item [139.)] Let $f:\mathbb R\to\mathbb R$ be $1/2$-H\"older, then there exists $C>0$ where
+    % \[\vertb{f(x)-f(y)}\leq C\vertb{x-y}^{1/2}\]
+    % ***
+
+    % \item [140.)] Let $f(x)=***$
+
+    % \item [141.)] ***
+
+    % \item [142.)] ***
+
+    % \item [143.)] ***
+
+    % \item [145.)] Let $f:(a,b)\to(a,b)$ where $f(x)=$ ***
+
+    % \item [147.)] ***
+
+    % \item [147.)] ***
+
+    % \item [148.)] ***
+
+    \item [150.)] \begin{itemize}
+        \item [a.)] ***
+        
+        \item [b.)] ***
+     \end{itemize}
+
+    % \item [151.)] ***
+
+    % \item [152.)] ***
+
+\end{itemize}
+
+\end{document}
