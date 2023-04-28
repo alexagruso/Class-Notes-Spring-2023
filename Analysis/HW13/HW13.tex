@@ -52,6 +52,9 @@
 
     \item [37.)] Since $b\in\mathbb{B}\implies b\geq a$ for all $a\in A$, $b$ is an upper bound of $A$ for all $b\in B$. Since $A\ne\varnothing$ and is bounded above, there exists $u\in\mathbb{R}$ where $u=\sup(A)$. For the sake of establishing a contradiction, suppose $u>b$ for some $b\in B$. Let $m=\text{mid}(u,b)$, thus $u>m>b$. Since $m>b$ for some $b\in B$, $m>a$ for all $a\in A$, thus $m$ is an upper bound of $A$, but since $u>m$, $u\neq\sup(A)$\contradiction, thus $u\leq b$ for all $b\in B$, thus $u$ is a lower bound of $B$, and thus $u=\sup(A)\leq\inf(B)$. Q.E.D.
 
+    \pagebreak
+    \item [38.)] Suppose $S$ is uniformly discrete. For the sake of establishing a contradiction, suppose $S$ has no maximal element, thus $x\in S\implies(x+\e)\in S$ for some $\e>0$. Let $x\in S$, thus there exists $\e>0$ where $(x+\e)\in S$. Since $x,(x+\e)\in S$ and $x,(x+\e)\in(x-2\e,x+2\e)$, then $\{x,x+\e\}\subseteq S\cap(x-2\e,x+2\e)$. Let $\e_0=2\e$, thus for some $\e_0>0$, $S\cap(x-\e_0,x+\e_0)\ne\{x\}$, thus $S$ is not uniformly discrete\contradiction, thus if $S$ is uniformly discrete, then $S$ has a maximal element $m\in S$. Since $m\geq x$ for all $x\in S$, $m$ is an upper bound of $S$. Since $m\in S$, then for all $u<m$, there exists $x\in S$ where $x>u$, thus $u$ cannot be an upper bound of $S$, thus $m\leq u$ for all upper bounds $u$ of $S$, thus $m=\sup(S)$, and thus $\sup(S)\in S$. Q.E.D.
+
     \item [45.)] Since $y_n\to B$, then for all $\e_0>0$, there exists $k_0\in\mathbb{N}$ where
     \[n\geq k_0\implies\vertb{y_n-B}<\e_0\]
     Let $\lambda=\vertb{B}/2$. Since $B\neq0$, there exists $k_1\in\mathbb{N}$ where
@@ -193,15 +196,18 @@
 
     % \item [138.)] ***
  
-    % \item [139.)] Let $f:\mathbb R\to\mathbb R$ be $1/2$-H\"older, then there exists $C>0$ where
-    % \[\vertb{f(x)-f(y)}\leq C\vertb{x-y}^{1/2}\]
-    % ***
+    \item [139.)] Let $f:\mathbb R\to\mathbb R$ be $1/2$-H\"older. For $f$ to be continuous over all $\mathbb R$, then for all $\e>0$, there exists $\delta>0$ where
+    \[\vertb{x-c}<\delta\implies\vertb{f(x)-f(c)}<\e\]
+    Let $c=y$ and $\delta=(\e/C)^2$:
+    \[\vertb{x-y}<\delta\implies\vertb{x-y}<\parns{\frac{\e}{C}}^2\implies\vertb{x-y}^{1/2}<\frac{\e}{C}\implies C\vertb{x-y}^{1/2}<\e\]
+    Since $f$ is $1/2$-H\"older, $\vertb{f(x)-f(y)}<C\vertb{x-y}^{1/2}$, thus $\vertb{f(x)-f(y)}<\e$, thus $f$ is continuous over all $\mathbb{R}$. Q.E.D.
 
     % \item [140.)] Let $f(x)=***$
 
     % \item [141.)] ***
 
-    % \item [142.)] ***
+    % \item [142.)] For $h(x)=\max(f(x),g(x))$ to be continuous over $D$, then for all $\e>0$, there exists $\delta>0$ where
+    % \[x,y\in D\land\vertb{x-y}<\delta\implies\vertb{h(x)-h(y)}\]
 
     % \item [143.)] ***
 
