@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.5}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 3380 Homework 14}
+
+\normalsize
+\begin{itemize}
+    \item [88.)] We can use induction to show that $x_n>0$ for all $n\in\mathbb{N}$. Since $x_1=2>0$, the base case holds. For the induction step, assume $x_n>0$:
+    \[x_n>0\implies\frac{1}{x_n}>0\text{ and }\frac{x_n}{2}>0\]
+    \[\implies\frac{1}{x_n}+\frac{x_n}{2}=x_{n+1}>0\]
+    Thus $x_n>0\implies x_{n+1}>0$, thus $x_n$ is bounded below by $0$.
+
+    \item [107.)] \begin{itemize}
+        \item [a.)] awd
+
+        \item [b.)] awd
+
+        \item [c.)] Consider $y_n$ when $n=2^{k}-1$ for some $k\in\mathbb{N}$:
+        \[y_n=1+\parns{\frac{1}{2}+\frac{1}{2}}+\parns{\frac{1}{4}+\frac{1}{4}+\frac{1}{4}+\frac{1}{4}}+\cdots+\parns{\frac{1}{2^k}+\cdots+\frac{1}{2^k}}\]
+        We can see that the terms in each set of parentheses sum to 1, thus $y_n=1+1+\cdots+1$. As $n\to\infty$, this sum diverges, thus $y_n$ is not bounded, convergent, nor cauchy. However, $y_n$ is nondecreasing, and thus monotone.
+    \end{itemize}
+
+    \item [140.)] Let $f:\mathbb R\to\mathbb R$ be defined as follows:
+    \[f(x)=\begin{cases}
+        \dfrac{1}{x-1}+1 & x<0 \\
+        \dfrac{1}{x+1}-1 & x>0 \\
+        0 & x=0 \\
+    \end{cases}\]
+    Since $-1<f(x)<1$ for all $x\in\mathbb R$, $f(x)$ is bounded, but since there are horizontal asymptotes at $y=-1$ and $y=1$, $f(x)$ has no maximal nor minimal value.
+
+    \item [152.)] $a$
+\end{itemize}
+
+\end{document}

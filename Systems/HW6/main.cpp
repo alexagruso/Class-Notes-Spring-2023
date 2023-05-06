@@ -122,20 +122,19 @@ int main(int argc, char** args) {
         return -4;
     }
 
-    double oldClock = 0.0;
     double clock = 0.0;
 
     int processesCompleted = 0;
+    std::vector<int> processesPerCPU;
 
-    int iterations = 0;
-    float totalTurnaroundTime = 0.0;
-    int totalReadyQueueProcesses = 0;
+    double totalWaitTime = 0.0;
+    double totalServiceTime = 0.0;
 
-    float totalCPUTime = 0;
-    std::vector<float> cpuTimes{};
+    std::vector<double> serviceTimes;
 
     for (int i = 0; i < cpuCount; i++) {
-        cpuTimes.push_back(0.0f);
+        processesPerCPU.push_back(0);
+        serviceTimes.push_back(0.0);
     }
 
     std::priority_queue<Event, std::vector<Event>, EventComparator> eventQueue;
@@ -147,7 +146,6 @@ int main(int argc, char** args) {
 
     if (scenario == 1) {
         // n CPUs, n ready queues
-
         Process firstProcess = generateRandomProcess(averageArrivalTime, averageServiceTime, 0.0f, chooseCPU(cpuCount));
         eventQueue.push({EventType::ARRIVAL, firstProcess, firstProcess.getArrivalTime()});
 
@@ -165,8 +163,6 @@ int main(int argc, char** args) {
                     Event newDeparture{EventType::DEPARTURE, event.getProcess(),
                                        clock + event.getProcess().getServiceTime()};
                     eventQueue.push(newDeparture);
-                    totalCPUTime += clock - oldClock;
-                    cpuTimes.at(cpu) += clock - oldClock;
                 } else {
                     cpus.at(cpu).readyQueue.push(event.getProcess());
                 }
@@ -188,12 +184,15 @@ int main(int argc, char** args) {
                     Event newDeparture{EventType::DEPARTURE, readyProcess, clock + readyProcess.getServiceTime()};
                     eventQueue.push(newDeparture);
                     cpus.at(cpu).readyQueue.pop();
-                    totalCPUTime += clock - oldClock;
-                    cpuTimes.at(cpu) += clock - oldClock;
                 }
 
-                totalTurnaroundTime += clock - event.getProcess().getStartTime();
                 processesCompleted++;
+                processesPerCPU.at(event.getProcess().getCPU())++;
+
+                totalWaitTime += (clock - event.getProcess().getStartTime() - event.getProcess().getServiceTime());
+                totalServiceTime += event.getProcess().getServiceTime();
+
+                serviceTimes[event.getProcess().getCPU()] += event.getProcess().getServiceTime();
 
                 break;
             }
@@ -201,17 +200,12 @@ int main(int argc, char** args) {
                 std::cerr << "Invalid event type" << '\n';
                 return -2;
             }
-
-            iterations++;
-
-            oldClock = clock;
         }
     } else {
         // n CPUs, 1 ready queue
-        std::queue<Process> readyQueue{};
-        int nextCPU = 0;
+        std::queue<Process> readyQueue;
 
-        Process firstProcess = generateRandomProcess(averageArrivalTime, averageServiceTime, 0.0f, 0);
+        Process firstProcess = generateRandomProcess(averageArrivalTime, averageServiceTime, 0.0f, -1);
         eventQueue.push({EventType::ARRIVAL, firstProcess, firstProcess.getArrivalTime()});
 
         while (processesCompleted < 10000) {
@@ -221,44 +215,72 @@ int main(int argc, char** args) {
 
             switch (event.getType()) {
             case EventType::ARRIVAL: {
-                if (cpus.at(nextCPU).state == CPUState::IDLE) {
-                    
-                } else {
+                bool foundCPU = false;
+
+                for (int i = 0; i < cpuCount; i++) {
+                    if (!foundCPU && cpus.at(i).state == CPUState::IDLE) {
+                        foundCPU = true;
+                        cpus.at(i).state = CPUState::BUSY;
+                        Process newProcess = {event.getProcess().getArrivalTime(), event.getProcess().getServiceTime(),
+                                              clock, i};
+                        Event newDeparture{EventType::DEPARTURE, newProcess, clock + newProcess.getServiceTime()};
+                        eventQueue.push(newDeparture);
+                    }
+                }
+
+                if (!foundCPU) {
                     readyQueue.push(event.getProcess());
                 }
 
-                nextCPU = (nextCPU + 1) % cpuCount;
+                Process newProcess = generateRandomProcess(averageArrivalTime, averageServiceTime, clock, -1);
+                Event newArrival{EventType::ARRIVAL, newProcess, clock + newProcess.getArrivalTime()};
+                eventQueue.push(newArrival);
+
                 break;
             }
             case EventType::DEPARTURE: {
+                if (readyQueue.empty()) {
+                    cpus.at(event.getProcess().getCPU()).state = CPUState::IDLE;
+                } else {
+                    Process readyProcess = readyQueue.front();
+                    readyQueue.pop();
+                    readyProcess.setCPU(event.getProcess().getCPU());
+                    Event newDeparture{EventType::DEPARTURE, readyProcess, clock + readyProcess.getServiceTime()};
+                    eventQueue.push(newDeparture);
+                }
+
+                processesCompleted++;
+                processesPerCPU.at(event.getProcess().getCPU())++;
+
+                totalWaitTime += (clock - event.getProcess().getStartTime() - event.getProcess().getServiceTime());
+                totalServiceTime += event.getProcess().getServiceTime();
+
+                serviceTimes[event.getProcess().getCPU()] += event.getProcess().getServiceTime();
+
                 break;
             }
             default:
                 std::cerr << "Invalid event type" << '\n';
                 return -2;
             }
-
-            iterations++;
-
-            oldClock = clock;
         }
     }
 
-    std::cout << totalCPUTime << '\n';
-    std::cout << clock << '\n';
+    double actualServiceAverage = (totalServiceTime / 10000);
+    double actualWaitAverage = (totalWaitTime / 10000);
+
+    double throughput = processesCompleted / clock;
+
+    std::cout << "Average Turnaround:   " << actualServiceAverage + actualWaitAverage << " seconds\n";
+    std::cout << "Throughput:           " << processesCompleted / clock << " processes/second\n";
 
     std::cout << std::setprecision(3);
-    std::cout << "Average turnaround:      " << totalTurnaroundTime / 10000 << " seconds" << '\n';
-    std::cout << "Total throughput:        " << 10000 / clock << " processes/second\n";
-
-    std::cout << "Total CPU Utilization:   " << (totalCPUTime / clock) * 100.0 << "%\n";
+    std::cout << "Utilization:\n";
     for (int i = 0; i < cpuCount; i++) {
-        std::cout << "  CPU " << i + 1 << ":                 " << (cpuTimes.at(i) / clock) * (100.0 * cpuCount)
-                  << "%\n";
+        std::cout << "  CPU " << i << ":              " << (processesPerCPU[i] / (clock)) * 2 << "%\n";
     }
 
-    std::cout << std::setprecision(5);
-    std::cout << "Average ready processes: " << totalReadyQueueProcesses / (float)iterations << '\n';
+    std::cout << "Average Queue Length: " << actualWaitAverage * averageArrivalTime << " processes\n";
 
     return 0;
 }

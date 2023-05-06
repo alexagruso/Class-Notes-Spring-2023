@@ -1,5 +1,42 @@
 import java.io.*;
 
+class CellThread extends Thread {
+    private Grid grid;
+    private int x;
+    private int y;
+
+    private boolean result = false;
+
+    public CellThread(Grid grid, int x, int y) {
+        this.grid = grid;
+        this.x = x;
+        this.y = y;
+    }
+
+    public boolean getResult() throws InterruptedException {
+        try {
+            this.join();
+        } catch (InterruptedException error) {}
+
+        return this.result;
+    }
+
+    @Override
+    public void run() {
+        if (this.grid.aliveAt(y, x)) {
+            if (this.grid.neighborsAt(y, x) < 2 || this.grid.neighborsAt(y, x) > 3) {
+                this.result = false;
+            } else {
+                this.result = true;
+            }
+        } else if (this.grid.neighborsAt(y, x) == 3) {
+            this.result = true;
+        } else {
+            this.result = false;
+        }
+    }
+}
+
 class Grid {
     private int size;
     private boolean[][] grid;
@@ -80,11 +117,11 @@ class Grid {
     }
 }
 
-public class GOL {
+public class GameOfLifeThreads {
     private Grid grid;
-    private int iterations;
+    private int generations;
 
-    public GOL(int size, String filePath) throws IOException {
+    public GameOfLifeThreads(int size, String filePath) throws IOException {
         this.grid = new Grid(size);
 
         FileInputStream input = null;
@@ -92,30 +129,19 @@ public class GOL {
         try {
             input = new FileInputStream(filePath);
 
-            int fileByte;
+            for (int j = 0; j < this.grid.getSize(); j++) {
+                for (int i = 0; i < this.grid.getSize() + 1; i++) {
+                    char fileChar = (char) input.read();
 
-            int xPos = 0;
-            int yPos = 0;
-
-            while ((fileByte = input.read()) != -1) {
-                char fileChar = (char) fileByte;
-                switch(fileChar) {
-                    case '.':
-                        xPos++;
-                        break;
-                    case 'x':
-                        this.grid.activateCell(xPos, yPos);
-                        xPos++;
-                        break;
-                    case '\n':
-                        xPos = 0;
-                        yPos++;
-                        break;
-                    default:
-                        // this.iterations = Integer.parseInt(); TODO broken
-                        return;
+                    if (fileChar == 'x') {
+                        this.grid.activateCell(i, j);
+                    } else if (fileChar != '.') {
+                        continue;
+                    }
                 }
             }
+
+            generations = Integer.parseInt(String.valueOf((char) input.read()));
         } catch (IOException exception) {
             System.err.println("File not found\n" + exception);
         } finally {
@@ -126,49 +152,57 @@ public class GOL {
     }
 
     public void run() {
-        grid.print();
-
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < this.generations; i++) {
             this.iterate();
         }
 
-        grid.print();
+        this.grid.print();
     }
     
     private void iterate() {
         Grid newGrid = new Grid(this.grid.getSize());
 
-        for (int j = 0; j < this.grid.getSize(); j++) {
-            for (int i = 0; i < this.grid.getSize(); i++) {
+            CellThread[][] threads = new CellThread[this.grid.getSize()][this.grid.getSize()];
+
+        for (int i = 0; i < this.grid.getSize(); i++) {
+            for (int j = 0; j < this.grid.getSize(); j++) {
+                threads[i][j] = new CellThread(this.grid, i, j);
+                threads[i][j].start();
+
                 if (this.grid.aliveAt(i, j)) {
-                    System.out.print("x");
-                } else {
-                    System.out.print(".");
-                }
-                if (this.grid.aliveAt(i, j)) {
-                    if (this.grid.neighborsAt(i, j) < 2 || this.grid.neighborsAt(i, j) > 3) {
-                        this.grid.deactivateCell(i, j);
-                    }
-                } else if (this.grid.neighborsAt(i, j) == 3) {
-                    this.grid.activateCell(i, j);
+                    newGrid.activateCell(i, j);
                 }
             }
-
-            System.out.println();
         }
+
+        for (int i = 0; i < this.grid.getSize(); i++) {
+            for (int j = 0; j < this.grid.getSize(); j++) {
+                try {
+                    if (threads[j][i].getResult()) {
+                        newGrid.activateCell(i, j);
+                    } else {
+                        newGrid.deactivateCell(i, j);
+                    }
+                } catch (InterruptedException error) {
+                    System.out.println("Error:\n" + error);
+                }
+            }
+        }
+
+        this.grid = newGrid;
     }
 
     public static void main(String[] args) throws IOException{
-        GOL gol = null;
+        GameOfLifeThreads gameOfLife = null;
 
         try {
-            gol = new GOL(20, "start.txt");
+            gameOfLife = new GameOfLifeThreads(20, "start.txt");
         } catch (IOException exception) {
             System.err.println("Failed to initialize GOL\n" + exception);
         }
 
-        if (gol != null) {
-            gol.run();
+        if (gameOfLife != null) {
+            gameOfLife.run();
         }
     }
 }
