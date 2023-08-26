@@ -39,7 +39,8 @@
     \[=\int^\pi_0\int^1_0z\sqrt{1-z^2}\sin x\,dz\,dx=-\frac{1}{2}\int^\pi_0\int^1_0\sqrt u\sin x\,du\,dx\]
     \[=-\frac{1}{2}\int^\pi_0\bracks{\frac{2}{3}\sqrt{(1-z^2)^3}\sin x}^1_0=\frac{1}{3}\int^\pi_0\sin x\,dx=\bracks{-\frac{1}{3}\cos x}^\pi_0=\frac{1}{3}+\frac{1}{3}=\frac{2}{3}\]
 
-    \item [11.)] \[I=\int^4_1\int^4_y\int^z_0\frac{z}{x^2+z^2}\,dx\,dz\,dy=\int^4_1\int^4_yz\int^z_0\frac{}{}\]
+    \item [11.)] \[I=\int^4_1\int^4_y\int^z_0\frac{z}{x^2+z^2}\,dx\,dz\,dy=\int^4_1\int^4_y\bracks{\tan^{-1}\parns{\frac{x}{z}}}^z_0\,dz\,dy=\frac{\pi}{4}\int^4_1\int^4_y\,dz\,dy\]
+    \[=\frac\pi4\int^4_1\bracks{z}^4_y\,dy=\frac{\pi}{4}\int^4_14-y\,dy=\frac\pi4\bracks{4y-\frac{1}{2}y^2}^4_1=\frac\pi4\parns{16-8-4+\frac{1}{2}}=\frac{9\pi}{8}\]
 
     \item [19.)] First, find bounds for $z$:
     \[2x+y+z=4\implies0\leq z\leq 4-2x-y\]
@@ -63,7 +64,7 @@
     \[\int^1_{-1}\int^1_{x^2}\int^{1-y}_0\,dz\,dy\,dx=\int^1_{-1}\int^1_{x^2}1-y\,dy\,dx=\int^1_{-1}\bracks{y-\frac{1}{2}y^2}^1_{x^2}\,dx\]
     \[=\int^1_{-1}\frac{1}{2}-x^2+\frac{1}{2}x^4\,dx=\bracks{\frac{1}{2}x-\frac{1}{3}x^3+\frac{1}{10}x^5}^1_{-1}=\frac{1}{2}-\frac{1}{3}+\frac{1}{10}+\frac{1}{2}-\frac{1}{3}+\frac{1}{10}=\frac{8}{15}\]
 
-    \item [54.)]
+    \item [54.)] \[I=\]
 
 \end{itemize}
 
@@ -95,11 +96,12 @@
     \[I=\int^4_{-5}\int^{2\pi}_0\int^4_0r^2\,dr\,d\theta\,dz=\int^4_{-5}\int^{2\pi}_0\bracks{\frac{1}{3}r^3}^4_0\,d\theta\,dz=\int^4_{-5}\int^{2\pi}_0\frac{64}{3}\,d\theta\,dz\]
     \[=\int^4_{-5}\bracks{\frac{64}{3}\theta}^{2\pi}_0\,dz=\int^4_{-5}\frac{128\pi}{3}\,dz=\frac{128\pi}{3}(4+5)=3(128\pi)=384\pi\]
 
-    \item [23.)] $z$ is bounded above $z=\sqrt{x^2+y^2}$ and below $z=\sqrt{2-x^2-y^2}$. The intersection of these two manifolds
+    \item [23.)] 
 
     \item [24.)]
 
-    \item [29.)]
+    \item [29.)] \[I=\int^{2\pi}_0\int^2_0\int^2_rzr^2\cos\theta\,dz\,dr\,d\theta=\int^{2\pi}_0\int^2_0\bracks{\frac{1}{2}z^2r^2\cos\theta}^2_r\,dr\,d\theta\]
+    \[=\int^{2\pi}_0\bracks{\frac{2}{3}r^3\cos\theta-\frac{1}{10}r^5\cos\theta}^2_0\,d\theta=\int^{2\pi}_0\frac{16}{3}\cos\theta-\frac{16}{5}\cos\theta\,d\theta=0-0=0\]
 
 \end{itemize}
 \end{document}

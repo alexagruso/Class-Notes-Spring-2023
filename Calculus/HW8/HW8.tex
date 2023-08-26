@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=10mm]{geometry}
+
+\newcommand{\contradiction}{%
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}%
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+\newcommand{\dvert}[1]{\left\Vert#1\right\Vert}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alexander Agruso}
+\fancyhead[R]{MATH 2393 Homework 8}
+
+\normalsize
+\section*{Exercises 15.8}
+\begin{itemize}
+    \item [1.)] \begin{itemize}
+        \item [a.)] \[x=\rho\sin\phi\cos\theta=6\sin\parns{\pi/6}\cos\parns{\pi/3}=3/2\]
+        \[y=\rho\sin\phi\sin\theta=6\sin\parns{\pi/6}\sin\parns{\pi/3}=3\sqrt3/2\]
+        \[z=\rho\cos\phi=6\cos(\pi/6)=3\sqrt3\]
+        \[\therefore\ (6,\pi/3,\pi/6)\to\parns{3/2,3\sqrt3/2,3\sqrt3}\]
+
+        \item [b.)] \[x=3\sin(3\pi/4)\cos(\pi/2)=0\]
+        \[y=3\sin(3\pi/4)\sin(\pi/2)=3\sqrt2/2\]
+        \[z=3\cos(3\pi/4)=-3\sqrt2/2\]
+        \[\therefore\ (3,\pi/2,3\pi/4)\to\parns{0,3\sqrt2/2,-3\sqrt2/2}\]
+    \end{itemize}
+
+    \item [3.)] \begin{itemize}
+        \item [a.)] \[\rho=\sqrt{x^2+y^2+z^2}=\sqrt{(-2)^2}=2\]
+        \[0=2\cos\phi\implies\phi=\cos^{-1}(0)=\pi/2\]
+        \[0=2\sin(\pi/2)\cos\theta\implies\theta=\cos^{-1}(0)=3\pi/2\]
+        \[\therefore\ (0,-2,0)\to(2,3\pi/2,\pi/2)\]
+
+        \item [b.)] \[\rho=\sqrt{1+1+2}=2\]
+        \[-\sqrt2=2\cos\phi\implies\phi=\cos^{-1}\parns{-\sqrt2/2}=3\pi/4\]
+        \[1=\sin(3\pi/4)\sin\theta\implies\theta=\sin^{-1}\parns{2/\sqrt2}=3\pi/4\]
+        \[\therefore\ \parns{-1,1,\sqrt2}\to\parns{2,3\pi/4,3\pi/4}\]
+    \end{itemize}
+
+    \item [9.)] \[x^2+y^2+z^2=9\implies\rho^2=9\implies\rho=3\]
+
+    \item [21.)] \[I=\int^{2\pi}_0\int^{\pi}_0\int^5_0\rho^6\sin\phi\,d\rho\,d\phi\,d\theta=\int^{2\pi}_0\int^\pi_0\bracks{\frac{1}{7}\rho^7\sin\phi}^5_0\,d\phi\,d\theta\]
+    \[=\frac{5^7}{7}\int^{2\pi}_0\int^\pi_0\sin\phi\,d\phi\,d\theta=\frac{5^7}{7}\int^{2\pi}_02\,d\theta=\frac{5^74\pi}7\]
+
+    \item [23.)] \[I=2\int^{2\pi}_0\int^\pi_0\int^3_2\rho^4\sin^3\phi\,d\rho\,d\phi\,d\theta=2\int^{2\pi}_0\int^\pi_0\bracks{\frac{1}{5}\rho^5\sin^3\phi}^3_2\,d\phi\,d\theta=\]
+    \[\frac{422}{5}\int^{2\pi}_0\int^\pi_0\sin^3\phi\,d\phi\,d\theta=-\frac{422}{5}\int^{2\pi}_0\bracks{\cos\phi-\frac{1}{3}\cos^3\phi}^\pi_0\,d\theta=\frac{422}{15}\int^{2\pi}_02\,d\theta=\frac{1688\pi}{15}\]
+
+    \item [27.)] \[V=\int^{2\pi}_0\int^{\pi/3}_{\pi/6}\int^a_0\rho^2\sin\phi\,d\rho\,d\phi\,d\theta=\frac{a^3}{3}\int^{2\pi}_0\int^{\pi/3}_{\pi/6}\sin\phi\,d\phi\,d\theta=\frac{(\sqrt3-1)a^3}{6}\int^{2\pi}_0\,d\theta\]
+    \[=\frac{1}{3}(\sqrt3-1)\pi a^3\]
+
+    \item [35.)] 
+
+    \item [41.)] 
+\end{itemize}
+\section*{Exercises 16.2}
+\begin{itemize}
+    \item[1.)] \[r(t)=\angleb{t^2,2t},\ r'(t)=\angleb{2t,2},\ \Vert r'(t)\Vert=2\sqrt{t^2+1}\]
+    \[\implies I=\int_Cy\,ds=\int^3_04t\sqrt{t^2+1}\,dt=2\int^3_0\sqrt u\,du=2\bracks{\frac{2}{3}(t^2+1)^{3/2}}^3_0=\frac{4}{3}(10^{3/2}-1)\]
+
+    \item[3.)] \[r(t)=\angleb{4\cos t,4\sin t},\ r'(t)=\angleb{-4\sin t,4\cos t},\ \Vert r'(t)\Vert=\sqrt{16\sin^2t+16\cos^2t}=4\]
+    \[\implies I=\int_Cxy^4\,ds=4^5\int^{\pi/2}_{-\pi/2}\cos t\sin^4 t\,dt=4^5\bracks{\frac{1}{5}\sin^5t}^{\pi/2}_{-\pi/2}=\frac{2\cdot4^5}{5}\]
+
+    \item[7.)] \[r_1(t)=\angleb{2t,t},\ r'_1(t)=\angleb{2,1}\]
+    \[\implies I_1=2\int^1_04t\,dt+\int^1_04t^2=4+\frac{4}{3}=\frac{16}{3}\]
+    \[r_2(t)=\angleb{t+2,1-t},\ r'_2(t)=\angleb{1,-1}\]
+    \[\implies I_2=\int^1_04-t\,dt-\int^1_0t^2+4t+4\,dt=\frac{7}{2}-\frac{19}{3}\]
+    \[I=I_1+I_2=\frac{16}{3}+\frac{7}{2}-\frac{19}{3}=\frac{7}{2}-1=\frac52\]
+
+    \item[9.)] \[r(t)=\angleb{\cos t,\sin t,t},\ r'(t)=\angleb{-\sin t,\cos t,1},\ \Vert r'(t)\Vert=\sqrt{\sin^2t+\cos^2t+1}=\sqrt2\]
+    \[\implies I=\int_Cx^2y\,ds=\sqrt2\int^{\pi/2}_0\cos^2t\sin t\,dt=-\sqrt2\int^{\pi/2}_0u^2\,du\]
+    \[=-\sqrt2\bracks{\frac{1}{3}\cos^3t}^{\pi/2}_0=\frac{\sqrt2}{3}\]
+
+    \item[15.)] \[r(t)=\angleb{3t+1,t,2t},\ r'(t)=\angleb{3,1,2},\ \Vert r'(t)\Vert=\sqrt{9+1+4}=\sqrt{14}\]
+    \[\implies I=3\int^1_04t^2\,dt+\int^1_09t^2+6t+1\,dt+2\int^1_0t^2\,dt=4+7+\frac{2}{3}=\frac{35}{3}\]
+
+    \item[19.)] \[r(t)=\angleb{t^3,t^2},\ r'(t)=\angleb{3t^2,2t}\]
+    \[\implies I=\int^1_0F(r(t))\cdot r'(t)\,dt=\int^1_0\angleb{t^7,-t^6}\cdot\angleb{3t^2,2t}\,dt=\int^1_03t^9-2t^7\,dt=\frac{1}{20}\]
+
+    \item[21.)] \[r(t)=\angleb{t^3,-t^2,t},\ r'(t)=\angleb{3t^2,-2t,1}\]
+    \[\implies I=\int^\pi_0\angleb{\sin(t^3)+\cos(-t^2)+t^4}\cdot\angleb{3t^2,-2t,1}\,dt\]
+    \[=\int^\pi_03t^2\sin(t^3)-2t\cos(-t^2)+t^4\,dt=\bracks{-\cos(t^3)-\sin(-t^2)+\frac{1}{5}t^5}^\pi_0\]
+
+    \item[41.)]
+\end{itemize}
+\end{document}

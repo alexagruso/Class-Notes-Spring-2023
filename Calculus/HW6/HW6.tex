@@ -122,12 +122,13 @@
     \end{vmatrix}=s\cos^2t+s\sin^2t=s\]
 
     \item [15.)] Given the triangle \{(0,0),(1,2),(2,1)\}, the transformation $x=2u+v$ and $y=u+2v$, and $J[u,v]=3$, we can evaluate the following integral:
-    \[I=\iint\limits_{R}x-3y\,dA=3\int^1_0\int^1_0-u-5v\,du\,dv=3\int^1_0\bracks{-\frac{1}{2}u^2-5uv}^1_0\,dv\]
-    \[=3\int^1_0-\frac{1}{2}-5v\,dv=3\bracks{-\frac{1}{2}v-\frac{5}{2}v^2}^1_0=-\frac{3}{2}-\frac{15}{2}=-9\]
+    \[I=\iint\limits_{R}x-3y\,dA=3\int^1_0\int^{1-v}_0-u-5v\,du\,dv=3\int^1_0\bracks{-\frac{1}{2}u^2-5uv}^{1-v}_0\,dv\]
+    \[=3\int^1_0-\frac{1}{2}(1-v)^2-5(1-v)v\,dv=\frac{3}{2}\int^1_09v^2-8v-1\,dv=\frac{3}{2}\bracks{3v^3-4v^2-v}^1_0\]
+    \[=\frac{3}{2}\parns{3-4-1}=-3\]
 
-    \item [17.)] Given the ellipse $9x^2+4y^2=36$, and applying the transformation $x=2u$ and $y=3v$, we get $u^2+v^2=1$. Converting to polar coordinates, we find $0\leq r\leq 1$ and $0\leq\theta\leq2\pi$. Evaluating the following integral:
+    \item [17.)] Given the ellipse $9x^2+4y^2=36$, and applying the transformation $x=2u$ and $y=3v$, we get $u^2+v^2=1$ and $J[u,v]=6$. Converting to polar coordinates, we find $0\leq r\leq 1$, $0\leq\theta\leq2\pi$ and $J[r,\theta]=r$. Evaluating the following integral:
     \[I=\iint\limits_{R}x^2\,dA=6\int^{2\pi}_0\int^1_04r^3\cos^2\theta\,dr\,d\theta=6\int^{2\pi}_0\bracks{r^4\cos^2\theta}^1_0\,d\theta\]
-    \[=6\int^{2\pi}_0\cos^2\theta\,d\theta=\]
+    \[=6\int^{2\pi}_0\cos^2\theta\,d\theta=3\int^{2\pi}_01+\cos2\theta\,d\theta=3\bracks{\theta+\frac{1}{2}\sin2\theta}^{2\pi}_0=3\parns{2\pi+0+0+0}=6\pi\]
 
 \end{itemize}
 \end{document}
