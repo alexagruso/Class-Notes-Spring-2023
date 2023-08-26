@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1693024396 "/home/alexander/Documents/School/Fall2023/Topology/Writing1/writing.tex" "writing.pdf" "writing" 1693024396 0
-  "/home/alexander/Documents/School/Fall2023/Topology/Writing1/writing.tex" 1693024395 2095 2ee821183e1c87aa17848b132048dc2b ""
+["pdflatex"] 1693026822 "/home/alexander/Documents/School/Fall2023/AbstractAlgebra/HW1/writing.tex" "writing.pdf" "writing" 1693026822 0
+  "/home/alexander/Documents/School/Fall2023/AbstractAlgebra/HW1/writing.tex" 1693026822 2363 9577466ee195ad631c1d16dd3511f7c8 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -20,15 +20,10 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1689853683 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm" 1689853683 688 37338d6ab346c2f1466b29e195316aa4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm" 1689853683 684 3a51bd4fd9600428d5264cf25f04bb9a ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1689853683 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1689853683 36741 fa121aac0049305630cf160b86157ee4 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1689853683 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1689853683 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1689853683 32722 d7379af29a190c3f453aba36302ff5a9 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1689853683 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1689853683 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1689853683 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1689853683 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1689853683 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1689853683 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1689853683 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -65,8 +60,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1692532208 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1692532166 6768056 ef319c1f3cde1f9ae838857292e8b4a7 ""
-  "writing.aux" 1693024396 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "writing.tex" 1693024395 2095 2ee821183e1c87aa17848b132048dc2b ""
+  "writing.aux" 1693026822 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "writing.tex" 1693026822 2363 9577466ee195ad631c1d16dd3511f7c8 ""
   (generated)
   "writing.aux"
   "writing.log"

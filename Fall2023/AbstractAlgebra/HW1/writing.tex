@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.2}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+\newcommand{\lcm}{\text{lcm}}
+\newcommand{\pmd}[1]{\text{ (mod }#1\text{)}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Writing 1}
+
+\normalsize
+
+\begin{itemize}
+    \item [2.)] \begin{itemize}
+        \item [a.)] $\gcd(2,10)=2$, $\lcm(2,10)=10$
+        \item [b.)] $\gcd(20,8)=4$, $\lcm(20,8)=40$
+        \item [c.)] $\gcd(12,40)=4$, $\lcm(12,40)=120$
+        \item [d.)] $\gcd(21,50)=1$, $\lcm(21,50)=1050$
+        \item [e.)] $\gcd(p^2q^2,pq^3)=pq^2$, $\lcm(p^2q^2,pq^3)=p^2q^3$
+    \end{itemize}
+
+    \item [7.)] Let $a,b\in\mathbb{Z}$ and $n\in\mathbb{N}$. Assume $a\equiv b\pmd{n}$, thus $a=b+kn$ for some $k\in\mathbb{Z}$. $a=b+kn\implies a-b=kn\implies n\mid a-b$, thus $a\equiv b\pmd{n}\implies n\mid a-b$.
+    
+    Next, assume $n\mid a-b$, thus $ln=a-b$ for some $l\in\mathbb{Z}$. $ln=a-b\implies a=b+ln\break\implies a\equiv b\pmd{n}$, thus $n\mid a-b\implies a\equiv b\pmd{n}$,
+    
+    Thus $a\equiv b\pmd{n}\iff n\mid a-b$. Q.E.D.
+
+    \item [18.)] $8^1\equiv3\pmd{5}$, $8^2\equiv4\pmd{5}$, $8^3\equiv2\pmd{5}$, $8^4\equiv1\pmd{5}$, $8^5\equiv3\pmd{5}$, thus $8^{402}\equiv(8^4)^{100}\times8^2\equiv1^{100}\times4\equiv4\pmd{5}$
+    
+    \item [58.)] Define a relation $R$ on $\mathbb{R}$ where $a\sim b\implies a-b\in\mathbb{Z}$ for $a,b\in\mathbb{R}$. Since for all $a\in\mathbb{R}$, $a-a=0$, we know that $a\sim a$, thus $R$ is reflexive.
+    
+    Next, assume $a\sim b$, thus $a-b\in\mathbb{Z}$. Let $n=a-b$; $n=a-b\implies -n=-(a-b)=b-a$. Since $n\in\mathbb{Z}\implies-n\in\mathbb{Z}$, we know that $b\sim a$, thus $R$ is symmetric. ***
+
+    \item [60.)] awd
+\end{itemize}
+
+\end{document}
