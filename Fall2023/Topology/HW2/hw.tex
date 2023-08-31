@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 2}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given a set $P$, a partial order on $P$ is a relation $\leq$ on $P$ that satisfies the following conditions:
+    \begin{itemize}
+        \item [1.] For all $p\in P$, $p\leq p$. (Reflexivity)
+        \item [2.] For all $p,q\in P$, $p\leq q\land q\leq p\implies p=q$. (Antisymmetry)
+        \item [3.] For all $p,q,r\in P$, $p\leq q\land q\leq r\implies p\leq r$. (Transitivity)
+    \end{itemize}
+
+    \item [2.)] Given a relation $R$ on a set $P$, $R$ is transitive if for all $p,q,r\in P$, $p\sim q\land q\sim r\implies p\sim r$.
+    
+    \item [3.)] The union of a collection of sets $\braces{S_\alpha}_{\alpha\in A}$ is defined as the set $S=\braces{}$
+\end{itemize}
+
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] awd
+\end{itemize}
+
+\end{document}

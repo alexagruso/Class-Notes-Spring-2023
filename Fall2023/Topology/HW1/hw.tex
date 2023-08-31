@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 1}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Let $A$ and $B$ be sets. We say that $A$ is a ``subset'' of $B$, and write $A\subset B$ if\break$a\in A\implies a\in B$ holds for all $a\in A$.
+
+    \item [2.)] Let $A$ be a set. We call $\mathcal{P}(A)$ the ``power set'' of $A$, and define it as $\mathcal{P}(A)=\{B:B\subset A\}$.
+
+    \item [3.)] We call $\varnothing$ the ``empty set'' and define it where $\vertb{\varnothing}=0$.
+
+    \item [4.)] We call $S^2$ the $2$-sphere and define it as follows:
+    \[S^2=\braces{(x_1,x_2,x_3)\in\mathbb{R}^3:\sum_{i=1}^3x_i^2=1}\]
+    It represents the boundary points of a closed ball in $\mathbb{R}^3$.
+
+    \item [5.)] Given a set $A$, $\mathcal{P}(A)$ represents the ``power set'' of $A$.
+
+    \item [6.)] We call $\Delta^2$ the $2$-simplex and define it as follows:
+    \[\Delta^2=\braces{(x_1,x_2,x_3)\in\mathbb{R}^3:\sum_{i=1}^3x_i=1}\]
+    It represents an equilateral triangle with side length $\sqrt{2}$ in $\mathbb{R}^3$.
+\end{itemize}
+
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] Let $A$ be an arbitrary set, and $G$ be the set of all functions $g:A\to\{0,1\}$. Also, let $f:\mathcal{P}(A)\to G$ be a mapping defined as follows:
+    \[\text{Given }S\in\mathcal{P}(A),\text{ define }f(S)\text{ as }(f(S))(a)=\begin{cases}
+        1 & \text{if }a\in S \\
+        0 & \text{otherwise}
+    \end{cases}\]
+
+    First we will show that $f$ is injective. Let $S_1,S_2\in\mathcal{P}(A)$ where $f(S_1)=f(S_2)$. We can see that $s\in S_1\implies (f(S_1))(s)=1\implies(f(S_2))(s)=1\implies s\in S_2$. Without loss of generality, we also see that $s\in S_2\implies s\in S_1$, thus $s\in S_1\iff s\in S_2\implies S_1=S_2$, thus $f(S_1)=f(S_2)\implies S_1=S_2$, thus $f$ is injective.
+
+    Next we will show that $f$ is surjective. Let $g\in G$ and $S\in\mathcal{P}(A)$ where $S=\braces{a\in A:g(a)=1}$. Since $a\in S\implies g(a)=1$ and $a\notin S\implies g(a)=0$, we know that $f(S)=g$, thus for any $g$ we can find $S$ where $f(S)=g$, thus $f$ is surjective.
+
+    Since $f$ is both injective and surjective, it is bijective, thus we have found a bijection from $\mathcal{P}(A)$ to $G$. Q.E.D.
+
+    \pagebreak
+    \item [b.)] Let $A$ be an arbitrary set, and consider an arbitrary mapping $f:A\to\mathcal{P}(A)$. Also, let $S\in\mathcal{P}(A)$ where $S=\braces{a\in A:a\notin f(a)}$. For the sake of establishing a contradiction, suppose $f$ is surjective, then there exists $b\in A$ where $f(b)=S$. Assume that $b\in S$, then $b\notin f(b)$. However, since $f(b)=S$, $b\in S\implies b\in f(b)\implies b\notin S$.\contradiction Instead, assume that $b\notin S$, then $b\in f(b)$, and thus $b\in S$.\contradiction Since $b\in S\land b\notin S$ is a contradictionl we can conclude that $f$ is not surjective, and thus not bijective, thus any mapping $f:A\to\mathcal{P}(A)$ is not bijective. Q.E.D.
+\end{itemize}
+
+\end{document}
