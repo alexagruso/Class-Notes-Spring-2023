@@ -1,7 +1,7 @@
-PWD /home/alexander/Documents/School/Fall2023/Topology/HW2
+PWD /home/alexander/Documents/schoolwork/fall2023/topology/hw2
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/alexander/Documents/School/Fall2023/Topology/HW2/hw.tex
+INPUT /home/alexander/Documents/schoolwork/fall2023/topology/hw2/hw.tex
 OUTPUT hw.log
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/article.cls

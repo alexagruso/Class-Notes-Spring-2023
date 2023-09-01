@@ -1,0 +1,54 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Extra Credit 1}
+
+\normalsize
+
+In $\R^3$, we can see that a tetrahedron consists of four triangular faces, each adjacent to eachother, six edges, each adjacent to two other lines, and four vertices. First, we will show that $\Delta^3$ contains the previously mentioned shapes, and then show that these shapes are adjacent, and thus $\Delta^3$ is a tetrahedron.
+
+Given the following definition of $\Delta^3$
+\[\Delta^3=\braces{(x_1,x_2,x_3,x_4)\in\mathbb{R}^4:\sum_{i=1}^{4}x_i=1\text{ and }x_i\geq0}\]
+Let $S\subset\braces{1,2,3,4}$ where $S\ne\varnothing$ and define $\Delta^3_S=\braces{x\in\Delta^3:i\in S\implies x_i=0}$. We can show that for each $S$, $\Delta^3_S\cong\Delta^{3-\vertb{S}}$. (Am I using $\cong$ right here?)
+
+Proof: let $S\subset\braces{1,2,3,4}$ where $S\ne\varnothing$. Consider the case where $\vertb{S}=1$. Without loss of generality, let $S=\braces{1}$, then every point in $\Delta^3_S$ is $(0,x_1,x_2,x_3)$ for $a,b,c\in\mathbb{R}$. Consider the mapping $f:\Delta^3_S\to\Delta^2$ where $(0,x_1,x_2,x_3)\mapsto(x_1,x_2,x_3)$. We can show that $f$ is bijective, and thus $\Delta^3_S\cong\Delta^2$. Suppose $a,b\in\Delta^3_S$ where $a=(0,a_1,a_2,a_3)$ and $b=(0,b_1,b_2,b_3)$, and where $f(a)=f(b)$, thus $(a_1,a_2,a_3)=(b_1,b_2,b_3)$, and thus $(0,a_1,a_2,a_3)=(0,b_1,b_2,b_3)$, thus $f$ is injective. Next, suppose $a\in\Delta^2$ where $a=(a_1,a_2,a_3)$ and consider $b=(0,b_1,b_2,b_3)$,
+
+\end{document}
