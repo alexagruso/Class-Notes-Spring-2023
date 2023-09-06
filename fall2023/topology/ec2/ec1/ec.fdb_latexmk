@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1693609434 "/home/alexander/Documents/School/fall2023/topology/ec1/ec.tex" "ec.pdf" "ec" 1693609435 0
-  "/home/alexander/Documents/School/fall2023/topology/ec1/ec.tex" 1693609434 3716 d63f1c3ab3efb68e40a108184a7c93a7 ""
+["pdflatex"] 1693615764 "/home/alexander/Documents/School/fall2023/topology/ec2/ec1/ec.tex" "ec.pdf" "ec" 1693615765 0
+  "/home/alexander/Documents/School/fall2023/topology/ec2/ec1/ec.tex" 1693615764 1689 f93ac52e2b6fb1106664e53ca2c0a249 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -26,7 +26,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1689853683 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1689853683 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1689853683 32569 5e5ddc8df908dea60932f3c484a54c0d ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1689853683 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1689853683 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1689853683 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1689853683 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -63,8 +62,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693603295 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693603284 6768064 329739968debc83b242f991dabf85891 ""
-  "ec.aux" 1693609435 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "ec.tex" 1693609434 3716 d63f1c3ab3efb68e40a108184a7c93a7 ""
+  "ec.aux" 1693615765 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "ec.tex" 1693615764 1689 f93ac52e2b6fb1106664e53ca2c0a249 ""
   (generated)
   "ec.aux"
   "ec.log"

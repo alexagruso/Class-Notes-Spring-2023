@@ -43,12 +43,23 @@
 
 \normalsize
 
-In $\R^3$, we can see that a tetrahedron consists of four triangular faces, each adjacent to eachother, six edges, each adjacent to two other lines, and four vertices. First, we will show that $\Delta^3$ contains the previously mentioned shapes, and then show that these shapes are adjacent, and thus $\Delta^3$ is a tetrahedron.
+In $\R^3$, we can define a tetrahedron as a polyhedron having four equilateral triangle faces, each of which is adjacent to the other three. First we will show that the boundary of $\Delta^3$ consists of four equilateral triangles. After, we will show each triangle is adjacent.
 
-Given the following definition of $\Delta^3$
-\[\Delta^3=\braces{(x_1,x_2,x_3,x_4)\in\mathbb{R}^4:\sum_{i=1}^{4}x_i=1\text{ and }x_i\geq0}\]
-Let $S\subset\braces{1,2,3,4}$ where $S\ne\varnothing$ and define $\Delta^3_S=\braces{x\in\Delta^3:i\in S\implies x_i=0}$. We can show that for each $S$, $\Delta^3_S\cong\Delta^{3-\vertb{S}}$. (Am I using $\cong$ right here?)
+Given the following definition of $\Delta^3$:
+\[\Delta^3=\braces{(x_1,x_2,x_3,x_4)\in\mathbb{R}^4:\sum_{i=1}^4x_i=1\text{ and }x_i\geq0}\]
+let $j\in\braces{1,2,3,4}$ and $\mathcal{F}_j$ be defined as follows:
+\[\mathcal{F}_j=\braces{x\in\Delta^3:i=j\implies x_i=0}\]
+If we can show bijections $f:\mathcal{F}_j\to\Delta^2$ for all $j$, then we know that $\mathcal{F}_j\subset\Delta^3$ is an equilateral triangle, and since there are 4 distinct $\mathcal{F}_j$, we can conclude that the boundary of $\Delta^3$ consists of 4 equilateral triangles.
 
-Proof: let $S\subset\braces{1,2,3,4}$ where $S\ne\varnothing$. Consider the case where $\vertb{S}=1$. Without loss of generality, let $S=\braces{1}$, then every point in $\Delta^3_S$ is $(0,x_1,x_2,x_3)$ for $a,b,c\in\mathbb{R}$. Consider the mapping $f:\Delta^3_S\to\Delta^2$ where $(0,x_1,x_2,x_3)\mapsto(x_1,x_2,x_3)$. We can show that $f$ is bijective, and thus $\Delta^3_S\cong\Delta^2$. Suppose $a,b\in\Delta^3_S$ where $a=(0,a_1,a_2,a_3)$ and $b=(0,b_1,b_2,b_3)$, and where $f(a)=f(b)$, thus $(a_1,a_2,a_3)=(b_1,b_2,b_3)$, and thus $(0,a_1,a_2,a_3)=(0,b_1,b_2,b_3)$, thus $f$ is injective. Next, suppose $a\in\Delta^2$ where $a=(a_1,a_2,a_3)$ and consider $b=(0,b_1,b_2,b_3)$,
+Consider the mapping $f:\mathcal{F}_1\to\Delta^2$ where $(0,x_2,x_3,x_4)\mapsto(x_2,x_3,x_4)$. We can first show that $f$ is injective. Let $a,b\in\mathcal{F}_1$ where $a=(0,a_1,a_2,a_3)$ and $b=(0,b_1,b_2,b_3)$, and where $f(a)=f(b)$. Since $f(a)=(a_1,a_2,a_3)$ and $f(b)=(b_1,b_2,b_3)$, we can conclude that $(a_1,a_2,a_3)=(b_1,b_2,b_3)$, thus $f$ is injective. Next we can show that $f$ is surjective. Let $a\in\Delta^2$ where $a=(a_1,a_2,a_3)$ and $b\in\mathcal{F}_1$ where $b=(0,a_1,a_2,a_3)$, then $f(b)=(a_1,a_2,a_3)=a$, thus for all $a\in\Delta^2$, there exists $b\in\mathcal{F}_1$ where $f(b)=a$, thus $f$ is a surjective, and thus $f:\mathcal{F}_1\to\Delta^2$ is a bijection. Without loss of generality, we can conclude that this holds for all $j$.
+
+To show that any two triangles $\mathcal{F}_{j},\mathcal{F}_{k}$ for $j\ne k$ are adjacent, we can show that their intersection is a line. Consider $\mathcal{F}_1$ and $\mathcal{F}_2$:
+\[\mathcal{F}_1=\braces{(x_1,x_2,x_3,x_4)\in\Delta^3:x_1=0}\]
+\[\mathcal{F}_2=\braces{(x_1,x_2,x_3,x_4)\in\Delta^3:x_2=0}\]
+and then $\mathcal{F}_1\cap \mathcal{F}_2$:
+\[\mathcal{F}_1\cap \mathcal{F}_2=\braces{a:a\in \mathcal{F}_1\land a\in \mathcal{F}_2}=\braces{(x_1,x_2,x_3,x_4)\in\Delta^3:x_1=x_2=0}\]
+Since $(0,0,x_3,x_4)\in\Delta^3$, we know that $x_3+x_4=1$, which is the equation of a line, thus we know that $\mathcal{F}_1\cap \mathcal{F}_2$ are adjacent, and without loss of generality, $\mathcal{F}_j$ and $\mathcal{F}_k$ are adjacent for $j\ne k$.
+
+Since we have shown that the boundary of $\Delta^3$ consists of four equilateral triangles, and that each triangle $\mathcal{F}_j\subset\Delta^3$ is adjacent to the others, we can conclude that according to our definition of a tetrahedron, $\Delta^3$ is a tetrahedron. $\blacksquare$
 
 \end{document}

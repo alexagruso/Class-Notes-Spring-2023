@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Extra Credit 2}
+
+\normalsize
+
+\begin{itemize}
+    \item [a.)] Given $p:S^3\to\C\times\R$, consider $\mathcal{I}=\text{Im}(p)$ and $S^2$:
+    \[\mathcal{I}=\braces{(z,x)\in\C\times\R:\exists (w_1,w_2)\in S^3\text{ where }p(w_1,w_2)=(z,x)}\]
+    \[S^2=\braces{(x_1,x_2,x_3)\in\mathbb{R}^3:\sum_{i=1}^3x_i^2=1}\] If we show that $a\in\mathcal{I}\iff a\in S^2$, then we will have shown that $\mathcal{I}=S^2$.
+
+    First, let $a\in\mathcal{I}=(z,x)=(2w_1\overline{w_2},w_1\overline{w_1}-w_2\overline{w_2})$ for some $w_1,w_2\in S^3$.
+
+    \item [b.)] awd
+    
+    \item [c.)] awd
+\end{itemize}
+
+
+\end{document}

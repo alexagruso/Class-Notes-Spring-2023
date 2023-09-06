@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Abstract Algebra Homework 2}
+
+\normalsize
+
+\section*{Chapter 1}
+\begin{itemize}
+    \item [5.)] awd
+
+    \item [15.)] awd
+
+\end{itemize}
+
+\section*{Chapter 2}
+\begin{itemize}
+    \item [7.)] \begin{itemize}
+        \item [1.] Let $a$ and $b$ be odd integers, thus there exist $m,n\in\Z$ where $a=2m+1$ and $b=2n+1$. We can see that $a+b=2m+1+2n+1=2m+2n+2=2(m+n+1)$, which is even, thus the odd integers are not closed under addition, and thus are not a group under addition.
+
+        \item [2.] For the sake of establishing a contradiction, let $a$ and $b$ be odd integers where $a+b=a$, thus for some $m,n\in\Z$:
+        \[2m+1+2n+1=2m+2n+2=2m+1\]
+        \[\implies2n+1=0\implies2n=-1\implies n=-\frac{1}{2}\]
+        Thus $n\notin\Z$.\contradiction Thus no such $a,b$ exist in the odd integers, thus the odd integers lack an identity element under addition, and thus are not a group under addition.
+    \end{itemize}
+
+    \item [14.)] \begin{itemize}
+        \item [1.] $(ab)^3=(ab)(ab)(ab)=ababab$
+
+        \item [2.] $(ab^{-2}c)^{-2}=(ab^{-2}c)^{-1}(ab^{-2}c)^{-1}=(c^{-1}b^2a^{-1})(c^{-1}b^2a^{-1})=c^{-1}b^2a^{-1}c^{-1}b^2a^{-1}$
+    \end{itemize}
+
+    \item [33.)] \[
+        \begin{tabular}{l|lllll}
+            & $e$ & $a$ & $b$ & $c$ & $d$ \\
+            \hline
+            $e$ & $e$ & $a$ & $b$ & $c$ & $d$ \\
+            $a$ & $a$ & $b$ & $c$ & $d$ & $e$ \\
+            $b$ & $b$ & $c$ & $d$ & $e$ & $a$ \\
+            $c$ & $c$ & $d$ & $e$ & $a$ & $b$ \\
+            $d$ & $d$ & $e$ & $a$ & $b$ & $c$
+        \end{tabular}
+        \]
+
+\end{itemize}
+
+\end{document}

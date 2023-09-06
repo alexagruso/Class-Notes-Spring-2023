@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Systems Security Homework 1}
+
+\normalsize
+
+\begin{itemize}
+    \item [1.)] awd
+
+    \item [2.)] \begin{itemize}
+        \item I agree with the statement. Consider a server with little to no integrity. Because of this lack of integrity, it would be easy to improperly modify information such as my access privilege, thus allowing me to access unauthorized information, which means that confidentiality is compromised, thus a server without integrity cannot have confidentiality.
+    \end{itemize}
+
+    \item [3.)] The principle of least privilege concerns the access that subjects get to objects. It states that ``subjects should only have access to the objects needed to perform routine, authorized rights''. This principle is important to computer security because it prohibits ordinary users from acting with higher privilege than they should have access to, preventing them from causing damage both inadvertently, and maliciously.
+
+    \item [4.)] awd
+
+    \item [5.)] awd
+\end{itemize}
+
+\end{document}

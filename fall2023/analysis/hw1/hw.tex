@@ -1,0 +1,68 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.5}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\verts}[1]{\left\vert#1\right\vert}
+\newcommand{\bracks}[1]{\left[#1\right]}
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\parns}[1]{\left(#1\right)}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\de}{\delta}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Analysis Homework 1}
+
+\normalsize
+
+\section*{Problems}
+\begin{itemize}
+    \item [5.1.8.] Let $\e>0$ be given and consider the following:
+    \[\verts{\sqrt{x}-\sqrt{x_0}}<\e\implies\verts{\sqrt{x}-\sqrt{x_0}}\verts{\sqrt{x}+\sqrt{x_0}}=\verts{x-x_0}<\e\verts{\sqrt{x}+\sqrt{x_0}}\]
+    Since $\sqrt{x}$ is only defined for $x\geq0$, we know that $x,x_0\geq0$, thus $\sqrt{x},\sqrt{x_0}>0$, thus
+    \[\verts{x-x_0}<\e\verts{\sqrt{x}+\sqrt{x_0}}<\implies\frac{\verts{x-x_0}}{\verts{\sqrt{x}+\sqrt{x_0}}}<\frac{\verts{x-x_0}}{\sqrt{x_0}}<\e\implies\verts{x-x_0}<\e\sqrt{x_0}\]
+    Let $\delta=\e\sqrt{x_0}$, thus
+    \[0<\verts{x-x_0}<\delta\implies\verts{x-x_0}<\e\sqrt{x_0}\implies\frac{\verts{x-x_0}}{\sqrt{x_0}}<\e\implies\frac{\verts{x-x_0}}{\verts{\sqrt{x}+\sqrt{x_0}}}<\frac{\verts{x-x_0}}{\sqrt{x_0}}<\e\]
+    \[\implies\verts{\sqrt{x}-\sqrt{x_0}}<\e\]
+    Thus $\lm{x\to x_0}\sqrt{x}=\sqrt{x_0}$. $\blacksquare$
+
+    \item [5.1.16] Let $f(x)=\verts{x}/x$. We will evaluate $\lm{x\to0^-}f(x)$ and $\lm{x\to0^+}f(x)$.
+
+    First, consider $\lm{x\to0^-}f(x)$. Let $\braces{x_n}_{n\in\mathbb{N}}$ be a sequence where $x_n\to0$ and $x_n<0$ for all $n\in\mathbb{N}$. We can see the following:
+    \[f(x_n)=\frac{\verts{x_n}}{x_n}=\frac{-x_n}{x_n}=-1\]
+    Thus $\lm{x\to0^-}f(x)=-1$. Next, consider $\lm{x\to0^+}f(x)$. Let $\braces{y_n}_{n\in\mathbb{N}}$ be a sequence where $y_n\to0$ and $y_n>0$ for all $n\in\mathbb{N}$. We can see the following:
+    \[f(y_n)=\frac{\verts{y_n}}{y_n}=\frac{y_n}{y_n}=1\]
+    Thus $\lm{x\to0^+}f(x)=1$, thus $\lm{x\to0^-}f(x)\ne\lm{x\to0^+}f(x)$, thus $\lm{x\to0}f(x)$ does not exist. $\blacksquare$
+
+    \item [5.6.12] Let $f$ be not uniformly continuous on an interval $I$, then there exists $\e>0$ where for all $\delta>0$, the following is true:
+    \[x,y\in I\text{ and }0<\verts{x-y}<\delta\implies\verts{f(x)-f(y)}>\e\]
+    Consider two sequences $\braces{x_n}_{n\in\mathbb{N}}$ and $\braces{y_n}_{n\in\mathbb{N}}$ where $x_n,y_n\in I$ for all $n\in\mathbb{N}$, and where $x_n-y_n\to0$, thus for some $N\in\mathbb{N}$, the following is true:
+    \[n>N\implies\verts{x_n-y_n}<\delta\]
+    Let $n>N$, then we can conclude that
+    \[x_n,y_n\in I\text{ and }\verts{x_n-y_n}<\delta\implies\verts{f(x_n)-f(y_n)}>\e\]
+    Thus there exist seqeuences where $x_n-y_n\to0$ but $\verts{f(x_n)-f(y_n)}>c$ for $c>0$. $\blacksquare$
+\end{itemize}
+
+\end{document}
