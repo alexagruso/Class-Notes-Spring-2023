@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \pagenumbering{gobble}
-\linespread{1.25}
+\linespread{1.4}
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -45,9 +45,23 @@
 
 \section*{Chapter 1}
 \begin{itemize}
-    \item [5.)] awd
+    \item [5.)] In $D_n$ for $n\ge3$, let $e$ be the identity element, $r$ be a counter-clockwise rotation by $(360/n)^\circ$, and $s$ be a reflection across the vertical axis. These elements of $D_n$ form a generating set of $D_n$, as every symmetry in $D_n$ is represented by one of the following group elements:
+    \[\braces{e,r,r^2,\dots,r^{n-1},s,sr,sr^2,\dots,sr^{n-1}}\]
+    From this set we can conclude that $D_n$ has $2n$ elements, or $\vertb{D_n}=2n$.
 
-    \item [15.)] awd
+    \item [15.)] Considering the symmetries of a nonsquare rectangle, we find the identity element $e$, the $180^\circ$ counter-clockwise rotation $r$, and the reflection across the vertical axis $s$. These elements form the symmetries of the rectangle with the following set:
+    \[\braces{e,r,s,sr}\]
+    Using this set we can construct the cayley table for the symmetries of the rectangle as follows:
+    \[
+        \begin{tabular}{c|cccc}
+            & $e$ & $r$ & $s$ & $sr$ \\
+            \hline
+            $e$ & $e$ & $r$ & $s$ & $sr$ \\
+            $r$ & $r$ & $e$ & $sr$ & $s$ \\
+            $s$ & $s$ & $sr$ & $e$ & $r$ \\
+            $sr$ & $sr$ & $s$ & $r$ & $e$
+        \end{tabular}
+    \]
 
 \end{itemize}
 
@@ -80,6 +94,45 @@
         \end{tabular}
         \]
 
+\end{itemize}
+
+\section*{Chapter 3}
+\begin{itemize}
+    \item [1.)] \begin{itemize}
+        \item [a.] $\vertb{\Z_{12}}=\vertb{\braces{[0],[1],[2],\dots,[11]}}=12$\newline
+        $\vertb{[0]}=1,\vertb{[1]}=12,\vertb{[2]}=6,\vertb{[3]}=4,\vertb{[4]}=3,\vertb{[5]}=12,\vertb{[6]}=2,\vertb{[7]}=12\break\vertb{[8]}=3,\vertb{[9]}=4,\vertb{[10]}=6,\vertb{[11]}=12$
+
+        \item [b.] $\vertb{U(10)}=\vertb{\braces{1,3,7,9}}=4$\newline
+        $\vertb{1}=1,\vertb{3}=4,\vertb{7}=4,\vertb{9}=2$
+
+        \item [c.] $\vertb{U(12)}=\vertb{\braces{1,5,7,11}}=4$\newline
+        $\vertb{1}=1,\vertb{5}=2,\vertb{7}=2,\vertb{11}=2$
+
+        \item [d.] $\vertb{U(20)}=\vertb{\braces{1,3,7,9,11,13,17,19}}=8$\newline
+        $\vertb{1}=1,\vertb{3}=4,\vertb{7}=4,\vertb{9}=2,\vertb{11}=2,\vertb{13}=4,\vertb{17}=4,\vertb{19}=2$
+
+        \item [e.] $\vertb{D_4}=\vertb{\braces{e,r,r^2,r^3,s,sr,sr^2,sr^3}}=8$\newline
+        $\vertb{e}=1,\vertb{r}=4,\vertb{r^2}=2,\vertb{r^3}=4,\vertb{s}=2,\vertb{sr}=2,\vertb{sr^2}=2,\vertb{sr^3}=2$
+    \end{itemize}
+    One might notice that the order of any element of a group never exceeds the order of the group itself.
+
+    \pagebreak
+    \item [4.)] Consider a group $(G,*)$ and let $a,a^{-1}\in G$ where $\vertb{a}=n$ for $n\in\N$. We can see that $a^n=e\implies\parens{a^{-1}}^n*a^n=\parens{a^{-1}}^n=a^{-n}*a^n=a^{-n}=e$, thus $\parens{a^{-1}}^n=e$. Now consider $m\in\N$ where $m<n$, then $a^m\ne e\implies a^{-m}*a^m\ne a^{-m}\implies a^{-m}\ne e$. From this we can conclude that $\vertb{a}=\vertb{a^{-1}}$. $\blacksquare$
+
+    \item [7.)] Consider a group $(G,*)$ and let $a,b,c\in G$ where $\vertb{a}=6$ and $\vertb{b}=7$. First, we can see that $\parens{a^4*c^{-2}*b^4}^{-1}=b^{-4}*c^2*a^{-4}$. Since $\vertb{a}=6$, we can see that $a^{-4}=e*a^{-4}=a^6*a^{-4}=a^2$, and since $\vertb{b}=7$, we can see that $b^{-4}=e*b^{-4}=b^7*b^{-4}=b^3$. From this we can conclude that $\parens{a^4*c^{-2}*b^4}^{-1}=b^3*c^2*a^2$. $\blacksquare$
+
+    \item [13.)] Consider a group $(G,*)$ and let $a,x,x^{-1}\in G$ where $\vertb{a}=n$ for $n\in\N$. We can see the following:
+    \[\parens{xax^{-1}}^n=\underbrace{\parens{xax^{-1}}\cdot\parens{xax^{-1}}\cdot\ldots\cdot\parens{xax^{-1}}}_\text{$n$ times}\]
+    \[=xa\parens{x^{-1}x}a\parens{x^{-1}x}a\cdot\ldots\cdot a\parens{x^{-1}x}ax^{-1}=xa^nx^{-1}=xex^{-1}=xx^{-1}=e\]
+    Thus $\parens{xax^{-1}}^n=e$. Now consider $m\in\N$ where $m<n$, thus $a^m\ne e$. Knowing this, we can see the following:
+    \[\parens{xax^{-1}}^m=\underbrace{\parens{xax^{-1}}\cdot\parens{xax^{-1}}\cdot\ldots\cdot\parens{xax^{-1}}}_\text{$m$ times}\]
+    \[=xa\parens{x^{-1}x}a\parens{x^{-1}x}a\cdot\ldots\cdot a\parens{x^{-1}x}ax^{-1}=xa^mx^{-1}\ne xex^{-1}=xx^{-1}=e\]
+    \[\implies\parens{xax^{-1}}^m\ne e\]
+    From this we can conclude that $\vertb{a}=\vertb{xax^{-1}}$. $\blacksquare$
+
+    \item [14.)] Consider a group $(G,*)$ and let $a\in G$ be the only element in $G$ with order $2$, thus $a^2=e$. Let $b,x,x^{-1}\in G$ where $b=xax^{-1}$, and consider $b^2$:
+    \[b^2=\parens{xax^{-1}}\parens{xax^{-1}}=xa\parens{x^{-1}x}ax^{-1}=xa^2x^{-1}=xex^{-1}=xx^{-1}=e\]
+    If $a$ is the only element in $G$ with order $2$, then $b=a$, thus $xax^{-1}=a\implies xax^{-1}x=xa=ax$, thus $a\in Z(G)$. $\blacksquare$
 \end{itemize}
 
 \end{document}
