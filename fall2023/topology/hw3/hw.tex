@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 3}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given $x\in\R^n$ and $r>0$, the open ball of radius $r$ centered at $x$ is defined as follows:
+    \[\text{Ball}(x,r):=\braces{y\in\R^n:\sum_{i=1}^n(y_i-x_i)^2<r^2}\]
+
+    \item [2.)] A subset $U\subset\R^n$ is open if it is a union of open balls
+
+    \item [3.)] Given $A\subset X$, the complement $A'$ of $A$ is the set defined as follows:
+    \[A'=\braces{x\in X:x\notin A}\]
+
+    \item [4.)] A subset $U\subset\R^n$ is closed if its complement is open.
+\end{itemize}
+
+\section*{Proof}
+
+Given a subset $K\subset\R^n$,
+
+\end{document}

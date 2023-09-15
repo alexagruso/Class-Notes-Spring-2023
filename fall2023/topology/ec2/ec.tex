@@ -10,6 +10,7 @@
 \usepackage{mathrsfs}
 \usepackage{mathtools}
 \usepackage{textcomp}
+
 \usepackage[margin=1in,headheight=1in]{geometry}
 
 \newcommand{\contradiction}{
@@ -21,7 +22,7 @@
 \newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
 \newcommand{\bracks}[1]{\left[#1\right]}             % []
 \newcommand{\braces}[1]{\left\{#1\right\}}           % {}
-\newcommand{\parens}[1]{\left(#1\right)}             % ()
+\newcommand{\p}[1]{\left(#1\right)}             % ()
 
 % set aliases
 \newcommand{\N}{\mathbb{N}}
@@ -45,11 +46,14 @@
 \normalsize
 
 \begin{itemize}
-    \item [a.)] Given $p:S^3\to\C\times\R$, consider $\mathcal{I}=\text{Im}(p)$ and $S^2$:
-    \[\mathcal{I}=\braces{(z,x)\in\C\times\R:\exists (w_1,w_2)\in S^3\text{ where }p(w_1,w_2)=(z,x)}\]
-    \[S^2=\braces{(x_1,x_2,x_3)\in\mathbb{R}^3:\sum_{i=1}^3x_i^2=1}\] If we show that $a\in\mathcal{I}\iff a\in S^2$, then we will have shown that $\mathcal{I}=S^2$.
-
-    First, let $a\in\mathcal{I}=(z,x)=(2w_1\overline{w_2},w_1\overline{w_1}-w_2\overline{w_2})$ for some $w_1,w_2\in S^3$.
+    \item [a.)] Let $x\in S^3\subset\R^4$. Since $\R^4\cong\C^2$, we know that $(x_1,x_2,x_3,x_4)\mapsto(w_1,w_2)$ where $w_1,w_2\in\C$. Let $w_1=a+bi$ and $w_2=c+di$ for $a,b,c,d\in\R$. By definition of $S^3$, $x_1^2+x_2^2+x_3^2+x_4^2=1$, thus $a^2+b^2+c^2+d^2=1$. Consider $2w_1\overline{w_2}$ and $w_1\overline{w_1}-w_2\overline{w_2}$:
+    \[2w_1\overline{w_2}=2(a+bi)(c-di)=2(ac+bci-adi+bd)=2(ac+bd)+2i(bc-ad)\]
+    \[w_1\overline{w_1}-w_2\overline{w_2}=(a+bi)(a-bi)-(c+di)(c-di)=a^2+b^2-\p{c^2+d^2}\]
+    Thus $2w_1\overline{w_2}\in\C$ and $(w_1\overline{w_1}-w_2\overline{w_2})\in\R$. Since $\C\times\R\cong\R^3$, we know that $(z,r)\mapsto y\in\R^3$. Let $y_1=2(ac+bd)$, $y_2=2(bc-ad)$, and $y_3=a^2+b^2-\p{c^2+d^2}$. Consider $y_1^2$, $y_2^2$, and $y_3^2$:
+    \[y_1^2=2^2(ac+bd)^2=4\p{a^2c^2+2abcd+b^2d^2}\]
+    \[y_2^2=2^2(bc-ad)^2=4\p{b^2c^2-2abcd+a^2d^2}\]
+    \[y_3^2=\p{\p{a^2+b^2}-\p{c^2+d^2}}^2=\p{a^2+b^2}^2-2\p{a^2+b^2}\p{c^2+d^2}+\p{c^2+d^2}^2\]
+    \[=\]
 
     \item [b.)] awd
     

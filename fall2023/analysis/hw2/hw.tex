@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.5}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Analysis Homework 2}
+
+\normalsize
+
+\begin{itemize}
+    \item [7.3.5.)] Using induction, we will show that $\derv{}{x}x^n=nx^{n-1}$ for all $n\in\N$. For the base case, consider $n=1$:
+    \[x^1=x\implies \derv{}{x}\bigg\vert_{x_0}x=\lm{x\to x_0}\frac{x-x_0}{x-x_0}=1\]
+    Thus the base case holds. Now, assume $\derv{}{x}x^n=nx^{n-1}$ holds for $n$, and consider $n+1$:
+    \[\derv{}{x}\bigg\vert_{x_0}x^{n+1}=\lm{x\to x_0}\frac{x^{n+1}-x_0^{n+1}}{x-x_0}=\lm{x\to x_0}\frac{(x-x_0)\displaystyle\parens{\sum_{i=0}^{n}x^{n-i}x_0^i}}{x-x_0}\]
+    \[=\lm{x\to x_0}\sum_{i=0}^{n}x^{n-i}x_0^i=\sum_{i=0}^nx_0^n=(n+1)x_0^n\]
+    Thus the inductive step holds, and thus $\derv{}{x}x^n=nx^{n-1}$ holds for all $n\in\N$. $\blacksquare$
+
+    \item [7.3.10.)] Let $f$ and $g$ be differentiable functions. Using induction we will show that $(fg)^{(n)}(x)=\displaystyle\sum_{i=0}^n\binom{n}{i}f^{(n-i)}(x)g^{(i)}(x)$. For the base case, consider $n=1$:
+    \[(fg)'(x)=f'(x)g(x)+f(x)g'(x)=\sum_{i=0}^1\binom{1}{i}f^{(1-i)}(x)g^{(i)}(x)\]
+    Thus the base case holds. Now, assume $(fg)^{(n)}(x)=\displaystyle\sum_{i=0}^n\binom{n}{i}f^{(n-i)}(x)g^{(i)}(x)$ holds for $n$, and consider $n+1$:
+    \[(fg)^{(n+1)}(x)=\derv{}{x}(fg)^{(n)}(x)=\derv{}{x}\sum_{i=0}^n\binom{n}{i}f^{(n-i)}(x)g^{(i)}(x)\]
+    \[=\sum_{i=0}^n\binom{n}{i}\derv{}{x}f^{(n-i)}(x)g^{(i)}(x)=\sum_{i=0}^n\binom{n}{i}\parens{f^{(n-i+1)}(x)g^{(i)}(x)+f^{(n-i)}(x)g^{(i+1)}(x)}\]
+    \[=\binom{n}{0}f^{(n+1)}(x)g(x)+\binom{n}{0}f^{(n)}(x)g^{(1)}(x)+\binom{n}{1}f^{(n)}(x)g^{(1)}(x)+\cdots\]
+    \[=f^{(n+1)}(x)g(x)+\binom{n+1}{1}f^{(n)}(x)g^{(1)}(x)+\binom{n+1}{2}f^{(n-1)}(x)g^{(2)}(x)+\cdots\]
+    \[+\binom{n+1}{n}f^{(1)}(x)g^{(n)}(x)+f(x)g^{(n+1)}(x)=\sum_{i=0}^{n+1}\binom{n+1}{i}f^{(n+1-i)}(x)g^{(i)}(x)\]
+    Thus the induction step holds, and thus we have found a formula for $(fg)^{(n)}(x)$. $\blacksquare$
+
+    \pagebreak
+    \item [7.3.22.)] Assuming the fact that $\derv{}{x}e^x=e^x$, we will show that $\derv{}{x}x^n=nx^{n-1}$ for all $n\in\R$. Given $n\in\R$, we can see the following:
+    \[x^n=e^{\ln\parens{x^n}}\]
+    Using this fact, we can find $\derv{}{x}x^n$:
+    \[\derv{}{x}x^n=\derv{}{x}e^{\ln\parens{x^n}}=e^{\ln\parens{x^n}}\derv{}{x}\ln\parens{x^n}=nx^n\derv{}{x}\ln x=\frac{nx^n}{x}=nx^{n-1}\]
+    Thus the identity holds. $\blacksquare$
+\end{itemize}
+
+\end{document}
