@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.5}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 4}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given a set $X$, a topology $\mathcal{T}$ on $X$ is a collection of subsets of $X$ such that
+    \begin{itemize}
+        \item[1.] $\varnothing,X\in\mathcal{T}$
+
+        \item[2.] Given a collection $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ of elements in $\mathcal{T}$,
+        \[\bigcup_{\alpha\in\mathcal{A}}U_\alpha\]
+        is in $\mathcal{T}$.
+
+        \item[3.] Given a finite collection $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ of elements in $\mathcal{T}$,
+        \[\bigcap_{\alpha\in\mathcal{A}}U_\alpha\]
+        is in $\mathcal{T}$.
+    \end{itemize}
+
+    \item [2.)] Given a poset $P$, the Alexandroff topology $\mathcal{T}$ on $P$ is defined as
+    \[\mathcal{T}:=\braces{U\subset P:U\text{ is open}}\]
+
+    \item [3.)] The standard topology $\mathcal{T}$ on $\R^n$ is defined as
+    \[\mathcal{T}:=\braces{U\subset\R^n:U\text{ is open}}\]
+
+    \item [4.)] Given a set $X$, the discrete topology $\mathcal{T}$ on $X$ is defined as $\mathcal{T}=\mathcal{P}(X)$.
+
+    \item [5.)] Given a set $X$, the trivial topology $\mathcal{T}$ on $X$ is defined as $\mathcal{T}=\braces{\varnothing,X}$.
+
+    \item [6.)] Give a topological space $(X,\mathcal{T})$, $U\subset X$ is open if $U\in\mathcal{T}$.
+
+    \item [7.)] Given a topological space $(X,\mathcal{T})$, $K\subset X$ is closed if $K^\complement\in\mathcal{T}$.
+
+    \item [8.)] Given topological spaces $(X,\mathcal{T}_X)$ and $(Y,\mathcal{T}_Y)$, we call $f:X\to Y$ continuous if given $U\subset Y$ where $U$ is open, $f^{-1}(U)$ is also open.
+
+    \item [9.)] Given topological spaces $(X,\mathcal{T}_X)$ and $(Y,\mathcal{T}_Y)$, we call $f:X\to Y$ a homeomorphism if
+    \begin{itemize}
+        \item [1.] $f$ is continuous
+
+        \item [2.] $f$ is a bijection
+
+        \item [3.] the inverse function $f^{-1}$ is continuous
+    \end{itemize}
+\end{itemize}
+
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] Let
+    $X$
+    be a set, and consider
+    $\mathcal{P}(X)$.
+    We can clearly see that
+    $\varnothing\in\mathcal{P}(X)$
+    and
+    $X\in\mathcal{P}(X)$.
+    Next, let
+    $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$
+    be an arbitrary collection of subsets of
+    $X$
+    and suppose
+    $\displaystyle x\in\bigcup_{\alpha\in\mathcal{A}}U_\alpha$,
+    thus there exists
+    $\alpha\in\mathcal{A}$
+    where
+    $x\in U_\alpha\subset X$,
+    thus
+    $x\in X$,
+    thus
+    $\displaystyle \bigcup_{\alpha\in\mathcal{A}}U_\alpha\in\mathcal{P}(X)$.
+    Next, let
+    $\braces{V_\beta}_{\beta\in\mathcal{B}}$
+    be an arbitrary finite collection of subsets of
+    $X$
+    and suppose
+    $\displaystyle x\in\bigcap_{\beta\in\mathcal{B}}V_\beta$,
+    then for all 
+    $\beta\in\mathcal{B}$, $x\in V_\beta\subset X$,
+    thus
+    $x\in X$,
+    thus
+    $\displaystyle \bigcap_{\beta\in\mathcal{B}}V_\beta\in\mathcal{P}(X)$,
+    thus
+    $\mathcal{P}(X)$
+    is a topology on
+    $X$.
+    $\blacksquare$
+
+    \item [b.)] Let $\braces{\mathcal{T}_\alpha}_{\alpha\in\mathcal{A}}$ be a collection of topologies on $X$. Because $\mathcal{T}_\alpha$ is a topology on $X$ for all $\alpha\in\mathcal{A}$, we know that $\varnothing,X\in\mathcal{T}_\alpha$ for all $\alpha$, thus $\varnothing,X\in\displaystyle \bigcap_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$.
+    Next, let $X\subset\displaystyle\bigcap_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$. We can see that for all $U\in X$, $U\in\displaystyle\bigcap_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$, thus $U\in\mathcal{T}_\alpha$ for all $\alpha$, thus $\displaystyle\bigcup_{U\in X}U\in\mathcal{T}_\alpha$ for all $\alpha$, and thus $\displaystyle\bigcup_{U\in X}U\in\bigcap_{\alpha\in\mathcal{T}}\mathcal{T}_\alpha$.
+    Finally, let $Y\subset\displaystyle\bigcap_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$ be finite. Again, for all $V\in Y$, $V\in\displaystyle\bigcap_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$, thus $V\in\mathcal{T}_\alpha$ for all $\alpha$, thus $\displaystyle\bigcap_{V\in Y}V\in\mathcal{T}_\alpha$ for all $\alpha$, thus $\displaystyle\bigcap_{V\in Y}V\in\bigcup_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$, thus $\displaystyle\bigcap_{\alpha\in\mathcal{A}}\mathcal{T}_\alpha$ is a topology on $X$. $\blacksquare$
+
+    \item [c.)] Because
+    $\mathcal{S}\subset\mathcal{P}(X)$,
+    we know that
+    $\mathcal{S}$
+    is contained in the discrete topology
+    $\mathcal{P}(X)$
+    on
+    $X$. 
+    $\blacksquare$
+
+    \item [d.)] Let $\mathcal{S}\subset\mathcal{P}(X)$ and define
+    $\mathcal{B}$
+    as follows:
+    \[
+    \mathcal{B}\coloneqq\braces{
+        \mathcal{T}'\subset\mathcal{P}(X):
+        \mathcal{T}'\text{ is a topology on }X
+        \text{ and }\mathcal{S}\subset\mathcal{T}'
+    }
+    \]
+    By definition,
+    $\mathcal{S}\subset\mathcal{T}'$
+    for all
+    $\mathcal{T}'\in\mathcal{B}$,
+    thus
+    $\mathcal{S}\subset
+    \displaystyle\bigcap_{\mathcal{T}'\subset\mathcal{B}}\mathcal{T}'$,
+    and thus
+    $\mathcal{S}\subset\mathcal{T}_\mathcal{S}$.
+    Now, let
+    $U\in\mathcal{T}_\mathcal{S}$.
+    By definition,
+    $U\in\mathcal{T}'$
+    for all
+    $\mathcal{T}'\in\mathcal{B}$,
+    thus for all
+    $\mathcal{T}'\in\mathcal{B}$,
+    we know that
+    $U\in\mathcal{T}_\mathcal{S}\implies U\in\mathcal{T}'$,
+    thus
+    $\mathcal{T}_\mathcal{S}\subset\mathcal{T}'$
+    for all
+    $\mathcal{T}'\in\mathcal{B}$.
+    $\blacksquare$
+
+    \item [e.)] When one considers all of the topologies of $X$ that contain $S$, they may realize that there are almost certainly many different examples of such a topology. Taking the intersection of all of these topologies, however, leaves only what is shared among all such topologies, and thus what is essential for them to contain $\mathcal{S}$, and nothing more. Because of this, when defining $\mathcal{T}_\mathcal{S}$ as such an intersection, it is appropriate to think of $\mathcal{T}_\mathcal{S}$ as the ``\,smallest topology containing $\mathcal{S}$\,''.
+
+\end{itemize}
+
+\end{document}

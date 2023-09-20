@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Writing 4}
+
+\normalsize
+
+Because of the fact that I took analysis 1 last semester, plus the fact that I'm currently taking analysis 2, I have had lots of exposure to the concept of continuity in the context of real valued functions. The intuition of continuity meaning "never lifting the pen" can be somewhat easily translated to the formal idea of $\e$-$\delta$ continuity. When a function is continuous at a point, say $x_0$, you can imagine that after placing your pen at $x_0$, there is always a neighborhood of points in the function around your pen that the pen can travel to. This idea is reminiscent of the $\e$-$\delta$ definition, which states that if $f$ is continuous at $x_0$, then for every $\e$-neighborhood around $f(x_0)$, there exists a $\delta$-neighborhood around $x_0$ such that if $x$ is within the $\delta$-neighborhood, then $f(x)$ is guaranteed to be within the $\e$-neighborhood. This 
+
+\end{document}
