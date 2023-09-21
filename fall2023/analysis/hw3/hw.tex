@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+\linespread{1.5}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Analysis Homework 3}
+
+\normalsize
+
+\begin{itemize}
+    \item [7.8.6.)] Define an interval $[a,b]$, and let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$. In addition, suppose $f$ satisfies the Lipschitz condition, thus for all $x,y\in[a,b]$, there exists $M\in\R$ where
+    \[\vertb{f(x)-f(y)}\leq M\vertb{x-y}\]
+    thus
+    \[\frac{\vertb{f(x)-f(y)}}{\vertb{x-y}}=\vertb{\frac{f(x)-f(y)}{x-y}}\leq M\]
+    We can take the limit to find $f'(y)$:
+    \[f'(y)=\lm{x\to y}\vertb{\frac{f(x)-f(y)}{x-y}}\]
+\end{itemize}
+
+\end{document}
