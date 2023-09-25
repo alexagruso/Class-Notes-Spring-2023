@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Abstract Algebra Homework 4}
+
+\normalsize
+
+\section*{Chapter 5}
+\begin{itemize}
+    \begin{spacing}{1}
+    \item [1.)] \begin{itemize}
+        \item [a.)] $\alpha^{-1}=\begin{bmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            2 & 1 & 3 & 5 & 4 & 6
+        \end{bmatrix}$
+
+        \item [b.)] $\beta\alpha=\begin{bmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            1 & 6 & 2 & 3 & 4 & 5
+        \end{bmatrix}$
+
+        \item [c.)] $\alpha\beta=\begin{bmatrix}
+            1 & 2 & 3 & 4 & 5 & 6 \\
+            6 & 2 & 1 & 5 & 3 & 4
+        \end{bmatrix}$
+    \end{itemize}
+
+    \item [3.)] \begin{itemize}
+        \item [a.)] $(1235)(413)=(15)(234)$
+
+        \item [b.)] $(13256)(23)(45612)=(124635)$
+
+        \item [c.)] $(12)(13)(23)(142)=(1423)$
+    \end{itemize}
+
+    \item [5.)] The order of a permutation is given by the least common multiple of the lengths of its disjoint cycles.
+    \begin{itemize}
+        \item [a.)] $\vertb{(124)(357)}=\text{lcm}(3,3)=3$
+
+        \item [a.)] $\vertb{(124)(3567)}=\text{lcm}(3,4)=12$
+
+        \item [c.)] $\vertb{(124)(35)}=\text{lcm}(3,2)=6$
+
+        \item [d.)] $\vertb{(124)(357869)}=\text{lcm}(3,6)=6$
+
+        \item [e.)] $\vertb{(1235)(24567)}=\text{lcm}(4,5)=20$
+
+        \item [f.)] $\vertb{(345)(245)}=\text{lcm}(3,3)=3$
+    \end{itemize}
+
+    \end{spacing}
+\end{itemize}
+
+\section*{Chapter 6}
+\begin{itemize}
+    \item [1.)] awd
+   
+    \item [6.)] Let $G$, $H$, and $K$ be groups.
+\end{itemize}
+
+\end{document}
