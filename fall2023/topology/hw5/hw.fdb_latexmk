@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1695517012 "/home/alexander/Documents/School/fall2023/topology/hw5/hw.tex" "hw.pdf" "hw" 1695517012 0
-  "/home/alexander/Documents/School/fall2023/topology/hw5/hw.tex" 1695517012 3264 a6f08c1f3db4aede5d5985660f7a7f42 ""
+["pdflatex"] 1695834185 "/home/alexander/Documents/School/fall2023/topology/hw5/hw.tex" "hw.pdf" "hw" 1695834186 0
+  "/home/alexander/Documents/School/fall2023/topology/hw5/hw.tex" 1695834185 3839 c24f80e6b6a95d870791c2ea488fdd08 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1689853683 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1689853683 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1689853683 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -32,6 +32,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1689853683 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1689853683 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1689853683 37944 359e864bd06cde3b1cf57bb20757fb06 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1689853683 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1689853683 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1689853683 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1689853683 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -68,8 +69,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1689853683 40684 9b9ec0b4288972636ff6a3b9c4238efc ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693603295 4483110 adb1e1d04498b9576f1f17c4219c5e03 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693603284 6768064 329739968debc83b242f991dabf85891 ""
-  "hw.aux" 1695517012 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "hw.tex" 1695517012 3264 a6f08c1f3db4aede5d5985660f7a7f42 ""
+  "hw.aux" 1695834186 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "hw.tex" 1695834185 3839 c24f80e6b6a95d870791c2ea488fdd08 ""
   (generated)
   "hw.aux"
   "hw.log"

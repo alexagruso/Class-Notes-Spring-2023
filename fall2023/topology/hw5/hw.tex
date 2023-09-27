@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \pagenumbering{gobble}
-\linespread{1.5}
+\linespread{1.3}
 
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -15,6 +15,8 @@
 \newcommand{\contradiction}{
     \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
 }
+
+\setlength{\parskip}{0.2in}
 
 % bracket commands
 \newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
@@ -69,13 +71,13 @@
     \item [8.)] Given a topological space $(X,\mathcal{T})$, it is \textit{compact} if for all open covers $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ of $X$, there exists a finite subcover $\braces{U_\beta}_{\beta\in\mathcal{B}}$ of $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$.
 \end{itemize}
 
-
 \section*{Proof}
-\begin{itemize}
-    \item [a.)] Let
-    $m,n\in\Z$
-    where
-    $m,n\geq1$.
-\end{itemize}
+Assume $f$ is continuous and let $V\subset Y$ be open. Fix $y\in V$, thus there exists $\e>0$ where $\text{Ball}(y,\e)\subset V$. Since Ball$(y,\e)$ is open, $f^{-1}(\text{Ball}(y,\e))$ is open, thus there exists $\delta>0$ where $\text{Ball}(x,\delta)\subset f^{-1}(\text{Ball}(y,\e))$, thus for all $x'\in\text{Ball}(x,\delta)$ we know that $x'\in f^{-1}(\text{Ball}(y,\e))$, and thus $f(x')\in\text{Ball}(y,\e)$.
+
+\noindent
+Next, fix $\e>0$, thus for some $\delta>0$, $x'\in\text{Ball}(x,\delta)\implies f(x')\in\text{Ball}(y,\e)$ for $x\in X$ and $y\in Y$.
+
+\noindent
+It follows that the two statements are equivalent. $\blacksquare$
 
 \end{document}
