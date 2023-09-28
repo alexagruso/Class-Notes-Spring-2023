@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \pagenumbering{gobble}
 
 \usepackage{amsfonts}
@@ -91,9 +91,15 @@
 
 \section*{Chapter 6}
 \begin{itemize}
-    \item [1.)] awd
+    \item [1.)] I am assuming that, in this case, the even integers include negatives, as the non-negative even integers do not form a group under addition. Let $f(n)=2n$. First we will show that $f$ is injective. Let $a,b\in\Z$ where $f(a)=f(b)$, thus $2a=2b$, thus $a=b$, thus $f$ is injective. Next, we will show that $f$ is surjective. Let $a$ be an even integer, thus $a=2n$ for some $n\in\Z$, thus $a/2$ is an integer. From this we can see that $f(a/2)=2(a/2)=a$, thus $f$ is surjective, and thus bijective. Finally, given $a,b\in\Z$, we can see that $f(a+b)=2(a+b)=2a+2b=f(a)+f(b)$, thus $f$ is an isomorphism from the integers to the even integers. $\blacksquare$
    
-    \item [6.)] Let $G$, $H$, and $K$ be groups.
+    \item [6.)] Let $G$, $H$, and $K$ be groups with operation $*$. Let $f:G\to G$ where $f(g)=g$. Let $a,b\in G$, thus $f(a*b)=a*b=f(a)*f(b)$. In addition, $f$ is trivially bijective, thus $f$ is an isomorphism from $G$ to $G$, thus $G\cong G$, thus group isomorphism is reflexive.
+
+    Next, let $G\cong H$, thus there exists a bijective $f:G\to H$ where $f(a*b)=f(a)*f(b)$ for all $a,b\in G$. Since $f$ is bijective, there exists an inverse function $f^{-1}$ that is also bijective. Let $a,b\in G$, thus $f(a),f(b)\in H$. We can see that $f^{-1}(f(a)*f(b))=f^{-1}(f(a*b))=a*b=f^{-1}(f(a))*f^{-1}(f(b))$, thus $f^{-1}$ is an isomorphism from $H$ to $G$, thus  $H\cong G$, thus group isomorphism is symmetric.
+
+    Finally, let $G\cong H$ and $H\cong K$, thus there exist isomorphisms $f:G\to H$ and $g:H\to K$. Let $h=g\circ f$ and let $a,b\in G$, then $h(a*b)=g(f(a*b))=g(f(a)*f(b))=g(f(a))*g(f(b))=h(a)*h(b)$, thus $G\cong K$, thus group isomorphism is transitive.
+
+    It follows that group isomorphism is an equivalence relation. $\blacksquare$
 \end{itemize}
 
 \end{document}
