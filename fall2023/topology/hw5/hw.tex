@@ -75,9 +75,9 @@
 Assume $f$ is continuous and let $V\subset Y$ be open. Fix $y\in V$, thus there exists $\e>0$ where $\text{Ball}(y,\e)\subset V$. Since Ball$(y,\e)$ is open, $f^{-1}(\text{Ball}(y,\e))$ is open, thus there exists $\delta>0$ where $\text{Ball}(x,\delta)\subset f^{-1}(\text{Ball}(y,\e))$, thus for all $x'\in\text{Ball}(x,\delta)$ we know that $x'\in f^{-1}(\text{Ball}(y,\e))$, and thus $f(x')\in\text{Ball}(y,\e)$.
 
 \noindent
-Next, fix $\e>0$, thus for some $\delta>0$, $x'\in\text{Ball}(x,\delta)\implies f(x')\in\text{Ball}(y,\e)$ for $x\in X$ and $y\in Y$.
+Assuming (b), fix $\e>0$, thus for some $\delta>0$, $x'\in\text{Ball}(x,\delta)\implies f(x')\in\text{Ball}(y,\e)$ for\break arbitrary $x\in X$ and $y\in Y$. We can see that $f(x')\in\text{Ball}(y,\e)\implies x'\in f^{-1}(\text{Ball}(y,\e))$, thus $x'\in\text{Ball}(x,\delta)\implies x'\in f^{-1}(\text{Ball}(y,\e))$, thus $\text{Ball}(x,\delta)\subset f^{-1}(\text{Ball}(y,\e))$. Let $V\subset Y$ be open where $\text{Ball}(y,\e)\subset V$, thus $f^{-1}(\text{Ball}(y,\e)\subset f^{-1}(V))$, thus $\text{Ball}(x,\delta)\subset f^{-1}(V)$. Since $x$ is arbitrary, we know that $\text{Ball}(x,\delta)\subset f^{-1}(V)$ for all $x\in f^{-1}(V)$, thus $f^{-1}(V)$ is open.
 
 \noindent
-It follows that the two statements are equivalent. $\blacksquare$
+It follows that (a) and (b) are equivalent. $\blacksquare$
 
 \end{document}
