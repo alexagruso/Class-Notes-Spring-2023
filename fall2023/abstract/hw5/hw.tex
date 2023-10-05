@@ -1,0 +1,81 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Abstract Algebra Homework 5}
+
+\normalsize
+
+\section*{Chapter 7}
+\begin{itemize}
+    \item [1.)] Since $H=\braces{n\in\Z:3\mid n}$, equipped with addition, we can find the left cosets of $H$ in $\Z$. Consider $n\in\Z$:
+    \[n\equiv0\pmod{3}\implies n+H=\braces{0+0,0\pm3,0\pm6,\cdots}=\braces{0,\pm3,\pm6,\cdots}=H\]
+    \[n\equiv1\pmod{3}\implies n+H=\braces{1+0,1\pm3,1\pm6,\cdots}=\braces{\cdots,-5,-2,1,4,7,\cdots}\]
+    \[n\equiv2\pmod{3}\implies n+H=\braces{2+0,2\pm3,2\pm6,\cdots}=\braces{\cdots,-4,-1,2,5,8,\cdots}\]
+    Thus the left cosets of $H$ in $\Z$ are $H$, $1+H$, and $2+H$.
+
+    \item [5.)] Since $U(30)=\braces{1,7,11,13,17,19,23,29}$, the left cosets of $H=\braces{1,11}$ in $U(30)$ are given as follows:
+    \[1H=\braces{1,11}=H\]
+    \[7H=\braces{7,17}\]
+    \[11H=\braces{11,1}=H\]
+    \[13H=\braces{13,23}\]
+    \[17H=\braces{17,7}=7H\]
+    \[19H=\braces{19,29}\]
+    \[23H=\braces{23,13}=13H\]
+    \[29H=\braces{29,19}=19H\]
+    Thus the left cosets of $H$ in $U(30)$ are $H$, $7H$, $13H$, and $19H$.
+
+    \item [6.)] Since $\vertb{a}=15$, $H=\angleb{a^5}=\braces{a^5,a^{10},e}$. From this, we can find the left cosets of $H$ in $\angleb{a}$:
+    \[eH=\braces{a^5,a^{10},e}=H\]
+    \[aH=\braces{a^6,a^{11},a}\]
+    \[a^2H=\braces{a^7,a^{12},a^2}\]
+    \[a^3H=\braces{a^8,a^{13},a^3}\]
+    \[a^4H=\braces{a^9,a^{14},a^4}\]
+    \[a^5H=\braces{a^{10},e,a^5}=H\]
+    \[\vdots\]
+    Thus the left cosets of $H$ in $\angleb{a}$ are $H$, $aH$, $a^2H$, $a^3H$, and $a^4H$.
+
+    \item [15.)] By Lagrange's theorem, if $H$ is a subgroup of $G$, then $\vertb{H}\mid60$, thus the possible orders of $H$ are the divisors of $60$:
+    \[\braces{1,2,3,4,5,6,10,12,15,20,30,60}\]
+
+    \item [20.)] Consider $U(n)$ for $n>2$. We can see that $(n-1)^2\equiv n^2-2n+1\equiv0-0+1\equiv1\pmod{n}$, thus $\vertb{n-1}=2$, thus by Lagrange's theorem, $2$ divides $\vertb{U(n)}$, thus $\vertb{U(n)}$ is even. $\blacksquare$
+\end{itemize}
+
+\end{document}
