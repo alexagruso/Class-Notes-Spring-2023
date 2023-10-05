@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Abstract Algebra Homework 6}
+
+\normalsize
+
+\section*{Chapter 8}
+\begin{itemize}
+    \item [3.)] Let $(G,*)$ and $(H,\circ)$ be groups with respective identity elements $e_G$ and $e_H$. Consider $f:G\to G\bigoplus\braces{e_H}$ where $g\mapsto(g,e_H)$. We can show that $f$ is bijective. Let $g_1,g_2\in G$ where $f(g_1)=f(g_2)$, thus $(g_1,e_H)=(g_2,e_H)$, thus $g_1=g_2$, thus $f$ is injective. Next, for all $(g,e_H)\in G\bigoplus\braces{e_H}$, $f(g)=(g,e_H)$, thus $f$ is injective, and thus bijective, and thus is an isomorphism from $G$ to $G\bigoplus\braces{e_H}$, thus $G\cong G\bigoplus\braces{e_H}$. A similar argument shows that $h\mapsto(h,e_G)$ is an isomorphism from $H$ to $H\bigoplus\braces{e_G}$, thus $H\cong H\bigoplus\braces{e_G}$. $\blacksquare$
+
+    \item [6.)] awd
+
+    \item [14.)] awd
+
+    \item [20.)] awd
+
+    \item [55.)] awd
+\end{itemize}
+
+\end{document}
