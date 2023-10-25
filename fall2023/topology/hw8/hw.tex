@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\linespread{1.25}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\setlength{\parskip}{0.2in}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 8}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given sets $X$ and $Y$, the \textit{direct product} or \textit{cartesian product} $X\times Y$ is defined as
+    \[X\times Y=\braces{(x,y):x\in X\land y\in Y}\]
+
+    \item [2.)] Given topological spaces $X$ and $Y$, the \textit{product topology} $\mathcal{T}_p$ on $X\times Y$ is defined as
+    \[\mathcal{T}_p=\braces{U\subseteq X\times Y:U=\bigcup_{\alpha\in\mathcal{A}}U_\alpha\times V_\alpha}\]
+    given $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ and $\braces{V_\alpha}_{\alpha\in\mathcal{A}}$ are collections of open sets in $X$ and $Y$ respectively.
+
+    \item [3.)] Given topological spaces $X$ and $Y$, the product topology on $X\times Y$ satisfies the following:
+    \begin{itemize}
+        \item [i.)] The projection maps $p_X:X\times Y\to X$ and $p_Y:X\times Y\to Y$ are continuous.
+
+        \item [ii.)] Given a topological space $W$ and a pair of continuous functions $g_X:W\to X$ and $g_Y:W\to Y$, there exists a unique continuous function $g:W\to X\times Y$ where $g_X=p_X\circ g$ and $g_Y=p_Y\circ g$.
+    \end{itemize}
+
+    \item [4.)] Given a collection of sets $\braces{X_\alpha}_{\alpha\in\mathcal{A}}$, the \textit{direct product} $\displaystyle\prod_{\alpha\in\mathcal{A}}X_\alpha$ is defined as
+    \[\prod_{\alpha\in\mathcal{A}}X_\alpha=\braces{\braces{x_\alpha}_{\alpha\in\mathcal{A}}:x_\alpha\in X_\alpha}\]
+
+    \item [5.)] Given a collection of topological spaces $\braces{X_\alpha}_{\alpha\in\mathcal{A}}$, the product topology on $\displaystyle\prod_{\alpha\in\mathcal{A}}X_\alpha$ satisfies the following:
+    \begin{itemize}
+        \item [i.)] For all $\alpha\in\mathcal{A}$, the projection map $p_\alpha:\prod_{\alpha\in\mathcal{A}}X_\alpha\to X_\alpha$ is continuous.
+
+        \item [ii.)] Given a topological space $W$ and a collection of continuous functions $\braces{g_\alpha}_{\alpha\in\mathcal{A}}$ where $g_\alpha:W\to X_\alpha$, there exists a unique continuous function $g:W\to\prod_{\alpha\in\mathcal{A}}X_\alpha$ where $g_\alpha=p_\alpha\circ g$.
+    \end{itemize}
+
+    \item [6.)] A topological space $X$ is \textit{Hausdorff} if and only if given distinct $x,x'\in X$, there exist open sets $U,V$ in $X$ where $x\in U$, $x'\in V$, and $U\cap V=\varnothing$.
+\end{itemize}
+
+\pagebreak
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] A topological space $X$ is Hausdorff if and only if its diagonal is closed under the product topology.
+
+    \item [b.)] Because this conjecture holds for every example we covered in class, I am choosing to pursue a proof of it.
+
+    \item [c.)] Let $X$ be a topological space, and suppose it is Hausdorff. Let $D^\complement$ denote the complement of the diagonal of $X$, thus $D^\complement=\braces{(x,x')\in X\times X:x\ne x'}$. Since $X$ is Hausdorff, we know that for all $(x,x')\in D^\complement$, there exist open sets $U,V$ in $X$ where $x\in U$, $x'\in V$, and $U\cap V=\varnothing$, thus $(x,x')\in U\times V$. In addition, since $U\cap V=\varnothing$, $(x,x')\in U\times V\implies x\ne x'$. For each point $\alpha\in D^\complement$, assign open sets $U_\alpha$ and $V_\alpha$ that satisfy the Hausdorff property, thus $\alpha\in U_\alpha\times V_\alpha$, thus $D^\complement\subseteq\displaystyle\bigcup U_\alpha\times V_\alpha$. Finally, if $\alpha\in U_\alpha\times V_\alpha$, then $\alpha=(x,x')$ where $x\ne x'$, thus $\alpha\in D^\complement$, thus $\displaystyle\bigcup U_\alpha\times V_\alpha\subseteq D^\complement$, thus $D^\complement=\displaystyle\bigcup U_\alpha\times V_\alpha$, thus $D^\complement$ is open, and thus the diagonal of $X$ is closed.
+
+    Next, suppose the diagonal of $X$ is closed, then $D^\complement$ is open, thus there exist collections of open sets $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ and $\braces{V_\alpha}_{\alpha\in\mathcal{A}}$ where $D^\complement=\displaystyle\bigcup U_\alpha\times V_\alpha$. It is clear that for all $\alpha\in\mathcal{A}$, $U_\alpha\times V_\alpha\subseteq D^\complement$, thus $(x,x')\in U_\alpha\times V_\alpha\implies x\ne x'$, thus $U_\alpha\cap V_\alpha=\varnothing$. Finally, since $(x,x')\in U_\alpha\times V_\alpha$, we know that $x\in U_\alpha$ and $x'\in V_\alpha$, thus for all distinct $x,x'\in X$, the Hausdorff property is satisfied, thus $X$ is Hausdorff.
+
+    Thus we can conclude that $X$ is Hausdorff if and only if the diagonal of $X$ is closed. $\newline\strut\hfill\blacksquare$
+
+    \item [d.)] This property stuck out to me when we were looking at examples, so not much reworking of ideas was needed before settling on trying to prove it.
+\end{itemize}
+
+\end{document}
