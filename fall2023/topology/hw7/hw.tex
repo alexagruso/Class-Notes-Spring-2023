@@ -1,0 +1,96 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.3}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\setlength{\parskip}{0.2in}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 7}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given a set $X$, a \textit{topology} on $X$ is a subset $\mathcal{T}\subseteq\mathcal{P}(X)$ that satisfies the following properties:
+    \begin{itemize}
+        \item [i.] $\varnothing,X\in\mathcal{T}$
+
+        \item [ii.] Given a collection $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ of sets in $\mathcal{T}$, $\displaystyle\bigcup_{\alpha\in\mathcal{A}}U_\alpha\in\mathcal{T}$
+
+        \item [iii.] Given a \textit{finite} collection $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ of sets in $\mathcal{T}$, $\displaystyle\bigcap_{\alpha\in\mathcal{A}}U_\alpha\in\mathcal{T}$
+    \end{itemize}
+
+    \item [2.)] Given a topological space $X$, an equivalence relation $\sim$ on $X$, and the quotient map $q$ on $X$, the \textit{quotient topology} $\mathcal{T}$ on $X/{\sim}$ is defined as
+    \[\mathcal{T}=\braces{U\subseteq X/{\sim}:q^{-1}(U)\text{ is open in }X}\]
+
+    \item [3.)] Given sets $X$ and $Y$, the \textit{cartesian product} $X\times Y$ is defined as
+    \[X\times Y=\braces{(x,y):x\in X\land y\in Y}\]
+
+    \item [4.)] Given topological spaces $X$ and $Y$, the \textit{product topology} $\mathcal{T}$ on $X\times Y$ is defined as
+    \[\mathcal{T}=\braces{U\subseteq X\times Y:U=\bigcup_{\alpha\in\mathcal{A}}V_\alpha\times V'_\alpha}\]
+    where $\braces{V_{\alpha}}_{\alpha\in\mathcal{A}}$ and $\braces{V'_{\alpha}}_{\alpha\in\mathcal{A}}$ are collections of open sets in $X$ and $Y$ respectively.
+
+    \item [5.)] Given sets $X$ and $Y$, the \textit{projection maps} $p_X:X\times Y\to X$ and $p_Y:X\times Y\to Y$ out of $X\times Y$ are the the respective mappings $(x,y)\mapsto x$ and $(x,y)\mapsto y$.
+
+    \item [6.)] Given a collection of sets $\braces{X_\alpha}_{\alpha\in\mathcal{A}}$, the \textit{direct product} $\displaystyle\prod_{\alpha\in\mathcal{A}}X_\alpha$ is defined as
+    \[\prod_{\alpha\in\mathcal{A}}X_\alpha=\braces{\braces{x_\alpha}_{\alpha\in\mathcal{A}}:x_\alpha\in X_\alpha\text{ for all }\alpha}\]
+
+    \item [7.)] Given a collection of topological spaces $\braces{X_\alpha}_{\alpha\in\mathcal{A}}$, the \textit{product topology} $\mathcal{T}$ on $\displaystyle\prod_{\alpha\in\mathcal{A}}X_\alpha$ is defined as
+    \[\mathcal{T}=\braces{U\subseteq\prod_{\alpha\in\mathcal{A}}X_\alpha:U=\bigcup\prod_{\alpha\in\mathcal{A}}V_\alpha}\]
+    where $V_\alpha$ is open in $X_\alpha$ for all $\alpha$ and where $V_\alpha=X_\alpha$ for almost all $\alpha$.
+\end{itemize}
+
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] Let $\theta_1,\theta_2\in\R$ where $\theta_1\sim\theta_2$ and $\theta_1\ne\theta_2$, then there exists a nonzero $n\in\Z$ where $\theta_1-\theta_2=\pi n$. Consider $\bar{f}([\theta_1])$ and $\bar{f}([\theta_2])$. Since $\theta_1=\theta_2+\pi n$, we can see that $f([\theta_1])=f(\theta_1)=\parens{\cos(2\theta_1),\sin(2\theta_1)}=(\cos(2(\theta_2+\pi n)),\sin(2(\theta_2+\pi n)))=\break(\cos(2\theta_2+2\pi n),\sin(2\theta_2+2\pi n))=(\cos(2\theta_2),\sin(2\theta_2))=f(\theta_2)=f([\theta_2])$, thus the value of $\bar f([\theta_1])$ does not depend on the representation of $[\theta_1]$, and thus $\bar f$ is well defined.\done
+
+    \item [b.)] Since $f(\theta)=(\cos(2\theta),\sin(2\theta))$, we know that the components of $f$ are continuous, and thus $f$ is continuous. Also note that $f=\bar f\circ q$. Let $U\subseteq Y$ be open, then $f^{-1}(U)$ is open, but $f^{-1}(U)=q^{-1}(\bar f^{-1}(U))$, thus $q^{-1}(\bar f^{-1}(U))$ is open, thus $\bar f^{-1}(U)$ is open in $X/{\sim}$, thus $\bar f$ is continuous.\done
+
+    \item [c.)] Let $\theta_1,\theta_2\in\R$ where $f([\theta_1])=f([\theta_2])$, thus $f(\theta_1)=f(\theta_2)$, thus $(\cos(2\theta_1),\sin(2\theta_1))=(\cos(2\theta_2),\sin(2\theta_2))$, thus $\cos(2\theta_1)=\cos(2\theta_2)$ and $\sin(2\theta_1)=\sin(2\theta_2)$, thus $\theta_1=\theta_2$, and thus $\bar f$ is injective.\done
+
+    \item [d.)] Let $(a,b)\in S^1$ and choose $\theta=\cos^{-1}(a)/2=\sin^{-1}(b)/2$, then $\bar f([\theta])=f(\theta)=\break(\cos(2\cos^{-1}(a)/2),\sin(2\sin^{-1}(b)/2))=(a,b)$, thus $\bar f$ is surjective.\done
+
+    \item [e.)] We must also show that the inverse of $\bar f$ is continuous.
+\end{itemize}
+
+\end{document}

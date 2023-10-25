@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.2}
+
+\setlength{\parskip}{0.15in}%
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Writing 8}
+
+\normalsize
+
+\noindent
+First, I would have them apply a strip of glue along one end of the sheet of paper. Next, I would tell them to roll up the paper in the direction that is perpendicular to the strip of glue. Once they reach the end, the strip of glue will span the length of the rolled up paper, binding the two ends together, thus creating a paper cylinder.
+
+\noindent
+Take our rectangle $\mathcal{R}$ in $\R^2$ to be the domain of $j$. We can define an equivalence relation on the points in this rectangle that morph them into a cylinder. Let $(t_1,\theta_1),(t_2,\theta_2)\in\mathcal{R}$, then
+\[(t_1,\theta_1)\sim(t_2,\theta_2)\iff t_1=t_2\,\land\,\theta_1=\theta_2+2\pi n\]
+where $n\in\Z$. This equivalence relation ``glues'' points with $\theta=0$ and $\theta=2\pi$ together, thus as one cycles through possible values of $\theta$, you eventually end up back at 0, which allows us to view these points as lying in a circle. Visually this is analagous to how we constructed a cylinder with paper and glue, except in this case the strip of glue is infinitely thin, and rather than gluing sections of the paper that have width to eachother, we ``glue'' the together the infinitely thin lines consisting of points with angle $0$ and $2\pi$.
+
+\end{document}
