@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\linespread{1.25}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage[skip=0.2in]{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Abstract Algebra Homework 8}
+
+\normalsize
+
+\section*{Chapter 10}
+\begin{itemize}
+    \item [3.)] Let $\phi:\R[x]\to\R[x]$ where $f\mapsto f'$, and let $f,g\in\R[x]$. We can see that $\phi(f)+\phi(g)=f'+g'=(f+g)'=\phi(f+g)$, thus $\phi$ is a homomorphism. \done
+
+    \item [7.)] Let $\phi:G\to H$ and $\sigma:H\to K$ be homomorphisms. Let $a,b\in G$, then $(\sigma\circ\phi)(ab)=\sigma(\phi(ab))=\sigma(\phi(a)\phi(b))=\sigma(\phi(a))\sigma(\phi(b))=(\sigma\circ\phi)(a)(\sigma\circ\phi)(b)$, thus $\sigma\circ\phi$ is a homomorphism. We can also show that $\ker\phi$ is a subgroup of $\ker\sigma\circ\phi$. It is obvious that $\ker\phi\subseteq\ker\sigma\circ\phi$, as $a\in\ker\phi\implies\sigma(\phi(a))=\sigma(e_H)=e_K\implies a\in\ker\sigma\circ\phi$. In addition, the kernel of any homomorphism is a group, thus we know that $\ker\phi$ is a subgroup of $\ker\sigma\circ\phi$. Finally, ***
+
+    \item [9.)] Let $a,b\in G\oplus H$ where $a=(g,h)$ and $b=(g',h')$, and consider the map $\phi:G\oplus H\to G$ where $(g,h)\mapsto g$. We can see that $\phi(ab)=\phi(gg',hh')=gg'=\phi(g,h)\phi(g',h')$, thus $\phi$ is a homomorphism. Next, let $a\in\ker G\oplus H$ where $a=(g,h)$, thus $\phi(a)=\phi(g,h)=g=e_G$, thus $\ker\phi=\braces{(e_G,h):h\in H}$. \done
+
+    \item [12.)] Let $k,n\in\Z$ where $k\mid n$ and $m\in\angleb{k}$, and consider the map $\phi:\Z_n/\angleb{k}\to\Z_k$ where $m\Z_n\mapsto m\pmod{k}$. For $m,m'\in\angleb{k}$, we can see that $\phi(m\Z_n\circ m'\Z_n)=\phi((mm')\Z_n)=mm'\pmod{k}=\phi(m\Z_n)\phi(m'\Z_n)$, thus $\phi$ is a homomorphism, and thus $\Z_n/\angleb{k}\cong\Z_k$. \done
+
+    \item [16.)]
+\end{itemize}
+
+\end{document}
