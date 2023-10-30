@@ -53,13 +53,15 @@
 \begin{itemize}
     \item [3.)] Let $\phi:\R[x]\to\R[x]$ where $f\mapsto f'$, and let $f,g\in\R[x]$. We can see that $\phi(f)+\phi(g)=f'+g'=(f+g)'=\phi(f+g)$, thus $\phi$ is a homomorphism. \done
 
-    \item [7.)] Let $\phi:G\to H$ and $\sigma:H\to K$ be homomorphisms. Let $a,b\in G$, then $(\sigma\circ\phi)(ab)=\sigma(\phi(ab))=\sigma(\phi(a)\phi(b))=\sigma(\phi(a))\sigma(\phi(b))=(\sigma\circ\phi)(a)(\sigma\circ\phi)(b)$, thus $\sigma\circ\phi$ is a homomorphism. We can also show that $\ker\phi$ is a subgroup of $\ker\sigma\circ\phi$. It is obvious that $\ker\phi\subseteq\ker\sigma\circ\phi$, as $a\in\ker\phi\implies\sigma(\phi(a))=\sigma(e_H)=e_K\implies a\in\ker\sigma\circ\phi$. In addition, the kernel of any homomorphism is a group, thus we know that $\ker\phi$ is a subgroup of $\ker\sigma\circ\phi$. Finally, ***
+    \item [7.)] Let $\phi:G\to H$ and $\sigma:H\to K$ be homomorphisms. Let $a,b\in G$, then $(\sigma\circ\phi)(ab)=\sigma(\phi(ab))=\sigma(\phi(a)\phi(b))=\sigma(\phi(a))\sigma(\phi(b))=(\sigma\circ\phi)(a)(\sigma\circ\phi)(b)$, thus $\sigma\circ\phi$ is a homomorphism. We can also show that $\ker\phi$ is a subgroup of $\ker\sigma\circ\phi$. It is obvious that $\ker\phi\subseteq\ker\sigma\circ\phi$, as $a\in\ker\phi\implies\sigma(\phi(a))=\sigma(e_H)=e_K\implies a\in\ker\sigma\circ\phi$. In addition, the kernel of any homomorphism is a group, thus we know that $\ker\phi$ is a subgroup of $\ker\sigma\circ\phi$. Finally, suppose $\phi$ and $\sigma$ are surjective, and that $\vertb{G}$ is finite, then $\vertb{G}=\vertb{\ker\phi}\vertb{\phi(G)}=\vertb{\ker\phi}\vertb{H}$. We also know that $\vertb{G}=\vertb{\ker\sigma\circ\phi}\vertb{\phi(G)}=\vertb{\ker\sigma\circ\phi}\vertb{K}$, thus
+    \[[\ker\sigma\circ\phi:\ker\phi]=\frac{\vertb{\ker\sigma\phi}}{\vertb{\ker\phi}}=\frac{\vertb{G}/\vertb{K}}{\vertb{G}/\vertb{H}}=\frac{\vertb{K}}{\vertb{H}}\]
+    Thus the index is finite and given above. \done
 
     \item [9.)] Let $a,b\in G\oplus H$ where $a=(g,h)$ and $b=(g',h')$, and consider the map $\phi:G\oplus H\to G$ where $(g,h)\mapsto g$. We can see that $\phi(ab)=\phi(gg',hh')=gg'=\phi(g,h)\phi(g',h')$, thus $\phi$ is a homomorphism. Next, let $a\in\ker G\oplus H$ where $a=(g,h)$, thus $\phi(a)=\phi(g,h)=g=e_G$, thus $\ker\phi=\braces{(e_G,h):h\in H}$. \done
 
     \item [12.)] Let $k,n\in\Z$ where $k\mid n$ and $m\in\angleb{k}$, and consider the map $\phi:\Z_n/\angleb{k}\to\Z_k$ where $m\Z_n\mapsto m\pmod{k}$. For $m,m'\in\angleb{k}$, we can see that $\phi(m\Z_n\circ m'\Z_n)=\phi((mm')\Z_n)=mm'\pmod{k}=\phi(m\Z_n)\phi(m'\Z_n)$, thus $\phi$ is a homomorphism, and thus $\Z_n/\angleb{k}\cong\Z_k$. \done
 
-    \item [16.)]
+    \item [16.)] Suppose $\phi:\Z_8\oplus\Z_2\to\Z_4\oplus\Z_4$ is a surjective homomorphism. We know that $\vertb{\Z_8\oplus\Z_2}=\vertb{\Z_4\oplus\Z_4}$, but since $(1,0)\in\Z_8\oplus\Z_2$ has order 8, and since every element in $\Z_4\oplus\Z_4$ has at most order 4, we know that $\phi$ cannot be surjective. \done
 \end{itemize}
 
 \end{document}
