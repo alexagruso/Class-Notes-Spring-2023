@@ -1,0 +1,27 @@
+# Fdb version 4
+["pdflatex"] 1698943793 "/home/alexander/Documents/School/fall2023/software/exam2/study.tex" "study.pdf" "study" 1698943793 0
+  "/home/alexander/Documents/School/fall2023/software/exam2/study.tex" 1698943793 24280 9e93d1eb8e1a8c33da27e3ae9bff1587 ""
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1583617216 6501 4011d89d9621e0b0901138815ba5ff29 ""
+  "/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty" 1572645307 1057 525c2192b5febbd8c1f662c9468335bb ""
+  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1601675358 20145 aad8c3dd3bc36e260347b84002182bc2 ""
+  "/usr/share/texmf-dist/tex/latex/base/size12.clo" 1601675358 8450 6fd3588c0e9d06f6f56c6cf4f7246466 ""
+  "/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1612734021 17086 7ed8cbc4d361ec87392817e0dd4f65ec ""
+  "/usr/share/texmf-dist/tex/latex/geometry/geometry.sty" 1578002852 41601 9cf6c5257b1bc7af01a58859749dd37a ""
+  "/usr/share/texmf-dist/tex/latex/graphics/keyval.sty" 1580683321 2590 e3b24ff953e5b58d924f163d25380312 ""
+  "/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1616086534 27164 3d5f7887a89df4eb2f6e86ba26ef3254 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1696253890 39447 2134d78a2da0cee52270db0ec417a200 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1696253902 327343 41a22076d79f3b37803909eea542967d ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1696253901 1380543 b285953d5219bf78f3e6dd4c3a6fc86e ""
+  "study.aux" 1698943793 33 caafbda2f246531a72f60df9bc4c0d5b "pdflatex"
+  "study.tex" 1698943793 24280 9e93d1eb8e1a8c33da27e3ae9bff1587 ""
+  (generated)
+  "study.aux"
+  "study.log"
+  "study.pdf"
+  (rewritten before read)

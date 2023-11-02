@@ -1,0 +1,102 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\linespread{1.2}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\setlength{\parskip}{0.2in}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 9}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given a set $X$, a \textit{metric} $d$ on $X$ is a function $d:X\times X\to\R$ that satisfies the following properties:
+    \begin{itemize}
+        \item [i.)] For all $x,x'\in X$, $x=x'\iff d(x,x')=0$.\hfill\textit{Non-degeneracy}
+
+        \item [ii.)] For all $x,x'\in X$, $d(x,x')=d(x',x)$.\hfill\textit{Symmetry}
+
+        \item [iii.)] For all $x,x',x''\in X$, $d(x,x'')\leq d(x,x')+d(x',x'')$.\hfill\textit{Triangle Inequality}
+    \end{itemize}
+
+    \item [2.)] Given a metric $d$ on $X$, $r\in\R_{>0}$, and $x\in X$, the \textit{open ball of radius $r$ centered at $x$} is defined as follows:
+    \[\text{Ball}(x,r)=\braces{x'\in X:d(x,x')<r}\]
+
+    \item [3.)] Given a metric $d$ on $X$, the \textit{metric topology} on $X$ is defined as follows:
+    \[\mathcal{T}_d\subseteq\mathcal{P}(X)=\braces{U\subseteq X:U=\bigcup_{\alpha\in\mathcal{A}}U_\alpha}\]
+    Where $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ is a collection of open balls in $X$.
+
+    \item [4.)] A \textit{metric space} $(X,d)$ is a set $X$ equipped with a metric $d$.
+
+    \item [5.)] The \textit{taxi cab} metric on $\R^n$ is defined as follows:
+    \[d_{taxi}(x,x')=\sum_{i=1}^n\vertb{x_i-x_i'}\]
+
+    \item [6.)] The $l^\infty$ metric on $\R^n$ is defined as follows:
+    \[d_{l^\infty}(x,x')=\max_{i=1,2,\dots,n}\vertb{x_i-x_i'}\]
+
+    \item [7.)] The \textit{standard} metric on $R^n$ is defined as follows:
+    \[d_{std}(x,x')=\sqrt{\sum_{i=1}^n(x_i-x_i')^2}\]
+
+    \item [8.)] The \textit{discrete} metric on a set $X$ is defined as follows:
+    \[d_{discrete}(x,x')=\begin{cases}
+        1 & x\ne x' \\
+        0 & x=x'
+    \end{cases}\]
+
+    \item [9.)] Given metric spaces $X$ and $Y$, an \textit{isometry} between them is a bijection $f:X\to Y$ where for all $x,x'\in X$, we have $d_Y(f(x),f(x'))=d_X(x,x')$.
+
+    \item [10.)] Given a metric space $X$, a sequence $\braces{x_n}_{n\in\N}$ is a function $x:\N\to X$. We say that $x_n$ converges to a point $L\in X$ if for all $\e>0$, there exists $N\in\N$ where
+    \[n>N\implies d(x_n,L)<\e\]
+\end{itemize}
+
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] Let $W$ be a compact topological space, and $\sim$ an equivalence relation on $W$. Consider the quotient space $W/{\sim}$ and quotient map $q:W\to W/{\sim}$, and let $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ be an open cover of $W/{\sim}$. Since $U_\alpha$ is open in $W/{\sim}$ for all $\alpha\in\mathcal{A}$, we know that $q^{-1}(U_\alpha)$ is open. Let $\braces{V_\alpha}_{\alpha\in\mathcal{A}}$ be a collection of open sets in $X$ where $V_\alpha=q^{-1}(U_\alpha)$. Since $\braces{U_\alpha}_{\alpha\in\mathcal{A}}$ is an open cover of $W/{\sim}$, we know that $\braces{V_\alpha}_{\alpha\in\mathcal{A}}$ is an open cover of $W$, and since $W$ is compact, there exists a finite subcover $\braces{V_\beta}_{\beta\in\mathcal{B}}$ of $W$ where $\mathcal{B}\subseteq\mathcal{A}$. Finally, let $\braces{U_\beta}_{\beta\in\mathcal{B}}$ be a collection of open sets in $W/{\sim}$ where $U_\beta=q(V_\beta)$. Since $\braces{V_\beta}_{\beta\in\mathcal{B}}$ is a cover of $W$, we know that $\braces{U_\beta}_{\beta\in\mathcal{B}}$ is a cover of $W/{\sim}$, and since $\mathcal{B}\subseteq\mathcal{A}$ and is finite, we know that it is a finite subcover of $W/{\sim}$, thus $W/{\sim}$ is compact. \done
+
+    \item [b.)] Let $X$ be a Hausdorff topological space and equip $A\subseteq X$ with the subspace topology. Let $a,a'\in A$ be distinct points. Since $A\subseteq X$, $a$ and $a'$ are also distinct points in $X$, thus there exist open sets $U,U'$ in $X$ where $a\in U$, $a'\in U'$, and $U\cap U'=\varnothing$. It is clear that $a\in A\cap U$ and $a'\in A\cap U'$. We also know that by definition $A\cap U$ and $A\cap U'$ are open in $A$. Finally, note that $(A\cap U)\cap(A\cap U')=A\cap(U\cap U')=A\cap\varnothing=\varnothing$, thus the two sets are distinct, and thus $A$ is Hausdorff. \done
+\end{itemize}
+
+\end{document}
