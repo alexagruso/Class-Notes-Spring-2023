@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\linespread{1.2}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\setlength{\parskip}{0.2in}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 10}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given a topological space $X$, a \textit{continuous path} in $X$ is a continuous mapping\break$\gamma:[0,1]\to X$. Given two points $x,x'\in X$, a path $\gamma$ connects them if $\gamma(0)=x$ and $\gamma(1)=x'$.
+
+    \item [2.)] A topological space $X$ is \textit{path-connected} if for all $x,x'\in X$, there exists a continuous path that connects $x$ and $x'$.
+
+    \item [3.)] Let $X$ be a topological space and $\sim$ be an equivalence relation on $X$ defined as follows:
+    \[x\sim x'\iff x\text{ is path connected to }x'\text{ in }X\]
+    We define $\pi_0(X)$ to be the topological space $X/{\sim}$.
+
+    \item [4.)] $\R^m$ is homeomorphic to $\R^n\iff m=n$.
+\end{itemize}
+
+\section*{Proofs}
+\begin{itemize}
+    \item [a.)] Let $[x]=[x']$ for some $x,x'\in X$, then there exists a continuous path $\gamma$ in $X$ where $\gamma(0)=x$ and $\gamma(1)=x'$. Let $y,y'\in Y$ where $y=f(x)$ and $y'=f(x')$, and define $\gamma'=f\circ\gamma$. We know $f$ and $\gamma$ are continuous, thus $\gamma'$ is continuous. In addition, we know that $\gamma'(0)=f(\gamma(0))=f(x)=y$ and $\gamma'(1)=f(\gamma(1))=f(x')=y'$, thus $\gamma'$ is a path that connects $y$ and $y'$, thus $y\sim y'\implies[y]=[y']\implies[f(x)]=[f(x')]$, thus $f_\sharp$ is a well defined function. \done
+
+    \item [b.)] Let $x\in X$, then $(g\circ f)_\sharp([x])=[(g\circ f)(x)]=[g(f(x))]$. We can also see that\break$(g_\sharp\circ f_\sharp)([x])=g_\sharp(f_\sharp([x]))=g_\sharp([f(x)])=[g(f(x))]$, thus $(g\circ f)_\sharp=g_\sharp\circ f_\sharp$. \done
+
+    \item [c.)] Let $[x]\in X/{\sim}$, then $(\text{id}_X)_\sharp([x])=[x]$. We can also see that $\text{id}_{\pi_0(X)}([x])=[x]$, thus $(\text{id}_X)_\sharp=\text{id}_{\pi_0(X)}$. \done
+
+    \item [d.)] Let $[x],[x']\in X/{\sim}$ where $f_\sharp([x])=f_\sharp([x'])$, then we know that $[f(x)]=[f(x')]$, thus $f(x)\sim f(x')$, thus there exists a path $\gamma$ in $Y$ that connects $f(x)$ and $f(x')$. Using a similar argument to before, it is easy to show that $\gamma'=f^{-1}\circ\gamma$ is a path in $X$ that connects $x$ to $x'$, thus $x\sim x'$, thus $[x]=[x']$, thus $f_\sharp$ is injective. Next, let $[y]\in Y/{\sim}$, then $f_\sharp([f^{-1}(y)])=[f(f^{-1}(y))]=[y]$, thus $f_\sharp$ is surjective, and thus bijective. \done
+\end{itemize}
+
+\end{document}
