@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+\linespread{1.1}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{animations}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+
+\graphicspath{ {./images/} }
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Writing 11}
+
+\normalsize
+
+So far, the concept that has given me the most trouble in this class has been
+the product topology and product spaces.
+I feel like I understand the definition well enough, but when it comes to
+extracting properties of open sets in a product space, I feel that I tend to
+make assumptions based on my intuition of these spaces that turn out to be
+false.
+This in turn leads to me doubting my own intuition of how these spaces behave.
+Because of this, I am aiming to establish a better intuition of product spaces
+to accompany my understanding of their definition.
+
+The two examples I chose to work were the past two extra credit problems, as
+they were both challenging problems that involved product spaces.
+On submission, extra credit problem 9 had an error.
+I falsely assumed that
+\[W_\alpha = U_\alpha \times V_\alpha\]
+where $W_\alpha$ was an open set in some product topology, and where
+$U_\alpha$ and $V_\alpha$ were unions of the respective collections of opens
+set that comprised $W_\alpha$.
+It turns out this equality does not hold, as the relationships between the
+individual sets in the collections are destroyed when the union is taken, so
+certain elements that did not exist in any pair of sets before might exist in
+the union.
+As a result, my proof was invalid, but this new insight into a property of
+sets in product topologies has led to a more accurate intuition of how they
+behave.
+As for extra credit problem 10, I didn't make any errors, but it did serve as
+a good exercise in juggling different types of topologies, including the
+product topology, at the same time.
+
+Overall, this exposure to working with product spaces has strengthened not
+only my understanding of the definition, but has also corrected some errors in
+my previous intuition.
+The error I made in problem 9 was effective in highlighting a gap in my
+intuition that I was then able to fix, and problem 10 served as a good
+exercise to strengthen my knowledge of how the product topology interacts with
+other topologies.
+
+\end{document}
