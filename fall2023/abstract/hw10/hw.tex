@@ -52,24 +52,47 @@
 \section*{Chapter 14}
 
 \begin{itemize}
-    \item [1.)] Let $a \in R$. We know that $\angleb{a} \subseteq R$ and that
-    it is non-empty.
-    In addition, since $R$ is commutative, we have $ra = ar$, thus
-    $ra \in \angleb{a} \iff ar \in \angleb{a}$, thus $\angleb{a}$ is an ideal
-    of $R$.
+    \item [1.)] Let $a \in R$. It is clear that $\angleb{a}$ is non-empty, as
+    $a=1a$, thus $a \in \angleb{a}$.
+    We also know that $ra \in R$ for all $r \in R$, so
+    $\angleb{a} \subseteq R$.
+    Finally, since $R$ is commutative, we know that $ra=ar$, thus
+    $ar \in \angleb{a}$, so $\angleb{a}$ is an ideal.
+    \done
 
     \item [7.)] Let $a \in R$. We know that $aR \subseteq R$, and that it is
     non-empty.
-    In addition, since $R$ is commutative, we have $ra=ar$,
+    In addition, since $R$ is commutative, we have $ar=ra$, so we know that
+    $ra \in aR$, thus $aR$ is an ideal.
+    \done
 
-    \item [28.)] awd
+    Given $R = \braces{2n:n \in \Z}$, we know that
+    $4R=\braces{4r:r \in R}=\braces{8n:n \in \Z}$.
+
+    \item [28.)] Let $a\in R$ where $a\ne0$.
+    Since $R$ is an ideal, we know that for all $k\in R$, there exists
+    $b\in R$ where $ab=k$.
+    Since $1\in R$, we know that there exists $b$ where $ab=1$, thus $R$ has
+    inverses, and is thus a field.
+    \done
 \end{itemize}
 
 \section*{Chapter 15}
 
 \begin{itemize}
-    \item [5.)] awd
-    \item [20.)] awd
+    \item [5.)] We have $\phi(2)+\phi(3)=30+45=75\equiv5\pmod{10}$, but
+    $\phi(2+3)=\phi(5)=\phi(0)=0\pmod{10}$, so $\phi$ does not preserve
+    addition.
+    \done
+
+    \item [20.)] Let $\phi:R_1 \to R_2$ be a ring homomorphism, $a\in R_1$
+    where $a$ is idempotent, and $b\in R_2$ where $\phi(a)=b$.
+    Since $a^2=a$, we have that
+    $b=\phi(a)=\phi(a*a)=\phi(a)\phi(a)=b*b=b^2$, thus $b=b^2$, thus $b$
+    is idempotent in $R_2$, thus ring homomorphisms carry idempotent elements
+    to other idempotent elements.
+    \done
+    
 \end{itemize}
 
 \end{document}
