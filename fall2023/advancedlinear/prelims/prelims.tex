@@ -104,16 +104,21 @@
         Suppose $R_1$ and $R_2$ are matrices in reduced row echelon form
         and that $A \sim R_1$ and $A \sim R_2$, then $A = E_1 \cdots E_mR_1$ and
         $A=E'_1 \cdots E'_nR_2$ where $E_i$ and $E'_i$ are elementary matrices.
-
+        We can see that
 
         \item [3.)] A given matrix $A$ is invertible if and only if its
         reduced row echelon form is an identity matrix.
 
         \textit{Proof:} Assume $A$ is invertible, and let $R$ be a matrix in
         reduced row echelon form where $A \sim R$, thus $A = E_1 \cdots E_nR$
-        where $E_i$ is an elementary matrix. For the sake of establishing a
-        contradiction, suppose $R \ne I$, then since $R$ is unique, we know
-        that $A\ne E$
+        where $E_i$ is an elementary matrix.
+        We know that $E_i$ is invertible, so $(E_1 \cdots E_n)^{-1}A=R$.
+        Since the product of two invertible matrices is invertible, we know
+        that $R$ is invertible, and since it is in reduced row echelon form,
+        it either has a zero row or column, or is the identity matrix, but $R$
+        is invertible, so it cannot have any zero rows or columns, thus $R$ is
+        the identity matrix.
+        \done
 
     \end{itemize}
     
