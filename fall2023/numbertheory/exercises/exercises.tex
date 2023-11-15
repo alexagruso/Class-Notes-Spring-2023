@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1in]{geometry}
+
+\newcommand{\claim}{\textit{Claim: }}
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\sep}[1]{\ \ \ \text{#1}\ \ \ }
+
+\newcommand{\braces}[1]{\left\{#1\right\}}
+\newcommand{\parens}[1]{\left(#1\right)}
+
+\begin{document}
+    \pagestyle{fancy}
+    \fancyhead[L]{Analytic Number Theory}
+    \fancyhead[R]{Exercises}
+
+    \section*{Chapter 1}
+
+    For all problems in this chapter, lowercase latin letters $a,b,\dots,y,z$
+    represent integers.
+    
+    \begin{itemize}
+        \item [1.)] \claim If $(a,b)=1$, and $c\mid a$ and $d\mid b$, then
+        $(c,d)=1$.
+        
+        \proof Since $(a,b)=1$, there exist $x$ and $y$ where $ax+by=1$.
+        We also know that $c\mid a $ and $b\mid d$, so there exists $m$ and
+        $n$ where $a=cm$ and $b=dn$, thus $ax+by=c(mx)+d(ny)=1$, thus
+        $(c,d)=1$.
+        \done
+
+        \item [2.)] \claim If $(a,b)=(a,c)=1$, then $(a,bc)=1$.
+
+        \proof Since $(a,b)=(a,c)=1$, there exist $x_1$, $x_2$, $y_1$, and
+        $y_2$ where $ax_1+by_1=1$ and $ax_2+cy_2=1$.
+        We can see that
+        \[
+            1 = (ax_1+by_1)(ax_2+cy_2)
+            = (a^2x_1x_2+abx_2y_1+acx_1y_2+bcy_1y_2)
+        \]\[
+            = a(ax_1x_2+bx_2y_1+cx_1y_2)+bc(y_1y_2)
+            \, ,
+        \]
+        so $(a,bc)=1$.
+        \done
+
+        \item [3.)] \claim If $(a,b) = 1$, then $(a^n,b^k) = 1$ for all $n$ and $k$.
+        
+        \proof We can take the prime factorizations of $a$ and $b$:
+        \[
+            a
+            = \prod p_i^{x_i}
+            \sep{and}
+            b
+            = \prod p_i^{y_i}
+            \, ,
+        \]
+        where $p_i$ are the primes, and $x_i$ and $y_i$ are integers that
+        depend on $p_i$.
+        Further, the prime factorizations for $a^n$ and $b^k$ are
+        \[
+            a^n
+            = \parens{\prod p_i^{x_i}}^n
+            = \prod p_i^{x_i^n}
+        \]
+        and
+        \[
+            b^k
+            = \parens{\prod p_i^{y_i}}^k
+            = \prod p_i^{y_i^k}
+        \]
+        Since $(a,b)=1$, we know that $\min \braces{x_i,y_i}=0$ for all $i$,
+        thus $\min \braces{x_i^n,y_i^k}=0$, thus $(a^n,b^k)=1$.
+        \done
+
+        \item [4.)] \claim If $(a,b) = 1$, then $(a + b, a - b)$ is either 1
+        or 2.
+
+        \proof Let $d = (a + b,a - b)$, then $d \mid a + b$ and
+        $d \mid a - b$, thus $a + b = dm$ and $a - b = dn$ for some $m$ and
+        $n$.
+        From
+
+        \item [5.)] ***
+
+        \item [6.)] ***
+
+        \item [7.)] ***
+
+        \item [8.)] ***
+
+        \item [9.)] ***
+
+        \item [10.)] ***
+
+        \item [11.)] ***
+
+        \item [12.)] ***
+
+        \item [13.)] ***
+
+        \item [14.)] ***
+
+        \item [15.)] ***
+
+        \item [16.)] ***
+
+        \item [17.)] ***
+
+        \item [18.)] ***
+
+        \item [19.)] ***
+
+        \item [20.)] ***
+
+        \item [21.)] ***
+
+        \item [22.)] ***
+
+        \item [23.)] ***
+
+        \item [24.)] ***
+
+        \item [25.)] ***
+
+        \item [26.)] ***
+
+        \item [27.)] ***
+
+        \item [28.)] ***
+
+        \item [29.)] ***
+
+        \item [30.)] ***
+    \end{itemize}
+\end{document}
