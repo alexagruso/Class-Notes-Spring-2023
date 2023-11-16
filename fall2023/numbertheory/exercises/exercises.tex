@@ -17,13 +17,15 @@
 \newcommand{\parens}[1]{\left(#1\right)}
 
 \begin{document}
+    \pagenumbering{gobble}
+
     \pagestyle{fancy}
     \fancyhead[L]{Analytic Number Theory}
     \fancyhead[R]{Exercises}
 
     \section*{Chapter 1}
 
-    For all problems in this chapter, lowercase latin letters $a,b,\dots,y,z$
+    For problems 1 through 6, lowercase latin letters $a,b,\dots,y,z$
     represent integers.
     
     \begin{itemize}
@@ -83,18 +85,41 @@
         \item [4.)] \claim If $(a,b) = 1$, then $(a + b, a - b)$ is either 1
         or 2.
 
-        \proof Let $d = (a + b,a - b)$, then $d \mid a + b$ and
-        $d \mid a - b$, thus $a + b = dm$ and $a - b = dn$ for some $m$ and
-        $n$.
-        From
+        \proof 
 
         \item [5.)] ***
 
-        \item [6.)] ***
+        \item [6.)] \claim If $(a,b) = 1$ and $d \mid a + b$, then
+        $(a,d) = (b,d) = 1$.
+
+        \proof Since $(a,b) = 1$, we know that $ax + by = 1$ for some $x$ and
+        $y$, and since $d \mid a + b$, $a + b = dm$ for some $m$.
+        We have $a + b = dm \implies b = dm - a$, thus
+        $ax+by=ax + (dm - a)y = ax + dmy - ay = a(x-y)+d(my)=1$,
+        thus $(a,d) = 1$.
+        A similar argument shows that $(b,d) = 1$ as well.
+        \done
 
         \item [7.)] ***
 
-        \item [8.)] ***
+        \item [8.)] \claim Every integer can be represented as $a^2b$, where
+        $a$ and $b$ are unique positive integers and $b$ is squarefree.
+
+        \proof We obtain the unique prime factorization of $n$ as follows:
+        \[
+            n
+            = \prod_{\text{primes}} p_i^{x_i} \prod_{\text{primes}} p_j^{x_j}
+            ,
+        \]
+        where powers $x_i$ of $p_i$ are all odd, and powers $x_j$ of $p_j$
+        are all even.
+        From this we can see that
+        \[
+            n
+            = p_i \prod_{\text{primes}} p_i^{x_i - 1}
+            \prod_{\text{primes}} p_j^{x_j}
+        \]
+        
 
         \item [9.)] ***
 
