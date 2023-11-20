@@ -1,0 +1,79 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage[skip=0.2in]{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\contradiction}{
+    \ensuremath{{\Rightarrow\mspace{-2mu}\Leftarrow}}
+}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Abstract Algebra Homework 11}
+
+\normalsize
+
+\section*{Chapter 19}
+
+\begin{itemize}
+    \item [7.)] Suppose $a_1u+a_2(u+v)+a_3(u+v+w)=0$, thus we have that
+    \[(a_1+a_2+a_3)u+(a_2+a_3)v+a_3w=0\]
+    Since $u,v$, and $w$ are linearly independent, we have $a_1+a_2+a_3=0$,
+    $a_2+a_3=0$, and $a_3=0$, so $a_2+a_3=a_2=0$, so $a_1+a_2+a_3=a_1=0$, thus
+    $a_1=a_2=a_3=0$, thus $u$, $v$, and $w$ are linearly independent.
+    \done
+
+    \item [8.)] Suppose $a_1v_1+a_2v_2+\cdots+a_nv_n=0$. Since the vectors are
+    linearly dependent, we can set $a_i\ne0$ for some $i$, so
+    $a_1v_1+\cdots+a_{i-1}v_{i-1}+a_{i+1}v_{i+1}+\cdots+a_nv_n=-a_iv_i$.
+    Dividing out by $-a_i$, we obtain $v_i$ as a linear combination of the
+    other vectors. 
+    \done
+
+    \item [9.)] 
+
+    \item [10.)] 
+
+    \item [22.)] Each vector has $n$ elements and each element has $p$ choices,
+    so the total number of elements is $p^n$.
+    \done
+\end{itemize}
+
+\end{document}
