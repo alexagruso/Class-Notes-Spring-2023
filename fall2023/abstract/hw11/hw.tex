@@ -67,12 +67,22 @@
     other vectors. 
     \done
 
-    \item [9.)] 
+    \item [9.)] If $\braces{v_1,\,\cdots\,v_n}$ is linearly independent, we are
+    done. Otherwise, there exists $v_i$ that is a linear combination of the
+    other, so we can remove it from the set to obtain another spanning set.
+    Repeat this until the set is linearly independent, at which point we have
+    obtained a basis.
+    \done
 
-    \item [10.)] 
+    \item [10.)] If the dimension of $V$ is $n$, we are done. Otherwise, set
+    $w_i$ to be linearly dependent to all vectors in the set and add it to the
+    set. This is possible if the dimension of $V$ is at least $n+i$. Repeat
+    this process until we have $n+m$ vectors, all of which are linearly
+    independent, thus we have obtained a basis for $V$.
+    \done
 
-    \item [22.)] Each vector has $n$ elements and each element has $p$ choices,
-    so the total number of elements is $p^n$.
+    \item [22.)] Each vector has $n$ entries and each entry has $p$ choices,
+    so the total number of elements in the vector space is $p^n$.
     \done
 \end{itemize}
 
