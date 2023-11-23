@@ -1,0 +1,111 @@
+\documentclass[12pt]{article}
+\linespread{1.15}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[headheight = 1in, margin = 1in]{geometry}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\begin{document}
+
+    \pagenumbering{gobble}
+
+    \pagestyle{fancy}
+    \fancyhead[L]{Putnam Exam}
+    \fancyhead[R]{A1 Problems}
+
+    \begin{itemize}
+        \item [2018)] \textbf{Problem:} Find all \( (a,b) \in \N^2 \) where
+        \[ \frac{1}{a} + \frac{1}{b} = \frac{3}{2018} \]
+
+        \textbf{Hints:} Find a way to factor the equation such that each factor
+        correlates to a prime factor of some number.
+
+        \textbf{Solution:} \( (674,340033) \), \( (2018,1009) \), and
+        \( (673,1358114) \), plus their reverse pairs.
+
+        \textbf{Proof:} Clearing denominators, we obtain
+        \[ 2018a + 2018b = 3ab \implies 3ab - 2018a - 2018b = 0 \]
+        \[ \implies 9ab - 3(2018)a - 3(2018)b = 0 \, . \]
+        Adding \( 2018^2 \) to both sides, we can factor the equation as
+        \[ (3a - 2018)(3b - 2018) = 2018^2 = 2^2 1009^2 \, . \] Note that
+        \( 2018 \equiv 1 \pmod{3} \), thus
+        \( 3a - 2018 \equiv 3b - 2018 \equiv 1 \pmod{3} \).
+        The possible factorizations of \( 2018^2 \) are
+        \( (2)( 2 \times 1009^2) \), \( (2^2)(1009^2) \),
+        \( (2^2 \times 1009)(1009) \), and \( (1)( 2^2 \times 1009^2)\),
+        but since \( 2 \not\equiv 1 \pmod{3} \),
+        we know that neither \( 3a - 2018 \) nor \( 3b - 2018 \) are equal to
+        it, so we can ignore that factorization. Finally, using the remaining
+        three factorizations, we can solve the following equations for \( a \)
+        and \( b \) as follows:
+        \begin{align*}
+            & 3a - 2018 = 2^2,             & 3b - 2018 = 1009^2 \\
+            & 3a - 2018 = 2^2 \times 1009, & 3b - 2018 = 1009   \\
+            & 3a - 2018 = 1,               & 3b - 2018 = 2^2 \times 1009^2
+        \end{align*}
+        Thus we obtain \( (674,340033) \), \( (2018,1009) \), and
+        \( (673,1358114) \), as solutions.
+        \done
+
+        \item [2017)] \textbf{Problem:} Let \( S \subseteq \N \) be the
+        smallest set where \( 2 \in S \), \( n^2 \in S \implies n \in S\), and
+        \( n \in S \implies (n + 5)^2 \in S \). Which positive integers are not
+        in \( S \)?
+
+        \textbf{Solution:} 1 and all \( n \) where \( n \equiv 0 \pmod{5} \).
+
+        \textbf{Proof:} It is clear that \( 1 \notin S \).
+        
+        \item [2008)]  \textbf{Problem:} Let \( f : \R^2 \to \R \) be a
+        function where \( f(x,y) + f(y,z) + f(z,x) = 0 \) for all
+        \( x,y,z \in \R \). Show that $f(x,y) = g(x) - g(y)$ for some function
+        \( g : \R \to \R \).
+
+        \textbf{Hints:} Since the defining property of \( f \) holds for all
+        choices of \( x \), \( y \), and \( z \), any property of $f$ that we
+        derive by fixing some or all of the variables will also hold for all
+        choices.
+
+        \textbf{Solution:} Fix \( z \in \R \), then \( g(x) = f(x,z) \)
+
+        \textbf{Proof:} Suppose \( x = y = z \), then
+        \( f(x,y) + f(y,z) + f(z,x) = 3f(x,x) = 0 \), thus \( f(x,x) = 0 \) for
+        all \( x \in \R \). Next, suppose \( x = z \) and \( y \) is free, then
+        \( f(x,y) + f(y,z) + f(z,x) = f(x,y) + f(y,x) + f(x,x)
+            = f(x,y) + f(y,z) = 0 \implies f(x,y) = -f(x,y) \) for all
+        \( x,y \in \R \). Finally, fix \( z \in \R \) and let
+        \( g(x) = f(x,z) \), then
+        \( f(x,y) + f(y,z) + f(z,x) = f(x,y) + f(y,z) - f(x,z)
+            = f(x,y) + g(y) - g(x) = 0 \implies f(x,y) = g(x) - g(y) \).
+        \done
+
+        \item [1999)] \textbf{Problem:} Find polynomials \( f(x) \), \( g(x) \),
+        and \( h(x) \) where
+        \[
+            \vertb{f(x)} - \vertb{g(x)} + h(x) = \begin{cases}
+                -1     & x < -1 \\
+                3x + 2 & -1 \leq x \leq 0 \\
+                2 - 2x & x > 0
+            \end{cases}
+        \]
+
+        \textbf{Hints:}
+
+        \textbf{Solution:}
+
+        \textbf{Proof:} Consider the functions $p(x)$ and $q(x)$ defined
+        as follows:
+        \[  \]
+    \end{itemize}
+\end{document}

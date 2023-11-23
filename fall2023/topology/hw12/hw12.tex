@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\pagenumbering{gobble}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{textcomp}
+\usepackage[margin=1in,headheight=1in]{geometry}
+
+\newcommand{\done}{
+    \ensuremath{\strut\hfill\blacksquare}
+}
+
+\newcommand{\contra}{
+    \Rightarrow\Leftarrow
+}
+
+% bracket commands
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle} % <>
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}      % ||
+\newcommand{\bracks}[1]{\left[#1\right]}             % []
+\newcommand{\braces}[1]{\left\{#1\right\}}           % {}
+\newcommand{\parens}[1]{\left(#1\right)}             % ()
+
+% set aliases
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\derv}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\di}{\,/\,}
+
+\newcommand{\lm}[1]{\displaystyle\lim_{#1}}
+
+\begin{document}
+
+\linespread{1.2}
+
+\setlength{\parskip}{0.2in}
+
+\pagestyle{fancy}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[R]{Topology Homework 12}
+
+\normalsize
+
+\section*{Definitions}
+\begin{itemize}
+    \item [1.)] Given two points $x$ and $x'$ in a topological space $X$, a
+    \textit{continuous path} in $X$ from $x$ to $x'$ is a continuous function
+    $\gamma : [0,1] \to X$ where $\gamma(0) = x$ and $\gamma(1) = x'$.
+    ‡{ú}
+    \item [2.)] A topological space $X$ is \textit{path-connected} if for all
+    $x,x' \in X$, there exists a continuous path between them.
+
+    \item [3.)] Define the equivalence relation $\sim$ on a topological space
+    $X$ as follows:
+    \[ x \sim x' \iff x\ \text{and}\ x'\ \text{are path-connected} \, . \]
+    We define $\pi_0(X)$ as the quotient space $X/{\sim}$.
+
+    \item [4.)] The \textit{invariance of domain} theorem states that
+    $\R^m \cong \R^n \iff m = n$.
+
+    \item [5.)] A topological space $X$ is \textit{connected} if for any set in
+    $X$ that is both open and closed, that set is either $X$ or $\varnothing$.
+\end{itemize}
+
+\section*{Proof}
+
+We know that $\R^n \cup \braces{*}$ is compact. In addition, since
+$\R^{n + 1}$ is Hausdorff and $S^n \subset \R^{n + 1}$, we know that $S^n$ is
+Hausdorff. We also know that the stereographic projection
+$p : S^n \backslash \braces{0, \dots, 0, 1} \to \R^n$ is bijective, so
+consider its inverse $p^{-1}$, and define a function
+$f : \R^{n} \cup \braces{*} \to S^n$ as follows:
+\[
+    f(x) = \begin{cases}
+        (0, \dots, 0, 1) \in S^n & x = * \\
+        p^{-1}(x) & \text{otherwise}
+    \end{cases}
+\]
+We can readily see that $f$ is bijective. Let $U$ be an open set in $S^n$, thus
+$U = S^n \cap V$ where $V$ is open in $\R^n$, thus
+$f^{-1}(U) = f^{-1}(S^n \cap V) = f^{-1}(S^n) \cap f^{-1}(V)$. Since
+$V \subseteq \R^n$, we know that $* \notin V$, so $f^{-1}(V) = p(V)$, and since
+$p$ is a homeomorphism, we know that $V' = p(V)$ is open in $\R^n$, thus
+$f^{-1}(S^n) \cap f^{-1}(V) = \parens{\R^n \cup \braces{*}} \cap V'
+    = (\R^n \cap V') \cup (V' \cap \braces{*}) = \R^n \cap V' = V'$, which is
+open in $\R^n$, thus $f$ is continuous, and thus by theorem 15.5.1, a
+homeomorphism.
+\done
+
+\end{document}
