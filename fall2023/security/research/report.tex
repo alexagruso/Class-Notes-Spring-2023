@@ -89,33 +89,39 @@
     The first step in creating a public-private key pair is to randomly choose
     two large prime numbers \( p \) and \( q \), then calculate their product
     \( n = pq \). Next, the value of \( \lambda(n) \) is calculated, where
-    \( \lambda \) is Carmichael's totient function. We define \( \lambda(n) \)
-    as the smallest integer \( m \) where \( a^m \equiv 1 \pmod{n} \) for all
-    integers \( a \) that are relatively prime to \( n \).~\cite{WA:Carmichael}
+    \( \lambda \) is Carmichael's totient function.
+    We define \( \lambda(n) \) as the smallest integer \( m \) where
+    \( a^m \equiv 1 \pmod{n} \) for all integers \( a \) that are relatively
+    prime to \( n \).
+    ~\cite{WA:Carmichael}
     It should be noted that \( \lambda(n) \) is very difficult to calculate if
-    only given \( n \). However, if one has the prime factorization of \( n \),
-    in this case \( pq \), the calculation becomes considerably easier, reducing
-    to calculating the least common multiple of \( p - 1 \) and \( q - 1\). We
-    then choose an integer \( e \) such that \( 2 < e < \lambda(n) \) and
+    only given \( n \).
+    However, if one has the prime factorization of \( n \), in this case
+    \( pq \), the calculation becomes considerably easier, with it reducing
+    to calculating the least common multiple of \( p - 1 \) and \( q - 1\).
+    We then choose an integer \( e \) such that \( 2 < e < \lambda(n) \) and
     \( e \) and \( \lambda(n) \) are relatively prime.
     Finally, we find the
     multiplicative inverse \( d \) of \( e \pmod{\lambda(n)} \).
-    The public key consists of the modulus \( n \)
-    and the exponent \( e \), while the private key consists of the exponent
-    \( d \).
+    The public key consists of the modulus \( n \) and the exponent \( e \),
+    while the private key consists of the exponent \( d \).
 
     Having calculated our public-private key pair, we are now ready to start
-    encrypting. Let \( M \) be the message we wish to encrypt. Using \( n \)
-    and \( e \), we calculate the ciphertext \( c \) by taking
-    \( M^e \pmod{n} \). The encrypted message \( c \) can then be sent to the
-    recipient.
+    encrypting messages.
+    Let \( M \) be the message we wish to encrypt.
+    Using \( n \) and \( e \), we calculate the ciphertext \( c \) by
+    evaluating the following:
+    \[ c \equiv M^e \pmod{n}. \]
+    The encrypted message \( c \) can then be sent to the recipient.
 
     When the message is received, it can be decrypted using our private
-    exponent \( d \). Since \( d \) and \( e \) are multiplicative inverses,
-    we have that \( de \equiv 1 \pmod{n} \), thus we can obtain \( M \) as
-    follows:
+    exponent \( d \).
+    Since \( d \) and \( e \) are multiplicative inverses, we have that
+    \( de \equiv 1 \pmod{n} \), thus we can obtain \( M \) as follows:
     \[ c^d \equiv (M^e)^d \equiv M^{ed} \equiv M^1 \equiv M \pmod{n}, \]
-    thus by calculating \( c^d \), we obtain the original message \( M \).
+    thus by calculating \( c^d \), we obtain the original message \( M \),
+    and since \( d \) is kept secret, only the recipient can decrypt the
+    ciphertext.
 
     \section*{Methods of Cracking RSA}
 
@@ -127,8 +133,36 @@
 
     \section*{Elliptic Curve Encryption}
 
-    Elliptic curve encryption, henceforth referred to as ECC, is another
-    public-key encryption scheme.
+    Elliptic curve cryptography, henceforth referred to as ECC, describes
+    several cryptographic schemes that rely on the intractability of the
+    elliptic curve discrete logarithm problem (ECDLP).
+    Before we can discuss how public-private key pairs are generated and how
+    they are used to encrypt and decrypt messages, we will briefly introduce
+    the mathematics behind elliptic curves and the ECDLP.
+    
+    An elliptic curve is a cubic polynomial in two variables that takes the
+    form of
+    \[ y^2 = x^3 + ax^2 + bx + c, \]
+    combined with a ``point at infinity'', which we will denote as
+    \( \mathcal{O} \).
+    For the purposes of ECC, we take this curve over a finite field
+    \( \mathbb{F}_p \), where \( p \) is a carefully chosen prime number.
+    In abstract algebra, a field simply represents a set where the usual
+    notions of addition and multiplication hold true, and in our case, this
+    field has finitely many elements, namely \( p \) elements.
+
+    Given the set of points on this curve over \( \mathbb{F}_p \), along with
+    \( \mathcal{O} \), we can endow it with a group structure by equipping it
+    with a special ``addition'' operation.
+    A group is a mathematical structure that describes the symmetries of a
+    certain object, in this case, the points on our curve.
+    Additionally, it allows us to define the ``discrete logarithm'' of points
+    on the curve.
+    Given two elements \( a \) and \( b \) in our group, we define the discrete
+    logarithm \( \log_b(a) \) as the integer \( k \) such that \( b^k = a \).
+    In this case, \( a \) and \( b \) are points on our curve,
+    Despite the notations being similar, the discrete logarithm and regular
+    logarithms should not be confused with one another.
 
     \section*{Future Threats to RSA and ECC}
 
