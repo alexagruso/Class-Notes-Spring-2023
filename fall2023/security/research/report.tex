@@ -1,36 +1,139 @@
-\documentclass[12pt]{article}
-\pagenumbering{gobble}
+\documentclass[letterpaper,twocolumn,12pt]{article}
 
-\usepackage{fancyhdr} 
-\usepackage[margin=1in]{geometry}
-\usepackage{setspace}
+% to be able to draw some self-contained figs
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 
-\title{Exploration of Cracking Methods for RSA and Elliptic Curve Encryption}
-\author{Alex Agruso \and Brandon Howell}
+% bibtex
+\usepackage{filecontents}
+\usepackage{url}
+
+% styles
+\usepackage{style}
+
+% aliases
+\newcommand{\N}{\mathbb{N}}
+
+\begin{filecontents}{\jobname.bib}
+
+\end{filecontents}
 
 \begin{document}
+    \date{}
 
-\setlength{\headheight}{2.5in}
-\setlength{\parskip}{0.25in}
+    \title{ An Exploration of Methods of Cracking \\
+        Encryption Schemes }
 
-\maketitle
-\pagebreak
+    \author{
+        { \rm Alexander Agruso } \\
+        { \rm Texas State University }
+        \and
+        { \rm Brandon Howell } \\
+        { \rm Texas State University }
+    }
 
-\setstretch{1.25}
+    \maketitle
 
-\setlength{\headheight}{1.5in}
+    \begin{abstract}
+        Blah blah blah abstract here
+    \end{abstract}
 
-\begin{abstract}
-    Abstract Here
-\end{abstract}
-\pagebreak
+    \section*{Introduction}
 
-\pagenumbering{arabic}
+    In the age of digital communication, it is more important than ever that we
+    safeguard our information online.
+    With so much of our sensitive information being sent over the internet, we
+    must find ways to ensure that unauthorized parties aren't able to view this
+    information.
+    The most common way of achieving this goal is through an encryption scheme.
+    
+    One of the earliest known encryption schemes date back to the ancient
+    Greeks, where Polybius invented the ``Polybius Square'', a primitive
+    encryption method that encoded letters in a five by five square.
+    Another well known encryption method from antiquity is the Julius Cipher,
+    which shifts the letters in the alphabet so that the corresponding letters
+    in a given sentence are scrambled in such a way as to make the text
+    unreadable unless deciphered.
 
-\setlength{\headheight}{1in}
-\setlength{\parskip}{0.25in}
+    While these schemes may have worked for people in the past, they are
+    rendered essentially useless by the ubiquity of powerful computers in our
+    modern age.
+    As a result, much more sophisticated encryption schemes have been developed
+    that can resist computational efforts to crack them. In this paper, we will
+    focus on two widely used public-key encryption schemes: RSA and Elliptic
+    Curve Encryption.
+    These methods use advanced concepts in math, specifically number theory, to
+    ensure that even the most powerful computers are unable to decipher a
+    message unless they possess the private key, with which deciphering a
+    message becomes a significantly easier task.
+    
+    Both of these schemes, and all public-key encryption schemes in general,
+    rely on intractable problems, which are problems whose solutions are
+    difficult, if not virtually impossible to find, but are nonetheless easily
+    verifiable once found.
+    So, if one wants to crack these encryption schemes, one must find solutions
+    to these intractable problems.
+    This paper explores various methods of finding solutions to the intractable
+    problems at the core of RSA and Elliptic Curve Encryption, as well as
+    possible improvements that can be made upon existing methods.
 
-\section*{Introduction}
+    \section*{RSA Encryption}
 
-Encryption serves as the backbone of modern computer security. 
+    The RSA encryption scheme, invented by Ron Rivest, Adi Shamir, and Leonard
+    Adleman in 1977, is a widely used public-key encryption system that relies
+    on the difficulty of factoring certain large integers. We provide a brief
+    explanation of how public-private key pairs are generated, and how they
+    are used to encrypt and decrypt messages.
+    
+    The first step in creating a public-private key pair is to randomly choose
+    two large prime numbers \( p \) and \( q \), then calculate their product
+    \( n = pq \). Next, the value of \( \lambda(n) \) is calculated, where
+    \( \lambda \) is Carmichael's totient function. We define \( \lambda(n) \)
+    as the smallest integer \( m \) where \( a^m \equiv 1 \pmod{n} \) for all
+    integers \( a \) that are relatively prime to \( n \).~\cite{WA:Carmichael}
+    It should be noted that \( \lambda(n) \) is very difficult to calculate if
+    only given \( n \). However, if one has the prime factorization of \( n \),
+    in this case \( pq \), the calculation becomes considerably easier, reducing
+    to calculating the least common multiple of \( p - 1 \) and \( q - 1\). We
+    then choose an integer \( e \) such that \( 2 < e < \lambda(n) \) and
+    \( e \) and \( \lambda(n) \) are relatively prime.
+    Finally, we find the
+    multiplicative inverse \( d \) of \( e \pmod{\lambda(n)} \).
+    The public key consists of the modulus \( n \)
+    and the exponent \( e \), while the private key consists of the exponent
+    \( d \).
+
+    Having calculated our public-private key pair, we are now ready to start
+    encrypting. Let \( M \) be the message we wish to encrypt. Using \( n \)
+    and \( e \), we calculate the ciphertext \( c \) by taking
+    \( M^e \pmod{n} \). The encrypted message \( c \) can then be sent to the
+    recipient.
+
+    When the message is received, it can be decrypted using our private
+    exponent \( d \). Since \( d \) and \( e \) are multiplicative inverses,
+    we have that \( de \equiv 1 \pmod{n} \), thus we can obtain \( M \) as
+    follows:
+    \[ c^d \equiv (M^e)^d \equiv M^{ed} \equiv M^1 \equiv M \pmod{n}, \]
+    thus by calculating \( c^d \), we obtain the original message \( M \).
+
+    \section*{Methods of Cracking RSA}
+
+    To crack RSA encryption, we must find a way to derive the private key
+    \( d \) from the public key values \( n \) and \( e \). The most
+    straightforward way of doing this is to find the prime factors \( p \)
+    and \( q \) of \( n \), which, as previously noted, can be used to easily
+    calculate \( \lambda(n) \), and thus calculate \( d \).
+
+    \section*{Elliptic Curve Encryption}
+
+    Elliptic curve encryption, henceforth referred to as ECC, is another
+    public-key encryption scheme.
+
+    \section*{Future Threats to RSA and ECC}
+
+    Blah blah blah quantum
+
+    \bibliographystyle{plain}
+    \bibliography{\jobname}
 \end{document}
