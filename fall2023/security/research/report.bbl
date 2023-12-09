@@ -1,8 +1,38 @@
 \begin{thebibliography}{1}
 
+\bibitem{JD:History}
+John Dooley.
+\newblock {\em History of cryptography and cryptanalysis: codes, ciphers, and their algorithms}.
+\newblock Springer, 2018.
+
 \bibitem{WA:Carmichael}
 Wolfram Alpha.
 \newblock Carmichael function.
 \newblock \url{ https://mathworld.wolfram.com/CarmichaelFunction.html }.
+
+\bibitem{QC:Shors}
+Alice Flarend and Bob Hilborn.
+\newblock {213RSA Encryption and the Shor Factoring Algorithm}.
+\newblock In {\em {Quantum Computing: From Alice to Bob}}. Oxford University Press, 04 2022.
+
+\bibitem{ShorsTime}
+David Beckman, Amalavoyal~N. Chari, Srikrishna Devabhaktuni, and John Preskill.
+\newblock Efficient networks for quantum factoring.
+\newblock {\em Phys. Rev. A}, 54:1034--1063, Aug 1996.
+
+\bibitem{FastMult}
+David Harvey and Joris van~der Hoeven.
+\newblock {Integer multiplication in time $O(n\mathrm{log}\, n)$}.
+\newblock {\em Annals of Mathematics}, 193(2):563 -- 617, 2021.
+
+\bibitem{2001IBM}
+Lieven M.~K. {Vandersypen}, Matthias {Steffen}, Gregory {Breyta}, Costantino~S. {Yannoni}, Mark~H. {Sherwood}, and Isaac~L. {Chuang}.
+\newblock {Experimental realization of Shor's quantum factoring algorithm using nuclear magnetic resonance}.
+\newblock 414(6866):883--887, December 2001.
+
+\bibitem{Failed}
+Mirko Amico, Zain~H. Saleem, and Muir Kumph.
+\newblock Experimental study of shor's factoring algorithm using the ibm q experience.
+\newblock {\em Phys. Rev. A}, 100:012305, Jul 2019.
 
 \end{thebibliography}

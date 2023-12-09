@@ -3,9 +3,15 @@
         "Adleman",
         "bibtex",
         "ciphertext",
+        "ECDLP",
+        "GNFS",
         "monoalphabetic",
+        "primefac",
+        "qubits",
         "Rivest",
         "Shamir",
+        "Shor",
+        "Shor's",
         "totient"
     ]
 }

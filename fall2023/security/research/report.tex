@@ -14,6 +14,7 @@
 
 % aliases
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\parens}[1]{\left( #1 \right)}
 
 \begin{filecontents}{\jobname.bib}
 
@@ -36,7 +37,12 @@
     \maketitle
 
     \begin{abstract}
-        Blah blah blah abstract here
+        In this paper, we explore RSA and Elliptic Curve Cryptography, giving a
+        mathematical overview of how these schemes function.
+        Additionally, we analyze and compare various methods that exist to
+        crack these encryption schemes.
+        Finally, we discuss future threats to these encryption schemes
+        and the ongoing efforts to mitigate them.
     \end{abstract}
 
     \section*{Introduction}
@@ -55,6 +61,7 @@
     which shifts the letters in the alphabet so that the corresponding letters
     in a given sentence are scrambled in such a way as to make the text
     unreadable unless deciphered.
+    ~\cite{JD:History}
 
     While these schemes may have worked for people in the past, they are
     rendered essentially useless by the ubiquity of powerful computers in our
@@ -126,10 +133,130 @@
     \section*{Methods of Cracking RSA}
 
     To crack RSA encryption, we must find a way to derive the private key
-    \( d \) from the public key values \( n \) and \( e \). The most
-    straightforward way of doing this is to find the prime factors \( p \)
-    and \( q \) of \( n \), which, as previously noted, can be used to easily
-    calculate \( \lambda(n) \), and thus calculate \( d \).
+    \( d \) from the public key values \( n \) and \( e \).
+    The most straightforward way of doing this is to find the prime factors
+    \( p \) and \( q \) of \( n \), which, as previously noted, can be used to
+    easily calculate \( \lambda(n) \), and thus calculate \( d \).
+    
+    The typical naive approach to factoring numbers is the brute force method.
+    A custom implementation of a brute force factoring algorithm in python is
+    given as follows:
+
+    First, we define two important utility functions, \verb|divides(d,n)| and
+    \verb|isPrime(n)|, which are implemented as
+    \begin{verbatim}
+    def divides(d, n):
+        q = n // d
+        return n == d * q
+    \end{verbatim}
+    and
+    \begin{verbatim}
+    def isPrime(n):
+        for i in range(2, n):
+            if divides(i, n):
+                return false
+        
+        return true
+    \end{verbatim}
+    respectively.
+    The \verb|divides| function checks whether or not \( d \) divides \( n \),
+    that is, it checks if \( n \) is an integer multiple of \( d \).
+    The \verb|isPrime| function simply checks whether \( n \) is prime.
+    Using these two utility functions, we can define \verb|primefac(n)|
+    as follows:
+    \begin{verbatim}
+    def primefac(n):
+        current = n
+        i = 2
+
+        while i <= n:
+            if isPrime(i) and
+                divides(i, current):
+                print(i)
+                current = current // i
+
+                if current == 1:
+                    return
+            else:
+                i = i + 1
+    \end{verbatim}
+    Disallowing pre-computed tables of primes, this algorithm runs roughly in
+    \( O(2^n) \).
+
+    A more efficient, albeit far more sophisticated prime factorization
+    method, is the General Number Field Sieve (GNFS) algorithm.
+    Its full implementation is far beyond the scope of this paper, so we will
+    only discuss how it compares to our brute force approach.
+
+    The time complexity of the GNFS algorithm is
+    \[
+        O\parens{e^{
+            \parens{(64 / 9)^{1 / 3} + O(1)}
+            \parens{\log n}^{1 / 3}(\log\log n)^{2 / 3}
+        }}.
+    \]
+    In other words, the GNFS runs in sub-exponential time.
+    While the brute force algorithm does factor small numbers faster than the
+    GNFS algorithm, the smaller runtime complexity of the GNFS guarantees that,
+    past a certain point, all numbers can be factored faster by the GNFS.
+
+    \section*{Improving the Brute Force Method}
+
+    Our original implementation of the brute force prime factorization
+    algorithm is suboptimal; there are several apparent optimizations that can
+    be made to it.
+
+    If \( n \) is prime, which is easy to check, our algorithm will still
+    attempt to factor it, in which case it will take the longest amount of
+    time to complete, as it will run through every number less than or equal to
+    \( n \) before finally finding \( n \) as a factor and terminating.
+    Additionally, given \( n \) is composite, we know that no number greater
+    than \( n / 2 \) can divide it, or else \( n \) would have to be a
+    non-integer multiple of that number or prime, contrary to our assumption.
+    Consequently, it suffices to only check factors up to
+    \( \lfloor n / 2 \rfloor \).
+    We can further reduce the number of factors we have to check by realizing
+    that no even integer greater than 2 is prime, thus we only have to check
+    odd numbers greater than 2 for factors.
+    A final small optimization that we can make is not repeatedly checking
+    whether factors are prime, and instead repeatedly dividing the same factor
+    until it no longer divides the residue.
+
+    Implementing these optimizations, we end up with our final brute force
+    algorithm:
+
+    \begin{verbatim}
+    def primefac(n):
+        if isPrime(n):
+            print(n)
+            return
+
+        current = n
+
+        while divides(2, current):
+            print(2)
+            current = current // 2
+
+            if current == 1:
+                return
+        
+        i = 3
+
+        while i <= n: if isPrime(i):
+            while divides(i, current):
+                print(i)
+                current = current // i
+
+            if current == 1:
+                return
+
+            i = i + 2
+    \end{verbatim}
+
+    Despite the several optimizations made to this algorithm, it still fails to
+    run better than exponential time. This ultimately illustrates that
+    different, more clever approaches are needed if we wish to factor large
+    numbers faster.
 
     \section*{Elliptic Curve Encryption}
 
@@ -160,14 +287,47 @@
     on the curve.
     Given two elements \( a \) and \( b \) in our group, we define the discrete
     logarithm \( \log_b(a) \) as the integer \( k \) such that \( b^k = a \).
-    In this case, \( a \) and \( b \) are points on our curve,
+    In this case, \( a \) and \( b \) are points on our curve. It should also
+    be noted that \( b^k \) does not represent typical exponentiation; in this
+    case, it represents
+    \[ \underbrace{b + b + \cdots + b}_{k\ \textrm{times}}, \]
+    with \( + \) being our special addition operation.
     Despite the notations being similar, the discrete logarithm and regular
     logarithms should not be confused with one another.
 
     \section*{Future Threats to RSA and ECC}
 
-    Blah blah blah quantum
+    The invention of the GNFS algorithm instilled doubts in the security of RSA
+    encryption.
+    While, for the time being, large RSA keys are safe of being
+    factored by the GNFS, it is possible that future advancements, both in
+    computing power, and in the GNFS algorithm itself, will allow these keys to
+    be broken relatively quickly.
 
-    \bibliographystyle{plain}
+    Another threat, completely distinct from the GNFS algorithm, is Shor's
+    algorithm.
+    Invented by computer scientist Peter Shor, it is a quantum algorithm that
+    can be used to factor prime numbers extremely efficiently.
+    ~\cite{QC:Shors}
+    It is significantly faster than even the GNFS algorithm, having a time
+    complexity of
+    \[ O\parens{ (\log n)^2(\log\log n)(\log\log\log n) } \]
+    using fast multiplication.
+    ~\cite{ShorsTime}
+    For very large numbers, this runtime can be improved even further to
+    \[ O\parens{ (\log n)^2(\log\log n)} \]
+    using the asymptotically fastest multiplication algorithm currently known.
+    ~\cite{FastMult}
+    The major barrier that prevents this algorithm from being used is the lack
+    of sufficiently powerful quantum computers to run it.
+    In 2001, IBM successfully factored 15 into 3 and 5 using Shor's algorithm.
+    ~\cite{2001IBM}
+    Additionally, an attempt was made by IBM in 2019 to factor 35 using Shor's
+    algorithm, but it was unsuccessful.
+    ~\cite{Failed}
+    
+    \section*{Future Work}
+
+    \bibliographystyle{unsrt}
     \bibliography{\jobname}
 \end{document}
