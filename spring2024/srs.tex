@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+
+\pagenumbering{gobble}
+\linespread{1.2}
+
+\usepackage{fancyhdr}
+\usepackage[headheight=0.5in,margin=1in]{geometry}
+
+\setlength{\parindent}{0in}
+
+\begin{document}
+    \pagestyle{fancy}
+
+    \fancyhead[L]{Software Requirements Specification \\ Group 1}
+    \fancyhead[R]{Alex Agruso, Mauro Alvizo Jr. \\ Daniel Arreguin, Jake Bram}
+
+    \section{Introduction}
+
+    Blah blah blah talk about the program
+
+    \section{Functional Requirements}
+
+    \subsection{User Interface}
+
+    \subsection{Particles and Elements}
+    
+    Physics interactions occur between particles, with each particle being of a
+    certain element.
+    A particle's element determines how it interacts with other particles.
+    
+    \subsubsection{Element Classes}
+
+    There are four primary classes of elements: solids, liquids, gasses, and powders.
+    Each is described as follows:
+
+    \textbf{Solid:} Static and rigid; is not affected by gravity.
+
+    \textbf{Liquid:} Dynamic; flows freely but is affected by gravity and
+    collides with other particles.
+    
+    \textbf{Gas:} Dynamic; diffuses evenly, is not affected by gravity but still
+    collides with other particles.
+
+    \textbf{Powder:} Dynamic, awd
+
+    We currently plan on implementing 20 different elements
+
+    \subsubsection{Solid Elements}
+
+    \textbf{Wall:}
+
+    \textbf{Metal:}
+
+    \textbf{Wood:}
+
+    \textbf{Glass:}
+    
+    \textbf{TNT:}
+
+    \textbf{Plant:}
+
+    \textbf{Rock:}
+
+    \subsubsection{Liquid Elements}
+
+    \textbf{Water:}
+
+    \textbf{Lava:}
+
+    \textbf{Poison:}
+
+    \textbf{Oil:}
+
+    \subsubsection{Gas Elements}
+
+    \textbf{Smoke:}
+
+    \textbf{Fire:}
+
+    \textbf{Steam:}
+
+    \textbf{Gas:}
+
+    \subsubsection{Powder Elements}
+
+    \textbf{Stone:}
+
+    \textbf{Sand:}
+
+    \textbf{Gunpowder:}
+
+    \textbf{Ice:}
+
+    \subsubsection{Miscellaneous Elements}
+
+    \textbf{Spark:}
+
+    \section{Non-Functional Requirements}
+
+    \subsection{Event System}
+
+    Our program will be built on an event system.
+    Any interaction between different components of the program will be handled
+    as an event.
+    There will be many different types of events for our application, many of
+    which will have no common functionality with each other.
+    In order to limit unnecessary abstraction, we will implement the events as
+    an algebraic data type using \verb|std::variant|.
+    We will also use pattern matching with \verb|std::visit|.
+
+    \subsection{Physics Engine}
+
+    For stability, the physics engine will be limited to running at 60 ticks per
+    second.
+    Each particle will be represented as an instance of \verb|std::optional|
+    wrapping a particle physics instance. If the particle is empty, or air, it
+    takes the type of \verb|std::nullopt|, while if it has a 
+
+    \section{Sequence Diagram}
+
+    \section{UML Class Diagram}
+    
+\end{document}
