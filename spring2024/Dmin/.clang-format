@@ -1,0 +1,18 @@
+Language: Cpp
+
+AccessModifierOffset: -2
+AlignAfterOpenBracket: Align
+AlignArrayOfStructures: Left
+AlignTrailingComments: Always
+AllowShortBlocksOnASingleLine: Always
+AllowShortCaseLabelsOnASingleLine: True
+AllowShortEnumsOnASingleLine: True
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+BreakBeforeBraces: Allman
+ColumnLimit: 120
+IndentCaseLabels: True
+IndentWidth: 4
+PointerAlignment: Left
+SpaceAfterCStyleCast: True
+SpacesInAngles: Leave
