@@ -12,6 +12,7 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 
+\linespread{1.2}
 
 \title{A Survey of Accessibility in Web Design}
 
@@ -24,7 +25,7 @@
 \begin{document}
 
 
-\noindent\begin{minipage}{0.15\textwidth}%
+\begin{minipage}{0.15\textwidth}%
 	\includegraphics[width=2.0cm]{images/txst-black.jpg}
 \end{minipage}%
 \hfill%
@@ -38,7 +39,8 @@
 
 
 \begin{abstract}
-	Abstract here
+	With the internet's current ubiquity, it is more important than ever to consider how to design accessible internet applications.
+	This paper examines existing research of the accessibility of certain websites and how to design accessible websites, as well as offers critique on how to potentially improve their methods and accuracy.
 \end{abstract}
 
 
@@ -55,25 +57,48 @@ Because of this, it is important that these online applications are built to be 
 Otherwise, we risk compromising efficient and effective use of our applications, and in certain cases risk rendering our applications unusable by certain groups of people.
 
 Though there are many types of applications which we could discuss, the scope of this paper will be limited to web design.
-We will first exhibit evaluations of the accessibility of various websites.
-Then we will discuss existing research on how to design accessible websites.
-Finally, we will perform an accessibility case study that applies the existing research on an example website, in this case, \verb|digitalocean.com|.
+We will first exhibit evaluations of the accessibility of various websites, then discuss existing research on how to design accessible websites.
+Finally, critique will be offered to improve the methods and accuracy of these studies.
 
 
 \section{Website Evaluations}
-In this section, we will o
+A plethora of research exists assessing the accessibility of various websites.
+Our paper will focus on those that analyze websites in the public sector that are likely to be used by many different types of people, including those with disabilities.
 
 
-\subsection*{Library Websites}
+\subsection{Public Library Websites}
 The first study we will examine was performed by Paul Khawaja in 2022.
 \cite{Library}
-In it, Khawaja seeks to
+In it, Khawaja seeks to assess to what extent public library websites in the United States are accessible to people with disabilities.
+He did this by judging websites based on several criteria, including but not limited to compliance with various accessibility standards, e.g. WCAG and Section 508, and the existence of common accessibility issues, e.g. text on a low contrast background.
 
+Khawaja selected a total of 120 library URLs to survey, with URLs being randomly weighted according to the population of the state the library was in to reduce selection bias.
+For each URL, four key pages were tested: the website's home page, the catalog page, the events page, and the hours/location page.
+An accessibility evaluation tool known as Axe was used to determine compliance with the accessibility standards.
+\cite{Axe}
+
+Using these methods, he was able to find many common accessibility flaws with the studied websites.
+By far the most common type of error was color contrast errors, with them occuring nearly as much as every other type of accessibility error combined.
+The other types of errors that were commonly encountered were structure errors, i.e. incorrect or inappropriate HTML tags, invalid links, poorly designed input forms, and missing alt text.
+These errors were found to be common across all sites examined.
+
+Khawaja also presents possible solutions to some of these errors.
+For example, many browsers are capable of detecting and fixing color contrast issues dynamically, so that poor design doesn't hamper usability.
+However, he also notes that some errors, especially structural errors, would require greater effort on the port of the software developer to overcome.
+
+\subsection{Local Government Websites}
+The next study was performed by Yang Bai, Jenna Grzeslo, Bumgi Min, and Krishna Jayakar.
+
+\cite{LocalGovernment}
 
 \section{How to Design Accessible Websites}
 
 
-\section{Case Study}
+\section{Critical Assessment}
+
+
+\section{Future Work}
+
 
 
 \section{Conclusion}
