@@ -12,7 +12,7 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 
-\linespread{1.2}
+\linespread{1.25}
 
 \title{A Survey of Accessibility in Web Design}
 
@@ -86,19 +86,49 @@ Khawaja also presents possible solutions to some of these errors.
 For example, many browsers are capable of detecting and fixing color contrast issues dynamically, so that poor design doesn't hamper usability.
 However, he also notes that some errors, especially structural errors, would require greater effort on the port of the software developer to overcome.
 
-\subsection{Local Government Websites}
-The next study was performed by Yang Bai, Jenna Grzeslo, Bumgi Min, and Krishna Jayakar.
+\subsection{Government Websites}
+This next study was published by Michelle Allgood and Ashlee Frandell in 2023.
+In it, they explore the accessibility of government websites during the COVID-19 pandemic, and specifically focus on how disabled people were affected.
+\cite{GovCovid}
 
-\cite{LocalGovernment}
 
 \section{How to Design Accessible Websites}
+Now that we understand the importance of accessibility in web design, we can now look at methods of ensuring accessibility in the websites we build.
+
+\subsection{How to Teach Accessible Design}
+In 2020, Michael Whitney published a paper on integrating accessibility principles into web design courses.
+He discusses the importance of teaching accessibility in web design, and how most modern web design treats accessibility with little importance.
+\cite{Learning}
+
+In his paper, Whitney emphasizes the importance of teaching how to properly assess a website's accessibility.
+Specifically, he proposes teaching specific accessibility guidelines such as the Web Content Accessibility Guidelines (WCAG), created by the W3C in an effort to proliferate web accessibility.
+The WCAG specifies three different levels of conformance: A, AA, and AAA, with each level being stricter than the last.
+When web designers have a clear criteria for judging accessibility, they have a clear image of what must be done in order to make the website accessible.
+
+Whitney also discusses the importance of using accessibility assessment tools.
+Specificy, he talks about W3C's Markup Validation Service, which provides detailed issues about a website, including those related to accessibility.
+This tool automates a lot of the validation work that goes in to ensuring accessibility, and thus better enables developers to implement accessible designs.
+
+Finally, Whitney talks about the challenges that teachers face when integrating accessibility into their teaching.
+He notes a lacking in many faculty's accessibility expertise, which naturally leads to a lacking of accessibility in their curriculum.
+He also noted that students tended not to program according to accessibility guidelines unless explicity required to do so.
+Consequently, he advocates for a consistent and strict requirement of accessibility in student's work in order to establish a habit of thinking about accessible designs.
 
 
 \section{Critical Assessment}
+I feel that all of the studies discussed in this paper do a good job in bringing certain accessibility issues to light.
+Khawaja's paper in particular shows that color constrast design flaws are the most common type of accessibility error, but also the easiest to fix.
+Consistently applying this knowledge when designing websites would eliminate a large class of accessibility errors and make websites more accessible to individuals with visual impairment.
+In addition, Allgood's and Frandell's paper highlights the key role that demographics and able status play in determining how accessible one's public internet resources are.
 
 
 \section{Future Work}
-
+Now that we know some areas of the internet which lack accessiblity, we can try to think of ways of filling these accessibility gaps.
+Potential solutions could include a browser plugin that dynamically converts website code into a form that is more accessible to the user.
+However, such a program would be difficult to generalize to all cases, as website design can be incredibly varied.
+This could also present as an opportunity to put AI to work.
+We could train an AI model on accessible web designs and have it judge or modify human made websites according to its training.
+AI capabilities are still rapidly improving, so it is not out of the realm of possibility that something like this could happen, but it would likely require a large commitment of effort to achieve something that is useful.
 
 
 \section{Conclusion}
