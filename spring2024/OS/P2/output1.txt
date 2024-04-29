@@ -1,0 +1,174 @@
+Dealer picks King of Diamonds
+Player 2 draws Two of Clubs
+Player 2 discards Six of Hearts
+Player 3 draws Jack of Diamonds
+Player 3 discards Jack of Diamonds
+Player 4 draws Five of Diamonds
+Player 4 discards Five of Diamonds
+Player 5 draws Six of Clubs
+Player 5 discards Six of Clubs
+Player 6 draws King of Hearts
+Player 2 lost round 1
+Player 3 lost round 1
+Player 4 lost round 1
+Player 5 lost round 1
+Player 6 won round 1
+
+================================================================
+
+Dealer picks One of Clubs
+Player 3 draws Two of Clubs
+Player 3 discards Five of Diamonds
+Player 4 draws Eight of Spades
+Player 4 discards Jack of Spades
+Player 5 draws Jack of Hearts
+Player 1 lost round 2
+Player 3 lost round 2
+Player 4 lost round 2
+Player 5 won round 2
+Player 6 lost round 2
+
+================================================================
+
+Dealer picks Jack of Diamonds
+Player 4 draws One of Hearts
+Player 4 discards One of Spades
+Player 5 draws Ten of Hearts
+Player 5 discards Ten of Hearts
+Player 6 draws Six of Hearts
+Player 6 discards Queen of Spades
+Player 1 draws Jack of Clubs
+Player 1 won round 3
+Player 2 lost round 3
+Player 4 lost round 3
+Player 5 lost round 3
+Player 6 lost round 3
+
+================================================================
+
+Dealer picks One of Clubs
+Player 5 draws Eight of Clubs
+Player 5 discards Five of Spades
+Player 6 draws Seven of Hearts
+Player 6 discards Queen of Diamonds
+Player 1 draws Ten of Hearts
+Player 1 discards Ten of Clubs
+Player 2 draws Six of Clubs
+Player 2 discards Ten of Spades
+Player 3 draws Eight of Spades
+Player 3 discards Three of Clubs
+Player 5 draws One of Spades
+Player 1 lost round 4
+Player 2 lost round 4
+Player 3 lost round 4
+Player 5 won round 4
+Player 6 lost round 4
+
+================================================================
+
+Dealer picks Eight of Hearts
+Player 6 draws Queen of Spades
+Player 6 discards Seven of Spades
+Player 1 draws One of Hearts
+Player 1 discards One of Hearts
+Player 2 draws Three of Diamonds
+Player 2 discards One of Clubs
+Player 3 draws King of Hearts
+Player 3 discards King of Hearts
+Player 4 draws Six of Clubs
+Player 4 discards Six of Clubs
+Player 6 draws Five of Diamonds
+Player 6 discards Five of Diamonds
+Player 1 draws Two of Diamonds
+Player 1 discards Two of Hearts
+Player 2 draws Two of Clubs
+Player 2 discards Three of Diamonds
+Player 3 draws Queen of Diamonds
+Player 3 discards Queen of Diamonds
+Player 4 draws Ten of Hearts
+Player 4 discards Ten of Hearts
+Player 6 draws Ten of Diamonds
+Player 6 discards Queen of Spades
+Player 1 draws Ten of Clubs
+Player 1 discards Two of Diamonds
+Player 2 draws Jack of Clubs
+Player 2 discards Jack of Clubs
+Player 3 draws Five of Spades
+Player 3 discards Three of Spades
+Player 4 draws Four of Clubs
+Player 4 discards Nine of Diamonds
+Player 6 draws Seven of Hearts
+Player 6 discards Seven of Hearts
+Player 1 draws Jack of Spades
+Player 1 discards Jack of Spades
+Player 2 draws Eight of Diamonds
+Player 1 lost round 5
+Player 2 won round 5
+Player 3 lost round 5
+Player 4 lost round 5
+Player 6 lost round 5
+
+================================================================
+
+Dealer picks Ten of Diamonds
+Player 1 draws Six of Spades
+Player 1 discards Six of Spades
+Player 2 draws Two of Spades
+Player 2 discards Eight of Hearts
+Player 3 draws King of Clubs
+Player 3 discards Jack of Clubs
+Player 4 draws Two of Clubs
+Player 4 discards Two of Clubs
+Player 5 draws Two of Diamonds
+Player 5 discards One of Spades
+Player 1 draws One of Clubs
+Player 1 discards Queen of Clubs
+Player 2 draws Seven of Spades
+Player 2 discards Seven of Spades
+Player 3 draws King of Hearts
+Player 3 discards King of Clubs
+Player 4 draws Eight of Spades
+Player 4 discards Eight of Spades
+Player 5 draws Queen of Diamonds
+Player 5 discards Queen of Diamonds
+Player 1 draws Two of Hearts
+Player 1 discards Two of Hearts
+Player 2 draws Nine of Hearts
+Player 2 discards Nine of Hearts
+Player 3 draws King of Diamonds
+Player 3 discards King of Diamonds
+Player 4 draws Five of Diamonds
+Player 4 discards Five of Spades
+Player 5 draws Eight of Diamonds
+Player 5 discards Two of Diamonds
+Player 1 draws Eight of Clubs
+Player 1 discards Eight of Clubs
+Player 2 draws Six of Clubs
+Player 2 discards Six of Clubs
+Player 3 draws Three of Spades
+Player 3 discards Three of Spades
+Player 4 draws Nine of Spades
+Player 4 discards Nine of Spades
+Player 5 draws Three of Clubs
+Player 5 discards Three of Clubs
+Player 1 draws Three of Diamonds
+Player 1 discards Three of Diamonds
+Player 2 draws Four of Hearts
+Player 2 discards Two of Spades
+Player 3 draws Jack of Spades
+Player 3 discards Jack of Spades
+Player 4 draws Seven of Hearts
+Player 4 discards Five of Diamonds
+Player 5 draws Nine of Clubs
+Player 5 discards Eight of Diamonds
+Player 1 draws Four of Diamonds
+Player 1 discards One of Clubs
+Player 2 draws Ten of Hearts
+Player 1 lost round 6
+Player 2 won round 6
+Player 3 lost round 6
+Player 4 lost round 6
+Player 5 lost round 6
+
+================================================================
+
