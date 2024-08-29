@@ -1,9 +1,0 @@
-The first step of developing the exploit involved compiling the vulnerable
-program and setting the appropriate permissions. After that, you intentionally
-segfault the program in order to generate a coredump file. Inspecting the
-coredump file in gdb, you can find the offset from the $esp pointer to the
-beginning of our malicious input. Next, we can find the address of a "jmp esp"
-command by disassembling the libraries that getscore uses. Finally, using a
-nop slep, we enter the malicious input into the program. When the program
-reaches the return address, which we have set to point to our malicious code,
-it will run a shell as root and then we will have gained root privileges.

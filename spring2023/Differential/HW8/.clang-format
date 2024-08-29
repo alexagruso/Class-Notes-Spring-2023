@@ -1,5 +1,0 @@
-BreakBeforeBraces: Attach
-AllowShortBlocksOnASingleLine: false
-AllowShortFunctionsOnASingleLine: false
-AllowShortIfStatementsOnASingleLine: false
-AllowShortLoopsOnASingleLine: false
