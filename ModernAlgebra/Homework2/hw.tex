@@ -1,0 +1,110 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Modern Algebra}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 2}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\section*{1.3 Symmetric Groups}
+
+\textbf{2)} We have that
+\[
+	\sigma = (1 \ 13 \ 5 \ 10)(3 \ 15 \ 8)(4 \ 14 \ 11 \ 7 \ 12 \ 9) \)
+\]
+and
+\[
+	\tau = (1 \ 14)(2 \ 9 \ 15 \ 13 \ 4)(3 \ 10)(5 \ 12 \ 7)(8 \ 11) \),
+\]
+thus
+\[
+	\sigma\tau
+	= (1 \ 13 \ 5 \ 10)(3 \ 15 \ 8)(4 \ 14 \ 11 \ 7 \ 12 \ 9) 
+	(1 \ 14)(2 \ 9 \ 15 \ 13 \ 4)(3 \ 10)(5 \ 12 \ 7)(8 \ 11),
+\]
+\[
+	= (1 \ 11 \ 3)(2 \ 4)(5 \ 9 \ 8 \ 7 \ 10 \ 15)(13 \ 14).
+\]
+
+\textbf{10)} Let \( \sigma \) be an \( n \)-cycle and assume indices are taken
+as their lowest positive residue mod \( n \).
+We will show by induction that \( \sigma^i(a_k) = a_{k + i} \).
+For \( i = 1 \), we have by definition that \( \sigma(a_k) = a_{k + 1} \).
+Now, assume the induction hypothesis \( \sigma^{i - 1}(a_k) = a_{k + i - 1} \),
+then
+\(
+	\sigma^i(a_k)
+	= \sigma(\sigma^{i - 1}(a_k))
+	= \sigma(a_{k + i - 1})
+	= a_{k + i}.
+\)
+\done
+
+\textbf{13)} Let \( \sigma \in S_n \) and consider its cycle decomposition
+\( \sigma = \sigma_1\sigma_2\cdots\sigma_m \).
+To establish a contradiction, assume that one of the cycles \( \sigma_i \) has
+length \( \geq 3 \),
+
+\textbf{15)}
+
+\textbf{18)}
+
+\section*{1.4 Matrix Groups}
+
+\textbf{7)}
+
+\textbf{8)}
+
+\textbf{9)}
+
+\textbf{10a)}
+
+\textbf{10b)}
+
+\section*{1.6 Homomorphisms and Isomorphisms}
+
+\textbf{3)}
+
+\textbf{5)}
+
+\textbf{6)}
+
+\textbf{9)}
+
+\textbf{11)}
+
+\textbf{14)}
+
+\textbf{20)}
+
+\textbf{22)}
+
+\textbf{25)}
+
+\end{document}
