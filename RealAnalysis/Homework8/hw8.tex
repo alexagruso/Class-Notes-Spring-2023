@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1.25in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+\usepackage{setspace}
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\renewcommand{\d}{\ensuremath{\delta}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\newcommand{\comp}{\complement}
+\newcommand{\sdiff}{\setminus}
+
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+\renewcommand{\t}[1]{\text{ #1 }}
+
+\bibliographystyle{plain}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Analysis}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 8}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+\setstretch{1}
+
+\textbf{6)}
+There exists a positive continuous function \( f : \R \to \R \) where
+\( f \) is integrable and \( \limsup_{x \to \infty} f(x) = \infty \).
+However, if \( f \) is uniformly continuous and integrable, then
+\( \lim_{\vertb{x} \to \infty} f(x) = 0 \).
+
+\proof
+Let \( g(x) = \sum_{k \in \N} k \chi_{I_k}(x) \), where
+\( I_k = [k, k + 1/k^3) \).
+Since the \( I_k \) are disjoint, we have that
+\[
+	\int g(x) \, dx
+	= \sum_{k \in \N} k \cdot m(I_k)
+	= \sum_{k \in \N} \frac{1}{k^2}
+	< \infty,
+\]
+thus \( g \) is integrable.
+For each \( k \), define the function
+\( f_k(x) = \min\braceb{h_k(x), h'_k(x)} \chi_{I_k}(x) \), where
+\[
+	h_k(x) = 2k^4(x - k)
+	\hspace{0.1in}
+	\t{and}
+	\hspace{0.1in}
+	h'_k(x) = -2k^4(x - k - 1/k^3).
+\]
+\( h_k \) and \( h'_k \) are both lines, and thus continuous.
+We can see that \( f_k(k) = h_k(k) = 0 \),
+Define \( f(x) = \sum_{k \in \N} f_k(x) \).
+Since \( f \) is a sum of continuous functions, it is itself continuous.
+
+\textbf{10)}
+
+\textbf{11)}
+If \( f \) is a real-valued function integrable on \( \R^d \), and if
+\( \int_E f \geq 0 \) for all measurable sets \( E \subseteq \R^d \), then
+\( f \geq 0 \) a.e.
+As a corollary, if \( \int_E f = 0 \) for all \( E \), then \( f = 0 \) a.e.
+
+\proof
+Suppose the proposition is false, then there exists some \( r > 0 \) where the
+set \( E = \braceb{f < -r} \) has non-zero measure.
+Since \( f \) is integrable and thus measurable, we have that \( E \) is also
+measurable.
+From this, we see that
+\[
+	\int_E f(x) \, dx
+	< \int_E -r \, dx
+	= -r \cdot m(E)
+	< 0,
+\]
+which is a contradiction since \( E \) is measurable.
+Thus, we must have that \( m(E) = 0 \) for all \( r > 0 \), showing that
+\( f \geq 0 \) a.e.
+
+As a corollary, suppose \( \int_E f = 0 \) for all \( E \), then \( f \geq 0 \)
+a.e.
+We also have that \( \int_E -f = -\int_E f = 0 \) for all \( E \), thus showing
+that \( -f \geq 0 \) a.e., revealing \( f \leq 0 \) a.e.
+Thus, \( 0 \leq f \leq 0 \) a.e., which proves that \( f = 0 \) a.e.
+\done
+
+\textbf{12)}
+
+\bibliography{\jobname}{}
+
+\end{document}

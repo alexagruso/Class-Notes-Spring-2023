@@ -1,0 +1,166 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\renewcommand{\d}{\ensuremath{\delta}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\newcommand{\comp}{\complement}
+\newcommand{\sdiff}{\setminus}
+
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+\bibliographystyle{plain}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Analysis}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 3}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+Let \( E \subseteq \R^d \), \( r \in \R \), and
+\( \d = (\d_1,\d_2,\dots,\d_d) \in \R^d \), then we define the following sets:
+
+\begin{itemize}
+	\item[]
+		\(
+			rE
+			= \braceb{(rx_1,rx_2,\dots,rx_d) : (x_1,x_2,\dots,x_d) \in E}
+		\)
+	\item[]
+		\(
+			\d E
+			= \braceb{
+				(\d_1x_1,\d_2x_2,\dots,\d_dx_d)
+				: (x_1,x_2,\dots,x_d) \in E
+			}
+		\)
+\end{itemize}
+
+\textbf{6)} Given an open ball \( B \subset \R^d \) centered at \( x \)
+with radius \( r \), we have that \( m(B) = r^dm(B_1) \), where \( B_1 \) is
+the unit open ball centered at the origin.
+
+\proof
+Let \( x \in B_1 \), then denoting \( 0 \) as the origin we have that
+\( d(x,0) < 1 \), and since \( rd(x,0) = d(rx,0) < r \), we see that \( rB_1 \)
+is equal to the open ball of radius \( r \) centered at the origin.
+From here it is clear that \( B = rB_1 + x \).
+By translation invariance, we can see that \( m(rB_1 + x) = m(rB_1) \), and by
+the dilation property, we have that \( m(rB_1) = r^dm(B_1) \), thus
+\( m(B) = m(rB_1 + x) = r^dm(B_1) \).
+\done
+
+\textbf{Lemma 1: } Fix a subset \( A \subset \R \) and \( r > 0 \), then
+\( \ell = \inf(A) \) if and only if \( r\ell = \inf(rA) \).
+
+\proof
+We have that \( \ell \) is a lower bound of \( A \), thus
+\( \ell \leq a \) for all \( a \in A \).
+Since \( r > 0 \), we also have that \( r\ell \leq ra \) for all
+\( ra \in rA \).
+Now, let \( k \) be a lower bound of \( A \), then \( k \leq \ell \) by
+definition, thus \( rk \leq r\ell \).
+Since \( rk \) is a lower bound of \( rA \), we have that
+\( r\ell = \inf(rA) \).
+
+The converse is obtained by taking \( A' = rA \) and \( r' = 1/r \).
+\done
+
+\textbf{7)} Let \( \delta = (\delta_1, \delta_2, \dots, \delta_d) \in \R^d \)
+with \( \delta_i > 0 \) and fix a measurable set \( E \subseteq \R^d \), then
+\( \delta E \) is measurable and
+\( m(\delta E) = \delta_1\delta_2 \cdots \delta_d m(E) \).
+
+\proof
+Fix a closed cube
+\( Q = [n_1,n'_1] \times \cdots \times [n_d,n'_d] \subset \R^d \) and
+let \( x = (x_1,\dots,x_d) \in Q \), then \( n_i \leq x_i \leq n'_i \) for
+\( 1 \leq i \leq d \).
+Since \( \d_i > 0 \), we have that \( \d_in_i \leq \d_ix_i \leq \d_in'_i \),
+thus
+\(
+	\d x
+	\in [\d_1n_1,\d_1n'_1] \times \cdots \times [\d_dn_d,\d_dn'_d]
+	= \d Q
+\),
+and thus
+\[
+	\vertb{\d Q}
+	= \prod_{i = 1}^d \vertb{\d_in_i - \d_in'_i}
+	= \prod_{i = 1}^d \vertb{\d_i}\vertb{n_i - n'_i}
+	= \d_1\cdots\d_d \prod_{i = 1}^d \vertb{n_i - n'_i}
+	= \d_1\cdots\d_d \vertb{Q}.
+\]
+% A corollary of this is that if \( x \in \d^{-1}Q \), then
+% \( \d x \in Q \), where \( \d^{-1} = (\d_1^{-1},\dots,\d_d^{-1}) \).
+For any collection \mc{Q} of closed cubes, denote \( \delta\mc{Q} \) as the set
+\( \braceb{\d Q : Q \in \mc{Q}} \) and denote \( \d^{-1} \) as
+\( (\d_1^{-1},\dots,\d_d^{-1}) \in \R^d \).
+If \mc{Q} covers \( E \), then we have for all \( x \in E \) that \( x \) is
+contained in some cube \( Q \in \mc{Q} \), thus \( \delta x \) is contained in
+\( \d Q \) and \( \d\mc{Q} \) covers \( \d E \).
+Similarly, since \( E = \d^{-1}\d E \), if \( \mc{Q}' \) covers \( \d E \) then
+\( \d^{-1}\mc{Q}' \) covers
+\( E \).
+Thus by \textbf{Lemma 1} we have
+\[
+	\d_1\cdots\d_d m_*(E)
+	= \d_1\cdots\d_d \inf\sum_{Q \in \mc{Q}} \vertb{Q}
+	= \inf\sum_{Q \in \mc{Q}} \d_1\cdots\d_d\vertb{Q}
+	= \inf\sum_{Q \in \mc{Q}} \vertb{\d Q}
+	\geq m_*(\d E)
+\]
+and
+\[
+	m_*(\d E)
+	= \inf\sum_{Q \in \mc{Q}'} \vertb{Q}
+	= \inf\sum_{Q \in \mc{Q}'} \d_1\cdots\d_d\vertb{\d^{-1}Q}
+	= \d_1\cdots\d_d \inf\sum_{Q \in \mc{Q}'} \vertb{\d^{-1}Q}
+	\geq \d_1\cdots\d_dm_*(E),
+\]
+thus we have that \( m_*(\d E) = \d_1\cdots\d_dm_*(E) \) for all
+\( E \subseteq \R^d \).
+Fix \( \e > 0 \) and an open set \( O \) where \( E \subseteq O \) and
+\( m_*(O \sdiff E) < \e/(\d_1\cdots\d_d) \).
+Note that \( \d E \subseteq \d O \) and that \( \d O \) is open.
+~\cite{DilationOfOpenSet}
+We have that
+\(
+	m_*(\d O \sdiff \d E)
+	= m_*(\d(O \sdiff E))
+	= \d_1\cdots\d_dm_*(O \sdiff E)
+	< \e
+\),
+thus \( \d E \) is measurable.
+\done
+
+\bibliography{\jobname}{}
+
+\end{document}

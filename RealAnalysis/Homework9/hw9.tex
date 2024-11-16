@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1.25in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+\usepackage{setspace}
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\renewcommand{\d}{\ensuremath{\delta}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\newcommand{\comp}{\complement}
+\newcommand{\sdiff}{\setminus}
+
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+\renewcommand{\t}[1]{\text{ #1 }}
+
+\bibliographystyle{plain}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Analysis}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 9}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+\setstretch{1}
+
+\textbf{9)}
+Let \( f : \R^d \to \R \) be a non-negative integrable function.
+If \( \alpha > 0 \) and \break
+\( E_\alpha = \braceb{x \in \R^d : f(x) > \alpha } \),
+then
+\[
+	m(E_\alpha)
+	\leq \frac{1}{\alpha} \int_{E_\alpha} f(x) \, dx.
+\]
+
+\proof
+We can see that
+\[
+	m(E_\alpha)
+	= \int_{E_\alpha} 1 \, dx.
+\]
+Additionally, if \( x \in E_\alpha \), then \( f(x) > \alpha \), hence
+\( f(x) / \alpha > 1 \).
+Thus, by monotonicity, we have that
+\[
+	\int_{E_\alpha} 1 \, dx
+	< \int_{E_\alpha} \frac{f(x)}{\alpha} \, dx
+	= \frac{1}{\alpha} \int_{E_\alpha} f(x) \, dx,
+\]
+which proves the inequality.
+\done
+
+\textbf{17)}
+
+\bibliography{\jobname}{}
+
+\end{document}

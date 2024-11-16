@@ -1,0 +1,244 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1.25in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+\usepackage{setspace}
+\usepackage{tikz}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+
+\renewcommand{\t}[1]{\text{#1}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\ovl}[1]{\overline{#1}}
+
+\newcommand{\normsub}{\trianglelefteq}
+\newcommand{\normsup}{\trianglerighteq}
+
+\newcommand{\aut}{\t{Aut}}
+\newcommand{\inn}{\t{Inn}}
+
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Modern Algebra}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 7}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.25in}
+\setstretch{1}
+
+Let \( H \) be a subgroup of \( G \) and fix \( g \in G \), then
+\( H \cong gHg^{-1} \).
+
+\proof
+Letting \( \phi_g \) denote conjugation by \( g \), we have for
+\( h_1, h_2 \in H \) that
+\[
+	\phi(h_1h_2)
+	= gh_1h_2g^{-1}
+	= gh_1(gg^{-1})h_2g^{-1}
+	= \phi(h_1)\phi(h_2),
+\]
+thus \( \phi_g \) is a homomorphism.
+If \( x \in gHg^{-1} \), then \( x = ghg^{-1} \) for some \( h \in H \), and
+thus is mapped to by \( h \), showing that \( \phi_g \) is surjective.
+Finally, suppose \( \phi(h_1) = \phi(h_2) \), then
+\[
+	gh_1g^{-1}
+	= gh_2g^{-1}
+	\implies 
+	(g^{-1}g)h_1(g^{-1}g)
+	= (g^{-1}g)h_2(g^{-1}g)
+	\implies
+	h_1
+	= h_2,
+\]
+thus showing that \( \phi_g \) is injective, which proves
+\( H \cong gHg^{-1} \).
+\done
+
+\subsection*{4.4 Automorphisms}
+
+\textbf{1)}
+Given a group \( G \), let \( \sigma \in \aut(G) \) and denote \( \phi_g \) as
+conjugation by \( g \in G \), then we have that
+\( \sigma\phi_g\sigma^{-1} = \phi_{\sigma(g)} \).
+As a corollary, \( \inn(G) \normsub \aut(G) \).
+
+\proof
+Fixing \( h \in G \), we see that
+\[
+	(\sigma\phi_g\sigma^{-1})(h)
+	= \sigma(\phi_g(\sigma^{-1}(h)))
+	= \sigma(g\sigma^{-1}(h)g^{-1}),
+\]
+and because \( \sigma \) is an automorphism,
+\[
+	\sigma(g\sigma^{-1}(h)g^{-1})
+	= \sigma(g)\sigma(\sigma^{-1}(h))\sigma(g^{-1})
+	= \sigma(g)h\sigma(g)^{-1}
+	= \phi_{\sigma(g)}(h),
+\]
+thus \( \sigma\phi_g\sigma^{-1} = \phi_{\sigma(g)} \).
+Since \( \phi_{\sigma(g)} \in \inn(G) \), we have that
+\( \sigma\phi_g\sigma^{-1} \in \inn(G) \) for every \( \sigma \in \aut(G) \),
+thus \( \inn(G) \normsub \aut(G) \).
+\done
+
+\textbf{2)}
+If \( G \) is an abelian group of order \( pq \) where \( p \) and \( q \) are
+distinct primes, then \( G \) is cyclic.
+
+\proof
+Since \( p \) and \( q \) are distinct, we can assume \( p < q \) without loss
+of generality.
+By Cauchy's theorem, there exist elements \( x, y \in G \) with orders \( p \)
+and \( q \) respectively.
+Clearly \( \vertb{xy} \ne 1 \), else the order of \( x \) or \( y \) would be
+1.
+We can also see that \( \vertb{xy} \ne p \), else we would have that
+\[
+	e = (xy)^p = x^py^p = y^p,
+\]
+which is impossible since \( \vertb{y} = q > p \).
+Finally, \( \vertb{xy} \ne q \), since if we did we would have
+\[
+	e = (xy)^q = x^qy^q = x^q,
+\]
+and because \( p \nmid q \), we have that \( q = pn + r \) for some
+\( n, r \in \Z \) and \( 0 < r < p \), thus
+\[
+	e = x^q = x^{pn + r} = (x^p)^nx^r = x^r,
+\]
+which violates \( \vertb{x} = p > r \).
+Thus, our only choice for the order of \( xy \) is \( pq \), which shows that
+\( G \) is cyclic.
+\done
+
+\textbf{15)}
+In \( (\Z/5\Z)^\times \), we have
+\( \angleb{\bar2} = \braceb{\bar2, \bar4, \bar3, \bar1} = (\Z/5\Z)^\times \),
+thus \( \Z/5\Z \) is cyclic.
+
+In \( (\Z/9\Z)^\times \), we have
+\(
+	\angleb{\bar2}
+	= \braceb{\bar2, \bar4, \bar8, \bar7, \bar5, \bar1}
+	= (\Z/9\Z)^\times
+\),
+thus \( \Z/9\Z \) is cyclic.
+
+\subsection*{4.5 Sylow's Theorem}
+
+\textbf{3)}
+If \( G \) is a group and \( p \) a prime that divides the order of \( G \),
+then there exists an element \( x \in G \) of order \( p \).
+
+\proof
+Fix a group \( G \) with order \( p^\alpha m \), where \( p \) is prime,
+\( \alpha \geq 1 \), and \( p \nmid m \).
+By Sylow's theorem, there exists a subgroup \( H \) of \( G \) with order
+\( p^\alpha \).
+Let \( x \in H \) where \( x \ne e \).
+Since \( \vertb{x} \) divides \( p^\alpha \), we have that
+\( \vertb{x} = p^n \) for some \( 1 \leq n \leq \alpha \).
+Consider the element \( y = x^{p^{n - 1}} \).
+Because \( p^{n - 1} < p^n \), we have that \( y \ne e \).
+We can see that
+\[
+	y^p
+	= \parenb{x^{p^{n - 1}}}^p
+	= x^{p^{n - 1}p}
+	= x^{p^n}
+	= e,
+\]
+thus \( \vertb{y} \leq p \).
+Since no integer \( 2 \leq k < p \) divides \( p^\alpha \), we must have that
+\( \vertb{y} = p \), thus proving Cauchy's theorem.
+\done
+
+\textbf{7)}
+The Sylow 2-subgroups of \( S_4 \) are given by
+\[
+	H_1
+	= \braceb{
+		e, (1\ 2), (3\ 4), (1\ 2)(3\ 4), (1\ 3)(2\ 4), (1\ 4)(2\ 3),
+		(1\ 3\ 2\ 4), (1\ 4\ 2\ 3)
+	}
+\]
+\[
+	H_2
+	= \braceb{
+		e, (1\ 3), (2\ 4), (1\ 3)(2\ 4), (1\ 4)(2\ 3), (1\ 2)(3\ 4),
+		(1\ 4\ 3\ 2), (1\ 2\ 3\ 4)
+	}
+\]
+\[
+	H_3
+	= \braceb{
+		e, (1\ 4), (2\ 3), (1\ 4)(2\ 3), (1\ 2)(3\ 4), (1\ 3)(2\ 4),
+		(1\ 2\ 4\ 3), (1\ 3\ 4\ 2)
+	}
+\]
+We have that \( H_1 = (2\ 3)H_2(2\ 3)^{-1} = (2\ 4)H_3(2\ 4)^{-1} \),
+\( H_2 = (2\ 3)H_1(2\ 3)^{-1} = (3\ 4)H_3(3\ 4)^{-1} \), and
+\( H_3 = (2\ 4)H_1(2\ 4)^{-1} = (3\ 4)H_2(3\ 4)^{-1} \).
+
+\textbf{13)}
+If \( G \) is a group with order 56, then there exists a normal Sylow
+\( p \)-subgroup where \( p \) is a prime divisor of \( \vertb{G} \).
+
+\proof
+The prime factorization of 56 is \( 2^3 \cdot 7 \).
+We know that \( n_7 \equiv 1 \pmod{7} \) and that \( n_7 \mid 2^3 \), thus the
+possible options for \( n_7 \) are 1 and 8.
+If \( n_7 = 8 \), then there are 8 Sylow 7-subgroups, each having 6 elements
+of order 7 that are unique to that group, plus the identity element.
+This means that there can be only one Sylow 2-subgroup, since such a group
+would have 7 non-identity elements whose orders are powers of two.
+Since \( 8 \cdot 6 + 7 + 1 = 56 \), we have accounted for all elements in
+\( G \) and thus know that \( n_2 = 1 \), proving that \( G \) has a normal
+Sylow 2-subgroup.
+Otherwise, \( n_7 = 1 \), and \( G \) has a normal Sylow 7-subgroup, completing
+the proof.
+\done
+
+\textbf{23)}
+No group \( G \) of order 462 is simple.
+
+\proof
+The prime factorization of 462 is \( 2 \cdot 3 \cdot 7 \cdot 11 \).
+We have that \( n_{11} \equiv 1 \pmod{11} \) and that
+\( n_{11} \mid 42 \), thus the possible values for
+\( n_{11} \) are \( 1, 12, 23, 34, 45, \dots \), but the only one of these
+that divides 42 is 1, showing that \( G \) has a normal Sylow 11-subgroup, and
+thus is not simple.
+\done
+
+\textbf{26)}
+If a group \( G \) of order 105 has a normal Sylow 3-subgroup, then it is
+abelian.
+
+\proof
+-
+
+\end{document}

@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=0.9in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\renewcommand{\d}{\ensuremath{\delta}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\newcommand{\comp}{\complement}
+\newcommand{\sdiff}{\setminus}
+
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+\renewcommand{\t}[1]{\text{ #1 }}
+
+\bibliographystyle{plain}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Analysis}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 6}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+If \( F \) is a collection of sets, denote \( \bigcup F \) and \( \bigcap F \)
+as \( \bigcup_{E \in F} E \) and \( \bigcap_{E \in F} E \), respectively.
+
+\textbf{1)}
+Given sets \( F_1, \dots, F_n \), there exists a collection of
+\( N = 2^n - 1 \) disjoint sets \( F^*_1, \dots, F^*_N \) where
+\( \bigcup_{k = 1}^n F_k = \bigcup_{k = 1}^{N} F^*_k \).
+
+\proof
+Denote \( F = \bigcup_{k = 1}^n F_k \) and let \( F^* \) be the collection of
+sets of the form \( F^*_1 \cap \dots \cap F^*_n \) where \( F^*_i \) is either
+\( F_i \) or \( F_i^\comp \) and excluding the set
+\( F_1^\comp \cap \dots \cap F_n^\comp \).
+Note that \( \vertb{F^*} = 2^n - 1 \).
+Let \( A \) and \( B \) be distinct sets in \( F^* \), then for some
+\( 1 \leq i \leq n \), and after possibly switching \( A \) and \( B \), we
+have that \( A \subseteq F_i \) and \( B \subseteq F_i^\comp \), but then
+\( A \cap B \subseteq F_i \cap F_i^\comp = \varnothing \), thus \( A \) and
+\( B \) are disjoint and \( F^* \) is a collection of disjoint sets.
+
+Fix \( x \in F \), then we can take \( I \) and \( J \) to be sets where
+\( I = \braceb{F_i : x \in F_i} \) and
+\( J = \braceb{F_i^\comp : x \notin F_i} \), given \( 1 \leq i \leq n \);
+we can see that \( x \in \bigcap I \cap \bigcap J \).
+Since \( x \in F_i \) and \( x \notin F_i \) are mutually exclusive conditions
+where exactly one must be true, we have that each \( F_i \) is contained in
+exactly one of \( I \) or \( J \), thus \( I \) and \( J \) are disjoint and
+\( \vertb{I} + \vertb{J} = n \).
+We must also have that \( I \) is non-empty, since \( x \in F \) implies
+\( x \) is contained in some \( F_i \).
+Thus, \( \bigcap I \cap \bigcap J \) takes the form of a set in
+\( F^* \), showing that \( x \) is contained in some set in \( F^* \) and
+\( F \subseteq \bigcup F^* \).
+Now, suppose \( x \) is contained in some set in \( F^* \).
+By the construction of \( F^* \), we have some \( i \) where \( x \in F_i \),
+thus \( x \in F \), showing that \( \bigcup F^* \subseteq F \) and
+\( F = \bigcup F^* \).
+Since the sets in \( F^* \) are disjoint and \( \vertb{F^*} = 2^n - 1 \), we
+are finished.
+\done
+
+\end{document}

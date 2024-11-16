@@ -1,0 +1,146 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=0.9in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\renewcommand{\d}{\ensuremath{\delta}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+
+\newcommand{\comp}{\complement}
+\newcommand{\sdiff}{\setminus}
+
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+\renewcommand{\t}[1]{\text{ #1 }}
+
+\bibliographystyle{plain}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Analysis}
+\fancyhead[C]{Alex Agruso}
+\fancyhead[R]{Homework 4}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+
+\textbf{Property 5.ii)}
+If \( f \) and \( g \) are finite valued measurable functions, then \( f + g \)
+is measurable.
+
+\proof
+We will show that
+\[
+	\braceb{f + g > a}
+	= M
+\]
+where
+\[
+	M = \bigcup_{r \in \Q} \braceb{f > a - r} \cap \braceb{g > r}
+\]
+and conclude that \( \braceb{f + g > a} \) is a countable union of measurable
+sets, and thus measurable.
+It is clear that \( M \subseteq \braceb{f + g > a} \) since if \( x \in M \),
+then \( f(x) > a - r \) and \( g(x) > r \) for some \( r \in \Q \), thus
+implying that \( f(x) + g(x) > a \).
+Conversely, suppose \( x \in \braceb{f + g > a} \), then
+\( f(x) + g(x) > a \) and \( g(x) > a - f(x) \).
+We can choose \( r \in \Q \) where \( a - f(x) < r < g(x) \), thus obtaining
+\( g(x) > r \) and \( f(x) - a > -r \implies f(x) > a - r \), which shows
+that \( x \in M \), thus \( \braceb{f + g > a} = M \) and we are finished.
+\done
+
+\textbf{18)}
+Every measurable function is the limit a.e. of a sequence of
+continuous functions.
+
+\proof
+Without loss of generality, we let \( f \) be non-negative, since
+\( f = f^+ - f^- \).
+We must also assume that \( f \) is finite a.e.
+Let \( Q_n \subseteq \R^d \) denote the closed cube with side length \( n \),
+and
+define the function \( f_n : \R^d \to \R \) as follows:
+\[
+	f_n(x)
+	= \begin{cases}
+		f(x) & x \in Q_n \t{and} f(x) \leq n \\
+		n    & x \in Q_n \t{and} f(x) > n \\
+		0    & x \notin Q_n
+	\end{cases}
+\]
+We previously established that \( f_n \to f \) everywhere \( f \) is finite.
+Since \( g(x) = \min\braceb{n,f(x)} \) is measurable for all \( n \)
+\cite{MinMeasurable},
+and since \( f_n(x) = \min\braceb{n,f(x)}\chi_{[0,1]} \), we have that \( f_n \)
+is measurable.
+Fix \( \e > 0 \), then since \( f_n \) is finite valued for all \( n \), we can
+use \textbf{theorem 4.5} to obtain closed sets \( F_n \subseteq Q_n \) with
+\( m(Q_n \sdiff F_n) < \e \) and where the restriction \( f_n |_{F_n} \) is
+continuous.
+By the \textbf{Tietze extension theorem}
+\cite{TietzeExtension}, there exists an extension
+\( g_n \) of \( f_n |_{F_n} \) that is continuous on \( \R^d \), and since
+\( g_n(x) = f_n(x) \) if \( x \in F_n \), we have that \( g_n \to f \)
+everywhere it is finite.
+Finally, as \( \e \to 0 \), \( m(Q_n \sdiff F_n) \to 0 \), thus the set of
+points where \( f_n \) doesn't converge to \( f \) has measure 0.
+\done
+
+\textbf{22)}
+There exists no everywhere continuous function \( f : \R \to \R \) where
+\( f(x) = \chi_{[0,1]}(x) \) a.e.
+
+\proof
+Fix a function \( f : \R \to \R \) with \( E \) denoting the set of points
+\( x \in \R \) where \( f(x) \ne \chi_{[0,1]}(x) \), and assume \( m(E) = 0 \).
+To establish a contradiction, suppose \( f \) is continuous on \R.
+
+First we consider the case where \( 0 \notin E \), then we have that
+\( f(0) = 1 \).
+Fix \( 0 < \e < 1 \), then since \( f \) is continuous at \( x = 0 \) we can
+choose \( \d > 0 \) where
+\( x \in (-\d,\d) \implies f(x) \in (1 - \e, 1 + \e) \).
+If \( -\d < x < 0 \), then we have that
+\( f(x) > 1 - \e > 0 = \chi_{[0,1]}(x) \), thus if
+\( x \in (-\d,0) \) we have \( f(x) \ne \chi_{[0,1]}(x) \).
+This implies that \( m(E) \geq m((-\d,0)) > 0 \) which is a contradiction.
+
+Next, consider the case where \( 0 \in E \), then \( f(0) \ne 1 \).
+Fix \( 0 < \e < \vertb{1 - f(0)} \) and choose \( \d > 0 \)
+where \( x \in (-\d,\d) \implies f(x) \in (f(0) - \e, f(0) + \e) \).
+Let \( 0 < x < \d \).
+If \( f(0) > 1 \), then \( f(x) > f(0) - \e > 1 = \chi_{[0,1]}(x) \), and if
+\( f(0) < 1 \), then \( f(x) < f(0) + \e < 1 = \chi_{[0,1]}(x) \).
+Thus, if \( x \in (0, \d) \), then \( f(x) \ne \chi_{[0,1]}(x) \), which again
+implies that \( m(E) \geq m((0,\d)) > 0 \), thus obtaining a contradiction.
+
+Since each case leads to a contradiction, we know that \( f \) cannot be
+continuous everywhere, and we are finished.
+\done
+
+\bibliography{\jobname}{}
+
+\end{document}

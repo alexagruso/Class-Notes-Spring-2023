@@ -13,6 +13,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
 
 \newcommand{\angleb}[1]{\left\langle#1\right\rangle}
 \newcommand{\braceb}[1]{\left\{#1\right\}}
@@ -36,11 +37,11 @@
 
 \textbf{2)} We have that
 \[
-	\sigma = (1 \ 13 \ 5 \ 10)(3 \ 15 \ 8)(4 \ 14 \ 11 \ 7 \ 12 \ 9) \)
+	\sigma = (1 \ 13 \ 5 \ 10)(3 \ 15 \ 8)(4 \ 14 \ 11 \ 7 \ 12 \ 9)
 \]
 and
 \[
-	\tau = (1 \ 14)(2 \ 9 \ 15 \ 13 \ 4)(3 \ 10)(5 \ 12 \ 7)(8 \ 11) \),
+	\tau = (1 \ 14)(2 \ 9 \ 15 \ 13 \ 4)(3 \ 10)(5 \ 12 \ 7)(8 \ 11),
 \]
 thus
 \[
@@ -66,45 +67,121 @@ then
 \)
 \done
 
-\textbf{13)} Let \( \sigma \in S_n \) and consider its cycle decomposition
-\( \sigma = \sigma_1\sigma_2\cdots\sigma_m \).
-To establish a contradiction, assume that one of the cycles \( \sigma_i \) has
-length \( \geq 3 \),
-
-\textbf{15)}
-
-\textbf{18)}
+\textbf{15)} Fix \( \sigma \in S_n \) with disjoint cycle decomposition
+\( \sigma = \sigma_1\sigma_2 \cdots \sigma_m \).
+Let \( \vertb{\sigma_i} \) divide \( k \), then we have that \( \sigma^k \)
+fixes the elements in \( \sigma_i \), and thus the smallest \( k \) that
+fixes the elements of \( \sigma_i \) for all \( i \) is the smallest number
+which is divisible by the orders of all \( \sigma_i \), thus
+\(
+	k
+	= \text{lcm}(\vertb{\sigma_1}, \vertb{\sigma_2}, \dots, \vertb{\sigma_m})
+\),
+which is the order of \( \sigma \).
+\done
 
 \section*{1.4 Matrix Groups}
 
-\textbf{7)}
+\textbf{7)} We have \( p^2 - 1 \) choices for the top row of the matrix since
+it cannot be the zero vector.
+Fixing the top row, we must choose the bottom row to be linearly independent,
+thus it cannot be a multiple of the top row, which means we have \( p^2 - p \)
+options for the bottom row.
+Thus, the total number of \( 2 \times 2 \) invertible matrices over \( \F_p \)
+is given by \( (p^2 - 1)(p^2 - p) = p^4 - p^3 - p^2 + p \).
+\done
 
-\textbf{8)}
+\textbf{10a)} We have that
+\[
+	\begin{bmatrix}
+		a_1 & b_1 \\ 0 & c_1
+	\end{bmatrix}
+	\times
+	\begin{bmatrix}
+		a_2 & b_2 \\ 0 & c_2
+	\end{bmatrix}
+	= \begin{bmatrix}
+		a_1a_2 & a_1b_2 + b_1c_2 \\
+		0 & c_1c_2
+	\end{bmatrix},
+\]
+and thus \( G \) is closed.
 
-\textbf{9)}
-
-\textbf{10a)}
-
-\textbf{10b)}
+\textbf{10b)} We have that
+\[
+	\begin{bmatrix}
+		a & b \\ 0 & c
+	\end{bmatrix}
+	\times
+	\frac{1}{ac}
+	\begin{bmatrix}
+		c & -b \\ 0 & a
+	\end{bmatrix}
+	=
+	\frac{1}{ac}
+	\begin{bmatrix}
+		ac & 0 \\ 0 & ac
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		1 & 0 \\ 0 & 1
+	\end{bmatrix},
+\]
+and thus \( G \) has inverses.
 
 \section*{1.6 Homomorphisms and Isomorphisms}
 
-\textbf{3)}
+\textbf{3)} Let \( \phi : G \to H \) be an isomorphism and suppose \( G \) is
+abelian.
+Fix \( a, b \in H \).
+Since \( \phi \) is surjective, we have \( c, d \in G \) where
+\( \phi(c) = a \) and \( \phi(d) = b \), thus
+\[
+	ab = \phi(c)\phi(d) = \phi(cd) = \phi(dc) = \phi(d)\phi(c) = ba.
+\]
+Now, assume \( H \) is abelian.
+Since \( \phi \) is bijective, it has a well defined inverse
+\( \phi^{-1} : H \to G \) that is also bijective, and so the previous argument
+can be applied to find that \( G \) is abelian.
+\done
 
-\textbf{5)}
+\textbf{5)} \( \Q \) is countable, but \( \R \) is uncountable, so
+\( \vertb{\Q} \ne \vertb{\R} \), and thus no bijection \( \phi: \Q \to \R \)
+exists.
+\done
 
-\textbf{6)}
+\textbf{9)} In \( D_{24} \) we have that \( \vertb{r} = 12 \), while there
+exist no elements in \( S_4 \) with order 12, thus these two groups cannot be
+isomorphic.
+\done
 
-\textbf{9)}
+\textbf{14)} Let \( \phi : G \to H \) be a homomorphism and
+\( a, b \in \ker\phi \), then we have that
+\( \phi(ab) = \phi(a)\phi(b) = e' \), and thus \( ab \in \ker\phi \).
+We also have that
+\( \phi(a^{-1}) = \phi(a)\phi(a^{-1}) = \phi(aa^{-1}) = \phi(e) = e' \), and
+thus \( a^{-1} \in \ker\phi \).
+Since \( \ker\phi \) satisfies the subgroup criterion, it is a subgroup of
+\( G \).
 
-\textbf{11)}
+Now, assume \( \ker\phi = \braceb{e} \) and let \( a, b \in G \) where
+\( \phi(a) = \phi(b) \), then we have that
+\( \phi(a)\phi(b^{-1}) = \phi(ab^{-1}) = e' \), but since
+\( \ker\phi = \braceb{e} \), we have that \( ab^{-1} = e \), and thus
+\( a = b \).
+Finally, assume \( \phi \) is injective.
+Since it is a homomorphism, \( \phi(e) = e' \).
+If there existed \( a \in G \) where \( a \ne e \) and \( \phi(a) = e' \), then
+\( \phi \) wouldn't be injective, and thus \( \ker\phi = \braceb{e} \).
+\done
 
-\textbf{14)}
-
-\textbf{20)}
-
-\textbf{22)}
-
-\textbf{25)}
+\textbf{22} Let \( \phi : A \to A \) be defined as \( \phi(a) = a^k \) for
+a fixed integer \( k \)
+Then, for \( a, b \in A \), we have that
+\( \phi(ab) = (ab)^k = a^kb^k = \phi(a)\phi(b) \) since \( A \) is abelian.
+Now, let \( k = -1 \), then \( \phi \) takes \( a \in A \) to its inverse.
+Since all elements in \( A \) have an inverse, \( \phi \) is surjective, and
+since inverses are unique, it is injective, and thus an isomorphism.
+\done
 
 \end{document}
