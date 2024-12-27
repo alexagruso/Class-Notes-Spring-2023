@@ -65,7 +65,7 @@ Since \( u \) is a unit, there exists \( u^{-1} \in R \) where
 is also a unit.
 
 \textbf{5)} \( (a) \) and \( (d) \) are rings. \( (b) \) fails closure, since
-\( (1/12) + (1/4) = (1/3) \), and \( (c) \) lacks additive inverses.
+\( 1/12 + 1/4 = 1/3 \), and \( (c) \) lacks additive inverses.
 
 \textbf{7)}
 Let \( Z(R) \) denote the center of \( R \).
@@ -97,8 +97,8 @@ Additionally, if \( r \in Z(R) \), then for all \( a \in R \), we have
 \[
 	r^{-1}a = r^{-1}(ar)r^{-1} = r^{-1}(ra)r^{-1} = ar^{-1},
 \]
-thus \( r^{-1} \in Z(R) \), showing that \( Z(R) \) is also a division ring.
-Finally, since \( Z(R) \) is commutative, it is a field.
+thus \( r^{-1} \in Z(R) \), showing that \( Z(R) \) is a commutative division
+ring, and thus a field.
 \done
 
 \textbf{11)}
@@ -144,16 +144,17 @@ For any \( A \in \mc{P}(X) \), we have \( A \symdiff \varnothing = A \), so
 \( \varnothing \) serves as our additive identity.
 Additionally, \( A \symdiff A = \varnothing \), so each element is its own
 additive inverse.
-It is left as an exercise for the reader that symmetric differences are
-associative.
+It is left as an exercise for the reader to show that symmetric differences
+are associative.
 Thus, \( \mc{P}(X) \) forms an additive group under \( + \).
 
 We have that \( A \cap X = A \) for all \( A \), thus \( X \) serves as our
 multiplicative identity.
 We also have that intersections distribute across symmetric differences,
 showing that \( \mc{P}(X) \) forms a ring.
-Finally, we have that \( A \cap A = A \) and \( A \cap B = B \cap A \) for
-all \( A \) and \( B \), so the ring is boolean and commutative.
+Finally, we have that \( A^2 = A \cap A = A \) and \( A \cap B = B \cap A \)
+for all \( A \) and \( B \), so the ring is boolean and commutative.
+\done
 
 \subsection*{7.2 Polynomial Rings, Matrix Rings, and Group Rings}
 
@@ -184,7 +185,18 @@ In \( \Z/3\Z \), we have
 
 \subsection*{7.3 Ring Homomorphisms and Quotient Rings}
 
-\textbf{4)} -
+\textbf{4)} There are six unique ring homomorphisms from \( \Z \) to
+\( \Z/30\Z \).
+
+\proof
+Any ring homomorphism \( \phi : \Z \to \Z/30\Z \) is determined
+by where \( \phi(1) \) is sent.
+Fix \( n \in \Z/30\Z \) where \( \phi(1) = n \), then
+\( n = \phi(1) = \phi(1)\phi(1) = n^2 \), so any value in \( \Z/30\Z \)
+that is equivalent to its square induces a unique homomorphism \( \phi \).
+These values happen to be \( \ovl1, \ovl6, \ovl{10}, \ovl{15}, \ovl{21} \),
+and \( \ovl{25} \), thus there are six such homomorphisms.
+\done
 
 \textbf{6)}
 \( \phi : M_2(\Z) \to \Z \) defined as the projection of the 1,1-th entry is

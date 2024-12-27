@@ -34,8 +34,7 @@
 \newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
 
 \renewcommand{\t}[1]{\text{ #1 }}
-
-\bibliographystyle{plain}
+\newcommand{\sectionskip}{\vspace{0.15in}}
 
 \begin{document}
 
@@ -48,142 +47,147 @@
 \setlength{\parskip}{0.1in}
 \setstretch{1}
 
-\textbf{Lemma 1:}
+\textbf{Lemma 1)}
 Let \( f : \R^d \to [0, \infty] \) be a non-negative measurable function and
-\( E \subset \R^d \) a set with measure 0.
-Then we have that
+\( E \) a subset of \( \R^d \) with measure 0, then
 \[
 	\int_E f(x) \, dx = 0.
 \]
 
 \proof
-Since \( m(E) = 0 \), we have that \( f\chi_E \) is zero almost everywhere,
-and thus by \cite{AlmostEverywhere}, we see
+Since \( f \) is non-negative and measurable, there exists an increasing
+sequence of simple functions \( \braceb{\phi_k}_{k \in \N} \) where
+\( \phi_k \to f \) as \( k \to \infty \).
+By definition we can write each \( \phi_k \) as the finite sum
+\( \sum_{i = 1}^n a_i\chi_{E_i} \) for constants \( a_i \) and measurable sets
+\( E_i \), thus
 \[
-	\int_E f(x) \, dx
-	= \int f(x)\chi_E(x) \, dx
-	= \int \vertb{f(x)\chi_E(x)} \, dx
-	= 0.
-\] 
+	\int_E \phi_k(x) \, dx
+	= \int \parenb{\sum_{i = 1}^n a_i\chi_{E_i}(x)} \chi_{E}(x) \, dx
+	= m(E) \parenb{\sum_{i = 1}^n a_i\chi_{E_i}(x)}
+	= 0
+\]
+for all \( k \in \N \), showing that \( \int_E \phi_k \to 0 \) as
+\( k \to \infty \).
+By the monotone convergence theorem, we have that
+\( \int_E \phi_k \to \int_E f \), thus \( \int_E f = 0 \) and we are finished.
 \done
 
-\textbf{Lemma 2:}
-Fix a measurable function \( f : \R^d \to \R \) and \( \e > 0 \).
-Define a collection of disjoint non-negative intervals
-\( \braceb{I_k}_{k \in \N_0} \) where \( \sup I_k \leq \inf I_{k + 1} \), and
-denote \( n_k := \inf I_k \) and \( n'_k := \sup I_k \).
-Also define \( P_k := f^{-1}(I_k) \) and \( P := \bigcup_{k \in \N_0} P_k \).
-If \( \braceb{m(P_k)}_{k \in \N_0} \) is a monotone sequence, then we have that
-\( \sum_{k \in \N_0} n_k m(P_k) < \infty \) if and only if \( f \) is
-integrable on \( P \).
-
-\proof
-Assume the former.
-Since the \( P_k \) are disjoint, we can see that
-\[
-	\int_{P} f(x) \, dx
-	= \sum_{k \in \N_0} \int_{P_k} f(x) \, dx
-	\leq \sum_{k \in \N_0} n_k m(P_k)
-	< \infty,
-\]
-showing that \( f \) is integrable over \( P \).
-Conversely, assume \( f \) is integrable over \( P \).
-In the case where \( m(P_k) \) is non-decreasing, we have that
-\[
-	\infty
-	> \int_P f(x) \, dx
-	\geq \sum_{k \in \N_0} n'_k m(P_k)
-	\geq \sum_{k \in \N} n'_k m(P_k)
-	\geq \sum_{k \in \N} n_{k - 1} m(P_{k - 1})
-	= \sum_{k \in \N_0}
-	
-	% \sum_{k \in \N_0} (2^k\e)m(E_k)
-	% \leq \sum_{k \in \N_0} \int_{E_k} f(x) \, dx
-	% = \int_{\vertb{x} \geq \e} f(x) \, dx
-	% < \infty,
-\]
-and thus
-\[
-	2\sum_{k \in \N_0} (2^k\e)m(E_k)
-	= \sum_{k \in \N_0} (2^{k + 1}\e)m(E_k)
-	< \infty,
-\]
-completing the proof
-\done
+\sectionskip
 
 \textbf{1, 2)}
-Define the functions \( f_a \) and \( F_a \) on \( \R^d \) as
+For a fixed number \( a \), define the functions \( f_a \) and
+\( F_a \) on \( \R^d \) as follows:
 \[
-	f_a := \begin{cases}
-		\vertb{x}^{-a} & \vertb{x} \leq 1 \\
+	f_a = \begin{cases}
+		\vertb{x}^{-a} & \t{if} \vertb{x} \leq 1 \\
 		0              & \t{otherwise}
 	\end{cases}
-	\hspace{0.2in}
+	\hspace{0.1in}
 	\t{and}
-	\hspace{0.2in}
-	F_a := \frac{1}{1 + \vertb{x}^a},
+	\hspace{0.1in}
+	F_a = \frac{1}{1 + \vertb{x}^a},
 \]
-then \( f_a \) is integrable if and only if \( 0 < a < d \), and \( f_a \) is
+then \( f_a \) is integrable if and only if \( 0 < a < d \), and \( F_a \) is
 integrable if and only if \( a > d \).
 
 \proof
-We have that both \( f_a \) and \( F_a \) are non-negative and measurable,
-thus by additivity and \textbf{Lemma 1},
+Using additivity and \textbf{Lemma 1}, we have that
 \[
-	\int f_a
-	= \int_{\R^d \sdiff \braceb{0}} f_a + \int_{\braceb{0}} f_a
-	= \int_{\R^d \sdiff \braceb{0}} f_a + 0
-	= \int_{\R^d \sdiff \braceb{0}} f_a,
+	\int f_a(x) \, dx
+	= \int_{\R^d \sdiff \braceb{0}} f_a(x) \, dx
+	+ \int_{\braceb{0}} f_a(x) \, dx
+	= \int_{\R^d \sdiff \braceb{0}} f_a(x) \, dx + 0
+	= \int_{\R^d \sdiff \braceb{0}} f_a(x) \, dx,
 \]
-and similarly \( \int F_a = \int_{\R^d \sdiff \braceb{0}} F_a \).
-Thus, it suffices to show that these functions are integrable outside any open
-ball centered at the origin.
+and so it suffices to show that \( f_a \) is integrable over
+\( \R^d \sdiff \braceb{0} \).
+The same argument shows that this is also true for \( F_a \).
 
-We first consider \( f_a \) and assume \( a \ne 0 \).
-Fix \( \e > 0 \), and for integers \( k \geq 0 \), define the collection of sets
+First, we consider \( f_a \).
+For each \( k \in \N_0 \), define the disjoint sets \( E_k \) as
 \[
-	I_k = \braceb{x \in \R^d : 2^k\e \leq f_a(x) < 2^{k + 1}\e}.
+	E_k = \braceb{x \in \R^d : 2^k \leq f_a(x) < 2^{k + 1}},
 \]
-Solving for \( \vertb{x} \), we see that
+then solving for \( \vertb{x} \) we see that
 \[
-	I_k = \braceb{x : (2^{k + 1}\e)^{-1/a} < \vertb{x} \leq (2^k\e)^{-1/a}},
+	E_k = \braceb{x \in \R^d : 2^{-(k + 1)/a} < \vertb{x} \leq 2^{-k/a}}.
 \]
-and denoting \( A = \braceb{x : 1 < \vertb{x} \leq 2^{1/\vertb{a}}} \), we have
-by relative-dilation invariance that
+Additionally, if we define the set
+\( E = \braceb{x \in \R^d : 2^{-1/a} < \vertb{x} < 1} \), we have that
+\( E_k = 2^{-k/a}E \), and thus by relative-dilation invariance we have
+\( m(E_k) = (2^{-k/a})^d m(E) \).
+Since \( f_a(x) > 0 \) implies that \( f_a(x) \geq 1 \) for all \( x \), we
+see that
 \[
-	m(I_k) = (2^{k + 1}\e)^{-d/a} m(A),
+	\int f_a(x) \, dx
+	= \sum_{k \in \N_0} \int_{E_k} f_a(x) \, dx
+	< \sum_{k \in \N_0} \int_{E_k} 2^{k + 1} \, dx
+	= \sum_{k \in \N_0} 2^{k + 1}m(E_k)
 \]
-thus
 \[
-	\sum_{k \in \N_0} (2^{k + 1}\e) m(I_k)
-	= \sum_{k \in \N_0} (2^{k + 1}\e)^{-(d/a) + 1}m(A)
-	= \frac{m(A)\e^{1 - (d/a)}}{2} \sum_{k \in \N} (2^k)^{1 - (d/a)},
+	= 2m(E) \sum_{k \in \N_0} 2^{k(1 - d/a)},
 \]
-but the rightmost series only converges when \( 0 < a < d \).
-Thus, by \textbf{Lemma 2}, we have that
-\( \int_{\vertb{x} \geq \e} f_a(x) \, dx \) is bounded by the sum, and thus is
-integrable when \( 0 < a < d \).
-Conversely, suppose \( f_a \) is integrable, then again by \textbf{Lemma 2},
+but this series only converges when \( 1 - d/a \) is negative, i.e. when
+\( 0 < a < d \).
+Thus, our assumption on the value of \( a \) implies that \( f_a \) is
+integrable.
+
+Conversely, assume \( f_a \) is integrable.
+We just established that
+\begin{equation}
+	\sum_{k \in \N_0} 2^{k + 1}m(E_k)
+\end{equation}
+only converges when \( 0 < a < d \), but
 \[
-	\sum_{k \in \N_0} (2^k\e) m(I_k)
-	= \frac{1}{2} \sum_{k \in \N_0} (2^{k + 1}\e) m(I_k)
-	= \frac{m(A)\e^{1 - (d/a)}}{4} \sum_{k \in \N} (2^k)^{1 - (d/a)}
-	< \infty,
+	\sum_{k \in \N_0} 2^{k + 1}m(E_k)
+	= 2\sum_{k \in \N_0} 2^{k}m(E_k)
+	\leq 2\sum_{k \in \N_0} \int_{E_k} f_a(x) \, dx
+	= 2\int f_a(x) \, dx,
 \]
-which we previously established to be true only when \( 0 < a < d \), thus the
-case for \( f_a \) has been proven.
+thus (1) converges, which forces \( 0 < a < d \) and proves the case of
+\( f_a \).
 
 We now turn our attention to \( F_a \).
-Let \( g(x) = x/(1 + x) \) and define \( h(x) = g(x + r) \) where
-\( r = \e/(1 - \e) \).
-We can see that \( h(0) = \e \) and that \( h(x) \to 1 \) as \( x \to \infty \).
-Fix \( 0 < \e < 1 \) and define for each \( k \in \N_0 \) the set
+Redefine \( E_k \) and \( E \) as
 \[
-	J_k
-	= \braceb{x \in \R^d : h(k)\e \leq F_a(x) < h(k + 1)\e}
+	E_k = \braceb{x \in \R^d : 2^{-(k + 1)} \leq F_a(x) < 2^{-k}}
+	\hspace{0.1in}
+	\t{and}
+	\hspace{0.1in}
+	E = \braceb{x \in \R^d : \vertb{x} \leq 1}.
 \]
+Since \( 0 < F_a(x) < 1 \) for all \( \vertb{x} > 0 \), we have that
+\( E_k = \varnothing \) for all \( k > 0 \).
+Additionally, solving for \( \vertb{x} \) we see that
+\[
+	E_k = \braceb{
+		x \in \R^d
+		: \sqrt[a]{2^k - 1}
+		< \vertb{x}
+		\leq \sqrt[a]{2^{k + 1} - 1}
+	},
+\]
+thus
+\(
+m(E_k)
+\leq (\sqrt[a]{2^{k + 1} - 1})^dm(E)
+< (\sqrt[a]{2^{k + 1}})^dm(E) \).
+This shows that
+\[
+	\frac{1}{2} \int F_a(x) \, dx
+	= \frac{1}{2} \sum_{k \in \N_0} \int_{E_k} F_a(x) \, dx
+	< \frac{1}{2} \sum_{k \in \N_0} \frac{m(E_k)}{2^k}
+	< m(E)\sum_{k \in \N_0} \frac{2^{d(k + 1)/a}}{2^{k + 1}}
+\]
+\[
+	= m(E)\sum_{k \in \N_0} 2^{(k + 1)(d/a - 1)},
+\]
+which converges only when \( d/a - 1 \) is negative, and thus when
+\( a > d \).
+Thus we have shown that \( a > d \) implies that \( F_a \) is integrable.
 
-
+\pagebreak
 \textbf{3)}
 Since \( \eta_1(x) = \min\braceb{f(x), \eta(x)} \), we have for fixed
 \( x \in \R^d \) that \( \eta_1(x) = f(x) \) or \( \eta_1(x) = \eta(x) \).
@@ -192,10 +196,13 @@ By assumption \( g \) is non-negative, and so in the case where
 \( \eta_2(x) = \eta(x) - \eta_1(x) = \eta(x) - \eta(x) = 0 \leq g(x) \), thus
 showing that \( \eta_2(x) \leq g(x) \).
 Otherwise, \( \eta_1(x) = f(x) \).
-We have \( \eta \leq f + g \) by definition, thus \( \eta - f \leq g \), which
-implies \( \eta_2(x) = \eta(x) - \eta_1(x) = \eta(x) - f(x) \leq g(x) \) and
+We have \( \eta(x) \leq f(x) + g(x) \) by definition, thus
+\( \eta(x) - f(x) \leq g(x) \), which implies
+\( \eta_2(x) = \eta(x) - \eta_1(x) = \eta(x) - f(x) \leq g(x) \) and
 \( \eta_2(x) \leq g(x) \).
 \done
+
+\sectionskip
 
 \textbf{4)}
 Let \( \braceb{E_k}_{k \in \N} \) be a collection of measurable sets in
@@ -225,12 +232,14 @@ and thus by \textbf{Corollary 1.10} we have shown that
 \( m(E) = 0 \).
 \done
 
+\sectionskip
+
 \textbf{5)}
 Fix \( \e > 0 \), then the function \( f : \R^d \to \R \), defined as
 \[
 	f(x)
 	= \begin{cases}
-		\frac{1}{\vertb{x}^{d + 1}} & x \ne 0 \\
+		\frac{1}{\vertb{x}^{d + 1}} & x \ne 0       \\
 		0                           & \t{otherwise}
 	\end{cases}
 \]
@@ -253,8 +262,9 @@ and let
 	g(x)
 	= \sum_{k \in \N_0} \frac{1}{\parenb{2^{k}\e}^{d + 1}} \chi_{A_k}(x).
 \]
-If \( \vertb{x} \geq \e \), then \( x \) is contained in \( A_k \) for some
-\( k \), thus \( \vertb{x} \geq 2^k\e \) and
+Fix \( x \in \R^d \) where \( \vertb{x} \geq \e \), then for some
+\( k \in \N_0 \) we have that \( x \in A_k \), thus \( \vertb{x} \geq 2^k\e \).
+Since the \( A_k \) are disjoint, we see that
 \[
 	g(x)
 	= \frac{1}{\parenb{2^{k}\e}^{d + 1}} \chi_{A_k}(x)
@@ -263,14 +273,15 @@ If \( \vertb{x} \geq \e \), then \( x \) is contained in \( A_k \) for some
 	= f(x),
 \]
 showing that \( f(x) \leq g(x) \).
-By monotonicity, we have
-\( \int_{\vertb{x} \geq \e} f \leq \int_{\vertb{x} \geq \e} g \).
-It now suffices to show \( \int_{\vertb{x} \geq \e} g < \infty \).
+By monotonicity we have
+\( \int_{\vertb{x} \geq \e} f \leq \int_{\vertb{x} \geq \e} g \), and so it
+suffices to show that \( \int_{\vertb{x} \geq \e} g < \infty \).
 
-Denote \( A = \braceb{x \in \R^d : 1 \leq \vertb{x} < 2} \), we have that
-\( A_k = 2^k\e A \), and thus by relative-dilation invarance we have
+Denote \( A = \braceb{x \in \R^d : 1 \leq \vertb{x} < 2} \), then we have that
+\( A_k = 2^k\e A \), and thus by relative-dilation invariance we have
 \( m(A_k) = (2^k\e)^d m(A) \).
-By \textbf{Corollary 10}, we have
+Since \( g \) is a sum of simple functions, we have by \textbf{Corollary 10}
+that
 \[
 	\int_{\vertb{x} \geq \e} g(x) \, dx
 	= \int_{\vertb{x} \geq \e} \sum_{k \in \N_0}
@@ -292,7 +303,5 @@ and since \( m(A) \) is finite, we have shown that
 \( \int_{\vertb{x} \geq \e} g = C/\e < \infty \) where \( C = 2m(A) \), thus
 completing the proof.
 \done
-
-\bibliography{\jobname}{}
 
 \end{document}

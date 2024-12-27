@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{cite}
+\usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage[headheight=1in,margin=1.25in]{geometry}
 \usepackage[colorlinks=true,linkcolor=blue]{hyperref}
@@ -24,16 +25,21 @@
 \newcommand{\bracketb}[1]{\left[#1\right]}
 \newcommand{\parenb}[1]{\left(#1\right)}
 \newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\dvertb}[1]{\left\Vert#1\right\Vert}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 \newcommand{\comp}{\complement}
 \newcommand{\sdiff}{\setminus}
 
 \newcommand{\proof}{\textit{Proof: }}
+\newcommand{\partialdone}{\ensuremath{\strut\hfill\blacktriangle}}
 \newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
 
 \newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
 
 \renewcommand{\t}[1]{\text{ #1 }}
+\newcommand{\impl}{\ensuremath{\implies}}
+\newcommand{\sectionskip}{\vspace{0.15in}}
 
 \bibliographystyle{plain}
 
@@ -75,8 +81,120 @@ Thus, by monotonicity, we have that
 which proves the inequality.
 \done
 
-\textbf{17)}
+\sectionskip
 
-\bibliography{\jobname}{}
+\textbf{17)}
+Given a positive convergent series \( \sum_{n \in \N_0} b_n \), define
+\( a_n = \sum_{0 \leq k \leq n} b_k \), and let \( f \) be a function on
+\( \R^2 \) defined as follows:
+\[
+	f(x,y) = \begin{cases}
+		a_n  & \t{if} x \in [n, n + 1) \t{and} y \in [n, n + 1)     \\
+		-a_n & \t{if} x \in [n, n + 1) \t{and} y \in [n + 1, n + 2) \\
+		0    & \t{otherwise},
+	\end{cases}
+\]
+where \( n \) is always non-negative.
+Then we have that \( f^y \) and \( f_x \) are integrable over \R, and
+that \( \int f_x(y) \, dy = 0 \) for all \( x \in \R \), showing that
+\( \int \parenb{\int f(x,y) \, dy} dx = 0 \).
+
+However, we also have that \( \int f^y(x) \, dx = a_0 \) for
+\( 0 \leq y < 1 \), and \( \int f^y(x) \, dx = a_n - a_{n - 1} \) if
+\( n \leq y < n + 1 \) for some \( n \in \N \).
+As a result,
+\( \int_{(0,\infty)} \int f^y(x) \, dx \, dy = \sum_{k \in \N_0} b_k \).
+
+Finally, we have that \( \iint \vertb{f(x,y)} \, dx \, dy = \infty \).
+
+\proof
+Since \( n \) is always non-negative, we have that \( f(x,y) = 0 \) if
+either \( x \) or \( y \) is negative.
+Fix \( x \geq 0 \) and let \( n = \floor{x} \).
+If \( n \leq y < n + 1 \), then \( f_x(y) = a_n \), and if
+\( n + 1 \leq y < n + 2 \), then \( f_x(y) = -a_n \).
+Otherwise, \( f_x(y) = 0 \).
+Thus, we have that
+\[
+	\int f_x(y) \, dy
+	= \int_{[n, n + 2)} f_x(y) \, dy
+	= \int_{[n, n + 1)} f_x(y) \, dy + \int_{[n + 1, n + 2)} f_x(y) \, dy
+	= a_n - a_n
+	= 0,
+\]
+which shows that \( f_x \) is integrable and \( \int f_x(y) \, dy = 0 \).
+From this we also obtain
+\[
+	\iint f(x,y) \, dy \, dx
+	= \iint f_x(y) \, dy \, dx
+	= \int 0 \, dx
+	= 0.
+\]
+
+Fix \( y \geq 0 \) and redefine \( n = \floor{y} \).
+If \( y < 1 \), then \( f^y(x) = a_0 \) only when \( 0 \leq x < 1 \),
+and is otherwise 0, thus we would have
+\[
+	\int f^y(x) \, dx
+	= \int_{[0,1)} f^y(x) \, dx
+	= \int_{[0,1)} a_0 \, dx
+	= a_0.
+\]
+Now let \( y \geq 1 \).
+If \( n \leq x < n + 1 \), then \( f^y(x) = a_n \), and if
+\( n - 1 \leq x < n \), then \( f^y(x) = -a_{n - 1} \).
+This shows that
+\[
+	\int f^y(x) \, dx
+	= \int_{[n, n + 2)} f^y(x) \, dx
+	= \int_{[n, n + 1)} f^y(x) \, dx + \int_{[n + 1, n + 2)} f^y(x) \, dx
+\]
+\[
+	= a_n - a_{n - 1} = b_n,
+\]
+thus \( f^y \) is integrable.
+Additionally, since \( [0, \infty) \) is the union of the disjoint intervals
+\( [0, 1), [1, 2), [2, 3), \dots \) we have by additivity that
+\[
+	\int_{(0,\infty)} \int f^y(x) \, dx \, dy
+	= \int_{[0,\infty)} \int f^y(x) \, dx \, dy
+	= \sum_{k \in \N_0} \int_{[k, k + 1)} \int f^y(x) \, dx \, dy
+\]
+\[
+	= a_0 + \lim_{n \to \infty} \sum_{1 \leq k \leq n}
+	\int_{[k, k + 1)} a_{\floor{y}} - a_{\floor{y - 1}} \, dy
+	= b_0 + \lim_{n \to \infty} \sum_{1 \leq k \leq n} a_k - a_{k - 1}
+	= b_0 + \lim_{n \to \infty} \sum_{1 \leq k \leq n} b_k
+\]
+\[
+	= b_0 + \sum_{k \in \N} b_k
+	= \sum_{k \in \N_0} b_k,
+\]
+thus proving the first part of the theorem.
+
+Finally, fix \( n \leq x < n + 1 \). If \( n \leq y < n + 2 \), then
+\( \vertb{f_x(y)} = a_n \), otherwise \( \vertb{f_x(y)} = 0 \).
+Additionally, since \( \braceb{b_n} \) is a positive sequence, we have that
+\( n_1 < n_2 \) implies \( a_{n_1} < a_{n_2} \), thus using
+\textbf{Corollary 10} we find that
+\[
+	\iint \vertb{f(x,y)} \, dy \, dx
+	= \iint \vertb{f_x(y)} \, dy \, dx
+	= \int \sum_{k \in \N_0} \int_{[k, k + 2)} a_k \, dy \, dx
+	= \int \sum_{k \in \N_0} 2a_k \, dx
+\]
+\[
+	= \sum_{k \in \N_0} \int 2a_k dx.
+\]
+The integral of a positive constant over \( \R \) is \( \infty \), which
+shows that
+\[
+	\iint \vertb{f(x,y)} \, dy \, dx
+	= \sum_{k \in \N_0} \int 2a_k dx
+	= \infty,
+\]
+thus completing the proof.
+\done
 
 \end{document}
+

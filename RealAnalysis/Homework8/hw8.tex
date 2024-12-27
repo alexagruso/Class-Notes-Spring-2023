@@ -3,7 +3,9 @@
 \usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{booktabs}
 \usepackage{cite}
+\usepackage{enumerate}
 \usepackage{fancyhdr}
 \usepackage[headheight=1in,margin=1.25in]{geometry}
 \usepackage[colorlinks=true,linkcolor=blue]{hyperref}
@@ -24,16 +26,20 @@
 \newcommand{\bracketb}[1]{\left[#1\right]}
 \newcommand{\parenb}[1]{\left(#1\right)}
 \newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\dvertb}[1]{\left\Vert#1\right\Vert}
 
 \newcommand{\comp}{\complement}
 \newcommand{\sdiff}{\setminus}
 
 \newcommand{\proof}{\textit{Proof: }}
+\newcommand{\partialdone}{\ensuremath{\strut\hfill\blacktriangle}}
 \newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
 
 \newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
 
 \renewcommand{\t}[1]{\text{ #1 }}
+\newcommand{\impl}{\ensuremath{\implies}}
+\newcommand{\sectionskip}{\vspace{0.15in}}
 
 \bibliographystyle{plain}
 
@@ -49,24 +55,26 @@
 \setstretch{1}
 
 \textbf{6)}
-There exists a positive continuous function \( f : \R \to \R \) where
-\( f \) is integrable and \( \limsup_{x \to \infty} f(x) = \infty \).
+There exists a non-negative continuous function \( f : \R \to \R \) that is
+integrable, but where \( \limsup_{x \to \infty} f(x) = \infty \).
 However, if \( f \) is uniformly continuous and integrable, then
 \( \lim_{\vertb{x} \to \infty} f(x) = 0 \).
 
 \proof
-Let \( g(x) = \sum_{k \in \N} k \chi_{I_k}(x) \), where
+Let \( g(x) = \sum_{k \in \N} k \chi_{I_k}(x) \) where
 \( I_k = [k, k + 1/k^3) \).
-Since the \( I_k \) are disjoint, we have that
+By \textbf{Corollary 10}, we have that
 \[
 	\int g(x) \, dx
+	= \int \sum_{k \in \N} k\chi_{I_k}(x) \, dx
+	= \sum_{k \in \N} \int k\chi_{I_k}(x) \, dx
 	= \sum_{k \in \N} k \cdot m(I_k)
 	= \sum_{k \in \N} \frac{1}{k^2}
 	< \infty,
 \]
 thus \( g \) is integrable.
 For each \( k \), define the function
-\( f_k(x) = \min\braceb{h_k(x), h'_k(x)} \chi_{I_k}(x) \), where
+\( g_k(x) = \min\braceb{h_k(x), h'_k(x)} \chi_{I_k}(x) \), where
 \[
 	h_k(x) = 2k^4(x - k)
 	\hspace{0.1in}
@@ -75,17 +83,206 @@ For each \( k \), define the function
 	h'_k(x) = -2k^4(x - k - 1/k^3).
 \]
 \( h_k \) and \( h'_k \) are both lines, and thus continuous.
-We can see that \( f_k(k) = h_k(k) = 0 \),
-Define \( f(x) = \sum_{k \in \N} f_k(x) \).
-Since \( f \) is a sum of continuous functions, it is itself continuous.
+Additionally, the minimum of two continuous functions is continuous, thus
+\( g_k \) is continuous on \( I_k \).
+We also have that \( g_k(k) = g_k(k + 1/k^3) = 0 \), and since \( g_k \) is
+clearly zero outside of \( I_k \), we have that \( g_k \) is continuous
+everywhere.
+
+We will now show that \( g_k(x) \leq g(x) \) for all \( x \) and \( k \).
+If \( k \leq x < k + 1/2k^3 \), then
+\[
+	h_k(x) < 2k^4(k + 1/2k^3 - k) = 2k^4/2k^3 = k = g(x) < h'_k(x),
+\]
+and if \( k + 1/2k^3 \leq x < k + 1/k^3 \), we have
+\[
+	h'_k(x) \leq -2k^4(k + 1/2k^3 - k - 1/k^3) = -2k^4/(-2k^3) = k = g(x)
+	\leq h_k(x),
+\]
+and since \( g(x) = g_k(x) = 0 \) for \( x \) not contained in any \( I_k \),
+we have that \( g_k(x) \leq g(x) \) everywhere.
+
+Now, define the function \( f \) as
+\[
+	f(x) = \sum_{k \in \N} g_k(x)
+\]
+The \( I_k \) are disjoint, and so if \( x \in [k, k + 1/k^3) \) for some
+\( k \), then \( f(x) = g_k(x) \) and \( f(x) = g_m(x) = 0 \) for all
+\( m \ne k \).
+This combined with the fact that \( g_k(x) \) is continuous everwhere for
+all \( k \) shows that \( f \) is continuous.
+We also have for all \( x \) that \( f(x) \leq g_k(x) \leq g(x) \) for some
+\( k \), and thus by monotonicity \( f \) is integrable.
+Finally, since \( f(k + 1/2k^3) = k \) for arbitrary \( k \in \N \), we have
+that \( \limsup_{x \to \infty} f(x) = \infty \), thus completing the first part
+of the proof.
+\partialdone
+
+Next, restrict \( f \) to being uniformly continuous and integrable, and for
+\( k \in \N_0 \), define the intervals \( I_k = [k, k + 1] \).
+The uniform continuity of \( f \) guarantees a minimum value over all compact
+sets, thus we can define \( x_k = \min_{x \in I_k} f(x) \).
+Additionally, since the inervals \( I_k \) are almost disjoint, we have that
+\[
+	\sum_{k \in \N_0} x_k
+	= \sum_{k \in \N_0} x_km(I_k)
+	= \sum_{k \in \N_0} \int_{I_k} x_k \, dx
+	\leq \sum_{k \in \N_0} \int_{I_k} f(x) \, dx
+	\leq \int f(x) \, dx
+	< \infty,
+\]
+thus the sum \( \sum_{k \in \N_0} x_n \) must be finite.
+Suppose, for the sake of contradiction, that
+\( \lim_{x \to \infty} f(x) = L > 0 \), then for any \( 0 < \e < L \), we can
+choose \( N \in \N \) where \( x > N \implies \vertb{f(x) - L} < \e \), thus if
+\( x > N \), we have that \( f(x) > L - \e \). But we have that
+\[
+	\infty
+	= \sum_{k > N} L - \e
+	\leq \sum_{k > N} x_k
+	\leq \sum_{k \in \N_0} x_k
+	\leq \int f(x) \, dx,
+\]
+which is a contradiction.
+This forces \( L = 0 \) since \( f \) is non-negative, showing that
+\( \lim_{x \to \infty} f(x) = 0 \).
+Defining \( g(x) = f(-x) \) and using the immediate result, we can see that
+\(
+0
+= \lim_{x \to \infty} g(x)
+= \lim_{x \to -\infty} g(-x)
+= \lim_{x \to -\infty} f(x)
+\),
+thus \( \lim_{\vertb{x} \to \infty} f(x) = 0 \) and the proof is complete.
+\done
+
+\sectionskip
 
 \textbf{10)}
+Fix a non-negative measurable function \( f \) on \( \R^d \), and for
+\( k \in \Z \) define the sets \( E_k \) and \( F_k \) as follows:
+\[
+	E_k = \braceb{x \in \R^d : 2^k < f(x)}
+	\hspace{0.1in}
+	\t{and}
+	\hspace{0.1in}
+	F_k = \braceb{x \in \R^d : 2^k < f(x) \leq 2^{k + 1}},
+\]
+then the following are equivalent:
+\begin{itemize}
+	\item[(a)] \( f \) is integrable
+
+	\item[(b)] \( \displaystyle \sum_{k \in \Z} 2^k m(E_k) < \infty \)
+
+	\item[(c)] \( \displaystyle \sum_{k \in \Z} 2^k m(F_k) < \infty \)
+\end{itemize}
+
+\proof
+We will show that (a) \impl (b) \impl (c) \impl (a).
+
+First, suppose \( f \) is integrable.
+Using \textbf{Corollary 10} we can see that
+\[
+	\sum_{k \in \Z} 2^km(E_k)
+	= \sum_{k \in \Z} \int_{E_k} 2^k \, dx
+	= \sum_{k \in \Z} \int 2^k\chi_{E_k}(x) \, dx
+	= \int \sum_{k \in \Z} 2^k\chi_{E_k}(x) \, dx.
+\]
+We also have that \( \sum_{k \in \Z} 2^k\chi_{E_k}(x) < 2f(x) \), since if
+\( 2^n < f(x) \leq 2^{n + 1} \), then
+\[
+	\sum_{k \in \Z} 2^k\chi_{E_k}(x)
+	= \sum_{k \leq n} 2^k
+	= \sum_{k \in \N} 2^{-k} + \sum_{0 \leq k \leq n} 2^k
+	= 1 + 2^{n + 1} - 1
+	= 2^{n + 1}
+	< 2f(x),
+\]
+which shows that
+\[
+	\int \sum_{k \in \Z} 2^k\chi_{E_k}(x) \, dx
+	< \int 2f(x) \, dx
+	= 2 \int f(x) \, dx
+	< \infty,
+\]
+thus proving (a) \impl (b).
+Next, assume (b).
+Because \( F_k \subset E_k \), we have that
+\[
+	\sum_{k \in \Z} 2^km(F_k)
+	< \sum_{k \in \Z} 2^km(E_k)
+	< \infty,
+\]
+showing that (b) \impl (c).
+Finally, assume (c).
+Since \( f \) is non-negative, we have that
+\( \braceb{f \ne 0} = \bigcup_{k \in \Z} F_k \), and since the \( F_k \) are
+disjoint, we have
+\[
+	\int f(x) \, dx
+	= \sum_{k \in \N} \int_{F_k} f(x) \, dx
+	\leq \sum_{k \in \N} \int_{F_k} 2^{k + 1} \, dx
+	= 2 \sum_{k \in \N} 2^km(F_k)
+	< \infty,
+\]
+thus (c) \impl (a), completing the proof.
+\done
+
+\textbf{Corollary)}
+Fix \( a \in \R \) and define the functions \( f_a \) and \( g_a \) on
+\( \R^d \) as
+\[
+	f_a(x) = \begin{cases}
+		\vertb{x}^{-a} & \t{if} \vertb{x} \leq 1 \\
+		0              & \t{otherwise}
+	\end{cases}
+	\hspace{0.1in}
+	\t{and}
+	\hspace{0.1in}
+	g_a(x) = \begin{cases}
+		\vertb{x}^{-a} & \t{if} \vertb{x} > 1 \\
+		0              & \t{otherwise}
+	\end{cases},
+\]
+then \( f_a \) is integrable if and only if \( 0 < a < d \), and \( g_a \) is
+integrable if and only if \( a > d \).
+
+\proof
+Define the sets \( F_k \) with \( f(x) = \vertb{x}^{-a} \) as before.
+Solving for \( \vertb{x} \), we find that
+\[
+	F_k = \braceb{x \in \R^d : 2^{-(k + 1)/a} \leq \vertb{x} < 2^{-k/a}}.
+\]
+Additionally, \( F_k = 2^{-k/a}F \), where
+\( F = \braceb{x \in \R^d : 2^{-1/a} \leq \vertb{x} < 1} \), and thus
+\( m(F_k) = (2^{-k/a})^dm(F) \).
+This combined with the fact that, for \( f_a \), \( k < 0 \) implies
+\( F_k = \varnothing \), shows that
+\[
+	\sum_{k \in \Z} 2^km(F_k)
+	= \sum_{k \in \N_0} 2^km(F_k)
+	= m(F) \sum_{k \in \N_0} 2^{k(1 - d/a)},
+\]
+but this series converges if and only if \( 1 - d/a \) is negative, i.e. when
+\( 0 < a < d \), thus by the previous theorem we have established that
+\( f_a \) is integrable if and only if \( 0 < a < d \).
+We also have that, for \( g_a(x) \), \( k \geq 0 \) implies
+\( F_k = \varnothing \), thus
+\[
+	\sum_{k \in \Z} 2^km(F_k)
+	= \sum_{k \in \N} \frac{m(F_{-k})}{2^k}
+	= m(F) \sum_{k \in \N} 2^{k(d/a - 1)},
+\]
+which converges if and only if \( d/a - 1 \) is negative, i.e. when \( a > d \),
+and again by the previous theorem we have proven the case of \( g_a \).
+\done
+
+\sectionskip
 
 \textbf{11)}
 If \( f \) is a real-valued function integrable on \( \R^d \), and if
 \( \int_E f \geq 0 \) for all measurable sets \( E \subseteq \R^d \), then
 \( f \geq 0 \) a.e.
-As a corollary, if \( \int_E f = 0 \) for all \( E \), then \( f = 0 \) a.e.
 
 \proof
 Suppose the proposition is false, then there exists some \( r > 0 \) where the
@@ -102,16 +299,144 @@ From this, we see that
 which is a contradiction since \( E \) is measurable.
 Thus, we must have that \( m(E) = 0 \) for all \( r > 0 \), showing that
 \( f \geq 0 \) a.e.
-
-As a corollary, suppose \( \int_E f = 0 \) for all \( E \), then \( f \geq 0 \)
-a.e.
-We also have that \( \int_E -f = -\int_E f = 0 \) for all \( E \), thus showing
-that \( -f \geq 0 \) a.e., revealing \( f \leq 0 \) a.e.
-Thus, \( 0 \leq f \leq 0 \) a.e., which proves that \( f = 0 \) a.e.
 \done
 
-\textbf{12)}
+\textbf{Corollary)} If \( \int_E f = 0 \) for all measurable sets
+\( E \subseteq \R^d \), then \( f = 0 \) a.e.
 
-\bibliography{\jobname}{}
+\proof
+By the previous theorem, we have that \( f \geq 0 \) a.e.
+We also have that \( \int_E -f = -\int_E f = 0 \) for all \( E \), showing
+that \( -f \geq 0 \) a.e., and thus \( f \leq 0 \) a.e.
+This proves that \( 0 \leq f \leq 0 \) a.e., showing \( f = 0 \) a.e.
+\done
+
+\sectionskip
+
+\textbf{12)}
+There exists an integrable function \( f \) on \( \R^d \) and a sequence of
+integrable functions \( \braceb{f_n}_{n \in \N} \) on \( \R^d \) where, as
+\( n \to \infty \), \( \dvertb{f - f_n} \to 0 \) but \( f_n \to f \) nowhere.
+
+\proof
+For \( k, m \in \N \), define the sets \( I_{k,m} \) as
+\[
+	I_{k,m}
+	= \braceb{x \in \R^d : (m - 1)/2^k \leq \vertb{x} < m/2^k}.
+\]
+We will consider the sequence of functions \( \braceb{f_n}_{n \in \N} \)
+defined as \( f_n = \chi_{I_{k,m}} \), where \( f_1 = \chi_{I_{1,1}} \),
+and for \( k \) to increase, \( m \) must traverse from \( 1 \) to \( k2^k \).
+For example, the sequence starts like this:
+\begin{center}
+	\begin{tabular}{cccccccc}
+		\toprule
+		\( n \) & 1                    & 2 & 3 & 4 & 5 & 6 & 7 \\
+		\midrule
+		\( f_n \)
+		        & \( \chi_{I_{1,1}} \)
+		        & \( \chi_{I_{1,2}} \)
+		        & \( \chi_{I_{2,1}} \)
+		        & \( \chi_{I_{2,2}} \)
+		        & \( \chi_{I_{2,3}} \)
+		        & \( \chi_{I_{2,4}} \)
+		        & \( \chi_{I_{2,5}} \)                         \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+\begin{center}
+	\begin{tabular}{cccccccc}
+		\toprule
+		\( n \) & 8                    & 9 & 10 & 11 & 12 & 13 & 14 \\
+		\midrule
+		\( f_n \)
+		        & \( \chi_{I_{2,6}} \)
+		        & \( \chi_{I_{2,7}} \)
+		        & \( \chi_{I_{2,8}} \)
+		        & \( \chi_{I_{3,1}} \)
+		        & \( \chi_{I_{3,2}} \)
+		        & \( \chi_{I_{3,3}} \)
+		        & \( \chi_{I_{3,4}} \)                              \\
+		\bottomrule
+	\end{tabular}
+\end{center}
+Now, define the set \( I_r = \braceb{x \in \R^d: \vertb{x} < r} \) if
+\( r > 0 \) and \( I_r = \varnothing \) if \( r = 0 \).
+Fixing \( k \), we can see that
+\[
+	I_{k,m} = I_{m/2^k} \sdiff I_{(m - 1)/2^k},
+\]
+and since \( I_{r_1} \subseteq I_{r_2} \) if \( r_1 \leq r_2 \), we have
+that
+\[
+	m(I_{k,m}) = m(I_{m/2^k}) - m(I_{(m - 1)/2^k})
+	= m(I_1)\parenb{\frac{m^d}{2^{kd}} - \frac{(m - 1)^d}{2^{kd}}}
+\]
+\[
+	= m(I_1)\parenb{\frac{m^d - (m - 1)^d}{2^{kd}}}.
+\]
+Note that the derivative of \( x^d - (x - 1)^d \) w.r.t. \( x \) is
+\( d(x^{d - 1} - (x - 1)^{d - 1}) \), which is positive for all
+\( x > 0 \), thus \( m^d - (m - 1)^d \) is increasing over the positive
+integers.
+Using this we see that \( m_1 \leq m_2 \) implies that
+\( m(I_{k,m_1}) \leq m(I_{k,m_2}) \), and thus
+\[
+	\int \chi_{I_{k,m_1}}(x) \, dx
+	= m(I_{k,m_1})
+	\leq m(I_{k,m_2})
+	= \int \chi_{I_{k,m_2}}(x) \, dx.
+\]
+Additionally, we have that
+\begin{equation}
+	m(I_{k,k2^k})
+	= m(I_1)\parenb{\frac{k^d2^{kd} - (k2^k - 1)^d}{2^{kd}}},
+\end{equation}
+as well as
+\[
+	k^d2^{kd} - (k2^k - 1)^d
+	= -(d - 1)k^{d - 1}2^{k(d - 1)} + \cdots
+	+ (-1)^{d - 1}(d - 1)k2^k + (-1)^d
+	\leq M2^{k(d - 1)},
+\]
+where \( M \) is any constant larger than the sum of the binomial
+coefficients in the expansion of \( (k2^k - 1)^d \).
+Note that \( M \) is defined independently of \( k \), thus
+we can see that (1) is bounded by \( M2^{k(d - 1)}/2^{kd} = M/2^k \),
+but this tends to 0 as \( k \to \infty \), and thus (1) tends to 0 as well.
+Consequently, we have that
+\[
+	\lim_{n \to \infty} \int f_n(x) \, dx
+	= \lim_{n \to \infty} \int \chi_{I_{\eta_k,\eta_m}}(x) \, dx
+	\leq \lim_{n \to \infty} \int \chi_{I_{\eta_k,\eta_k2^{\eta_k}}}(x) \, dx
+\]
+\[
+	= \lim_{k \to \infty} m(I_{k,k2^k})
+	= 0,
+\]
+where \( \eta_k \) and \( \eta_m \) are the corresponding values of \( k \)
+and \( m \) for each \( n \) taken in the limit.
+Thus, setting \( f(x) = 0 \), we have shown that \( \dvertb{f_n - f} \to 0 \)
+as \( n \to \infty \) for some function \( f \).
+
+We will now show that \( \lim_{n \to \infty} f_n(x) \) exists nowhere.
+Fix \( x \in \R^d \).
+Note that for fixed \( k \), the sets \( I_{k,m} \) are disjoint over
+\( 1 \leq m \leq k2^k \), and that
+\[
+	\bigcup_{1 \leq m \leq k2^k} I_{k,m}
+	= \braceb{x \in \R^d : \vertb{x} < k}.
+\]
+Thus, if \( \vertb{x} = r \), then for each integer \( k > r \), there exists
+\( m_k \) where \( x \in I_{k,m_k} \).
+This means that \( x  \) is contained in infinitely many of the
+\( I_{k,m} \), hence \( f_n(x) = 1 \) for infinitely many \( n \in \N \).
+For fixed \( k > r \), we have that \( x \) is contained in one
+of \( k2^k \) disjoint sets, and thus for each \( k \) we have \( m'_k \)
+where \( x \notin I_{k,m'_k} \), thus showing that \( f_n(x) = 0 \) for
+infinitely many \( n \).
+This is only possible when \( \lim_{n \to \infty} f_n(x) \) does not exist
+at \( x \), thus completing the proof.
+\done
 
 \end{document}
