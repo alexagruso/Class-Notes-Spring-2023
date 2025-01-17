@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage[headheight=1in,margin=1.25in]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+\usepackage{mathtools}
+\usepackage{scalerel}
+\usepackage{setspace}
+
+\usepackage{tikz}
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\e}{\ensuremath{\varepsilon}}
+\renewcommand{\d}{\ensuremath{\delta}}
+
+\newcommand{\angleb}[1]{\left\langle#1\right\rangle}
+\newcommand{\braceb}[1]{\left\{#1\right\}}
+\newcommand{\bracketb}[1]{\left[#1\right]}
+\newcommand{\parenb}[1]{\left(#1\right)}
+\newcommand{\vertb}[1]{\left\vert#1\right\vert}
+\newcommand{\dvertb}[1]{\left\Vert#1\right\Vert}
+
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+
+\newcommand{\comp}{\complement}
+\newcommand{\sdiff}{\setminus}
+
+\newcommand{\solution}{\textit{Solution: }}
+\newcommand{\proof}{\textit{Proof: }}
+\newcommand{\partialdone}{\ensuremath{\strut\hfill\blacktriangle}}
+\newcommand{\done}{\ensuremath{\strut\hfill\blacksquare}}
+
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+
+\renewcommand{\t}[1]{\text{ #1 }}
+\newcommand{\impl}{\ensuremath{\implies}}
+\newcommand{\sectionskip}{\vspace{0.15in}}
+\newcommand{\tri}{\triangle}
+\newcommand{\ovl}[1]{\ensuremath{\overline{#1}}}
+
+\begin{document}
+
+\pagestyle{fancy}
+\fancyhead[L]{Alex Agruso}
+\fancyhead[C]{Integration Theory}
+\fancyhead[R]{Journal}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.1in}
+\setstretch{1}
+
+\section*{Chapter 4: Hilbert Spaces}
+
+\textbf{5)}
+There exists a function \( f \in L^1(\R^d) \) where \( f \notin L^2(\R^d) \),
+and a function \( g \in L^2(\R^d) \) where \( g \in L^1(\R^d) \).
+
+However, if \( f \) is a measurable function supported on a set \( E \) of
+finite measure, and if \( f \in L^2(\R^d) \), we have that
+\( f \in L^1(\R^d) \) and
+\[
+	\dvertb{f}_{L^1(\R^d)}
+	\leq m(E)^{1/2} \dvertb{f}_{L^2(\R^d)}.
+\]
+Furthermore, if \( f \) is bounded, say by \( M \), and if
+\( f \in L^1(\R^d) \), then \( f \in L^2(\R^d) \) and
+\[
+	\dvertb{f}_{L^2(\R^d)}
+	\leq M^{1/2} \dvertb{f}_{L^1(\R^d)}^{1/2}.
+\]
+
+\proof
+(1)
+
+(2)
+
+Finally, suppose \( f \) is
+
+\textbf{6)}
+The following sets of functions are dense subspaces of \( L^2(\R^d) \):
+\begin{enumerate}[(a)]
+	\item Simple functions
+
+	\item Continuous functions of compact support
+\end{enumerate}
+
+\proof
+Fix \( \e > 0 \) and a simple function \( f \) on \( \R^d \).
+Using the canonical representation of \( f \), we obtain disjoint measurable
+sets \( E_1, E_2, \dots, E_n \) of finite measure and constants
+\( a_1, a_2, \dots, a_n \) in \( \R \) where
+\[
+	f(x) = \sum_{1 \leq k \leq n} a_k\chi_{E_k}(x).
+\]
+Also denote \( E = \bigcup_{k = 1}^n E_k \).
+We will now show that the function \( g \), defined as
+\[
+	g(x) = f(x) - \d\chi_{E}(x)
+\]
+where \( 0 < \d < \sqrt{\e/m(E)} \), is a simple function, and that
+\( \dvertb{f - g}_{L^2} < \e \).
+
+We first note that
+\[
+	\d\chi_{E}(x)
+	= \sum_{1 \leq k \leq n} \d\chi_{E_k}(x)
+\]
+since the \( E_k \) are disjoint.
+This leads to
+\[
+	g(x)
+	= f(x) - \d\chi_{E}(x)
+	= \sum_{1 \leq k \leq n} a_k\chi_{E_k}(x)
+	- \sum_{1 \leq k \leq n} \d\chi_{E_k}(x)
+	= \sum_{1 \leq k \leq n} \parenb{a_k - \d}\chi_{E_k}(x),
+\]
+thus showing that \( g \) is a simple function.
+Finally, we compute \( \dvertb{f - g}_{L^2} \) as follows:
+\[
+	\dvertb{f - g}_{L^2}
+	= \int \vertb{f(x) - g(x)}^2 \, dx
+	= \int \vertb{f(x) - f(x) + \d\chi_{E}(x)}^2 \, dx
+	= \int \vertb{\d\chi_{E}(x)}^2 \, dx
+\]
+\[
+	= \int \vertb{\d}^2 \vertb{\chi_E(x)}^2 \, dx
+	= \int \delta^2 \chi_E(x) \, dx
+	= \int_E \delta^2 \, dx
+	< \int_E \frac{\e}{m(E)} \, dx
+	= m(E)\frac{\e}{m(E)}
+	= \e,
+\]
+thus proving (a).
+
+We now let \( f \) be a continuous function of compact support.
+
+\end{document}
